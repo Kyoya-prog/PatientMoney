@@ -28,13 +28,13 @@
 		3D6D012726355E4400C30DD1 /* MBCircularProgressBar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFF8B263548B200C30DD1 /* MBCircularProgressBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D6D012826355E4400C30DD1 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFF0263555F200C30DD1 /* nanopb.framework */; };
 		3D6D012A26355E4400C30DD1 /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFEF263555F200C30DD1 /* PromisesObjC.framework */; };
+		3D6D014526356D4E00C30DD1 /* MBCircularProgressBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D6D014426356D4E00C30DD1 /* MBCircularProgressBar.bundle */; };
 		3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF2926353E3E00C30DD1 /* AppDelegate.swift */; };
 		3D6DFF2E26353E3E00C30DD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF2D26353E3E00C30DD1 /* ViewController.swift */; };
 		3D6DFF3326353E3F00C30DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFF3226353E3F00C30DD1 /* Assets.xcassets */; };
 		3D6DFF4126353E3F00C30DD1 /* PatientMoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF4026353E3F00C30DD1 /* PatientMoneyTests.swift */; };
 		3D6DFF4C26353E3F00C30DD1 /* PatientMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF4B26353E3F00C30DD1 /* PatientMoneyUITests.swift */; };
 		3D6DFF80263546EA00C30DD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */; };
-		3D6DFF90263548DC00C30DD1 /* MBCircularProgressBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFF8F263548DC00C30DD1 /* MBCircularProgressBar.bundle */; };
 		3D6DFFB7263554B900C30DD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */; };
 		3D6DFFFF2635564600C30DD1 /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFFFE2635564600C30DD1 /* gRPCCertificates-Cpp.bundle */; };
 /* End PBXBuildFile section */
@@ -91,6 +91,7 @@
 		3D6D00B126355BA500C30DD1 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		3D6D00B226355BA500C30DD1 /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "leveldb-library.framework"; path = "../Desktop/PatientMoney/Carthage/Build/iOS/leveldb-library.framework"; sourceTree = "<group>"; };
 		3D6D012D26355E4500C30DD1 /* MBCircularProgressBar.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = MBCircularProgressBar.framework.dSYM; path = Carthage/Build/iOS/MBCircularProgressBar.framework.dSYM; sourceTree = "<group>"; };
+		3D6D014426356D4E00C30DD1 /* MBCircularProgressBar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MBCircularProgressBar.bundle; path = Carthage/Build/iOS/MBCircularProgressBar.framework/MBCircularProgressBar.bundle; sourceTree = SOURCE_ROOT; };
 		3D6DFF2626353E3E00C30DD1 /* PatientMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PatientMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6DFF2926353E3E00C30DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D6DFF2D26353E3E00C30DD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +105,6 @@
 		3D6DFF4D26353E3F00C30DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D6DFF8B263548B200C30DD1 /* MBCircularProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBCircularProgressBar.framework; path = Carthage/Build/iOS/MBCircularProgressBar.framework; sourceTree = "<group>"; };
-		3D6DFF8F263548DC00C30DD1 /* MBCircularProgressBar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBCircularProgressBar.bundle; sourceTree = "<group>"; };
 		3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3D6DFFBA263555E700C30DD1 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTMSessionFetcher.framework; path = Carthage/Build/iOS/GTMSessionFetcher.framework; sourceTree = "<group>"; };
 		3D6DFFBB263555E700C30DD1 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Carthage/Build/iOS/GoogleUtilities.framework; sourceTree = "<group>"; };
@@ -276,8 +276,8 @@
 		3D6DFFAE2635543A00C30DD1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3D6D014426356D4E00C30DD1 /* MBCircularProgressBar.bundle */,
 				3D6DFFFE2635564600C30DD1 /* gRPCCertificates-Cpp.bundle */,
-				3D6DFF8F263548DC00C30DD1 /* MBCircularProgressBar.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -394,8 +394,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D6DFF90263548DC00C30DD1 /* MBCircularProgressBar.bundle in Resources */,
 				3D6DFF3326353E3F00C30DD1 /* Assets.xcassets in Resources */,
+				3D6D014526356D4E00C30DD1 /* MBCircularProgressBar.bundle in Resources */,
 				3D6DFF80263546EA00C30DD1 /* LaunchScreen.storyboard in Resources */,
 				3D6DFFB7263554B900C30DD1 /* GoogleService-Info.plist in Resources */,
 				3D6DFFFF2635564600C30DD1 /* gRPCCertificates-Cpp.bundle in Resources */,
