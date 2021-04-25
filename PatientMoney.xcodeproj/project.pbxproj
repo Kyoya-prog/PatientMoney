@@ -13,6 +13,10 @@
 		3D6DFF4126353E3F00C30DD1 /* PatientMoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF4026353E3F00C30DD1 /* PatientMoneyTests.swift */; };
 		3D6DFF4C26353E3F00C30DD1 /* PatientMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF4B26353E3F00C30DD1 /* PatientMoneyUITests.swift */; };
 		3D6DFF80263546EA00C30DD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */; };
+		3D6DFF90263548DC00C30DD1 /* MBCircularProgressBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFF8F263548DC00C30DD1 /* MBCircularProgressBar.bundle */; };
+		3D6DFF992635498C00C30DD1 /* MBCircularProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFF8B263548B200C30DD1 /* MBCircularProgressBar.framework */; };
+		3D6DFF9A2635498C00C30DD1 /* MBCircularProgressBar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFF8B263548B200C30DD1 /* MBCircularProgressBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D6DFFA226354B2800C30DD1 /* MBCircularProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFF8B263548B200C30DD1 /* MBCircularProgressBar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +36,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3D6DFF9B2635498C00C30DD1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3D6DFF9A2635498C00C30DD1 /* MBCircularProgressBar.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3D6DFF2626353E3E00C30DD1 /* PatientMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PatientMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6DFF2926353E3E00C30DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +63,8 @@
 		3D6DFF4B26353E3F00C30DD1 /* PatientMoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientMoneyUITests.swift; sourceTree = "<group>"; };
 		3D6DFF4D26353E3F00C30DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3D6DFF8B263548B200C30DD1 /* MBCircularProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBCircularProgressBar.framework; path = Carthage/Build/iOS/MBCircularProgressBar.framework; sourceTree = "<group>"; };
+		3D6DFF8F263548DC00C30DD1 /* MBCircularProgressBar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MBCircularProgressBar.bundle; path = Carthage/Build/iOS/MBCircularProgressBar.framework/MBCircularProgressBar.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D6DFF992635498C00C30DD1 /* MBCircularProgressBar.framework in Frameworks */,
+				3D6DFFA226354B2800C30DD1 /* MBCircularProgressBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +97,12 @@
 		3D6DFF1D26353E3E00C30DD1 = {
 			isa = PBXGroup;
 			children = (
+				3D6DFF8F263548DC00C30DD1 /* MBCircularProgressBar.bundle */,
 				3D6DFF2826353E3E00C30DD1 /* PatientMoney */,
 				3D6DFF3F26353E3F00C30DD1 /* PatientMoneyTests */,
 				3D6DFF4A26353E3F00C30DD1 /* PatientMoneyUITests */,
 				3D6DFF2726353E3E00C30DD1 /* Products */,
+				3D6DFF8A263548B200C30DD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +146,14 @@
 			path = PatientMoneyUITests;
 			sourceTree = "<group>";
 		};
+		3D6DFF8A263548B200C30DD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D6DFF8B263548B200C30DD1 /* MBCircularProgressBar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +164,7 @@
 				3D6DFF2226353E3E00C30DD1 /* Sources */,
 				3D6DFF2326353E3E00C30DD1 /* Frameworks */,
 				3D6DFF2426353E3E00C30DD1 /* Resources */,
+				3D6DFF9B2635498C00C30DD1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -225,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D6DFF90263548DC00C30DD1 /* MBCircularProgressBar.bundle in Resources */,
 				3D6DFF3326353E3F00C30DD1 /* Assets.xcassets in Resources */,
 				3D6DFF80263546EA00C30DD1 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -411,15 +445,21 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87QA297FUT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PatientMoney/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.kyoyaprog.PatientMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -430,15 +470,21 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87QA297FUT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PatientMoney/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.kyoyaprog.PatientMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
