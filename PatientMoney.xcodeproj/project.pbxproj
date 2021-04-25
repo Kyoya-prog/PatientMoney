@@ -65,7 +65,7 @@
 		3D6DFF4D26353E3F00C30DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D6DFF8B263548B200C30DD1 /* MBCircularProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBCircularProgressBar.framework; path = Carthage/Build/iOS/MBCircularProgressBar.framework; sourceTree = "<group>"; };
-		3D6DFF8F263548DC00C30DD1 /* MBCircularProgressBar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MBCircularProgressBar.bundle; path = Carthage/Build/iOS/MBCircularProgressBar.framework/MBCircularProgressBar.bundle; sourceTree = "<group>"; };
+		3D6DFF8F263548DC00C30DD1 /* MBCircularProgressBar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBCircularProgressBar.bundle; sourceTree = "<group>"; };
 		3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,7 +99,6 @@
 		3D6DFF1D26353E3E00C30DD1 = {
 			isa = PBXGroup;
 			children = (
-				3D6DFF8F263548DC00C30DD1 /* MBCircularProgressBar.bundle */,
 				3D6DFF2826353E3E00C30DD1 /* PatientMoney */,
 				3D6DFF3F26353E3F00C30DD1 /* PatientMoneyTests */,
 				3D6DFF4A26353E3F00C30DD1 /* PatientMoneyUITests */,
@@ -161,6 +160,7 @@
 		3D6DFFAE2635543A00C30DD1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3D6DFF8F263548DC00C30DD1 /* MBCircularProgressBar.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
