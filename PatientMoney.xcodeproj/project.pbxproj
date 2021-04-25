@@ -279,7 +279,7 @@
 				3D6D0152263576F700C30DD1 /* MBCircularProgressBar.bundle */,
 				3D6DFFFE2635564600C30DD1 /* gRPCCertificates-Cpp.bundle */,
 			);
-			path = Resource;
+			name = Resource;
 			sourceTree = "<group>";
 		};
 		3D6DFFB52635548E00C30DD1 /* GoogleServiceInfo */ = {
