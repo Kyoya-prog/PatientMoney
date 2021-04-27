@@ -190,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Generated;
+			name = Generated;
 			sourceTree = "<group>";
 		};
 		3D6DFF1D26353E3E00C30DD1 = {
