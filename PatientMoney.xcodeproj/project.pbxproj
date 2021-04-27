@@ -38,6 +38,8 @@
 		3D6DFF4C26353E3F00C30DD1 /* PatientMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF4B26353E3F00C30DD1 /* PatientMoneyUITests.swift */; };
 		3D6DFF80263546EA00C30DD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */; };
 		3D6DFFB7263554B900C30DD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */; };
+		3DE103C82638360000F724B8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103C72638360000F724B8 /* Strings.swift */; };
+		3DE103CC2638360800F724B8 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103CB2638360800F724B8 /* Asset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		3D6DFFCA263555E700C30DD1 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Carthage/Build/iOS/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
 		3D6DFFEF263555F200C30DD1 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = Carthage/Build/iOS/PromisesObjC.framework; sourceTree = "<group>"; };
 		3D6DFFF0263555F200C30DD1 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
+		3DE103C72638360000F724B8 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Generated/Strings.swift; sourceTree = "<group>"; };
+		3DE103CB2638360800F724B8 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Generated/Asset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,8 @@
 		3D205C6726381E160058064C /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				3DE103CB2638360800F724B8 /* Asset.swift */,
+				3DE103C72638360000F724B8 /* Strings.swift */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -467,7 +473,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "swiftgen\n\n\n";
+			shellScript = "swiftgen config generate-xcfilelists --config swiftgen --inputs Generated/SwiftGenInput.xcfilelist --outputs Generated/SwiftGenOutput.xcfilelist\n\nswiftgen config run \n\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -477,6 +483,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D6DFF2E26353E3E00C30DD1 /* ViewController.swift in Sources */,
+				3DE103C82638360000F724B8 /* Strings.swift in Sources */,
+				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
 				3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
