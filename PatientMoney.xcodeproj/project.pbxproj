@@ -313,6 +313,7 @@
 				3D6DFF2426353E3E00C30DD1 /* Resources */,
 				3D6D012C26355E4500C30DD1 /* Embed Frameworks */,
 				3D6D016F2635B4D300C30DD1 /* Run Swiftlint */,
+				3DE103AA26382B5800F724B8 /* Run Swiftgen */,
 			);
 			buildRules = (
 			);
@@ -449,6 +450,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		3DE103AA26382B5800F724B8 /* Run Swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftgen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftgen\n\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
