@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D205C6326381C820058064C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6226381C820058064C /* Localizable.strings */; };
+		3D205C6B26381EAB0058064C /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6A26381EAB0058064C /* gRPCCertificates-Cpp.bundle */; };
 		3D6D010426355E4300C30DD1 /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFC1263555E700C30DD1 /* abseil.framework */; };
 		3D6D010626355E4300C30DD1 /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFC8263555E700C30DD1 /* BoringSSL-GRPC.framework */; };
 		3D6D010826355E4300C30DD1 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFBF263555E700C30DD1 /* FIRAnalyticsConnector.framework */; };
@@ -36,7 +38,6 @@
 		3D6DFF4C26353E3F00C30DD1 /* PatientMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF4B26353E3F00C30DD1 /* PatientMoneyUITests.swift */; };
 		3D6DFF80263546EA00C30DD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */; };
 		3D6DFFB7263554B900C30DD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */; };
-		3D6DFFFF2635564600C30DD1 /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFFFE2635564600C30DD1 /* gRPCCertificates-Cpp.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,25 +72,27 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D205C6226381C820058064C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		3D205C6A26381EAB0058064C /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "gRPCCertificates-Cpp.bundle"; path = "../../Carthage/Build/iOS/gRPC-C++.framework/Resources/gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
 		3D6D003D2635590100C30DD1 /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
-		3D6D00A126355BA400C30DD1 /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
-		3D6D00A226355BA400C30DD1 /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "../Desktop/PatientMoney/Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
-		3D6D00A326355BA400C30DD1 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/FirebaseInstallations.framework; sourceTree = "<group>"; };
-		3D6D00A426355BA400C30DD1 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/Firebase.framework; sourceTree = "<group>"; };
-		3D6D00A526355BA400C30DD1 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
-		3D6D00A626355BA500C30DD1 /* gRPC-C++.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "gRPC-C++.framework"; path = "../Desktop/PatientMoney/Carthage/Build/iOS/gRPC-C++.framework"; sourceTree = "<group>"; };
-		3D6D00A726355BA500C30DD1 /* gRPC-Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "gRPC-Core.framework"; path = "../Desktop/PatientMoney/Carthage/Build/iOS/gRPC-Core.framework"; sourceTree = "<group>"; };
-		3D6D00A826355BA500C30DD1 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTMSessionFetcher.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/GTMSessionFetcher.framework; sourceTree = "<group>"; };
-		3D6D00A926355BA500C30DD1 /* MBCircularProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBCircularProgressBar.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/MBCircularProgressBar.framework; sourceTree = "<group>"; };
-		3D6D00AA26355BA500C30DD1 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/GoogleUtilities.framework; sourceTree = "<group>"; };
-		3D6D00AB26355BA500C30DD1 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/FirebaseAuth.framework; sourceTree = "<group>"; };
-		3D6D00AC26355BA500C30DD1 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
-		3D6D00AD26355BA500C30DD1 /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = abseil.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/abseil.framework; sourceTree = "<group>"; };
-		3D6D00AE26355BA500C30DD1 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/FirebaseCore.framework; sourceTree = "<group>"; };
-		3D6D00AF26355BA500C30DD1 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
-		3D6D00B026355BA500C30DD1 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
-		3D6D00B126355BA500C30DD1 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = ../Desktop/PatientMoney/Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		3D6D00B226355BA500C30DD1 /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "leveldb-library.framework"; path = "../Desktop/PatientMoney/Carthage/Build/iOS/leveldb-library.framework"; sourceTree = "<group>"; };
+		3D6D00A126355BA400C30DD1 /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
+		3D6D00A226355BA400C30DD1 /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
+		3D6D00A326355BA400C30DD1 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = Carthage/Build/iOS/FirebaseInstallations.framework; sourceTree = "<group>"; };
+		3D6D00A426355BA400C30DD1 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Carthage/Build/iOS/Firebase.framework; sourceTree = "<group>"; };
+		3D6D00A526355BA400C30DD1 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
+		3D6D00A626355BA500C30DD1 /* gRPC-C++.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "gRPC-C++.framework"; path = "Carthage/Build/iOS/gRPC-C++.framework"; sourceTree = "<group>"; };
+		3D6D00A726355BA500C30DD1 /* gRPC-Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "gRPC-Core.framework"; path = "Carthage/Build/iOS/gRPC-Core.framework"; sourceTree = "<group>"; };
+		3D6D00A826355BA500C30DD1 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTMSessionFetcher.framework; path = Carthage/Build/iOS/GTMSessionFetcher.framework; sourceTree = "<group>"; };
+		3D6D00A926355BA500C30DD1 /* MBCircularProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBCircularProgressBar.framework; path = Carthage/Build/iOS/MBCircularProgressBar.framework; sourceTree = "<group>"; };
+		3D6D00AA26355BA500C30DD1 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Carthage/Build/iOS/GoogleUtilities.framework; sourceTree = "<group>"; };
+		3D6D00AB26355BA500C30DD1 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Carthage/Build/iOS/FirebaseAuth.framework; sourceTree = "<group>"; };
+		3D6D00AC26355BA500C30DD1 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Carthage/Build/iOS/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		3D6D00AD26355BA500C30DD1 /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = abseil.framework; path = Carthage/Build/iOS/abseil.framework; sourceTree = "<group>"; };
+		3D6D00AE26355BA500C30DD1 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Carthage/Build/iOS/FirebaseCore.framework; sourceTree = "<group>"; };
+		3D6D00AF26355BA500C30DD1 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = Carthage/Build/iOS/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		3D6D00B026355BA500C30DD1 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = Carthage/Build/iOS/FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
+		3D6D00B126355BA500C30DD1 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		3D6D00B226355BA500C30DD1 /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "leveldb-library.framework"; path = "Carthage/Build/iOS/leveldb-library.framework"; sourceTree = "<group>"; };
 		3D6D012D26355E4500C30DD1 /* MBCircularProgressBar.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = MBCircularProgressBar.framework.dSYM; path = Carthage/Build/iOS/MBCircularProgressBar.framework.dSYM; sourceTree = "<group>"; };
 		3D6D0152263576F700C30DD1 /* MBCircularProgressBar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MBCircularProgressBar.bundle; path = Carthage/Build/iOS/MBCircularProgressBar.framework/MBCircularProgressBar.bundle; sourceTree = SOURCE_ROOT; };
 		3D6DFF2626353E3E00C30DD1 /* PatientMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PatientMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,7 +128,6 @@
 		3D6DFFCA263555E700C30DD1 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Carthage/Build/iOS/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
 		3D6DFFEF263555F200C30DD1 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = Carthage/Build/iOS/PromisesObjC.framework; sourceTree = "<group>"; };
 		3D6DFFF0263555F200C30DD1 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
-		3D6DFFFE2635564600C30DD1 /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "gRPCCertificates-Cpp.bundle"; path = "Carthage/Build/iOS/gRPC-C++.framework/Resources/gRPCCertificates-Cpp.bundle"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D205C6626381D4C0058064C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D205C6A26381EAB0058064C /* gRPCCertificates-Cpp.bundle */,
+				3D6DFF3226353E3F00C30DD1 /* Assets.xcassets */,
+				3D6D0152263576F700C30DD1 /* MBCircularProgressBar.bundle */,
+				3D205C6226381C820058064C /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3D205C6726381E160058064C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Generated;
+			sourceTree = "<group>";
+		};
 		3D6DFF1D26353E3E00C30DD1 = {
 			isa = PBXGroup;
 			children = (
@@ -197,11 +217,11 @@
 		3D6DFF2826353E3E00C30DD1 /* PatientMoney */ = {
 			isa = PBXGroup;
 			children = (
+				3D205C6726381E160058064C /* Generated */,
+				3D205C6626381D4C0058064C /* Resources */,
 				3D6DFFB52635548E00C30DD1 /* GoogleServiceInfo */,
-				3D6DFFAE2635543A00C30DD1 /* Resource */,
 				3D6DFF2926353E3E00C30DD1 /* AppDelegate.swift */,
 				3D6DFF2D26353E3E00C30DD1 /* ViewController.swift */,
-				3D6DFF3226353E3F00C30DD1 /* Assets.xcassets */,
 				3D6DFF3726353E3F00C30DD1 /* Info.plist */,
 				3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */,
 			);
@@ -273,15 +293,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3D6DFFAE2635543A00C30DD1 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				3D6D0152263576F700C30DD1 /* MBCircularProgressBar.bundle */,
-				3D6DFFFE2635564600C30DD1 /* gRPCCertificates-Cpp.bundle */,
-			);
-			name = Resource;
-			sourceTree = "<group>";
-		};
 		3D6DFFB52635548E00C30DD1 /* GoogleServiceInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +313,7 @@
 				3D6DFF2426353E3E00C30DD1 /* Resources */,
 				3D6D012C26355E4500C30DD1 /* Embed Frameworks */,
 				3D6D016F2635B4D300C30DD1 /* Run Swiftlint */,
+				3DE103AA26382B5800F724B8 /* Run Swiftgen */,
 			);
 			buildRules = (
 			);
@@ -396,10 +408,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D6DFF3326353E3F00C30DD1 /* Assets.xcassets in Resources */,
+				3D205C6B26381EAB0058064C /* gRPCCertificates-Cpp.bundle in Resources */,
+				3D205C6326381C820058064C /* Localizable.strings in Resources */,
 				3D6D0153263576F700C30DD1 /* MBCircularProgressBar.bundle in Resources */,
 				3D6DFF80263546EA00C30DD1 /* LaunchScreen.storyboard in Resources */,
 				3D6DFFB7263554B900C30DD1 /* GoogleService-Info.plist in Resources */,
-				3D6DFFFF2635564600C30DD1 /* gRPCCertificates-Cpp.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +450,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		3DE103AA26382B5800F724B8 /* Run Swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftgen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftgen\n\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

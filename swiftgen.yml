@@ -1,0 +1,11 @@
+xcassets:
+  inputs: PatientMoney/Resources/Assets.xcassets
+  outputs:
+    templateName: swift5
+    output: PatientMoney/Generated/Asset.swift
+
+strings:
+  inputs: PatientMoney/Resources/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: PatientMoney/Generated/Strings.swift
