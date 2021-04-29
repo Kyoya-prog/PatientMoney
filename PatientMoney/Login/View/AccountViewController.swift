@@ -1,13 +1,14 @@
 import Foundation
 import UIKit
 
-/// ログインViewController
+/// アカウント情報入力 ViewController
 class AccountViewController: UIViewController {
     enum InputMode {
         case signIn
-
         case signUp
     }
+
+    // MARK: Initialize
 
     required init?(coder: NSCoder) {
         self.inputMode = .signIn
@@ -19,11 +20,13 @@ class AccountViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
+    // MARK: Private
+
     private let mailAddressLabel = UILabel()
 
     private let passwordLabel = UILabel()
 
-    private let loginTitleLabel = UILabel()
+    private let titleLabel = UILabel()
 
     private let mailAddressTextField = PatienceTextField()
 
@@ -43,10 +46,10 @@ class AccountViewController: UIViewController {
     }
 
     private func construct() {
-        loginTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        loginTitleLabel.font = UIFont.boldSystemFont(ofSize: 30)
-        loginTitleLabel.textColor = UIColor(hex: "FFA488")
-        view.addSubview(loginTitleLabel)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        titleLabel.textColor = UIColor(hex: "FFA488")
+        view.addSubview(titleLabel)
 
         mailAddressLabel.translatesAutoresizingMaskIntoConstraints = false
         mailAddressLabel.font = UIFont.systemFont(ofSize: 14)
@@ -85,10 +88,10 @@ class AccountViewController: UIViewController {
         view.addSubview(changeInputLabel)
 
         NSLayoutConstraint.activate([
-            loginTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
-            loginTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
-            mailAddressLabel.topAnchor.constraint(equalTo: loginTitleLabel.bottomAnchor, constant: 20),
+            mailAddressLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             mailAddressLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 30),
             mailAddressLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -30),
 
@@ -121,13 +124,13 @@ class AccountViewController: UIViewController {
         var attributedString: NSAttributedString
         switch inputMode {
         case .signIn:
-            loginTitleLabel.text = L10n.AccountViewController.SignIn.TitleLabel.text
+            titleLabel.text = L10n.AccountViewController.SignIn.TitleLabel.text
             finishButton.setTitle(L10n.AccountViewController.SignIn.DecideButton.title, for: .normal)
             changeInputLabel.text = L10n.AccountViewController.SignIn.ChengeModeLabel.text
             attributedString = NSAttributedString(string: L10n.AccountViewController.SignIn.ChengeModeLabel.text, attributes: [.foregroundColor: UIColor(hex: "5BCAFF"), .underlineStyle: NSUnderlineStyle.single.rawValue])
 
         case .signUp:
-            loginTitleLabel.text = L10n.AccountViewController.SignUp.TitleLabel.text
+            titleLabel.text = L10n.AccountViewController.SignUp.TitleLabel.text
             finishButton.setTitle(L10n.AccountViewController.SignUp.DecideButton.title, for: .normal)
             changeInputLabel.text = L10n.AccountViewController.SignUp.ChangeModeLabel.text
             attributedString = NSAttributedString(string: L10n.AccountViewController.SignUp.ChangeModeLabel.text, attributes: [.foregroundColor: UIColor(hex: "5BCAFF"), .underlineStyle: NSUnderlineStyle.single.rawValue])
