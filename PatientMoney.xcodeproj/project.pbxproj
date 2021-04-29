@@ -40,6 +40,9 @@
 		3D6DFFB7263554B900C30DD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */; };
 		3DE103C82638360000F724B8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103C72638360000F724B8 /* Strings.swift */; };
 		3DE103CC2638360800F724B8 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103CB2638360800F724B8 /* Asset.swift */; };
+		3DE103E6263ACBE100F724B8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103E5263ACBE100F724B8 /* LoginViewController.swift */; };
+		3DE103ED263AE65A00F724B8 /* ColorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */; };
+		3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +135,9 @@
 		3D6DFFF0263555F200C30DD1 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
 		3DE103C72638360000F724B8 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Generated/Strings.swift; sourceTree = "<group>"; };
 		3DE103CB2638360800F724B8 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Generated/Asset.swift; sourceTree = "<group>"; };
+		3DE103E5263ACBE100F724B8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtension.swift; sourceTree = "<group>"; };
+		3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +229,9 @@
 		3D6DFF2826353E3E00C30DD1 /* PatientMoney */ = {
 			isa = PBXGroup;
 			children = (
+				3DE103F2263AE67100F724B8 /* New Group */,
+				3DE103EB263AE64900F724B8 /* Extension */,
+				3DE103E3263ACBC900F724B8 /* Login */,
 				3D205C6726381E160058064C /* Generated */,
 				3D205C6626381D4C0058064C /* Resources */,
 				3D6DFFB52635548E00C30DD1 /* GoogleServiceInfo */,
@@ -305,6 +314,38 @@
 				3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */,
 			);
 			path = GoogleServiceInfo;
+			sourceTree = "<group>";
+		};
+		3DE103E3263ACBC900F724B8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3DE103E4263ACBD200F724B8 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3DE103E4263ACBD200F724B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DE103E5263ACBE100F724B8 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DE103EB263AE64900F724B8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3DE103F2263AE67100F724B8 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,8 +525,11 @@
 			files = (
 				3D6DFF2E26353E3E00C30DD1 /* ViewController.swift in Sources */,
 				3DE103C82638360000F724B8 /* Strings.swift in Sources */,
+				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
+				3DE103E6263ACBE100F724B8 /* LoginViewController.swift in Sources */,
 				3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */,
+				3DE103ED263AE65A00F724B8 /* ColorsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

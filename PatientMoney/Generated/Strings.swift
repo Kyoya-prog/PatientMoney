@@ -10,6 +10,33 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+
+  internal enum LoginViewController {
+    internal enum LoginButton {
+      /// ログインする
+      internal static let title = L10n.tr("Localizable", "LoginViewController.LoginButton.title")
+    }
+    internal enum LoginTitleLabel {
+      /// ログイン画面
+      internal static let text = L10n.tr("Localizable", "LoginViewController.LoginTitleLabel.text")
+    }
+    internal enum MailAddressLabel {
+      /// メールアドレス
+      internal static let text = L10n.tr("Localizable", "LoginViewController.MailAddressLabel.text")
+    }
+    internal enum MailAddressTextField {
+      /// patience@example.com
+      internal static let placeholder = L10n.tr("Localizable", "LoginViewController.MailAddressTextField.placeholder")
+    }
+    internal enum PasswordLabel {
+      /// パスワード
+      internal static let text = L10n.tr("Localizable", "LoginViewController.PasswordLabel.text")
+    }
+    internal enum PasswordTextField {
+      /// patience123
+      internal static let placeholder = L10n.tr("Localizable", "LoginViewController.PasswordTextField.placeholder")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

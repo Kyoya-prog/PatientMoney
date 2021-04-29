@@ -1,7 +1,9 @@
-/* 
-  Localizable.strings
-  PatientMoney
 
-  Created by 松山響也 on 2021/04/27.
-  
-*/
+
+//LoginViewController
+"LoginViewController.MailAddressTextField.placeholder" = "patience@example.com";
+"LoginViewController.PasswordTextField.placeholder" = "patience123";
+"LoginViewController.LoginTitleLabel.text" = "ログイン画面";
+"LoginViewController.LoginButton.title" = "ログインする";
+"LoginViewController.MailAddressLabel.text" = "メールアドレス";
+"LoginViewController.PasswordLabel.text" = "パスワード";
