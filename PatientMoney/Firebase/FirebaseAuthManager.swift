@@ -4,7 +4,7 @@ import Foundation
 /// Firebase認証マネージャー
 class FirebaseAuthManeger {
     /// 共有インスタンス
-    let shared = FirebaseAuthManeger()
+    static let shared = FirebaseAuthManeger()
 
     /// サインインしているかどうか
     var isSignIn: Bool = {
@@ -12,16 +12,16 @@ class FirebaseAuthManeger {
     }()
 
     /// サインインする
-    func signIn(email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
+    func signIn(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            completion(result, error)
+            completion?(result, error)
         }
     }
 
     /// サインアップする
-    func signUp(email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
+    func signUp(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            completion(result, error)
+            completion?(result, error)
         }
     }
 
