@@ -229,7 +229,7 @@
 		3D6DFF2826353E3E00C30DD1 /* PatientMoney */ = {
 			isa = PBXGroup;
 			children = (
-				3DE103F2263AE67100F724B8 /* New Group */,
+				3DE103F2263AE67100F724B8 /* ViewComponent */,
 				3DE103EB263AE64900F724B8 /* Extension */,
 				3DE103E3263ACBC900F724B8 /* Login */,
 				3D205C6726381E160058064C /* Generated */,
@@ -340,12 +340,12 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		3DE103F2263AE67100F724B8 /* New Group */ = {
+		3DE103F2263AE67100F724B8 /* ViewComponent */ = {
 			isa = PBXGroup;
 			children = (
 				3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */,
 			);
-			path = "New Group";
+			path = ViewComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
