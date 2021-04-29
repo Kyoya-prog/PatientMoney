@@ -349,6 +349,8 @@
 				3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */,
 			);
 			path = ViewComponent;
+			sourceTree = "<group>";
+		};
 		3DE103D6263A803A00F724B8 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
