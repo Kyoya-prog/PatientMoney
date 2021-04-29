@@ -40,6 +40,7 @@
 		3D6DFFB7263554B900C30DD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */; };
 		3DE103C82638360000F724B8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103C72638360000F724B8 /* Strings.swift */; };
 		3DE103CC2638360800F724B8 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103CB2638360800F724B8 /* Asset.swift */; };
+		3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		3D6DFFF0263555F200C30DD1 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
 		3DE103C72638360000F724B8 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Generated/Strings.swift; sourceTree = "<group>"; };
 		3DE103CB2638360800F724B8 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Generated/Asset.swift; sourceTree = "<group>"; };
+		3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 		3D6DFF2826353E3E00C30DD1 /* PatientMoney */ = {
 			isa = PBXGroup;
 			children = (
+				3DE103D6263A803A00F724B8 /* Firebase */,
 				3D205C6726381E160058064C /* Generated */,
 				3D205C6626381D4C0058064C /* Resources */,
 				3D6DFFB52635548E00C30DD1 /* GoogleServiceInfo */,
@@ -305,6 +308,14 @@
 				3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */,
 			);
 			path = GoogleServiceInfo;
+			sourceTree = "<group>";
+		};
+		3DE103D6263A803A00F724B8 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,6 +497,7 @@
 				3DE103C82638360000F724B8 /* Strings.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
 				3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */,
+				3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
