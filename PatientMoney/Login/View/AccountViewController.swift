@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 /// ログインViewController
-class LoginViewController: UIViewController {
+class AccountViewController: UIViewController {
     enum InputMode {
         case signIn
 
@@ -29,7 +29,9 @@ class LoginViewController: UIViewController {
 
     private let passwordTextField = PatienceTextField()
 
-    private let loginButton = UIButton()
+    private let finishButton = UIButton()
+
+    private let changeInputLabel = UILabel()
 
     private var inputMode: InputMode
 
@@ -37,18 +39,17 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         construct()
+        setTextValue()
     }
 
     private func construct() {
         loginTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         loginTitleLabel.font = UIFont.boldSystemFont(ofSize: 30)
         loginTitleLabel.textColor = UIColor(hex: "FFA488")
-        loginTitleLabel.text = L10n.LoginViewController.LoginTitleLabel.text
         view.addSubview(loginTitleLabel)
 
         mailAddressLabel.translatesAutoresizingMaskIntoConstraints = false
         mailAddressLabel.font = UIFont.systemFont(ofSize: 14)
-        mailAddressLabel.text = L10n.LoginViewController.MailAddressLabel.text
         mailAddressLabel.textColor = .black
         view.addSubview(mailAddressLabel)
 
@@ -57,14 +58,12 @@ class LoginViewController: UIViewController {
         mailAddressTextField.layer.borderWidth = 1
         mailAddressTextField.layer.borderColor = UIColor(hex: "FFA500").cgColor
         mailAddressTextField.layer.cornerRadius = 4
-        mailAddressTextField.placeholder = L10n.LoginViewController.MailAddressTextField.placeholder
         mailAddressTextField.textColor = .black
         mailAddressTextField.delegate = self
         view.addSubview(mailAddressTextField)
 
         passwordLabel.translatesAutoresizingMaskIntoConstraints = false
         passwordLabel.font = UIFont.systemFont(ofSize: 14)
-        passwordLabel.text = L10n.LoginViewController.PasswordLabel.text
         passwordLabel.textColor = .black
         view.addSubview(passwordLabel)
 
@@ -74,15 +73,16 @@ class LoginViewController: UIViewController {
         passwordTextField.layer.cornerRadius = 4
         passwordTextField.layer.borderColor = UIColor(hex: "FFA500").cgColor
         passwordTextField.isSecureTextEntry = true
-        passwordTextField.placeholder = L10n.LoginViewController.PasswordTextField.placeholder
         passwordTextField.textColor = .black
         passwordTextField.delegate = self
         view.addSubview(passwordTextField)
 
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
-        loginButton.backgroundColor = UIColor(hex: "FFA498")
-        loginButton.setTitle(L10n.LoginViewController.LoginButton.title, for: .normal)
-        view.addSubview(loginButton)
+        finishButton.translatesAutoresizingMaskIntoConstraints = false
+        finishButton.backgroundColor = UIColor(hex: "FFA498")
+        view.addSubview(finishButton)
+
+        changeInputLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(changeInputLabel)
 
         NSLayoutConstraint.activate([
             loginTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
@@ -104,12 +104,37 @@ class LoginViewController: UIViewController {
             passwordTextField.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
             passwordTextField.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
 
-            loginButton.topAnchor.constraint(greaterThanOrEqualTo: passwordTextField.bottomAnchor),
-            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+            finishButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
+            finishButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+            changeInputLabel.topAnchor.constraint(greaterThanOrEqualTo: finishButton.bottomAnchor),
+            changeInputLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            changeInputLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
         ])
+    }
+
+    private func setTextValue() {
+        mailAddressLabel.text = L10n.AccountViewController.MailAddressLabel.text
+        mailAddressTextField.placeholder = L10n.AccountViewController.MailAddressTextField.placeholder
+        passwordLabel.text = L10n.AccountViewController.PasswordLabel.text
+        passwordTextField.placeholder = L10n.AccountViewController.PasswordTextField.placeholder
+        var attributedString: NSAttributedString
+        switch inputMode {
+        case .signIn:
+            loginTitleLabel.text = L10n.AccountViewController.SignIn.TitleLabel.text
+            finishButton.setTitle(L10n.AccountViewController.SignIn.DecideButton.title, for: .normal)
+            changeInputLabel.text = L10n.AccountViewController.SignIn.ChengeModeLabel.text
+            attributedString = NSAttributedString(string: L10n.AccountViewController.SignIn.ChengeModeLabel.text, attributes: [.foregroundColor: UIColor(hex: "5BCAFF"), .underlineStyle: NSUnderlineStyle.single.rawValue])
+
+        case .signUp:
+            loginTitleLabel.text = L10n.AccountViewController.SignUp.TitleLabel.text
+            finishButton.setTitle(L10n.AccountViewController.SignUp.DecideButton.title, for: .normal)
+            changeInputLabel.text = L10n.AccountViewController.SignUp.ChangeModeLabel.text
+            attributedString = NSAttributedString(string: L10n.AccountViewController.SignUp.ChangeModeLabel.text, attributes: [.foregroundColor: UIColor(hex: "5BCAFF"), .underlineStyle: NSUnderlineStyle.single.rawValue])
+        }
+        changeInputLabel.attributedText = attributedString
     }
 }
 
-extension LoginViewController: UITextFieldDelegate {
+extension AccountViewController: UITextFieldDelegate {
 }
