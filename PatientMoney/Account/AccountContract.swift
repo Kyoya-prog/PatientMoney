@@ -1,12 +1,28 @@
 import Foundation
+import UIKit.UIViewController
+
+protocol AccountWireFrame: AnyObject {
+    // Dependency
+    var viewController: UIViewController? { get }
+
+    /// Home画面を表示する
+    func presentHomeView()
+}
 
 protocol AccountView: AnyObject {
+    // Dependency
+    var presenter: AccountPresentation { get }
     /// エラーメッセージを表示する
     /// - parameter message:エラーメッセージ
     func outputError(message: String)
 }
 
 protocol AccountPresentation: AnyObject {
+    // Dependency
+    var view: AccountView? { get }
+    var interactor: AccountUsecase! { get }
+    var router: AccountWireFrame! { get }
+
     /// ログイン、新規登録ボタンが押された
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
@@ -24,7 +40,9 @@ protocol AccountInteractorOutput: AnyObject {
     func outputError(message: String)
 }
 
-protocol AccountInteractor: AnyObject {
+protocol AccountUsecase: AnyObject {
+    // Dependency
+    var output: AccountInteractorOutput? { get }
     /// サインインする
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
