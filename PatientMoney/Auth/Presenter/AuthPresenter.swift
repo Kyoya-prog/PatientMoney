@@ -1,6 +1,7 @@
 import Foundation
 
 class AuthPresenter: AuthPresentation, AuthInteractorOutput {
+    // MARK: AuthPresentation
     var view: AuthView?
 
     var interactor: AuthUsecase!
@@ -15,15 +16,16 @@ class AuthPresenter: AuthPresentation, AuthInteractorOutput {
         interactor.signUp(mailAddress: mailAddress, password: password)
     }
 
-    func outputError(message: String) {
-        view?.showError(message: message)
-    }
-
     func didTapSignInChangeViewLabel() {
         router.presentSignUpView()
     }
 
     func didTapSignUpChangeViewLabel() {
         router.presentSignInView()
+    }
+
+    // MARK: AuthInteractorOutput
+    func outputError(message: String) {
+        view?.showError(message: message)
     }
 }

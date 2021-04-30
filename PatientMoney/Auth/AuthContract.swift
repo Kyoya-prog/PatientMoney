@@ -23,9 +23,6 @@ protocol AuthView: AnyObject {
     /// エラーメッセージを表示する
     /// - parameter message:エラーメッセージ
     func showError(message: String)
-
-    /// 完了ボタンを有効・無効にする
-    func enableFinishButton(isEnabled: Bool)
 }
 
 /// 認証Presentation

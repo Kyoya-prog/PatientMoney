@@ -1,7 +1,6 @@
 import Foundation
 import UIKit
 
-/// アカウント情報入力 ViewController
 class AuthViewController: UIViewController, AuthView {
     enum InputMode {
         case signIn
@@ -43,10 +42,6 @@ class AuthViewController: UIViewController, AuthView {
 
     func showError(message: String) {
         authErrorLabel.text = message
-    }
-
-    func enableFinishButton(isEnabled: Bool) {
-        finishButton.isEnabled = isEnabled
     }
 
     // MARK: Private
@@ -113,21 +108,7 @@ class AuthViewController: UIViewController, AuthView {
         authErrorLabel.isHidden = true
         view.addSubview(authErrorLabel)
 
-        changeLabelView.translatesAutoresizingMaskIntoConstraints = false
-        changeLabelView.backgroundColor = .clear
-        changeLabelView.isUserInteractionEnabled = true
-        view.addSubview(changeLabelView)
-
-        changeDiscriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        changeDiscriptionLabel.font = UIFont.systemFont(ofSize: 14)
-        changeLabelView.addSubview(changeDiscriptionLabel)
-
-        changeViewLabel.translatesAutoresizingMaskIntoConstraints = false
-        changeViewLabel.font = UIFont.systemFont(ofSize: 14)
-        changeViewLabel.isUserInteractionEnabled = true
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapChangeViewLabel(_:)))
-        changeViewLabel.addGestureRecognizer(tapRecognizer)
-        changeLabelView.addSubview(changeViewLabel)
+        setUpChangeLabelView()
 
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
@@ -167,6 +148,24 @@ class AuthViewController: UIViewController, AuthView {
             changeLabelView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             changeLabelView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
+    }
+
+    private func setUpChangeLabelView() {
+        changeLabelView.translatesAutoresizingMaskIntoConstraints = false
+        changeLabelView.backgroundColor = .clear
+        changeLabelView.isUserInteractionEnabled = true
+        view.addSubview(changeLabelView)
+
+        changeDiscriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        changeDiscriptionLabel.font = UIFont.systemFont(ofSize: 14)
+        changeLabelView.addSubview(changeDiscriptionLabel)
+
+        changeViewLabel.translatesAutoresizingMaskIntoConstraints = false
+        changeViewLabel.font = UIFont.systemFont(ofSize: 14)
+        changeViewLabel.isUserInteractionEnabled = true
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapChangeViewLabel(_:)))
+        changeViewLabel.addGestureRecognizer(tapRecognizer)
+        changeLabelView.addSubview(changeViewLabel)
     }
 
     @objc private func didChangeMailAddressTextField(_ sender: PatienceTextField) {
