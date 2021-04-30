@@ -18,4 +18,14 @@ class SignInViewController: AuthViewController {
     override func changeViewLabelAction() {
         presenter.didTapSignInChangeViewLabel()
     }
+
+    override func mailAddressTextFiledChangeAction() {
+        guard let passwprd = passwordTextField.text, let mailAddress = mailAddressTextField.text else { return }
+        finishButton.isEnabled = !passwprd.isEmpty && !mailAddress.isEmpty
+    }
+
+    override func passwordTextFieldChangeAction() {
+        guard let passwprd = passwordTextField.text, let mailAddress = mailAddressTextField.text else { return }
+        finishButton.isEnabled = !passwprd.isEmpty && !mailAddress.isEmpty
+    }
 }

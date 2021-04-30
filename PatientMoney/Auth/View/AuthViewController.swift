@@ -30,10 +30,19 @@ class AuthViewController: UIViewController, AuthView {
         fatalError("this method must be overrided")
     }
 
+    func mailAddressTextFiledChangeAction() {
+        fatalError("this method must be overrided")
+    }
+
+    func passwordTextFieldChangeAction() {
+        fatalError("this method must be overrided")
+    }
+
     // MARK: AuthView
     var presenter: AuthPresentation!
 
     func showError(message: String) {
+        authErrorLabel.text = message
     }
 
     func enableFinishButton(isEnabled: Bool) {
@@ -91,6 +100,7 @@ class AuthViewController: UIViewController, AuthView {
         passwordTextField.textColor = .black
         passwordTextField.placeholder = L10n.AuthViewController.PasswordTextField.placeholder
         view.addSubview(passwordTextField)
+        passwordTextField.addTarget(self, action: #selector(didChangePasswordTextField(_:)), for: .editingChanged)
 
         finishButton.translatesAutoresizingMaskIntoConstraints = false
         finishButton.isEnabled = false
@@ -160,8 +170,7 @@ class AuthViewController: UIViewController, AuthView {
     }
 
     @objc private func didChangeMailAddressTextField(_ sender: PatienceTextField) {
-        guard let passwprd = passwordTextField.text, let mailAddress = mailAddressTextField.text else { return }
-        finishButton.isEnabled = !passwprd.isEmpty && !mailAddress.isEmpty
+        mailAddressTextFiledChangeAction()
     }
 
     @objc private func didTapFinishButton(_ sender: UIButton) {
@@ -170,5 +179,9 @@ class AuthViewController: UIViewController, AuthView {
 
     @objc private func didTapChangeViewLabel(_ sender: UIButton) {
         changeViewLabelAction()
+    }
+
+    @objc private func didChangePasswordTextField(_ sender: PatienceTextField) {
+        passwordTextFieldChangeAction()
     }
 }
