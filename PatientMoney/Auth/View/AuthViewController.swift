@@ -26,6 +26,10 @@ class AuthViewController: UIViewController, AuthView {
     func showError(message: String) {
     }
 
+    func enableFinishButton(isEnabled: Bool) {
+        finishButton.isEnabled = isEnabled
+    }
+
     // MARK: Private
 
     private let mailAddressLabel = UILabel()
@@ -38,9 +42,11 @@ class AuthViewController: UIViewController, AuthView {
 
     private let passwordTextField = PatienceTextField()
 
-    private let finishButton = UIButton()
+    private let finishButton = FlatButton()
 
     private let changeInputLabel = UILabel()
+
+    private let authErrorLabel = UILabel()
 
     private var inputMode: InputMode
 
@@ -68,7 +74,7 @@ class AuthViewController: UIViewController, AuthView {
         mailAddressTextField.layer.borderColor = UIColor(hex: "FFA500").cgColor
         mailAddressTextField.layer.cornerRadius = 4
         mailAddressTextField.textColor = .black
-        mailAddressTextField.delegate = self
+        mailAddressTextField.addTarget(self, action: #selector(didChangeMailAddressTextField(_:)), for: .editingChanged)
         view.addSubview(mailAddressTextField)
 
         passwordLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -83,12 +89,20 @@ class AuthViewController: UIViewController, AuthView {
         passwordTextField.layer.borderColor = UIColor(hex: "FFA500").cgColor
         passwordTextField.isSecureTextEntry = true
         passwordTextField.textColor = .black
-        passwordTextField.delegate = self
+        passwordTextField.addTarget(self, action: #selector(didChangePasswordTextField(_:)), for: .editingChanged)
         view.addSubview(passwordTextField)
 
         finishButton.translatesAutoresizingMaskIntoConstraints = false
-        finishButton.backgroundColor = UIColor(hex: "FFA498")
+        
+        finishButton.addTarget(self, action: #selector(didTapFinishButton(_:)), for: .touchUpInside)
+        finishButton.isEnabled = false
         view.addSubview(finishButton)
+
+        authErrorLabel.translatesAutoresizingMaskIntoConstraints = false
+        authErrorLabel.font = UIFont.systemFont(ofSize: 14)
+        authErrorLabel.textColor = UIColor(hex: "FFA07A")
+        authErrorLabel.isHidden = true
+        view.addSubview(authErrorLabel)
 
         changeInputLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(changeInputLabel)
@@ -113,7 +127,11 @@ class AuthViewController: UIViewController, AuthView {
             passwordTextField.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
             passwordTextField.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
 
-            finishButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
+            authErrorLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 3),
+            authErrorLabel.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
+            authErrorLabel.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
+
+            finishButton.topAnchor.constraint(equalTo: authErrorLabel.bottomAnchor, constant: 30),
             finishButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
             changeInputLabel.topAnchor.constraint(greaterThanOrEqualTo: finishButton.bottomAnchor),
@@ -143,7 +161,25 @@ class AuthViewController: UIViewController, AuthView {
         }
         changeInputLabel.attributedText = attributedString
     }
+
+    @objc private func didChangeMailAddressTextField(_ sender: PatienceTextField) {
+        guard let passwprd = passwordTextField.text, let mailAddress = mailAddressTextField.text else { return }
+        finishButton.isEnabled = !passwprd.isEmpty && !mailAddress.isEmpty
+    }
+
+    @objc private func didChangePasswordTextField(_ sender: PatienceTextField) {
+        guard let password = passwordTextField.text else { return }
+        finishButton.isEnabled = 8 <= password.count
+        if !finishButton.isEnabled {
+            authErrorLabel.text = "パスワードは８文字以上入力してください"
+            authErrorLabel.isHidden = false
+        } else {
+            authErrorLabel.isHidden = true
+        }
+    }
+
+    @objc private func didTapFinishButton(_ sender: UIButton) {
+        presenter.didTapFinishButton(mailAddress: mailAddressTextField.text ?? "", password: passwordTextField.text ?? "", isSignIn: inputMode == .signIn)
+    }
 }
 
-extension AuthViewController: UITextFieldDelegate {
-}

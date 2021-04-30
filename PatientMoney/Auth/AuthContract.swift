@@ -17,6 +17,9 @@ protocol AuthView: AnyObject {
     /// エラーメッセージを表示する
     /// - parameter message:エラーメッセージ
     func showError(message: String)
+
+    /// 完了ボタンを有効・無効にする
+    func enableFinishButton(isEnabled: Bool)
 }
 
 /// 認証Presentation
@@ -29,10 +32,10 @@ protocol AuthPresentation: AnyObject {
     /// ログイン、新規登録ボタンが押された
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
-    func didTapFinishButton(mailAddress: String, password: String)
+    /// - parameter isSignIn:ログインでの入力かどうか
+    func didTapFinishButton(mailAddress: String, password: String, isSignIn: Bool)
 
     /// アカウントの入力状態が変化した
-    /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
     func didChangeAuthInput(mailAddress: String, password: String)
 }
