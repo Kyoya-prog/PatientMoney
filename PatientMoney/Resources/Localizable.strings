@@ -1,13 +1,13 @@
 
 
 //LoginViewController
-"AccountViewController.MailAddressTextField.placeholder" = "patience@example.com";
-"AccountViewController.PasswordTextField.placeholder" = "patience123";
-"AccountViewController.SignUp.TitleLabel.text" = "新規登録画面";
-"AccountViewController.SignUp.DecideButton.title" = "新規登録する";
-"AccountViewController.SignIn.TitleLabel.text" = "ログイン画面";
-"AccountViewController.SignIn.DecideButton.title" = "ログインする";
-"AccountViewController.MailAddressLabel.text" = "メールアドレス";
-"AccountViewController.PasswordLabel.text" = "パスワード";
-"AccountViewController.SignIn.ChengeModeLabel.text" = "新規登録画面へ移動";
-"AccountViewController.SignUp.ChangeModeLabel.text" = "ログイン画面へ移動";
+"AuthViewController.MailAddressTextField.placeholder" = "patience@example.com";
+"AuthViewController.PasswordTextField.placeholder" = "patience123";
+"AuthViewController.SignUp.TitleLabel.text" = "新規登録画面";
+"AuthViewController.SignUp.DecideButton.title" = "新規登録する";
+"AuthViewController.SignIn.TitleLabel.text" = "ログイン画面";
+"AuthViewController.SignIn.DecideButton.title" = "ログインする";
+"AuthViewController.MailAddressLabel.text" = "メールアドレス";
+"AuthViewController.PasswordLabel.text" = "パスワード";
+"AuthViewController.SignIn.ChengeModeLabel.text" = "新規登録画面へ移動";
+"AuthViewController.SignUp.ChangeModeLabel.text" = "ログイン画面へ移動";

@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 /// アカウント情報入力 ViewController
-class AccountViewController: UIViewController {
+class AuthViewController: UIViewController, AuthView {
     enum InputMode {
         case signIn
         case signUp
@@ -18,6 +18,12 @@ class AccountViewController: UIViewController {
     init(inputMode: InputMode) {
         self.inputMode = inputMode
         super.init(nibName: nil, bundle: nil)
+    }
+
+    // MARK: AuthView
+    var presenter: AuthPresentation!
+
+    func showError(message: String) {
     }
 
     // MARK: Private
@@ -117,27 +123,27 @@ class AccountViewController: UIViewController {
     }
 
     private func setTextValue() {
-        mailAddressLabel.text = L10n.AccountViewController.MailAddressLabel.text
-        mailAddressTextField.placeholder = L10n.AccountViewController.MailAddressTextField.placeholder
-        passwordLabel.text = L10n.AccountViewController.PasswordLabel.text
-        passwordTextField.placeholder = L10n.AccountViewController.PasswordTextField.placeholder
+        mailAddressLabel.text = L10n.AuthViewController.MailAddressLabel.text
+        mailAddressTextField.placeholder = L10n.AuthViewController.MailAddressTextField.placeholder
+        passwordLabel.text = L10n.AuthViewController.PasswordLabel.text
+        passwordTextField.placeholder = L10n.AuthViewController.PasswordTextField.placeholder
         var attributedString: NSAttributedString
         switch inputMode {
         case .signIn:
-            titleLabel.text = L10n.AccountViewController.SignIn.TitleLabel.text
-            finishButton.setTitle(L10n.AccountViewController.SignIn.DecideButton.title, for: .normal)
-            changeInputLabel.text = L10n.AccountViewController.SignIn.ChengeModeLabel.text
-            attributedString = NSAttributedString(string: L10n.AccountViewController.SignIn.ChengeModeLabel.text, attributes: [.foregroundColor: UIColor(hex: "5BCAFF"), .underlineStyle: NSUnderlineStyle.single.rawValue])
+            titleLabel.text = L10n.AuthViewController.SignIn.TitleLabel.text
+            finishButton.setTitle(L10n.AuthViewController.SignIn.DecideButton.title, for: .normal)
+            changeInputLabel.text = L10n.AuthViewController.SignIn.ChengeModeLabel.text
+            attributedString = NSAttributedString(string: L10n.AuthViewController.SignIn.ChengeModeLabel.text, attributes: [.foregroundColor: UIColor(hex: "5BCAFF"), .underlineStyle: NSUnderlineStyle.single.rawValue])
 
         case .signUp:
-            titleLabel.text = L10n.AccountViewController.SignUp.TitleLabel.text
-            finishButton.setTitle(L10n.AccountViewController.SignUp.DecideButton.title, for: .normal)
-            changeInputLabel.text = L10n.AccountViewController.SignUp.ChangeModeLabel.text
-            attributedString = NSAttributedString(string: L10n.AccountViewController.SignUp.ChangeModeLabel.text, attributes: [.foregroundColor: UIColor(hex: "5BCAFF"), .underlineStyle: NSUnderlineStyle.single.rawValue])
+            titleLabel.text = L10n.AuthViewController.SignUp.TitleLabel.text
+            finishButton.setTitle(L10n.AuthViewController.SignUp.DecideButton.title, for: .normal)
+            changeInputLabel.text = L10n.AuthViewController.SignUp.ChangeModeLabel.text
+            attributedString = NSAttributedString(string: L10n.AuthViewController.SignUp.ChangeModeLabel.text, attributes: [.foregroundColor: UIColor(hex: "5BCAFF"), .underlineStyle: NSUnderlineStyle.single.rawValue])
         }
         changeInputLabel.attributedText = attributedString
     }
 }
 
-extension AccountViewController: UITextFieldDelegate {
+extension AuthViewController: UITextFieldDelegate {
 }

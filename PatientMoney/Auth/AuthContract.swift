@@ -1,7 +1,8 @@
 import Foundation
 import UIKit.UIViewController
 
-protocol AccountWireFrame: AnyObject {
+/// 認証Wireframe
+protocol AuthWireFrame: AnyObject {
     // Dependency
     var viewController: UIViewController? { get }
 
@@ -9,19 +10,21 @@ protocol AccountWireFrame: AnyObject {
     func presentHomeView()
 }
 
-protocol AccountView: AnyObject {
+/// 認証View
+protocol AuthView: AnyObject {
     // Dependency
-    var presenter: AccountPresentation { get }
+    var presenter: AuthPresentation! { get }
     /// エラーメッセージを表示する
     /// - parameter message:エラーメッセージ
-    func outputError(message: String)
+    func showError(message: String)
 }
 
-protocol AccountPresentation: AnyObject {
+/// 認証Presentation
+protocol AuthPresentation: AnyObject {
     // Dependency
-    var view: AccountView? { get }
-    var interactor: AccountUsecase! { get }
-    var router: AccountWireFrame! { get }
+    var view: AuthView? { get }
+    var interactor: AuthUsecase! { get }
+    var router: AuthWireFrame! { get }
 
     /// ログイン、新規登録ボタンが押された
     /// - parameter mailAddress:メールアドレス
@@ -31,18 +34,20 @@ protocol AccountPresentation: AnyObject {
     /// アカウントの入力状態が変化した
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
-    func didChangeAccountInput(mailAddress: String, password: String)
+    func didChangeAuthInput(mailAddress: String, password: String)
 }
 
-protocol AccountInteractorOutput: AnyObject {
+/// 認証InteractorOutput
+protocol AuthInteractorOutput: AnyObject {
     /// エラーメッセージを表示する
     /// - parameter message:エラーメッセージ
     func outputError(message: String)
 }
 
-protocol AccountUsecase: AnyObject {
+/// 認証Usecase
+protocol AuthUsecase: AnyObject {
     // Dependency
-    var output: AccountInteractorOutput? { get }
+    var output: AuthInteractorOutput? { get }
     /// サインインする
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
