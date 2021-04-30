@@ -6,6 +6,12 @@ protocol AuthWireFrame: AnyObject {
     // Dependency
     var viewController: UIViewController? { get }
 
+    /// 新規登録画面を表示する
+    func presentSignUpView()
+    
+    /// ログイン画面を表示する
+    func presentSignInView()
+    
     /// Home画面を表示する
     func presentHomeView()
 }
@@ -33,7 +39,7 @@ protocol AuthPresentation: AnyObject {
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
     func didTapFinishSignInButton(mailAddress: String, password: String)
-
+    
     /// 新規登録画面の完了ボタンが押された
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
