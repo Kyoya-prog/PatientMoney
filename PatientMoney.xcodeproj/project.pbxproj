@@ -46,6 +46,8 @@
 		3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */; };
 		3DE10408263B976700F724B8 /* AuthContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10407263B976700F724B8 /* AuthContract.swift */; };
 		3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10419263BEDE900F724B8 /* FlatButton.swift */; };
+		3DE10427263C008900F724B8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10426263C008900F724B8 /* SignUpViewController.swift */; };
+		3DE1042B263C013800F724B8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1042A263C013800F724B8 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +146,8 @@
 		3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceTextField.swift; sourceTree = "<group>"; };
 		3DE10407263B976700F724B8 /* AuthContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthContract.swift; sourceTree = "<group>"; };
 		3DE10419263BEDE900F724B8 /* FlatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
+		3DE10426263C008900F724B8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3DE1042A263C013800F724B8 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				3DE103E5263ACBE100F724B8 /* AuthViewController.swift */,
+				3DE10426263C008900F724B8 /* SignUpViewController.swift */,
+				3DE1042A263C013800F724B8 /* SignInViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -540,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE10427263C008900F724B8 /* SignUpViewController.swift in Sources */,
 				3D6DFF2E26353E3E00C30DD1 /* ViewController.swift in Sources */,
 				3DE103C82638360000F724B8 /* Strings.swift in Sources */,
 				3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */,
@@ -547,6 +554,7 @@
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
 				3DE10408263B976700F724B8 /* AuthContract.swift in Sources */,
 				3DE103E6263ACBE100F724B8 /* AuthViewController.swift in Sources */,
+				3DE1042B263C013800F724B8 /* SignInViewController.swift in Sources */,
 				3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */,
 				3DE103ED263AE65A00F724B8 /* ColorsExtension.swift in Sources */,
 				3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */,

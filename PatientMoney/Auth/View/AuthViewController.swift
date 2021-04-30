@@ -8,16 +8,20 @@ class AuthViewController: UIViewController, AuthView {
         case signUp
     }
 
-    // MARK: Initialize
+    let titleLabel = UILabel()
 
-    required init?(coder: NSCoder) {
-        self.inputMode = .signIn
-        super.init(coder: coder)
-    }
+    let mailAddressTextField = PatienceTextField()
 
-    init(inputMode: InputMode) {
-        self.inputMode = inputMode
-        super.init(nibName: nil, bundle: nil)
+    let passwordTextField = PatienceTextField()
+
+    let finishButton = FlatButton()
+
+    let changeInputLabel = UILabel()
+
+    let authErrorLabel = UILabel()
+
+    func finishButtonAction() {
+        fatalError("this method must be overrided")
     }
 
     // MARK: AuthView
@@ -36,29 +40,10 @@ class AuthViewController: UIViewController, AuthView {
 
     private let passwordLabel = UILabel()
 
-    private let titleLabel = UILabel()
-
-    private let mailAddressTextField = PatienceTextField()
-
-    private let passwordTextField = PatienceTextField()
-
-    private let finishButton = FlatButton()
-
-    private let changeInputLabel = UILabel()
-
-    private let authErrorLabel = UILabel()
-
-    private var inputMode: InputMode {
-        didSet {
-            setTextValue()
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         construct()
-        setTextValue()
     }
 
     private func construct() {
@@ -70,6 +55,7 @@ class AuthViewController: UIViewController, AuthView {
         mailAddressLabel.translatesAutoresizingMaskIntoConstraints = false
         mailAddressLabel.font = UIFont.systemFont(ofSize: 14)
         mailAddressLabel.textColor = .black
+        mailAddressLabel.text = L10n.AuthViewController.MailAddressLabel.text
         view.addSubview(mailAddressLabel)
 
         mailAddressTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -78,12 +64,14 @@ class AuthViewController: UIViewController, AuthView {
         mailAddressTextField.layer.borderColor = UIColor(hex: "FFA500").cgColor
         mailAddressTextField.layer.cornerRadius = 4
         mailAddressTextField.textColor = .black
+        mailAddressTextField.placeholder = L10n.AuthViewController.MailAddressTextField.placeholder
         mailAddressTextField.addTarget(self, action: #selector(didChangeMailAddressTextField(_:)), for: .editingChanged)
         view.addSubview(mailAddressTextField)
 
         passwordLabel.translatesAutoresizingMaskIntoConstraints = false
         passwordLabel.font = UIFont.systemFont(ofSize: 14)
         passwordLabel.textColor = .black
+        passwordLabel.text = L10n.AuthViewController.PasswordLabel.text
         view.addSubview(passwordLabel)
 
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -93,13 +81,12 @@ class AuthViewController: UIViewController, AuthView {
         passwordTextField.layer.borderColor = UIColor(hex: "FFA500").cgColor
         passwordTextField.isSecureTextEntry = true
         passwordTextField.textColor = .black
-        passwordTextField.addTarget(self, action: #selector(didChangePasswordTextField(_:)), for: .editingChanged)
+        passwordTextField.placeholder = L10n.AuthViewController.PasswordTextField.placeholder
         view.addSubview(passwordTextField)
 
         finishButton.translatesAutoresizingMaskIntoConstraints = false
-
-        finishButton.addTarget(self, action: #selector(didTapFinishButton(_:)), for: .touchUpInside)
         finishButton.isEnabled = false
+        finishButton.addTarget(self, action: #selector(didTapFinishButton(_:)), for: .touchUpInside)
         view.addSubview(finishButton)
 
         authErrorLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -109,8 +96,6 @@ class AuthViewController: UIViewController, AuthView {
         view.addSubview(authErrorLabel)
 
         changeInputLabel.translatesAutoresizingMaskIntoConstraints = false
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapChengeInputLabel(_:)))
-        changeInputLabel.addGestureRecognizer(tapRecognizer)
         changeInputLabel.isUserInteractionEnabled = true
         view.addSubview(changeInputLabel)
 
@@ -147,55 +132,12 @@ class AuthViewController: UIViewController, AuthView {
         ])
     }
 
-    private func setTextValue() {
-        mailAddressLabel.text = L10n.AuthViewController.MailAddressLabel.text
-        mailAddressTextField.placeholder = L10n.AuthViewController.MailAddressTextField.placeholder
-        passwordLabel.text = L10n.AuthViewController.PasswordLabel.text
-        passwordTextField.placeholder = L10n.AuthViewController.PasswordTextField.placeholder
-        var attributedString: NSAttributedString
-        switch inputMode {
-        case .signIn:
-            titleLabel.text = L10n.AuthViewController.SignIn.TitleLabel.text
-            finishButton.setTitle(L10n.AuthViewController.SignIn.DecideButton.title, for: .normal)
-            changeInputLabel.text = L10n.AuthViewController.SignIn.ChengeModeLabel.text
-            attributedString = NSAttributedString(string: L10n.AuthViewController.SignIn.ChengeModeLabel.text, attributes: [.foregroundColor: UIColor(hex: "5BCAFF"), .underlineStyle: NSUnderlineStyle.single.rawValue])
-
-        case .signUp:
-            titleLabel.text = L10n.AuthViewController.SignUp.TitleLabel.text
-            finishButton.setTitle(L10n.AuthViewController.SignUp.DecideButton.title, for: .normal)
-            changeInputLabel.text = L10n.AuthViewController.SignUp.ChangeModeLabel.text
-            attributedString = NSAttributedString(string: L10n.AuthViewController.SignUp.ChangeModeLabel.text, attributes: [.foregroundColor: UIColor(hex: "5BCAFF"), .underlineStyle: NSUnderlineStyle.single.rawValue])
-        }
-        changeInputLabel.attributedText = attributedString
-    }
-
-    @objc private func didChangeMailAddressTextField(_ sender: PatienceTextField) {
+    @objc func didChangeMailAddressTextField(_ sender: PatienceTextField) {
         guard let passwprd = passwordTextField.text, let mailAddress = mailAddressTextField.text else { return }
         finishButton.isEnabled = !passwprd.isEmpty && !mailAddress.isEmpty
     }
 
-    @objc private func didChangePasswordTextField(_ sender: PatienceTextField) {
-        guard let password = passwordTextField.text else { return }
-        finishButton.isEnabled = 8 <= password.count
-        if !finishButton.isEnabled {
-            authErrorLabel.text = "パスワードは８文字以上入力してください"
-            authErrorLabel.isHidden = false
-        } else {
-            authErrorLabel.isHidden = true
-        }
-    }
-
-    @objc private func didTapFinishButton(_ sender: UIButton) {
-        presenter.didTapFinishButton(mailAddress: mailAddressTextField.text ?? "", password: passwordTextField.text ?? "", isSignIn: inputMode == .signIn)
-    }
-
-    @objc private func didTapChengeInputLabel(_ sender: UILabel) {
-        switch inputMode {
-        case .signIn:
-            inputMode = .signUp
-
-        case .signUp:
-            inputMode = .signIn
-        }
+    @objc func didTapFinishButton(_ sender: UIButton) {
+        finishButtonAction()
     }
 }

@@ -29,9 +29,9 @@ internal enum L10n {
       internal static let placeholder = L10n.tr("Localizable", "AuthViewController.PasswordTextField.placeholder")
     }
     internal enum SignIn {
-      internal enum ChengeModeLabel {
+      internal enum ChangeViewLabel {
         /// 新規登録画面へ移動
-        internal static let text = L10n.tr("Localizable", "AuthViewController.SignIn.ChengeModeLabel.text")
+        internal static let text = L10n.tr("Localizable", "AuthViewController.SignIn.ChangeViewLabel.text")
       }
       internal enum DecideButton {
         /// ログインする
@@ -43,9 +43,9 @@ internal enum L10n {
       }
     }
     internal enum SignUp {
-      internal enum ChangeModeLabel {
+      internal enum ChangeViewLabel {
         /// ログイン画面へ移動
-        internal static let text = L10n.tr("Localizable", "AuthViewController.SignUp.ChangeModeLabel.text")
+        internal static let text = L10n.tr("Localizable", "AuthViewController.SignUp.ChangeViewLabel.text")
       }
       internal enum DecideButton {
         /// 新規登録する

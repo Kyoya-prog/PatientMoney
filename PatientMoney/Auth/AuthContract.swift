@@ -29,11 +29,15 @@ protocol AuthPresentation: AnyObject {
     var interactor: AuthUsecase! { get }
     var router: AuthWireFrame! { get }
 
-    /// ログイン、新規登録ボタンが押された
+    /// ログイン画面の完了ボタンが押された
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
-    /// - parameter isSignIn:ログインでの入力かどうか
-    func didTapFinishButton(mailAddress: String, password: String, isSignIn: Bool)
+    func didTapFinishSignInButton(mailAddress: String, password: String)
+
+    /// 新規登録画面の完了ボタンが押された
+    /// - parameter mailAddress:メールアドレス
+    /// - parameter password:パスワード
+    func didTapFinishSignUpButton(mailAddress: String, password: String)
 
     /// アカウントの入力状態が変化した
     /// - parameter password:パスワード

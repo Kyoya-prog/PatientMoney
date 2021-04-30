@@ -9,5 +9,5 @@
 "AuthViewController.SignIn.DecideButton.title" = "ログインする";
 "AuthViewController.MailAddressLabel.text" = "メールアドレス";
 "AuthViewController.PasswordLabel.text" = "パスワード";
-"AuthViewController.SignIn.ChengeModeLabel.text" = "新規登録画面へ移動";
-"AuthViewController.SignUp.ChangeModeLabel.text" = "ログイン画面へ移動";
+"AuthViewController.SignIn.ChangeViewLabel.text" = "新規登録画面へ移動";
+"AuthViewController.SignUp.ChangeViewLabel.text" = "ログイン画面へ移動";
