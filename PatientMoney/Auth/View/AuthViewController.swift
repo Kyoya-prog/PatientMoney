@@ -16,11 +16,15 @@ class AuthViewController: UIViewController, AuthView {
 
     let finishButton = FlatButton()
 
-    let changeInputLabel = UILabel()
+    let changeViewLabel = UILabel()
 
     let authErrorLabel = UILabel()
 
     func finishButtonAction() {
+        fatalError("this method must be overrided")
+    }
+
+    func changeViewLabelAction() {
         fatalError("this method must be overrided")
     }
 
@@ -95,9 +99,12 @@ class AuthViewController: UIViewController, AuthView {
         authErrorLabel.isHidden = true
         view.addSubview(authErrorLabel)
 
-        changeInputLabel.translatesAutoresizingMaskIntoConstraints = false
-        changeInputLabel.isUserInteractionEnabled = true
-        view.addSubview(changeInputLabel)
+        changeViewLabel.translatesAutoresizingMaskIntoConstraints = false
+        changeViewLabel.isUserInteractionEnabled = true
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapChangeViewLabel(_:)))
+        changeViewLabel.addGestureRecognizer(tapRecognizer)
+        changeViewLabel.isUserInteractionEnabled = true
+        view.addSubview(changeViewLabel)
 
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
@@ -126,18 +133,22 @@ class AuthViewController: UIViewController, AuthView {
             finishButton.topAnchor.constraint(equalTo: authErrorLabel.bottomAnchor, constant: 30),
             finishButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
-            changeInputLabel.topAnchor.constraint(greaterThanOrEqualTo: finishButton.bottomAnchor),
-            changeInputLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            changeInputLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+            changeViewLabel.topAnchor.constraint(greaterThanOrEqualTo: finishButton.bottomAnchor),
+            changeViewLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            changeViewLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
         ])
     }
 
-    @objc func didChangeMailAddressTextField(_ sender: PatienceTextField) {
+    @objc private func didChangeMailAddressTextField(_ sender: PatienceTextField) {
         guard let passwprd = passwordTextField.text, let mailAddress = mailAddressTextField.text else { return }
         finishButton.isEnabled = !passwprd.isEmpty && !mailAddress.isEmpty
     }
 
-    @objc func didTapFinishButton(_ sender: UIButton) {
+    @objc private func didTapFinishButton(_ sender: UIButton) {
         finishButtonAction()
+    }
+
+    @objc private func didTapChangeViewLabel(_ sender: UIButton) {
+        changeViewLabelAction()
     }
 }

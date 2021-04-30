@@ -11,3 +11,4 @@
 "AuthViewController.PasswordLabel.text" = "パスワード";
 "AuthViewController.SignIn.ChangeViewLabel.text" = "新規登録画面へ移動";
 "AuthViewController.SignUp.ChangeViewLabel.text" = "ログイン画面へ移動";
+"AuthViewController.passwordMustMoreEightCharacters" = "パスワードは8文字以上入力してください。";

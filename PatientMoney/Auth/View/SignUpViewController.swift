@@ -7,7 +7,7 @@ class SignUpViewController: AuthViewController {
 
         super.titleLabel.text = L10n.AuthViewController.SignUp.TitleLabel.text
         super.finishButton.setTitle(L10n.AuthViewController.SignUp.DecideButton.title, for: .normal)
-        super.changeInputLabel.attributedText = NSAttributedString(string: L10n.AuthViewController.SignUp.ChangeViewLabel.text, attributes: [.foregroundColor: UIColor(hex: "5BCAFF"), .underlineStyle: NSUnderlineStyle.single.rawValue])
+        super.changeViewLabel.attributedText = NSAttributedString(string: L10n.AuthViewController.SignUp.ChangeViewLabel.text, attributes: [.foregroundColor: UIColor(hex: "5BCAFF"), .underlineStyle: NSUnderlineStyle.single.rawValue])
 
         passwordTextField.addTarget(self, action: #selector(didChangePasswordTextField(_:)), for: .editingChanged)
     }
@@ -16,14 +16,17 @@ class SignUpViewController: AuthViewController {
         guard let password = passwordTextField.text else { return }
         finishButton.isEnabled = 8 <= password.count
         if !finishButton.isEnabled {
-            authErrorLabel.text = "パスワードは８文字以上入力してください"
+            authErrorLabel.text = L10n.AuthViewController.passwordMustMoreEightCharacters
             authErrorLabel.isHidden = false
         } else {
             authErrorLabel.isHidden = true
         }
     }
 
-        override func finishButtonAction() {
-            presenter.didTapFinishSignUpButton(mailAddress: mailAddressTextField.text ?? "", password: passwordTextField.text ?? "")
-        }
+    override func finishButtonAction() {
+        presenter.didTapFinishSignUpButton(mailAddress: mailAddressTextField.text ?? "", password: passwordTextField.text ?? "")
+    }
+
+    override func changeViewLabelAction() {
+    }
 }

@@ -12,6 +12,8 @@ import Foundation
 internal enum L10n {
 
   internal enum AuthViewController {
+    /// パスワードは8文字以上入力してください。
+    internal static let passwordMustMoreEightCharacters = L10n.tr("Localizable", "AuthViewController.passwordMustMoreEightCharacters")
     internal enum MailAddressLabel {
       /// メールアドレス
       internal static let text = L10n.tr("Localizable", "AuthViewController.MailAddressLabel.text")
