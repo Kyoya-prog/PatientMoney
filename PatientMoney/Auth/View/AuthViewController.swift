@@ -16,6 +16,8 @@ class AuthViewController: UIViewController, AuthView {
 
     let finishButton = FlatButton()
 
+    let changeDiscriptionLabel = UILabel()
+
     let changeViewLabel = UILabel()
 
     let authErrorLabel = UILabel()
@@ -43,6 +45,8 @@ class AuthViewController: UIViewController, AuthView {
     private let mailAddressLabel = UILabel()
 
     private let passwordLabel = UILabel()
+
+    private let changeLabelView = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,12 +103,21 @@ class AuthViewController: UIViewController, AuthView {
         authErrorLabel.isHidden = true
         view.addSubview(authErrorLabel)
 
+        changeLabelView.translatesAutoresizingMaskIntoConstraints = false
+        changeLabelView.backgroundColor = .clear
+        changeLabelView.isUserInteractionEnabled = true
+        view.addSubview(changeLabelView)
+
+        changeDiscriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        changeDiscriptionLabel.font = UIFont.systemFont(ofSize: 14)
+        changeLabelView.addSubview(changeDiscriptionLabel)
+
         changeViewLabel.translatesAutoresizingMaskIntoConstraints = false
+        changeViewLabel.font = UIFont.systemFont(ofSize: 14)
         changeViewLabel.isUserInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapChangeViewLabel(_:)))
         changeViewLabel.addGestureRecognizer(tapRecognizer)
-        changeViewLabel.isUserInteractionEnabled = true
-        view.addSubview(changeViewLabel)
+        changeLabelView.addSubview(changeViewLabel)
 
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
@@ -133,9 +146,16 @@ class AuthViewController: UIViewController, AuthView {
             finishButton.topAnchor.constraint(equalTo: authErrorLabel.bottomAnchor, constant: 30),
             finishButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
-            changeViewLabel.topAnchor.constraint(greaterThanOrEqualTo: finishButton.bottomAnchor),
-            changeViewLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            changeViewLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+            changeDiscriptionLabel.centerYAnchor.constraint(equalTo: changeLabelView.centerYAnchor),
+            changeDiscriptionLabel.leftAnchor.constraint(equalTo: changeLabelView.leftAnchor),
+
+            changeViewLabel.centerYAnchor.constraint(equalTo: changeLabelView.centerYAnchor),
+            changeViewLabel.leftAnchor.constraint(equalTo: changeDiscriptionLabel.rightAnchor, constant: 5),
+            changeViewLabel.rightAnchor.constraint(equalTo: changeLabelView.rightAnchor),
+
+            changeLabelView.heightAnchor.constraint(equalToConstant: 20),
+            changeLabelView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            changeLabelView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
 

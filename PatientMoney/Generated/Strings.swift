@@ -31,8 +31,12 @@ internal enum L10n {
       internal static let placeholder = L10n.tr("Localizable", "AuthViewController.PasswordTextField.placeholder")
     }
     internal enum SignIn {
+      internal enum ChangeDesctiptionLabel {
+        /// アカウントを持っていない場合
+        internal static let text = L10n.tr("Localizable", "AuthViewController.SignIn.ChangeDesctiptionLabel.text")
+      }
       internal enum ChangeViewLabel {
-        /// 新規登録画面へ移動
+        /// 登録はこちら
         internal static let text = L10n.tr("Localizable", "AuthViewController.SignIn.ChangeViewLabel.text")
       }
       internal enum DecideButton {
@@ -45,8 +49,12 @@ internal enum L10n {
       }
     }
     internal enum SignUp {
+      internal enum ChangeDesctiptionLabel {
+        /// すでにアカウントを持っている場合
+        internal static let text = L10n.tr("Localizable", "AuthViewController.SignUp.ChangeDesctiptionLabel.text")
+      }
       internal enum ChangeViewLabel {
-        /// ログイン画面へ移動
+        /// ログイン
         internal static let text = L10n.tr("Localizable", "AuthViewController.SignUp.ChangeViewLabel.text")
       }
       internal enum DecideButton {

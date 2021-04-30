@@ -8,6 +8,7 @@ class SignUpViewController: AuthViewController {
         super.titleLabel.text = L10n.AuthViewController.SignUp.TitleLabel.text
         super.finishButton.setTitle(L10n.AuthViewController.SignUp.DecideButton.title, for: .normal)
         super.changeViewLabel.attributedText = NSAttributedString(string: L10n.AuthViewController.SignUp.ChangeViewLabel.text, attributes: [.foregroundColor: UIColor(hex: "5BCAFF"), .underlineStyle: NSUnderlineStyle.single.rawValue])
+        super.changeDiscriptionLabel.text = L10n.AuthViewController.SignUp.ChangeDesctiptionLabel.text
 
         passwordTextField.addTarget(self, action: #selector(didChangePasswordTextField(_:)), for: .editingChanged)
     }
