@@ -49,6 +49,7 @@
 		3DE10427263C008900F724B8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10426263C008900F724B8 /* SignUpViewController.swift */; };
 		3DE1042B263C013800F724B8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1042A263C013800F724B8 /* SignInViewController.swift */; };
 		3DE10436263C0B1000F724B8 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10435263C0B1000F724B8 /* AuthRouter.swift */; };
+		3DE1043D263C0C4700F724B8 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1043C263C0C4700F724B8 /* AuthPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		3DE10426263C008900F724B8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3DE1042A263C013800F724B8 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		3DE10435263C0B1000F724B8 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		3DE1043C263C0C4700F724B8 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +342,7 @@
 		3DE103E3263ACBC900F724B8 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				3DE1043B263C0C3900F724B8 /* Presenter */,
 				3DE10434263C0B0500F724B8 /* Router */,
 				3DE103E4263ACBD200F724B8 /* View */,
 				3DE10407263B976700F724B8 /* AuthContract.swift */,
@@ -380,6 +383,14 @@
 				3DE10435263C0B1000F724B8 /* AuthRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		3DE1043B263C0C3900F724B8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3DE1043C263C0C4700F724B8 /* AuthPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -565,6 +576,7 @@
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
 				3DE10408263B976700F724B8 /* AuthContract.swift in Sources */,
 				3DE103E6263ACBE100F724B8 /* AuthViewController.swift in Sources */,
+				3DE1043D263C0C4700F724B8 /* AuthPresenter.swift in Sources */,
 				3DE10436263C0B1000F724B8 /* AuthRouter.swift in Sources */,
 				3DE1042B263C013800F724B8 /* SignInViewController.swift in Sources */,
 				3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */,

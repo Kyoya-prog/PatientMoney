@@ -8,10 +8,10 @@ protocol AuthWireFrame: AnyObject {
 
     /// 新規登録画面を表示する
     func presentSignUpView()
-    
+
     /// ログイン画面を表示する
     func presentSignInView()
-    
+
     /// Home画面を表示する
     func presentHomeView()
 }
@@ -38,16 +38,18 @@ protocol AuthPresentation: AnyObject {
     /// ログイン画面の完了ボタンが押された
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
-    func didTapFinishSignInButton(mailAddress: String, password: String)
-    
+    func didTapSigninFinishButton(mailAddress: String, password: String)
+
     /// 新規登録画面の完了ボタンが押された
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
-    func didTapFinishSignUpButton(mailAddress: String, password: String)
+    func didTapSignUpFinishButton(mailAddress: String, password: String)
 
-    /// アカウントの入力状態が変化した
-    /// - parameter password:パスワード
-    func didChangeAuthInput(mailAddress: String, password: String)
+    /// ログイン画面の画面変更ラベルがタップされた
+    func didTapSignInChangeViewLabel()
+
+    /// 新規登録画面の画面変更ラベルがタップされた
+    func didTapSignUpChangeViewLabel()
 }
 
 /// 認証InteractorOutput

@@ -11,9 +11,10 @@ class SignInViewController: AuthViewController {
     }
 
     override func finishButtonAction() {
-        presenter.didTapFinishSignInButton(mailAddress: mailAddressTextField.text ?? "", password: passwordTextField.text ?? "")
+        presenter.didTapSigninFinishButton(mailAddress: mailAddressTextField.text ?? "", password: passwordTextField.text ?? "")
     }
 
     override func changeViewLabelAction() {
+        presenter.didTapSignInChangeViewLabel()
     }
 }
