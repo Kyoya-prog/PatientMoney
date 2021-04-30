@@ -45,6 +45,7 @@
 		3DE103ED263AE65A00F724B8 /* ColorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */; };
 		3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */; };
 		3DE10408263B976700F724B8 /* AuthContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10407263B976700F724B8 /* AuthContract.swift */; };
+		3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10419263BEDE900F724B8 /* FlatButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtension.swift; sourceTree = "<group>"; };
 		3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceTextField.swift; sourceTree = "<group>"; };
 		3DE10407263B976700F724B8 /* AuthContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthContract.swift; sourceTree = "<group>"; };
+		3DE10419263BEDE900F724B8 /* FlatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */,
+				3DE10419263BEDE900F724B8 /* FlatButton.swift */,
 			);
 			path = ViewComponent;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 			files = (
 				3D6DFF2E26353E3E00C30DD1 /* ViewController.swift in Sources */,
 				3DE103C82638360000F724B8 /* Strings.swift in Sources */,
+				3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */,
 				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
 				3DE10408263B976700F724B8 /* AuthContract.swift in Sources */,
