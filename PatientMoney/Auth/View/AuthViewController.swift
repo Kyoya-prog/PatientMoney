@@ -48,7 +48,11 @@ class AuthViewController: UIViewController, AuthView {
 
     private let authErrorLabel = UILabel()
 
-    private var inputMode: InputMode
+    private var inputMode: InputMode {
+        didSet {
+            setTextValue()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,7 +97,7 @@ class AuthViewController: UIViewController, AuthView {
         view.addSubview(passwordTextField)
 
         finishButton.translatesAutoresizingMaskIntoConstraints = false
-        
+
         finishButton.addTarget(self, action: #selector(didTapFinishButton(_:)), for: .touchUpInside)
         finishButton.isEnabled = false
         view.addSubview(finishButton)
@@ -105,6 +109,9 @@ class AuthViewController: UIViewController, AuthView {
         view.addSubview(authErrorLabel)
 
         changeInputLabel.translatesAutoresizingMaskIntoConstraints = false
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapChengeInputLabel(_:)))
+        changeInputLabel.addGestureRecognizer(tapRecognizer)
+        changeInputLabel.isUserInteractionEnabled = true
         view.addSubview(changeInputLabel)
 
         NSLayoutConstraint.activate([
@@ -181,5 +188,14 @@ class AuthViewController: UIViewController, AuthView {
     @objc private func didTapFinishButton(_ sender: UIButton) {
         presenter.didTapFinishButton(mailAddress: mailAddressTextField.text ?? "", password: passwordTextField.text ?? "", isSignIn: inputMode == .signIn)
     }
-}
 
+    @objc private func didTapChengeInputLabel(_ sender: UILabel) {
+        switch inputMode {
+        case .signIn:
+            inputMode = .signUp
+
+        case .signUp:
+            inputMode = .signIn
+        }
+    }
+}
