@@ -40,10 +40,16 @@
 		3D6DFFB7263554B900C30DD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */; };
 		3DE103C82638360000F724B8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103C72638360000F724B8 /* Strings.swift */; };
 		3DE103CC2638360800F724B8 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103CB2638360800F724B8 /* Asset.swift */; };
-		3DE103E6263ACBE100F724B8 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103E5263ACBE100F724B8 /* AccountViewController.swift */; };
+		3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */; };
+		3DE103E6263ACBE100F724B8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103E5263ACBE100F724B8 /* AuthViewController.swift */; };
 		3DE103ED263AE65A00F724B8 /* ColorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */; };
 		3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */; };
-		3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */; };
+		3DE10408263B976700F724B8 /* AuthContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10407263B976700F724B8 /* AuthContract.swift */; };
+		3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10419263BEDE900F724B8 /* FlatButton.swift */; };
+		3DE10427263C008900F724B8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10426263C008900F724B8 /* SignUpViewController.swift */; };
+		3DE1042B263C013800F724B8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1042A263C013800F724B8 /* SignInViewController.swift */; };
+		3DE10436263C0B1000F724B8 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10435263C0B1000F724B8 /* AuthRouter.swift */; };
+		3DE1043D263C0C4700F724B8 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1043C263C0C4700F724B8 /* AuthPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,10 +142,16 @@
 		3D6DFFF0263555F200C30DD1 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
 		3DE103C72638360000F724B8 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Generated/Strings.swift; sourceTree = "<group>"; };
 		3DE103CB2638360800F724B8 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Generated/Asset.swift; sourceTree = "<group>"; };
-		3DE103E5263ACBE100F724B8 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		3DE103E5263ACBE100F724B8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtension.swift; sourceTree = "<group>"; };
 		3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceTextField.swift; sourceTree = "<group>"; };
-		3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		3DE10407263B976700F724B8 /* AuthContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthContract.swift; sourceTree = "<group>"; };
+		3DE10419263BEDE900F724B8 /* FlatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
+		3DE10426263C008900F724B8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3DE1042A263C013800F724B8 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		3DE10435263C0B1000F724B8 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		3DE1043C263C0C4700F724B8 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,7 +245,7 @@
 			children = (
 				3DE103F2263AE67100F724B8 /* ViewComponent */,
 				3DE103EB263AE64900F724B8 /* Extension */,
-				3DE103E3263ACBC900F724B8 /* Login */,
+				3DE103E3263ACBC900F724B8 /* Auth */,
 				3DE103D6263A803A00F724B8 /* Firebase */,
 				3D205C6726381E160058064C /* Generated */,
 				3D205C6626381D4C0058064C /* Resources */,
@@ -319,18 +331,31 @@
 			path = GoogleServiceInfo;
 			sourceTree = "<group>";
 		};
-		3DE103E3263ACBC900F724B8 /* Login */ = {
+		3DE103D6263A803A00F724B8 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				3DE103E4263ACBD200F724B8 /* View */,
+				3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */,
 			);
-			path = Login;
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		3DE103E3263ACBC900F724B8 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3DE1043B263C0C3900F724B8 /* Presenter */,
+				3DE10434263C0B0500F724B8 /* Router */,
+				3DE103E4263ACBD200F724B8 /* View */,
+				3DE10407263B976700F724B8 /* AuthContract.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		3DE103E4263ACBD200F724B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3DE103E5263ACBE100F724B8 /* AccountViewController.swift */,
+				3DE103E5263ACBE100F724B8 /* AuthViewController.swift */,
+				3DE10426263C008900F724B8 /* SignUpViewController.swift */,
+				3DE1042A263C013800F724B8 /* SignInViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,16 +372,25 @@
 			isa = PBXGroup;
 			children = (
 				3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */,
+				3DE10419263BEDE900F724B8 /* FlatButton.swift */,
 			);
 			path = ViewComponent;
 			sourceTree = "<group>";
 		};
-		3DE103D6263A803A00F724B8 /* Firebase */ = {
+		3DE10434263C0B0500F724B8 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */,
+				3DE10435263C0B1000F724B8 /* AuthRouter.swift */,
 			);
-			path = Firebase;
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3DE1043B263C0C3900F724B8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3DE1043C263C0C4700F724B8 /* AuthPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -534,11 +568,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE10427263C008900F724B8 /* SignUpViewController.swift in Sources */,
 				3D6DFF2E26353E3E00C30DD1 /* ViewController.swift in Sources */,
 				3DE103C82638360000F724B8 /* Strings.swift in Sources */,
+				3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */,
 				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
-				3DE103E6263ACBE100F724B8 /* AccountViewController.swift in Sources */,
+				3DE10408263B976700F724B8 /* AuthContract.swift in Sources */,
+				3DE103E6263ACBE100F724B8 /* AuthViewController.swift in Sources */,
+				3DE1043D263C0C4700F724B8 /* AuthPresenter.swift in Sources */,
+				3DE10436263C0B1000F724B8 /* AuthRouter.swift in Sources */,
+				3DE1042B263C013800F724B8 /* SignInViewController.swift in Sources */,
 				3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */,
 				3DE103ED263AE65A00F724B8 /* ColorsExtension.swift in Sources */,
 				3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */,

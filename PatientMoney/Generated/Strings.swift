@@ -11,49 +11,59 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
-  internal enum AccountViewController {
+  internal enum AuthViewController {
+    /// パスワードは8文字以上入力してください。
+    internal static let passwordMustMoreEightCharacters = L10n.tr("Localizable", "AuthViewController.passwordMustMoreEightCharacters")
     internal enum MailAddressLabel {
       /// メールアドレス
-      internal static let text = L10n.tr("Localizable", "AccountViewController.MailAddressLabel.text")
+      internal static let text = L10n.tr("Localizable", "AuthViewController.MailAddressLabel.text")
     }
     internal enum MailAddressTextField {
       /// patience@example.com
-      internal static let placeholder = L10n.tr("Localizable", "AccountViewController.MailAddressTextField.placeholder")
+      internal static let placeholder = L10n.tr("Localizable", "AuthViewController.MailAddressTextField.placeholder")
     }
     internal enum PasswordLabel {
       /// パスワード
-      internal static let text = L10n.tr("Localizable", "AccountViewController.PasswordLabel.text")
+      internal static let text = L10n.tr("Localizable", "AuthViewController.PasswordLabel.text")
     }
     internal enum PasswordTextField {
       /// patience123
-      internal static let placeholder = L10n.tr("Localizable", "AccountViewController.PasswordTextField.placeholder")
+      internal static let placeholder = L10n.tr("Localizable", "AuthViewController.PasswordTextField.placeholder")
     }
     internal enum SignIn {
-      internal enum ChengeModeLabel {
-        /// 新規登録画面へ移動
-        internal static let text = L10n.tr("Localizable", "AccountViewController.SignIn.ChengeModeLabel.text")
+      internal enum ChangeDesctiptionLabel {
+        /// アカウントを持っていない場合
+        internal static let text = L10n.tr("Localizable", "AuthViewController.SignIn.ChangeDesctiptionLabel.text")
+      }
+      internal enum ChangeViewLabel {
+        /// 登録はこちら
+        internal static let text = L10n.tr("Localizable", "AuthViewController.SignIn.ChangeViewLabel.text")
       }
       internal enum DecideButton {
         /// ログインする
-        internal static let title = L10n.tr("Localizable", "AccountViewController.SignIn.DecideButton.title")
+        internal static let title = L10n.tr("Localizable", "AuthViewController.SignIn.DecideButton.title")
       }
       internal enum TitleLabel {
         /// ログイン画面
-        internal static let text = L10n.tr("Localizable", "AccountViewController.SignIn.TitleLabel.text")
+        internal static let text = L10n.tr("Localizable", "AuthViewController.SignIn.TitleLabel.text")
       }
     }
     internal enum SignUp {
-      internal enum ChangeModeLabel {
-        /// ログイン画面へ移動
-        internal static let text = L10n.tr("Localizable", "AccountViewController.SignUp.ChangeModeLabel.text")
+      internal enum ChangeDesctiptionLabel {
+        /// すでにアカウントを持っている場合
+        internal static let text = L10n.tr("Localizable", "AuthViewController.SignUp.ChangeDesctiptionLabel.text")
+      }
+      internal enum ChangeViewLabel {
+        /// ログイン
+        internal static let text = L10n.tr("Localizable", "AuthViewController.SignUp.ChangeViewLabel.text")
       }
       internal enum DecideButton {
         /// 新規登録する
-        internal static let title = L10n.tr("Localizable", "AccountViewController.SignUp.DecideButton.title")
+        internal static let title = L10n.tr("Localizable", "AuthViewController.SignUp.DecideButton.title")
       }
       internal enum TitleLabel {
         /// 新規登録画面
-        internal static let text = L10n.tr("Localizable", "AccountViewController.SignUp.TitleLabel.text")
+        internal static let text = L10n.tr("Localizable", "AuthViewController.SignUp.TitleLabel.text")
       }
     }
   }
