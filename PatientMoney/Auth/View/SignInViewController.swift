@@ -23,10 +23,9 @@ class SignInViewController: AuthViewController {
         guard let passwprd = passwordTextField.text, let mailAddress = mailAddressTextField.text else { return }
         finishButton.isEnabled = !passwprd.isEmpty && !mailAddress.isEmpty
     }
-    
+
     override func passwordTextFieldChangeAction() {
         guard let passwprd = passwordTextField.text, let mailAddress = mailAddressTextField.text else { return }
         finishButton.isEnabled = !passwprd.isEmpty && !mailAddress.isEmpty
     }
-    
 }

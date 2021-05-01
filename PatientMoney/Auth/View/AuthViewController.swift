@@ -41,6 +41,7 @@ class AuthViewController: UIViewController, AuthView {
     var presenter: AuthPresentation!
 
     func showError(message: String) {
+        authErrorLabel.isHidden = false
         authErrorLabel.text = message
     }
 
@@ -104,7 +105,7 @@ class AuthViewController: UIViewController, AuthView {
 
         authErrorLabel.translatesAutoresizingMaskIntoConstraints = false
         authErrorLabel.font = UIFont.systemFont(ofSize: 14)
-        authErrorLabel.textColor = UIColor(hex: "FFA07A")
+        authErrorLabel.textColor = UIColor(hex: "FF0000")
         authErrorLabel.isHidden = true
         view.addSubview(authErrorLabel)
 

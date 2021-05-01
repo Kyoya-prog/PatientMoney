@@ -14,3 +14,10 @@
 "AuthViewController.SignIn.ChangeViewLabel.text" = "登録はこちら";
 "AuthViewController.SignUp.ChangeViewLabel.text" = "ログイン";
 "AuthViewController.passwordMustMoreEightCharacters" = "パスワードは8文字以上入力してください。";
+
+// FirebaseAuthManager
+"FirebaseAuthManager.Error.EmailAlreadyInUse.message" = "このメールアドレスはすでに使用されています。";
+"FirebaseAuthManager.Error.InvalidEmail.message" = "メールアドレスの形式が不正です。";
+"FirebaseAuthManager.Error.WrongPassword.message" = "パスワードが間違っています。";
+"FirebaseAuthManager.Error.UserNotFound.message" = "ユーザーが見つかりませんでした。";
+"FirebaseAuthManager.Error.Default.message" = "認証に失敗しました。もう一度お試しください。";

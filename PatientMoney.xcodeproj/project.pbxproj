@@ -50,6 +50,7 @@
 		3DE1042B263C013800F724B8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1042A263C013800F724B8 /* SignInViewController.swift */; };
 		3DE10436263C0B1000F724B8 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10435263C0B1000F724B8 /* AuthRouter.swift */; };
 		3DE1043D263C0C4700F724B8 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1043C263C0C4700F724B8 /* AuthPresenter.swift */; };
+		3DE10449263C725200F724B8 /*  AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10448263C725200F724B8 /*  AuthInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +153,7 @@
 		3DE1042A263C013800F724B8 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		3DE10435263C0B1000F724B8 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		3DE1043C263C0C4700F724B8 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		3DE10448263C725200F724B8 /*  AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " AuthInteractor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +344,7 @@
 		3DE103E3263ACBC900F724B8 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				3DE1044C263C725500F724B8 /* Interactor */,
 				3DE1043B263C0C3900F724B8 /* Presenter */,
 				3DE10434263C0B0500F724B8 /* Router */,
 				3DE103E4263ACBD200F724B8 /* View */,
@@ -391,6 +394,14 @@
 				3DE1043C263C0C4700F724B8 /* AuthPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3DE1044C263C725500F724B8 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3DE10448263C725200F724B8 /*  AuthInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE10427263C008900F724B8 /* SignUpViewController.swift in Sources */,
+				3DE10449263C725200F724B8 /*  AuthInteractor.swift in Sources */,
 				3D6DFF2E26353E3E00C30DD1 /* ViewController.swift in Sources */,
 				3DE103C82638360000F724B8 /* Strings.swift in Sources */,
 				3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */,
