@@ -1,7 +1,23 @@
-/* 
-  Localizable.strings
-  PatientMoney
 
-  Created by 松山響也 on 2021/04/27.
-  
-*/
+
+//LoginViewController
+"AuthViewController.MailAddressTextField.placeholder" = "patience@example.com";
+"AuthViewController.PasswordTextField.placeholder" = "patience123";
+"AuthViewController.SignUp.TitleLabel.text" = "新規登録画面";
+"AuthViewController.SignUp.DecideButton.title" = "新規登録する";
+"AuthViewController.SignIn.TitleLabel.text" = "ログイン画面";
+"AuthViewController.SignIn.DecideButton.title" = "ログインする";
+"AuthViewController.MailAddressLabel.text" = "メールアドレス";
+"AuthViewController.PasswordLabel.text" = "パスワード";
+"AuthViewController.SignIn.ChangeDesctiptionLabel.text" = "アカウントを持っていない場合";
+"AuthViewController.SignUp.ChangeDesctiptionLabel.text" = "すでにアカウントを持っている場合";
+"AuthViewController.SignIn.ChangeViewLabel.text" = "登録はこちら";
+"AuthViewController.SignUp.ChangeViewLabel.text" = "ログイン";
+"AuthViewController.passwordMustMoreEightCharacters" = "パスワードは8文字以上入力してください。";
+
+// FirebaseAuthManager
+"FirebaseAuthManager.Error.EmailAlreadyInUse.message" = "このメールアドレスはすでに使用されています。";
+"FirebaseAuthManager.Error.InvalidEmail.message" = "メールアドレスの形式が不正です。";
+"FirebaseAuthManager.Error.WrongPassword.message" = "パスワードが間違っています。";
+"FirebaseAuthManager.Error.UserNotFound.message" = "ユーザーが見つかりませんでした。";
+"FirebaseAuthManager.Error.Default.message" = "認証に失敗しました。もう一度お試しください。";
