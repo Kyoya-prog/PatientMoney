@@ -13,9 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        print(UIFont.fontNames(
+            forFamilyName: "Font Awesome 5 Free"
+        ))
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "home"
+        label.attributedText = NSAttributedString.icon(.pizzaSlice, size: 100, style: .solid)
         view.addSubview(label)
         NSLayoutConstraint.activate([
             label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
