@@ -2,7 +2,6 @@ import UIKit
 
 /// コンテンツのサイズで高さが決まるコレクションビュー
 open class HeightSelfSizingCollectionView: UICollectionView {
-    
     // MARK: - Override
     override public init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)

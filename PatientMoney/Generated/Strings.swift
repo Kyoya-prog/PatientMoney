@@ -68,6 +68,19 @@ internal enum L10n {
     }
   }
 
+  internal enum CategoriesView {
+    /// カテゴリー
+    internal static let title = L10n.tr("Localizable", "CategoriesView.title")
+    internal enum IconTitle {
+      /// 交通費
+      internal static let bus = L10n.tr("Localizable", "CategoriesView.IconTitle.bus")
+      /// 趣味
+      internal static let paintBrush = L10n.tr("Localizable", "CategoriesView.IconTitle.paintBrush")
+      /// 飲食費
+      internal static let pizzaSlice = L10n.tr("Localizable", "CategoriesView.IconTitle.pizzaSlice")
+    }
+  }
+
   internal enum FirebaseAuthManager {
     internal enum Error {
       internal enum Default {

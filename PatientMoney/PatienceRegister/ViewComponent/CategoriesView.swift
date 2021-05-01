@@ -18,26 +18,30 @@ class CategoriesView: UIView {
 
     // MARK: Private
     private let categories:[(icon: FontAwesome.Icon, title: String, color: UIColor)] = [
-        (icon:.pizzaSlice, title:"飲食費", UIColor(hex: "FFA500")),
-        (icon:.pizzaSlice, title:"交通費", UIColor(hex: "00BFFF")),
-        (icon:.pizzaSlice, title:"娯楽", UIColor(hex: "00FF00"))
+        (icon:.pizzaSlice, title:L10n.CategoriesView.IconTitle.pizzaSlice, UIColor(hex: "FFA500")),
+        (icon:.bus, title:L10n.CategoriesView.IconTitle.bus, UIColor(hex: "00BFFF")),
+        (icon:.paintBrush, title:L10n.CategoriesView.IconTitle.paintBrush, UIColor(hex: "00FF00"))
     ]
 
     private func construct() {
         categoriesView.translatesAutoresizingMaskIntoConstraints = false
         categoriesView.delegate = self
         categoriesView.dataSource = self
-
-        if let flowLayout = categoriesView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: 1, height: 80)
-        }
-
         addSubview(categoriesView)
+
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        titleLabel.text = L10n.CategoriesView.title
+        addSubview(titleLabel)
+
         NSLayoutConstraint.activate([
-            categoriesView.topAnchor.constraint(equalTo: topAnchor),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            titleLabel.leftAnchor.constraint(equalTo: leftAnchor),
+            titleLabel.rightAnchor.constraint(equalTo: rightAnchor),
+
+            categoriesView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             categoriesView.leftAnchor.constraint(equalTo: leftAnchor),
-            categoriesView.rightAnchor.constraint(equalTo: rightAnchor),
-            categoriesView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            categoriesView.rightAnchor.constraint(equalTo: rightAnchor)
         ])
     }
 
@@ -56,6 +60,8 @@ class CategoriesView: UIView {
         view.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseIdentifer)
         return view
     }()
+
+    private let titleLabel = UILabel()
 }
 
 // MARK: CollectionViewDelegateMethod
@@ -93,7 +99,7 @@ private class CategoryCell: UICollectionViewCell {
     static let reuseIdentifer = "category-cell"
     var icon: FontAwesome.Icon {
         get {
-            .cog
+            .pizzaSlice
         }
         set {
             iconLabel.attributedText = NSAttributedString.icon(newValue, size: 50, style: .solid)
@@ -168,7 +174,7 @@ private class CategoryCell: UICollectionViewCell {
     }
 
     private func updateDisplay() {
-        layer.borderColor = isSelectedCell ? UIColor(hex: "BBBBBB").cgColor:UIColor(hex: "123456").cgColor
+        layer.borderColor = isSelectedCell ? UIColor(hex: "808080").cgColor:UIColor(hex: "DCDCDC").cgColor
     }
 
     private let iconLabel = UILabel()
