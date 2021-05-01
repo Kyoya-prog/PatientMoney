@@ -51,6 +51,11 @@
 		3DE10436263C0B1000F724B8 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10435263C0B1000F724B8 /* AuthRouter.swift */; };
 		3DE1043D263C0C4700F724B8 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1043C263C0C4700F724B8 /* AuthPresenter.swift */; };
 		3DE10449263C725200F724B8 /*  AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10448263C725200F724B8 /*  AuthInteractor.swift */; };
+		3DE10495263D36B500F724B8 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10494263D36B500F724B8 /* FontAwesome.swift */; };
+		3DE1049A263D36E900F724B8 /* NSAttributedStrinfExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10499263D36E900F724B8 /* NSAttributedStrinfExtension.swift */; };
+		3DE104A6263D383C00F724B8 /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DE104A3263D383C00F724B8 /* Font Awesome 5 Brands-Regular-400.otf */; };
+		3DE104A7263D383C00F724B8 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DE104A4263D383C00F724B8 /* Font Awesome 5 Free-Solid-900.otf */; };
+		3DE104A8263D383C00F724B8 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DE104A5263D383C00F724B8 /* Font Awesome 5 Free-Regular-400.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +159,11 @@
 		3DE10435263C0B1000F724B8 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		3DE1043C263C0C4700F724B8 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		3DE10448263C725200F724B8 /*  AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " AuthInteractor.swift"; sourceTree = "<group>"; };
+		3DE10494263D36B500F724B8 /* FontAwesome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
+		3DE10499263D36E900F724B8 /* NSAttributedStrinfExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStrinfExtension.swift; sourceTree = "<group>"; };
+		3DE104A3263D383C00F724B8 /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
+		3DE104A4263D383C00F724B8 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
+		3DE104A5263D383C00F724B8 /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,10 +214,12 @@
 		3D205C6626381D4C0058064C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3DE104AB263D384100F724B8 /* Font */,
 				3D205C6A26381EAB0058064C /* gRPCCertificates-Cpp.bundle */,
 				3D6DFF3226353E3F00C30DD1 /* Assets.xcassets */,
 				3D6D0152263576F700C30DD1 /* MBCircularProgressBar.bundle */,
 				3D205C6226381C820058064C /* Localizable.strings */,
+				3DE10494263D36B500F724B8 /* FontAwesome.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -367,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */,
+				3DE10499263D36E900F724B8 /* NSAttributedStrinfExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -402,6 +415,16 @@
 				3DE10448263C725200F724B8 /*  AuthInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3DE104AB263D384100F724B8 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				3DE104A3263D383C00F724B8 /* Font Awesome 5 Brands-Regular-400.otf */,
+				3DE104A5263D383C00F724B8 /* Font Awesome 5 Free-Regular-400.otf */,
+				3DE104A4263D383C00F724B8 /* Font Awesome 5 Free-Solid-900.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,6 +533,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE104A6263D383C00F724B8 /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
+				3DE104A7263D383C00F724B8 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
+				3DE104A8263D383C00F724B8 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 				3D6DFF3326353E3F00C30DD1 /* Assets.xcassets in Resources */,
 				3D205C6B26381EAB0058064C /* gRPCCertificates-Cpp.bundle in Resources */,
 				3D205C6326381C820058064C /* Localizable.strings in Resources */,
@@ -581,8 +607,10 @@
 			files = (
 				3DE10427263C008900F724B8 /* SignUpViewController.swift in Sources */,
 				3DE10449263C725200F724B8 /*  AuthInteractor.swift in Sources */,
+				3DE1049A263D36E900F724B8 /* NSAttributedStrinfExtension.swift in Sources */,
 				3D6DFF2E26353E3E00C30DD1 /* ViewController.swift in Sources */,
 				3DE103C82638360000F724B8 /* Strings.swift in Sources */,
+				3DE10495263D36B500F724B8 /* FontAwesome.swift in Sources */,
 				3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */,
 				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
