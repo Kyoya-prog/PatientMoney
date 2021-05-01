@@ -1,3 +1,4 @@
+import FirebaseAuth
 import Foundation
 
 class AuthPresenter: AuthPresentation, AuthInteractorOutput {
@@ -25,7 +26,13 @@ class AuthPresenter: AuthPresentation, AuthInteractorOutput {
     }
 
     // MARK: AuthInteractorOutput
-    func outputError(message: String) {
-        view?.showError(message: message)
+    func outputAuthResult(result: Result<AuthDataResult, Error>) {
+        switch result {
+        case .success:
+            print("success")
+
+        case .failure(let error):
+            view?.showError(message: FirebaseAuthManeger.shared.buildAuthErrorMessage(error: error))
+        }
     }
 }

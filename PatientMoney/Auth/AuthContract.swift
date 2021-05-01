@@ -1,3 +1,4 @@
+import FirebaseAuth
 import Foundation
 import UIKit.UIViewController
 
@@ -51,9 +52,9 @@ protocol AuthPresentation: AnyObject {
 
 /// 認証InteractorOutput
 protocol AuthInteractorOutput: AnyObject {
-    /// エラーメッセージを表示する
-    /// - parameter message:エラーメッセージ
-    func outputError(message: String)
+    /// 認証の結果を出力する
+    /// - parameter result 認証処理結果
+    func outputAuthResult(result: Result<AuthDataResult, Error>)
 }
 
 /// 認証Usecase
