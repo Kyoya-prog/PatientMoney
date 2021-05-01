@@ -29,7 +29,7 @@ class AuthPresenter: AuthPresentation, AuthInteractorOutput {
     func outputAuthResult(result: Result<AuthDataResult, Error>) {
         switch result {
         case .success:
-            print("success")
+            router.presentHomeView()
 
         case .failure(let error):
             view?.showError(message: FirebaseAuthManeger.shared.buildAuthErrorMessage(error: error))

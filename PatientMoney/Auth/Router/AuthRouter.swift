@@ -35,8 +35,8 @@ class AuthRouter: AuthWireFrame {
 
         return signUpView
     }
-    
-    // MARK:AuthWireFrame 
+
+    // MARK: AuthWireFrame 
     func presentSignUpView() {
         let view = AuthRouter.assembleSignUpModule()
         view.modalPresentationStyle = .fullScreen
@@ -50,6 +50,8 @@ class AuthRouter: AuthWireFrame {
     }
 
     func presentHomeView() {
-        print("homeview")
+        let homeView = ViewController()
+        homeView.modalPresentationStyle = .fullScreen
+        viewController?.present(homeView, animated: true, completion: nil)
     }
 }
