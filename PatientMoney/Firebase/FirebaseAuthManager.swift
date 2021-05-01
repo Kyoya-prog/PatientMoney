@@ -29,4 +29,28 @@ class FirebaseAuthManeger {
     func signOut() throws {
         try Auth.auth().signOut()
     }
+
+    func buildAuthErrorMessage(error: Error) -> String {
+        let code = AuthErrorCode(rawValue: error._code)
+        switch code {
+        case .emailAlreadyInUse:
+            return L10n.FirebaseAuthManager.Error.EmailAlreadyInUse.message
+
+        case .invalidEmail:
+            return L10n.FirebaseAuthManager.Error.InvalidEmail.message
+
+        case .wrongPassword:
+            return L10n.FirebaseAuthManager.Error.WrongPassword.message
+
+        case .userNotFound:
+            return L10n.FirebaseAuthManager.Error.UserNotFound.message
+
+        default:
+            return L10n.FirebaseAuthManager.Error.Default.message
+        }
+    }
+
+    enum AuthErrorType {
+        case emailAlreadyInUse
+    }
 }
