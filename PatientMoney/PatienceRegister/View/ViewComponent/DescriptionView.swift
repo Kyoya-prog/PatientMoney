@@ -37,6 +37,13 @@ class DescriptionView: UIView {
         descriptionTextView.isScrollEnabled = false
         addSubview(descriptionTextView)
 
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: frame.width, height: 35))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonAction(_:)))
+        toolBar.setItems([doneItem], animated: true)
+        toolBar.sizeToFit()
+
+        descriptionTextView.inputAccessoryView = toolBar
+
         NSLayoutConstraint.activate([
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor),
@@ -52,4 +59,8 @@ class DescriptionView: UIView {
     private let titleLabel = UILabel()
 
     private let descriptionTextView = UITextView()
+
+    @objc private func doneButtonAction(_ : UIBarButtonItem) {
+        descriptionTextView.endEditing(true)
+    }
 }
