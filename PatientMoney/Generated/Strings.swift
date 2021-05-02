@@ -146,6 +146,16 @@ internal enum L10n {
       /// 登録する
       internal static let title = L10n.tr("Localizable", "RegisterViewController.RegisterButton.title")
     }
+    internal enum StatusNotification {
+      internal enum Failure {
+        /// 登録に失敗しました
+        internal static let title = L10n.tr("Localizable", "RegisterViewController.StatusNotification.Failure.title")
+      }
+      internal enum Success {
+        /// 登録に成功しました
+        internal static let title = L10n.tr("Localizable", "RegisterViewController.StatusNotification.Success.title")
+      }
+    }
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

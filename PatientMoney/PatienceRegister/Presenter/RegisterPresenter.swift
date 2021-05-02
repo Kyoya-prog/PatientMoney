@@ -14,10 +14,10 @@ class RegisterPresenter: RegisterPresentation, RegisterInteractorOutput {
 
     // MARK: RegisterInteractorOutput
     func outputRegisterError(error: Error) {
-        view?.showError(message: "error")
+        view?.showError(message: L10n.RegisterViewController.StatusNotification.Failure.title)
     }
 
     func outputRegisterSuccess() {
-        view?.showError(message: "success")
+        view?.showSuccess(message: L10n.RegisterViewController.StatusNotification.Success.title)
     }
 }
