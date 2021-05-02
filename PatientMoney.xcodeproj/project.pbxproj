@@ -18,6 +18,8 @@
 		3D3A3224263EEFE000077B6D /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; };
 		3D3A3225263EEFE000077B6D /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D3A322A263EF37F00077B6D /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3229263EF37F00077B6D /* RegisterPresenter.swift */; };
+		3D3A3231263F074F00077B6D /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3230263F074F00077B6D /* RegisterInteractor.swift */; };
+		3D3A323F263F096B00077B6D /* RegisterDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A323E263F096B00077B6D /* RegisterDataStore.swift */; };
 		3D6B0FDD263D8031009D21A1 /* HeightSelfSizingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FDC263D8031009D21A1 /* HeightSelfSizingCollectionView.swift */; };
 		3D6B0FE7263D85E0009D21A1 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FE6263D85E0009D21A1 /* DateView.swift */; };
 		3D6B0FEC263E714D009D21A1 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FEB263E714D009D21A1 /* DateUtils.swift */; };
@@ -117,6 +119,8 @@
 		3D3A321E263EEFE000077B6D /* NotificationBanner.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NotificationBanner.xcframework; path = Carthage/Build/NotificationBanner.xcframework; sourceTree = "<group>"; };
 		3D3A321F263EEFE000077B6D /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
 		3D3A3229263EF37F00077B6D /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		3D3A3230263F074F00077B6D /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		3D3A323E263F096B00077B6D /* RegisterDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDataStore.swift; sourceTree = "<group>"; };
 		3D6B0FDC263D8031009D21A1 /* HeightSelfSizingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightSelfSizingCollectionView.swift; sourceTree = "<group>"; };
 		3D6B0FE6263D85E0009D21A1 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		3D6B0FEB263E714D009D21A1 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
@@ -274,6 +278,14 @@
 				3D3A3229263EF37F00077B6D /* RegisterPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3D3A322F263F073E00077B6D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3D3A3230263F074F00077B6D /* RegisterInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		3D6B0FEA263E713E009D21A1 /* Util */ = {
@@ -496,9 +508,11 @@
 		3DE104AE263D3BC700F724B8 /* PatienceRegister */ = {
 			isa = PBXGroup;
 			children = (
+				3D3A322F263F073E00077B6D /* Interactor */,
 				3D3A3228263EF36D00077B6D /* Presenter */,
 				3D6B1007263E9A6D009D21A1 /* View */,
 				3D3A3215263EE0F700077B6D /* RegisterContract.swift */,
+				3D3A323E263F096B00077B6D /* RegisterDataStore.swift */,
 			);
 			path = PatienceRegister;
 			sourceTree = "<group>";
@@ -708,6 +722,7 @@
 				3DE10495263D36B500F724B8 /* FontAwesome.swift in Sources */,
 				3D3A321A263EEEA000077B6D /* StatusNotification.swift in Sources */,
 				3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */,
+				3D3A3231263F074F00077B6D /* RegisterInteractor.swift in Sources */,
 				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
 				3D6B0FE7263D85E0009D21A1 /* DateView.swift in Sources */,
@@ -715,6 +730,7 @@
 				3DE103E6263ACBE100F724B8 /* AuthViewController.swift in Sources */,
 				3DE1043D263C0C4700F724B8 /* AuthPresenter.swift in Sources */,
 				3DE10436263C0B1000F724B8 /* AuthRouter.swift in Sources */,
+				3D3A323F263F096B00077B6D /* RegisterDataStore.swift in Sources */,
 				3DE1042B263C013800F724B8 /* SignInViewController.swift in Sources */,
 				3DE104B1263D3BEC00F724B8 /* CategoriesView.swift in Sources */,
 				3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */,

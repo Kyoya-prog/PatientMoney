@@ -44,4 +44,6 @@
 "RegisterViewController.Alert.OkAction.title" = "OK";
 "RegisterViewController.Alert.CancelAction.title" = "キャンセル";
 "RegisterViewController.Alert.title" = "金額が０円ですがこのまま登録しますか？";
+"RegisterViewController.StatusNotification.Success.title" = "登録に成功しました";
+"RegisterViewController.StatusNotification.Failure.title" = "登録に失敗しました";
 

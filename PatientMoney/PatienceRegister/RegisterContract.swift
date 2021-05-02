@@ -3,7 +3,7 @@ import UIKit
 
 struct Patience {
     var date: Date
-    var discription: String
+    var description: String
     var money: Int
     var category: String
 }
@@ -37,14 +37,15 @@ protocol RegisterPresentation {
 
 protocol RegisterUsecase {
     // Dependency
-    var output: AuthInteractorOutput? { get }
+    var output: RegisterInteractorOutput? { get }
+
+    var repository: RegisterRepository! { get }
     /// データを登録する
     /// - parameter date:日付
-    /// - parameter discription:メモ
+    /// - parameter description:メモ
     /// - parameter money: 金額
     /// - parameter category: カテゴリー
-    /// - parameter completion: 完了ハンドラ
-    func registerPatienceData(date: Date, description: String, money: Int, category: String, completion: (Error?) -> Void)
+    func registerPatienceData(date: Date, description: String, money: Int, category: String)
 }
 
 protocol RegisterInteractorOutput {
@@ -58,9 +59,6 @@ protocol RegisterInteractorOutput {
 
 protocol RegisterRepository {
     /// データを登録する
-    /// - parameter date:日付
-    /// - parameter discription:メモ
-    /// - parameter money: 金額
-    /// - parameter category: カテゴリー
-    func registerPatienceData(date: Date, description: String, money: Int, category: String)
+    /// - parameter data:ドキュメントデータ
+    func registerPatienceData(data: [String: Any]) -> Error?
 }

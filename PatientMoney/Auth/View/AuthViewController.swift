@@ -15,7 +15,7 @@ class AuthViewController: UIViewController, AuthView {
 
     let finishButton = FlatButton()
 
-    let changeDiscriptionLabel = UILabel()
+    let changeDescriptionLabel = UILabel()
 
     let changeViewLabel = UILabel()
 
@@ -138,11 +138,11 @@ class AuthViewController: UIViewController, AuthView {
             finishButton.topAnchor.constraint(equalTo: authErrorLabel.bottomAnchor, constant: 30),
             finishButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
-            changeDiscriptionLabel.centerYAnchor.constraint(equalTo: changeLabelView.centerYAnchor),
-            changeDiscriptionLabel.leftAnchor.constraint(equalTo: changeLabelView.leftAnchor),
+            changeDescriptionLabel.centerYAnchor.constraint(equalTo: changeLabelView.centerYAnchor),
+            changeDescriptionLabel.leftAnchor.constraint(equalTo: changeLabelView.leftAnchor),
 
             changeViewLabel.centerYAnchor.constraint(equalTo: changeLabelView.centerYAnchor),
-            changeViewLabel.leftAnchor.constraint(equalTo: changeDiscriptionLabel.rightAnchor, constant: 5),
+            changeViewLabel.leftAnchor.constraint(equalTo: changeDescriptionLabel.rightAnchor, constant: 5),
             changeViewLabel.rightAnchor.constraint(equalTo: changeLabelView.rightAnchor),
 
             changeLabelView.heightAnchor.constraint(equalToConstant: 20),
@@ -157,9 +157,9 @@ class AuthViewController: UIViewController, AuthView {
         changeLabelView.isUserInteractionEnabled = true
         view.addSubview(changeLabelView)
 
-        changeDiscriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        changeDiscriptionLabel.font = UIFont.systemFont(ofSize: 14)
-        changeLabelView.addSubview(changeDiscriptionLabel)
+        changeDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        changeDescriptionLabel.font = UIFont.systemFont(ofSize: 14)
+        changeLabelView.addSubview(changeDescriptionLabel)
 
         changeViewLabel.translatesAutoresizingMaskIntoConstraints = false
         changeViewLabel.font = UIFont.systemFont(ofSize: 14)
