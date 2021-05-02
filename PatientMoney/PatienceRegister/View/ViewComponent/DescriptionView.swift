@@ -25,7 +25,7 @@ class DescriptionView: UIView {
     // MARK: Private
     private func construct() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        titleLabel.font = UIFont.systemFont(ofSize: 20)
         titleLabel.text = L10n.DescriptionView.title
         addSubview(titleLabel)
 
@@ -33,6 +33,7 @@ class DescriptionView: UIView {
         descriptionTextView.layer.cornerRadius = 4
         descriptionTextView.backgroundColor = UIColor(hex: "DCDCDC")
         descriptionTextView.font = UIFont.systemFont(ofSize: 20)
+        descriptionTextView.textContainerInset = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
         descriptionTextView.text = L10n.DescriptionView.DescriptionTextView.text
         descriptionTextView.isScrollEnabled = false
         addSubview(descriptionTextView)
