@@ -81,6 +81,11 @@ internal enum L10n {
     }
   }
 
+  internal enum DateView {
+    /// 日付
+    internal static let title = L10n.tr("Localizable", "DateView.title")
+  }
+
   internal enum FirebaseAuthManager {
     internal enum Error {
       internal enum Default {

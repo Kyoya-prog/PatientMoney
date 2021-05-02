@@ -22,9 +22,11 @@
 "FirebaseAuthManager.Error.UserNotFound.message" = "ユーザーが見つかりませんでした。";
 "FirebaseAuthManager.Error.Default.message" = "認証に失敗しました。もう一度お試しください。";
 
-//CategoriesView
+// CategoriesView
 "CategoriesView.title" = "カテゴリー";
 "CategoriesView.IconTitle.pizzaSlice" = "飲食費";
 "CategoriesView.IconTitle.bus" = "交通費";
 "CategoriesView.IconTitle.paintBrush" = "趣味";
 
+// DateView
+"DateView.title" = "日付";

@@ -10,6 +10,8 @@
 		3D205C6326381C820058064C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6226381C820058064C /* Localizable.strings */; };
 		3D205C6B26381EAB0058064C /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6A26381EAB0058064C /* gRPCCertificates-Cpp.bundle */; };
 		3D6B0FDD263D8031009D21A1 /* HeightSelfSizingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FDC263D8031009D21A1 /* HeightSelfSizingCollectionView.swift */; };
+		3D6B0FE7263D85E0009D21A1 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FE6263D85E0009D21A1 /* DateView.swift */; };
+		3D6B0FEC263E714D009D21A1 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FEB263E714D009D21A1 /* DateUtils.swift */; };
 		3D6D010426355E4300C30DD1 /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFC1263555E700C30DD1 /* abseil.framework */; };
 		3D6D010626355E4300C30DD1 /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFC8263555E700C30DD1 /* BoringSSL-GRPC.framework */; };
 		3D6D010826355E4300C30DD1 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFBF263555E700C30DD1 /* FIRAnalyticsConnector.framework */; };
@@ -95,6 +97,8 @@
 		3D205C6226381C820058064C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3D205C6A26381EAB0058064C /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "gRPCCertificates-Cpp.bundle"; path = "../../Carthage/Build/iOS/gRPC-C++.framework/Resources/gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
 		3D6B0FDC263D8031009D21A1 /* HeightSelfSizingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightSelfSizingCollectionView.swift; sourceTree = "<group>"; };
+		3D6B0FE6263D85E0009D21A1 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		3D6B0FEB263E714D009D21A1 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		3D6D003D2635590100C30DD1 /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
 		3D6D00A126355BA400C30DD1 /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
 		3D6D00A226355BA400C30DD1 /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
@@ -237,6 +241,14 @@
 			name = Generated;
 			sourceTree = "<group>";
 		};
+		3D6B0FEA263E713E009D21A1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				3D6B0FEB263E714D009D21A1 /* DateUtils.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		3D6DFF1D26353E3E00C30DD1 = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +273,7 @@
 		3D6DFF2826353E3E00C30DD1 /* PatientMoney */ = {
 			isa = PBXGroup;
 			children = (
+				3D6B0FEA263E713E009D21A1 /* Util */,
 				3DE104AE263D3BC700F724B8 /* PatienceRegister */,
 				3DE103F2263AE67100F724B8 /* ViewComponent */,
 				3DE103EB263AE64900F724B8 /* Extension */,
@@ -445,6 +458,7 @@
 			children = (
 				3DE104B0263D3BEC00F724B8 /* CategoriesView.swift */,
 				3D6B0FDC263D8031009D21A1 /* HeightSelfSizingCollectionView.swift */,
+				3D6B0FE6263D85E0009D21A1 /* DateView.swift */,
 			);
 			path = ViewComponent;
 			sourceTree = "<group>";
@@ -631,12 +645,14 @@
 				3DE10449263C725200F724B8 /*  AuthInteractor.swift in Sources */,
 				3DE1049A263D36E900F724B8 /* NSAttributedStrinfExtension.swift in Sources */,
 				3D6B0FDD263D8031009D21A1 /* HeightSelfSizingCollectionView.swift in Sources */,
+				3D6B0FEC263E714D009D21A1 /* DateUtils.swift in Sources */,
 				3D6DFF2E26353E3E00C30DD1 /* ViewController.swift in Sources */,
 				3DE103C82638360000F724B8 /* Strings.swift in Sources */,
 				3DE10495263D36B500F724B8 /* FontAwesome.swift in Sources */,
 				3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */,
 				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
+				3D6B0FE7263D85E0009D21A1 /* DateView.swift in Sources */,
 				3DE10408263B976700F724B8 /* AuthContract.swift in Sources */,
 				3DE103E6263ACBE100F724B8 /* AuthViewController.swift in Sources */,
 				3DE1043D263C0C4700F724B8 /* AuthPresenter.swift in Sources */,
