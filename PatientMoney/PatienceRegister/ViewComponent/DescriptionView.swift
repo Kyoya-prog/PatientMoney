@@ -2,6 +2,16 @@ import Foundation
 import UIKit
 
 class DescriptionView: UIView {
+    
+    var memo:String{
+        get {
+            descriptionTextView.text
+        }
+        set{
+            descriptionTextView.text = newValue
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         construct()
