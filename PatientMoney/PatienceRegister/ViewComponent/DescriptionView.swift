@@ -2,6 +2,16 @@ import Foundation
 import UIKit
 
 class DescriptionView: UIView {
+    /// メモ
+    var memo: String {
+        get {
+            descriptionTextView.text
+        }
+        set {
+            descriptionTextView.text = newValue
+        }
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         construct()
@@ -12,6 +22,7 @@ class DescriptionView: UIView {
         construct()
     }
 
+    // MARK: Private
     private func construct() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
