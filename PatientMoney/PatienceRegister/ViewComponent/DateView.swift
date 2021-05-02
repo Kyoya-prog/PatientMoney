@@ -22,6 +22,8 @@ class DateView: UIView {
         construct()
     }
 
+    // MARK: Private
+
     private func construct() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = L10n.DateView.title
@@ -59,7 +61,7 @@ class DateView: UIView {
         ])
     }
 
-    var datePicker = UIDatePicker()
+    private let datePicker = UIDatePicker()
 
     private let titleLabel = UILabel()
 
