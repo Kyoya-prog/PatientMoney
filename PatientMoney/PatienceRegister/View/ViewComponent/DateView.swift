@@ -31,7 +31,7 @@ class DateView: UIView {
         addSubview(titleLabel)
 
         dateTextField.translatesAutoresizingMaskIntoConstraints = false
-        dateTextField.placeholder = DateUtils.stringFromDate(date: Date(), format: dateFormat)
+        dateTextField.text = DateUtils.stringFromDate(date: Date(), format: dateFormat)
         dateTextField.backgroundColor = UIColor(hex: "F0E68C")
         dateTextField.textInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
         dateTextField.font = UIFont.boldSystemFont(ofSize: 20)
