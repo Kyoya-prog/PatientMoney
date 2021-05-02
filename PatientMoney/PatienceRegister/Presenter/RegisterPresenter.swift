@@ -10,7 +10,7 @@ class RegisterPresenter: RegisterPresentation, RegisterInteractorOutput {
 
     func didTapRegisterButton(patience: Patience) {
         outputRegisterSuccess()
-        interactor.registerPatienceData(date: patience.date, description: patience.discription, money: patience.money, category: patience.category) { [weak self] error in
+        interactor.registerPatienceData(date: patience.date, description: patience.description, money: patience.money, category: patience.category) { [weak self] error in
             if let error = error {
                 self?.outputRegisterError(error: error)
             } else {

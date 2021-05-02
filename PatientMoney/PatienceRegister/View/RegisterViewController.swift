@@ -85,10 +85,10 @@ class RegisterViewController: UIViewController, RegisterView {
 
     @objc private func registerButtonAction(_ :UIButton) {
         if let date = (subViews[0] as? DateView)?.selectedDate,
-           let discription = (subViews[1] as? DescriptionView)?.memo,
+           let description = (subViews[1] as? DescriptionView)?.memo,
            let category = (subViews[3] as? CategoriesView)?.selectedCategoryTitle {
             if let money = (subViews[2] as? MoneyView)?.money {
-                let patience = Patience(date: date, discription: discription, money: money, category: category)
+                let patience = Patience(date: date, description: description, money: money, category: category)
                 presenter.didTapRegisterButton(patience: patience)
             } else {
                 present(alert, animated: true, completion: nil)
