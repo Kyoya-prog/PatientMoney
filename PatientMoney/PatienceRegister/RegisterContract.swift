@@ -43,7 +43,8 @@ protocol RegisterUsecase {
     /// - parameter discription:メモ
     /// - parameter money: 金額
     /// - parameter category: カテゴリー
-    func registerPatienceData(date: Date, description: String, money: Int, category: String)
+    /// - parameter completion: 完了ハンドラ
+    func registerPatienceData(date: Date, description: String, money: Int, category: String, completion: (Error?) -> Void)
 }
 
 protocol RegisterInteractorOutput {
