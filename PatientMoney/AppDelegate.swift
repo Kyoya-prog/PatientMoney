@@ -17,17 +17,7 @@ var window: UIWindow?
         window = UIWindow(frame: UIScreen.main.bounds)
         var initialViewController: UIViewController
         if FirebaseAuthManeger.shared.isSignIn {
-            let view = RegisterViewController()
-            let presenter = RegisterPresenter()
-            let interactor = RegisterInteractor()
-            let datastore = RegisterDataStore()
-
-            interactor.repository = datastore
-            interactor.output = presenter
-            presenter.interactor = interactor
-            presenter.view = view
-            view.presenter = presenter
-            initialViewController = view
+            initialViewController = PatienceRegisterRouter.assembleModule()
         } else {
             initialViewController = ViewController()
         }

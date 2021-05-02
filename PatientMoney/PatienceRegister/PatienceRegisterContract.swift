@@ -8,14 +8,14 @@ struct Patience {
     var category: String
 }
 
-protocol RegisterWireframe {
+protocol PatienceRegisterWireframe {
     // Dependency
     var viewController: UIViewController? { get }
 }
 
-protocol RegisterView {
+protocol PatienceRegisterView {
     // Dependency
-    var presenter: RegisterPresentation! { get }
+    var presenter: PatienceRegisterPresentation! { get }
     /// エラーメッセージを表示する
     /// - parameter message:エラーメッセージ
     func showError(message: String)
@@ -25,21 +25,21 @@ protocol RegisterView {
     func showSuccess(message: String)
 }
 
-protocol RegisterPresentation {
+protocol PatienceRegisterPresentation {
     // Dependency
-    var view: RegisterView? { get }
-    var interactor: RegisterUsecase! { get }
+    var view: PatienceRegisterView? { get }
+    var interactor: PatienceRegisterUsecase! { get }
     var router: AuthWireFrame! { get }
     /// 登録ボタンがタップされた
     /// - parameter patience:登録項目
     func didTapRegisterButton(patience: Patience)
 }
 
-protocol RegisterUsecase {
+protocol PatienceRegisterUsecase {
     // Dependency
-    var output: RegisterInteractorOutput? { get }
+    var output: PatienceRegisterInteractorOutput? { get }
 
-    var repository: RegisterRepository! { get }
+    var repository: PatienceRegisterRepository! { get }
     /// データを登録する
     /// - parameter date:日付
     /// - parameter description:メモ
@@ -48,7 +48,7 @@ protocol RegisterUsecase {
     func registerPatienceData(date: Date, description: String, money: Int, category: String)
 }
 
-protocol RegisterInteractorOutput {
+protocol PatienceRegisterInteractorOutput {
     /// 登録時のエラーを知らせる
     /// - parameter error:エラー内容
     func outputRegisterError(error: Error)
@@ -57,7 +57,7 @@ protocol RegisterInteractorOutput {
     func outputRegisterSuccess()
 }
 
-protocol RegisterRepository {
+protocol PatienceRegisterRepository {
     /// データを登録する
     /// - parameter data:ドキュメントデータ
     func registerPatienceData(data: [String: Any]) -> Error?
