@@ -5,7 +5,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "記録画面"
+        navigationItem.title = L10n.RegisterViewController.RegisterButton.title
         view.backgroundColor = .white
         vstack.translatesAutoresizingMaskIntoConstraints = false
         vstack.axis = .vertical
@@ -21,7 +21,7 @@ class RegisterViewController: UIViewController {
         view.addSubview(vstack)
 
         registerButton.translatesAutoresizingMaskIntoConstraints = false
-        registerButton.setTitle("登録する", for: .normal)
+        registerButton.setTitle(L10n.RegisterViewController.RegisterButton.title, for: .normal)
         registerButton.backgroundColor = .orange
         registerButton.layer.cornerRadius = 10
         view.addSubview(registerButton)
