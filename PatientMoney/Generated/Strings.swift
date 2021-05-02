@@ -126,6 +126,18 @@ internal enum L10n {
   }
 
   internal enum RegisterViewController {
+    internal enum Alert {
+      /// 金額が０円ですがこのまま登録しますか？
+      internal static let title = L10n.tr("Localizable", "RegisterViewController.Alert.title")
+      internal enum CancelAction {
+        /// キャンセル
+        internal static let title = L10n.tr("Localizable", "RegisterViewController.Alert.CancelAction.title")
+      }
+      internal enum OkAction {
+        /// OK
+        internal static let title = L10n.tr("Localizable", "RegisterViewController.Alert.OkAction.title")
+      }
+    }
     internal enum NavigationItem {
       /// 登録画面
       internal static let title = L10n.tr("Localizable", "RegisterViewController.NavigationItem.title")

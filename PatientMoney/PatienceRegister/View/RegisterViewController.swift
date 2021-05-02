@@ -65,11 +65,11 @@ class RegisterViewController: UIViewController, RegisterView {
     private let registerButton = UIButton()
 
     private lazy var alert: UIAlertController = {
-        let alert = UIAlertController(title: nil, message: "金額が０円ですが、このまま登録しますか？", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+        let alert = UIAlertController(title: nil, message: L10n.RegisterViewController.Alert.title, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: L10n.RegisterViewController.Alert.OkAction.title, style: .default, handler: { [weak self] _ in
             self?.registerAction()
         })
-        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: { [weak self] _ in
+        let cancelAction = UIAlertAction(title: L10n.RegisterViewController.Alert.CancelAction.title, style: .cancel, handler: { [weak self] _ in
             self?.cancelAction()
         })
         alert.addAction(okAction)
