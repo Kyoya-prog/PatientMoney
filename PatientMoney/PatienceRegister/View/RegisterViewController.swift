@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, RegisterView {
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +39,19 @@ class RegisterViewController: UIViewController {
         ])
     }
 
+    // MARK: RegisterView
+    var presenter: RegisterPresentation!
+
+    func showError(message: String) {
+        StatusNotification.notifyError(message)
+    }
+
+    func showSuccess(message: String) {
+        StatusNotification.notifySuccess(message)
+    }
+
+    // MARK: Private
+
     private let vstack = UIStackView()
 
     private let subViews = [
@@ -49,4 +62,15 @@ class RegisterViewController: UIViewController {
     ]
 
     private let registerButton = UIButton()
+    
+    @objc private func registerButtonAction(_ :UIButton){
+        if let date = (subViews[0] as? DateView)?.selectedDate,
+           let discription = (subViews[1] as? DescriptionView)?.memo,
+           let money = (subViews[2] as? MoneyView )?.money,
+           let category = (subViews[3] as? CategoriesView)?.selectedCategoryTitle
+        {
+            let patience = Patience(date: date, discription: discription, money: money, category: category)
+            presenter.didTapRegisterButton(patience: patience)
+        }
+    }
 }
