@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, RegisterView {
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +24,7 @@ class RegisterViewController: UIViewController {
         registerButton.setTitle(L10n.RegisterViewController.RegisterButton.title, for: .normal)
         registerButton.backgroundColor = .orange
         registerButton.layer.cornerRadius = 10
+        registerButton.addTarget(self, action: #selector(registerButtonAction(_:)), for: .touchUpInside)
         view.addSubview(registerButton)
 
         NSLayoutConstraint.activate([
@@ -39,6 +40,19 @@ class RegisterViewController: UIViewController {
         ])
     }
 
+    // MARK: RegisterView
+    var presenter: RegisterPresentation!
+
+    func showError(message: String) {
+        StatusNotification.notifyError(message)
+    }
+
+    func showSuccess(message: String) {
+        StatusNotification.notifySuccess(message)
+    }
+
+    // MARK: Private
+
     private let vstack = UIStackView()
 
     private let subViews = [
@@ -49,4 +63,36 @@ class RegisterViewController: UIViewController {
     ]
 
     private let registerButton = UIButton()
+
+    private lazy var alert: UIAlertController = {
+        let alert = UIAlertController(title: nil, message: L10n.RegisterViewController.Alert.title, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: L10n.RegisterViewController.Alert.OkAction.title, style: .default, handler: { [weak self] _ in
+            self?.registerAction()
+        })
+        let cancelAction = UIAlertAction(title: L10n.RegisterViewController.Alert.CancelAction.title, style: .cancel, handler: { [weak self] _ in
+            self?.cancelAction()
+        })
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        return alert
+    }()
+
+    private func registerAction() {
+    }
+
+    private func cancelAction() {
+    }
+
+    @objc private func registerButtonAction(_ :UIButton) {
+        if let date = (subViews[0] as? DateView)?.selectedDate,
+           let discription = (subViews[1] as? DescriptionView)?.memo,
+           let category = (subViews[3] as? CategoriesView)?.selectedCategoryTitle {
+            if let money = (subViews[2] as? MoneyView)?.money {
+                let patience = Patience(date: date, discription: discription, money: money, category: category)
+                presenter.didTapRegisterButton(patience: patience)
+            } else {
+                present(alert, animated: true, completion: nil)
+            }
+        }
+    }
 }

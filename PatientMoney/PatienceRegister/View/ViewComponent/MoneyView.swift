@@ -3,12 +3,12 @@ import UIKit
 
 class MoneyView: UIView {
     /// 金額
-    var money: Int {
+    var money: Int? {
         get {
-            Int(moneyTextField.text ?? "") ?? 0
+            Int(moneyTextField.text ?? "")
         }
         set {
-            moneyTextField.text = String(newValue)
+            moneyTextField.text = String(newValue ?? 0)
         }
     }
 
