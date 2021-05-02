@@ -24,6 +24,7 @@ class RegisterViewController: UIViewController, RegisterView {
         registerButton.setTitle(L10n.RegisterViewController.RegisterButton.title, for: .normal)
         registerButton.backgroundColor = .orange
         registerButton.layer.cornerRadius = 10
+        registerButton.addTarget(self, action: #selector(registerButtonAction(_:)), for: .touchUpInside)
         view.addSubview(registerButton)
 
         NSLayoutConstraint.activate([
@@ -62,15 +63,36 @@ class RegisterViewController: UIViewController, RegisterView {
     ]
 
     private let registerButton = UIButton()
-    
-    @objc private func registerButtonAction(_ :UIButton){
+
+    private lazy var alert: UIAlertController = {
+        let alert = UIAlertController(title: nil, message: "金額が０円ですが、このまま登録しますか？", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+            self?.registerAction()
+        })
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: { [weak self] _ in
+            self?.cancelAction()
+        })
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        return alert
+    }()
+
+    private func registerAction() {
+    }
+
+    private func cancelAction() {
+    }
+
+    @objc private func registerButtonAction(_ :UIButton) {
         if let date = (subViews[0] as? DateView)?.selectedDate,
            let discription = (subViews[1] as? DescriptionView)?.memo,
-           let money = (subViews[2] as? MoneyView )?.money,
-           let category = (subViews[3] as? CategoriesView)?.selectedCategoryTitle
-        {
-            let patience = Patience(date: date, discription: discription, money: money, category: category)
-            presenter.didTapRegisterButton(patience: patience)
+           let category = (subViews[3] as? CategoriesView)?.selectedCategoryTitle {
+            if let money = (subViews[2] as? MoneyView)?.money {
+                let patience = Patience(date: date, discription: discription, money: money, category: category)
+                presenter.didTapRegisterButton(patience: patience)
+            } else {
+                present(alert, animated: true, completion: nil)
+            }
         }
     }
 }
