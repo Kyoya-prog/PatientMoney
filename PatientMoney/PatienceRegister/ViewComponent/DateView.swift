@@ -53,6 +53,7 @@ class DateView: UIView {
         NSLayoutConstraint.activate([
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor),
+            titleLabel.widthAnchor.constraint(equalToConstant: 50),
 
             dateTextField.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             dateTextField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
