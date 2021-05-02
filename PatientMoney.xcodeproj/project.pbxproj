@@ -14,6 +14,7 @@
 		3D6B0FEC263E714D009D21A1 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FEB263E714D009D21A1 /* DateUtils.swift */; };
 		3D6B0FF6263E76AA009D21A1 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FF5263E76AA009D21A1 /* DescriptionView.swift */; };
 		3D6B1000263E94E1009D21A1 /* MoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FFF263E94E1009D21A1 /* MoneyView.swift */; };
+		3D6B1009263E9A82009D21A1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B1008263E9A82009D21A1 /* RegisterViewController.swift */; };
 		3D6D010426355E4300C30DD1 /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFC1263555E700C30DD1 /* abseil.framework */; };
 		3D6D010626355E4300C30DD1 /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFC8263555E700C30DD1 /* BoringSSL-GRPC.framework */; };
 		3D6D010826355E4300C30DD1 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFBF263555E700C30DD1 /* FIRAnalyticsConnector.framework */; };
@@ -103,6 +104,7 @@
 		3D6B0FEB263E714D009D21A1 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		3D6B0FF5263E76AA009D21A1 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		3D6B0FFF263E94E1009D21A1 /* MoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyView.swift; sourceTree = "<group>"; };
+		3D6B1008263E9A82009D21A1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3D6D003D2635590100C30DD1 /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
 		3D6D00A126355BA400C30DD1 /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
 		3D6D00A226355BA400C30DD1 /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
@@ -251,6 +253,15 @@
 				3D6B0FEB263E714D009D21A1 /* DateUtils.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		3D6B1007263E9A6D009D21A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DE104AF263D3BD600F724B8 /* ViewComponent */,
+				3D6B1008263E9A82009D21A1 /* RegisterViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		3D6DFF1D26353E3E00C30DD1 = {
@@ -452,7 +463,7 @@
 		3DE104AE263D3BC700F724B8 /* PatienceRegister */ = {
 			isa = PBXGroup;
 			children = (
-				3DE104AF263D3BD600F724B8 /* ViewComponent */,
+				3D6B1007263E9A6D009D21A1 /* View */,
 			);
 			path = PatienceRegister;
 			sourceTree = "<group>";
@@ -650,6 +661,7 @@
 				3DE10427263C008900F724B8 /* SignUpViewController.swift in Sources */,
 				3DE10449263C725200F724B8 /*  AuthInteractor.swift in Sources */,
 				3DE1049A263D36E900F724B8 /* NSAttributedStrinfExtension.swift in Sources */,
+				3D6B1009263E9A82009D21A1 /* RegisterViewController.swift in Sources */,
 				3D6B0FDD263D8031009D21A1 /* HeightSelfSizingCollectionView.swift in Sources */,
 				3D6B0FEC263E714D009D21A1 /* DateUtils.swift in Sources */,
 				3D6DFF2E26353E3E00C30DD1 /* ViewController.swift in Sources */,

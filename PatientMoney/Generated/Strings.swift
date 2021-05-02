@@ -124,6 +124,17 @@ internal enum L10n {
     /// 金額
     internal static let title = L10n.tr("Localizable", "MoneyView.title")
   }
+
+  internal enum RegisterViewController {
+    internal enum NavigationItem {
+      /// 登録画面
+      internal static let title = L10n.tr("Localizable", "RegisterViewController.NavigationItem.title")
+    }
+    internal enum RegisterButton {
+      /// 登録する
+      internal static let title = L10n.tr("Localizable", "RegisterViewController.RegisterButton.title")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

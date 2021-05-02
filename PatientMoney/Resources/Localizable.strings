@@ -37,3 +37,7 @@
 
 // MoneyView
 "MoneyView.title" = "金額";
+
+// RegisterViewController
+"RegisterViewController.RegisterButton.title" = "登録する";
+"RegisterViewController.NavigationItem.title" = "登録画面";
