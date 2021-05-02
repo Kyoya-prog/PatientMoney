@@ -1,11 +1,11 @@
 import Foundation
 import UIKit
 
-class RegisterViewController: UIViewController, RegisterView {
+class PatienceRegisterViewController: UIViewController, PatienceRegisterView {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = L10n.RegisterViewController.RegisterButton.title
+        navigationItem.title = L10n.PatienceRegisterViewController.RegisterButton.title
         view.backgroundColor = .white
         vstack.translatesAutoresizingMaskIntoConstraints = false
         vstack.axis = .vertical
@@ -21,7 +21,7 @@ class RegisterViewController: UIViewController, RegisterView {
         view.addSubview(vstack)
 
         registerButton.translatesAutoresizingMaskIntoConstraints = false
-        registerButton.setTitle(L10n.RegisterViewController.RegisterButton.title, for: .normal)
+        registerButton.setTitle(L10n.PatienceRegisterViewController.RegisterButton.title, for: .normal)
         registerButton.backgroundColor = .orange
         registerButton.layer.cornerRadius = 10
         registerButton.addTarget(self, action: #selector(registerButtonAction(_:)), for: .touchUpInside)
@@ -41,7 +41,7 @@ class RegisterViewController: UIViewController, RegisterView {
     }
 
     // MARK: RegisterView
-    var presenter: RegisterPresentation!
+    var presenter: PatienceRegisterPresentation!
 
     func showError(message: String) {
         StatusNotification.notifyError(message)
@@ -65,11 +65,11 @@ class RegisterViewController: UIViewController, RegisterView {
     private let registerButton = UIButton()
 
     private lazy var alert: UIAlertController = {
-        let alert = UIAlertController(title: nil, message: L10n.RegisterViewController.Alert.title, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: L10n.RegisterViewController.Alert.OkAction.title, style: .default, handler: { [weak self] _ in
+        let alert = UIAlertController(title: nil, message: L10n.PatienceRegisterViewController.Alert.title, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: L10n.PatienceRegisterViewController.Alert.OkAction.title, style: .default, handler: { [weak self] _ in
             self?.registerAction()
         })
-        let cancelAction = UIAlertAction(title: L10n.RegisterViewController.Alert.CancelAction.title, style: .cancel, handler: { [weak self] _ in
+        let cancelAction = UIAlertAction(title: L10n.PatienceRegisterViewController.Alert.CancelAction.title, style: .cancel, handler: { [weak self] _ in
             self?.cancelAction()
         })
         alert.addAction(okAction)
