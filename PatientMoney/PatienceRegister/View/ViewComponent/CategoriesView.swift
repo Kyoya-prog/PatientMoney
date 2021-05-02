@@ -41,7 +41,8 @@ class CategoriesView: UIView {
 
             categoriesView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             categoriesView.leftAnchor.constraint(equalTo: leftAnchor),
-            categoriesView.rightAnchor.constraint(equalTo: rightAnchor)
+            categoriesView.rightAnchor.constraint(equalTo: rightAnchor),
+            categoriesView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 

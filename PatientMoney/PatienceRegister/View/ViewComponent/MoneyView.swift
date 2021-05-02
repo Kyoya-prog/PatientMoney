@@ -40,12 +40,7 @@ class MoneyView: UIView {
         moneyTextField.keyboardType = .numberPad
         addSubview(moneyTextField)
 
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 35))
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonAction(_:)))
-        toolBar.setItems([doneItem], animated: true)
-        toolBar.sizeToFit()
-
-        moneyTextField.inputAccessoryView = toolBar
+        moneyTextField.inputAccessoryView = keyboardToolbar
 
         yenLabel.translatesAutoresizingMaskIntoConstraints = false
         yenLabel.text = "円"
@@ -73,6 +68,16 @@ class MoneyView: UIView {
     private let moneyTextField = PatienceTextField()
 
     private let yenLabel = UILabel()
+
+    private lazy var keyboardToolbar: UIToolbar = {
+        let toolbar = UIToolbar()
+        toolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonAction(_:)))
+        ]
+        toolbar.sizeToFit()
+        return toolbar
+    }()
 
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
         moneyTextField.endEditing(true)

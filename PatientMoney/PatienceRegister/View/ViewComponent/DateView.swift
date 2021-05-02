@@ -42,13 +42,8 @@ class DateView: UIView {
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.locale = .current
 
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 35))
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonAction(_:)))
-        toolBar.setItems([doneItem], animated: true)
-        toolBar.sizeToFit()
-
         dateTextField.inputView = datePicker
-        dateTextField.inputAccessoryView = toolBar
+        dateTextField.inputAccessoryView = keyboardToolbar
 
         NSLayoutConstraint.activate([
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -69,6 +64,16 @@ class DateView: UIView {
     private let dateTextField = PatienceTextField()
 
     private let dateFormat = "yyyy年MM月dd日"
+
+    private lazy var keyboardToolbar: UIToolbar = {
+        let toolbar = UIToolbar()
+        toolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonAction(_:)))
+        ]
+        toolbar.sizeToFit()
+        return toolbar
+    }()
 
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
         dateTextField.endEditing(true)

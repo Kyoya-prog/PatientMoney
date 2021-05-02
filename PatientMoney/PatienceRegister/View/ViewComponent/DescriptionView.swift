@@ -37,12 +37,7 @@ class DescriptionView: UIView {
         descriptionTextView.isScrollEnabled = false
         addSubview(descriptionTextView)
 
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: frame.width, height: 35))
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonAction(_:)))
-        toolBar.setItems([doneItem], animated: true)
-        toolBar.sizeToFit()
-
-        descriptionTextView.inputAccessoryView = toolBar
+        descriptionTextView.inputAccessoryView = keyboardToolbar
 
         NSLayoutConstraint.activate([
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -52,13 +47,23 @@ class DescriptionView: UIView {
             descriptionTextView.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 20),
             descriptionTextView.topAnchor.constraint(equalTo: topAnchor, constant: 3),
             descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3),
-            descriptionTextView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20)
+            descriptionTextView.rightAnchor.constraint(equalTo: rightAnchor, constant: -30)
         ])
     }
 
     private let titleLabel = UILabel()
 
     private let descriptionTextView = UITextView()
+
+    private lazy var keyboardToolbar: UIToolbar = {
+        let toolbar = UIToolbar()
+        toolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonAction(_:)))
+        ]
+        toolbar.sizeToFit()
+        return toolbar
+    }()
 
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
         descriptionTextView.endEditing(true)
