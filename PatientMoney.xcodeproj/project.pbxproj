@@ -22,8 +22,8 @@
 		3D3A3224263EEFE000077B6D /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; };
 		3D3A3225263EEFE000077B6D /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D3A322A263EF37F00077B6D /* PatienceRegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3229263EF37F00077B6D /* PatienceRegisterPresenter.swift */; };
-		3D3A3231263F074F00077B6D /* PatienceRegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3230263F074F00077B6D /* PatienceRegisterInteractor.swift */; };
-		3D3A323F263F096B00077B6D /* PatienceRegisterDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A323E263F096B00077B6D /* PatienceRegisterDataStore.swift */; };
+		3D3A3231263F074F00077B6D /* PatienceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3230263F074F00077B6D /* PatienceInteractor.swift */; };
+		3D3A323F263F096B00077B6D /* PatienceDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A323E263F096B00077B6D /* PatienceDataStore.swift */; };
 		3D3A3250263F2B9800077B6D /* PatienceRegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A324F263F2B9800077B6D /* PatienceRegisterRouter.swift */; };
 		3D6B0FDD263D8031009D21A1 /* HeightSelfSizingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FDC263D8031009D21A1 /* HeightSelfSizingCollectionView.swift */; };
 		3D6B0FE7263D85E0009D21A1 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FE6263D85E0009D21A1 /* DateView.swift */; };
@@ -128,8 +128,8 @@
 		3D3A321E263EEFE000077B6D /* NotificationBanner.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NotificationBanner.xcframework; path = Carthage/Build/NotificationBanner.xcframework; sourceTree = "<group>"; };
 		3D3A321F263EEFE000077B6D /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
 		3D3A3229263EF37F00077B6D /* PatienceRegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceRegisterPresenter.swift; sourceTree = "<group>"; };
-		3D3A3230263F074F00077B6D /* PatienceRegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceRegisterInteractor.swift; sourceTree = "<group>"; };
-		3D3A323E263F096B00077B6D /* PatienceRegisterDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceRegisterDataStore.swift; sourceTree = "<group>"; };
+		3D3A3230263F074F00077B6D /* PatienceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceInteractor.swift; sourceTree = "<group>"; };
+		3D3A323E263F096B00077B6D /* PatienceDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceDataStore.swift; sourceTree = "<group>"; };
 		3D3A324F263F2B9800077B6D /* PatienceRegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceRegisterRouter.swift; sourceTree = "<group>"; };
 		3D6B0FDC263D8031009D21A1 /* HeightSelfSizingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightSelfSizingCollectionView.swift; sourceTree = "<group>"; };
 		3D6B0FE6263D85E0009D21A1 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
@@ -307,6 +307,17 @@
 			path = HeightSelfSizingView;
 			sourceTree = "<group>";
 		};
+		3D36BCA8263FDCBA00EDF69F /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				3D3A322F263F073E00077B6D /* Interactor */,
+				3DE104AE263D3BC700F724B8 /* PatienceRegister */,
+				3D36BC8F263FBEF400EDF69F /* PatienceCalendar */,
+				3DE103E3263ACBC900F724B8 /* Auth */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		3D3A3228263EF36D00077B6D /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,15 +329,16 @@
 		3D3A322F263F073E00077B6D /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				3D3A3230263F074F00077B6D /* PatienceRegisterInteractor.swift */,
+				3D3A3230263F074F00077B6D /* PatienceInteractor.swift */,
 			);
-			path = Interactor;
+			name = Interactor;
+			path = PatienceRegister/Interactor;
 			sourceTree = "<group>";
 		};
 		3D3A324D263F2B6F00077B6D /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				3D3A323E263F096B00077B6D /* PatienceRegisterDataStore.swift */,
+				3D3A323E263F096B00077B6D /* PatienceDataStore.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -382,14 +394,11 @@
 		3D6DFF2826353E3E00C30DD1 /* PatientMoney */ = {
 			isa = PBXGroup;
 			children = (
-				3D36BC97263FD37C00EDF69F /* HeightSelfSizingView */,
-				3D36BC8F263FBEF400EDF69F /* PatienceCalendar */,
 				3D3A324D263F2B6F00077B6D /* Data */,
+				3D36BCA8263FDCBA00EDF69F /* Module */,
 				3D6B0FEA263E713E009D21A1 /* Util */,
-				3DE104AE263D3BC700F724B8 /* PatienceRegister */,
 				3DE103F2263AE67100F724B8 /* ViewComponent */,
 				3DE103EB263AE64900F724B8 /* Extension */,
-				3DE103E3263ACBC900F724B8 /* Auth */,
 				3DE103D6263A803A00F724B8 /* Firebase */,
 				3D205C6726381E160058064C /* Generated */,
 				3D205C6626381D4C0058064C /* Resources */,
@@ -521,6 +530,7 @@
 		3DE103F2263AE67100F724B8 /* ViewComponent */ = {
 			isa = PBXGroup;
 			children = (
+				3D36BC97263FD37C00EDF69F /* HeightSelfSizingView */,
 				3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */,
 				3DE10419263BEDE900F724B8 /* FlatButton.swift */,
 			);
@@ -565,7 +575,6 @@
 			isa = PBXGroup;
 			children = (
 				3D3A324E263F2B8400077B6D /* Router */,
-				3D3A322F263F073E00077B6D /* Interactor */,
 				3D3A3228263EF36D00077B6D /* Presenter */,
 				3D6B1007263E9A6D009D21A1 /* View */,
 				3D3A3215263EE0F700077B6D /* PatienceRegisterContract.swift */,
@@ -780,7 +789,7 @@
 				3DE10495263D36B500F724B8 /* FontAwesome.swift in Sources */,
 				3D3A321A263EEEA000077B6D /* StatusNotification.swift in Sources */,
 				3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */,
-				3D3A3231263F074F00077B6D /* PatienceRegisterInteractor.swift in Sources */,
+				3D3A3231263F074F00077B6D /* PatienceInteractor.swift in Sources */,
 				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
 				3D36BC99263FD39200EDF69F /* HeightSelfSizingTableView.swift in Sources */,
@@ -789,7 +798,7 @@
 				3DE103E6263ACBE100F724B8 /* AuthViewController.swift in Sources */,
 				3DE1043D263C0C4700F724B8 /* AuthPresenter.swift in Sources */,
 				3DE10436263C0B1000F724B8 /* AuthRouter.swift in Sources */,
-				3D3A323F263F096B00077B6D /* PatienceRegisterDataStore.swift in Sources */,
+				3D3A323F263F096B00077B6D /* PatienceDataStore.swift in Sources */,
 				3DE1042B263C013800F724B8 /* SignInViewController.swift in Sources */,
 				3DE104B1263D3BEC00F724B8 /* CategoriesView.swift in Sources */,
 				3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */,

@@ -7,8 +7,8 @@ class PatienceRegisterRouter: PatienceRegisterWireframe {
     static func assembleModule() -> UIViewController {
         let registerView = PatienceRegisterViewController()
         let presenter = PatienceRegisterPresenter()
-        let interactor = PatienceRegisterInteractor()
-        let datastore = PatienceRegisterDataStore()
+        let interactor = PatienceInteractor()
+        let datastore = PatienceDataStore()
 
         interactor.repository = datastore
         interactor.output = presenter

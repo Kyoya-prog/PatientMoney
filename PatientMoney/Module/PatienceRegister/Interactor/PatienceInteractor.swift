@@ -1,8 +1,8 @@
 import Foundation
 
-class PatienceRegisterInteractor: PatienceRegisterUsecase {
+class PatienceInteractor: PatienceUsecase {
     var output: PatienceRegisterInteractorOutput?
-    var repository: PatienceRegisterRepository!
+    var repository: PatienceRepository!
 
     func registerPatienceData(date: Date, description: String, money: Int, category: String) {
         let documentData = ["Date": date, "Memo": description, "Money": money, "Category": category, "UID": uid] as [String: Any]

@@ -4,7 +4,7 @@ class PatienceRegisterPresenter: PatienceRegisterPresentation, PatienceRegisterI
     // MARK: RegisterPresentation
     var view: PatienceRegisterView?
 
-    var interactor: PatienceRegisterUsecase!
+    var interactor: PatienceUsecase!
 
     var router: AuthWireFrame!
 
