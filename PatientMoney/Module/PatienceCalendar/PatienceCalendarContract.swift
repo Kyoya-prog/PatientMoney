@@ -8,9 +8,9 @@ protocol PatienceCalendarWireframe {
     /// - parameter date:日付
     func presentRegisterModal(date: Date)
 
-    /// 項目を更新する
-    /// - parameter record:登録してあるデータ
-    func presentUpdatePatienceView(record: PatienceRecord)
+    /// 更新画面を表示する
+    /// - parameter record:登録データ
+    func presentUpdateView(record: PatienceRecord)
 }
 
 protocol PatienceCalendarView {
@@ -23,14 +23,42 @@ protocol PatienceCalendarView {
     /// 成功メッセージを表示する
     /// - parameter message:成功メッセージ
     func showSuccess(message: String)
+
+    /// 記録配列を更新する
+    /// - parameter records:記録
+    func updateRecord(records: [PatienceRecord])
 }
 
 protocol PatienceCalendarPresentation {
     // Dependency
-    var view: PatienceInputView? { get }
-    var interactor: PatienceUsecase! { get }
+    var view: PatienceCalendarView? { get }
+    var interactor: PatienceCalendarInteractor! { get }
     var router: PatienceCalendarWireframe! { get }
+
     /// 登録ボタンがタップされた
-    /// - parameter patience:登録項目
-    func didTapRegisterButton(patience: Patience)
+    /// - parameter date:日付
+    func didTapRegisterButton(date: Date)
+
+    /// 記録セルがタップされた
+    /// - parameter record:記録
+    func didTappedRecordCell(record: PatienceRecord)
+
+    /// 日付が変更された
+    /// - parameter date:日付
+    func dateDidchange(date: Date)
+}
+
+protocol PatienceCalendarInteractor {
+    /// データをフェッチする
+    /// - parameter data:日付
+    func fetchPatienceData(date: Date)
+}
+
+protocol PatienceCalendarInteractorOutput {
+    /// フェッチしてきたデータを表示する
+    /// - parameter records:フェッチされた記録
+    func outputFetchData(records: [PatienceRecord])
+
+    /// エラーを返す
+    func outputError()
 }

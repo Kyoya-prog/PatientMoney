@@ -51,10 +51,6 @@ protocol PatienceUsecase {
     /// - parameter category: カテゴリー
     func registerPatienceData(date: Date, description: String, money: Int, category: String)
 
-    /// データをフェッチする
-    /// - parameter data:日付
-    func fetchPatienceData(date: Date)
-
     /// データをupdateする
     /// - parameter record:データレコード
     func updatePatienceData(record: PatienceRecord)

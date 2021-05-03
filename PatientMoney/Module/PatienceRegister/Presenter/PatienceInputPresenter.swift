@@ -7,13 +7,13 @@ class PatienceInputPresenter: PatienceInputPresentation, PatienceInputInteractor
     var interactor: PatienceUsecase!
 
     var router: AuthWireFrame!
-    
-    var documentId:String?
+
+    var documentId: String?
 
     func didTapRegisterButton(patience: Patience) {
         interactor.registerPatienceData(date: patience.date, description: patience.description, money: patience.money, category: patience.category)
     }
-    
+
     func didTapUpdateButton(patience: Patience) {
         guard let documentId = documentId else { return }
         interactor.updatePatienceData(record: .init(documentID: documentId, date: patience.date, description: patience.description, money: patience.money, categoryTitle: patience.category))

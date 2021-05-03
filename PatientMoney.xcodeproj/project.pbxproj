@@ -22,7 +22,7 @@
 		3D3A3224263EEFE000077B6D /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; };
 		3D3A3225263EEFE000077B6D /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D3A322A263EF37F00077B6D /* PatienceInputPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3229263EF37F00077B6D /* PatienceInputPresenter.swift */; };
-		3D3A3231263F074F00077B6D /* PatienceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3230263F074F00077B6D /* PatienceInteractor.swift */; };
+		3D3A3231263F074F00077B6D /* PatienceInputInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3230263F074F00077B6D /* PatienceInputInteractor.swift */; };
 		3D3A323F263F096B00077B6D /* PatienceDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A323E263F096B00077B6D /* PatienceDataStore.swift */; };
 		3D3A3250263F2B9800077B6D /* PatienceInputRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A324F263F2B9800077B6D /* PatienceInputRouter.swift */; };
 		3D6B0FDD263D8031009D21A1 /* HeightSelfSizingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FDC263D8031009D21A1 /* HeightSelfSizingCollectionView.swift */; };
@@ -131,7 +131,7 @@
 		3D3A321E263EEFE000077B6D /* NotificationBanner.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NotificationBanner.xcframework; path = Carthage/Build/NotificationBanner.xcframework; sourceTree = "<group>"; };
 		3D3A321F263EEFE000077B6D /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
 		3D3A3229263EF37F00077B6D /* PatienceInputPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceInputPresenter.swift; sourceTree = "<group>"; };
-		3D3A3230263F074F00077B6D /* PatienceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceInteractor.swift; sourceTree = "<group>"; };
+		3D3A3230263F074F00077B6D /* PatienceInputInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceInputInteractor.swift; sourceTree = "<group>"; };
 		3D3A323E263F096B00077B6D /* PatienceDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceDataStore.swift; sourceTree = "<group>"; };
 		3D3A324F263F2B9800077B6D /* PatienceInputRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceInputRouter.swift; sourceTree = "<group>"; };
 		3D6B0FDC263D8031009D21A1 /* HeightSelfSizingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightSelfSizingCollectionView.swift; sourceTree = "<group>"; };
@@ -324,7 +324,6 @@
 		3D36BCA8263FDCBA00EDF69F /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				3D3A322F263F073E00077B6D /* Interactor */,
 				3DE104AE263D3BC700F724B8 /* PatienceRegister */,
 				3D36BC8F263FBEF400EDF69F /* PatienceCalendar */,
 				3DE103E3263ACBC900F724B8 /* Auth */,
@@ -343,10 +342,9 @@
 		3D3A322F263F073E00077B6D /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				3D3A3230263F074F00077B6D /* PatienceInteractor.swift */,
+				3D3A3230263F074F00077B6D /* PatienceInputInteractor.swift */,
 			);
-			name = Interactor;
-			path = PatienceRegister/Interactor;
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		3D3A324D263F2B6F00077B6D /* Data */ = {
@@ -593,6 +591,7 @@
 		3DE104AE263D3BC700F724B8 /* PatienceRegister */ = {
 			isa = PBXGroup;
 			children = (
+				3D3A322F263F073E00077B6D /* Interactor */,
 				3D3A324E263F2B8400077B6D /* Router */,
 				3D3A3228263EF36D00077B6D /* Presenter */,
 				3D6B1007263E9A6D009D21A1 /* View */,
@@ -811,7 +810,7 @@
 				3D3A321A263EEEA000077B6D /* StatusNotification.swift in Sources */,
 				3DEB53CC26400BB9002A2166 /* PatienceCalendarPresenter.swift in Sources */,
 				3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */,
-				3D3A3231263F074F00077B6D /* PatienceInteractor.swift in Sources */,
+				3D3A3231263F074F00077B6D /* PatienceInputInteractor.swift in Sources */,
 				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
 				3D36BC99263FD39200EDF69F /* HeightSelfSizingTableView.swift in Sources */,

@@ -1,9 +1,6 @@
 import Foundation
 
-class PatienceInteractor: PatienceUsecase {
-    func fetchPatienceData(date: Date) {
-    }
-
+class PatienceInputInteractor: PatienceUsecase {
     func updatePatienceData(record: PatienceRecord) {
     }
 

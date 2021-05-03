@@ -119,9 +119,7 @@ class PatienceInputViewController: UIViewController, PatienceInputView {
         let okAction = UIAlertAction(title: L10n.PatienceInputViewController.Alert.OkAction.title, style: .default, handler: { [weak self] _ in
             self?.inputAction()
         })
-        let cancelAction = UIAlertAction(title: L10n.PatienceInputViewController.Alert.CancelAction.title, style: .cancel, handler: { [weak self] _ in
-            self?.cancelAction()
-        })
+        let cancelAction = UIAlertAction(title: L10n.PatienceInputViewController.Alert.CancelAction.title, style: .cancel)
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         return alert
@@ -133,9 +131,6 @@ class PatienceInputViewController: UIViewController, PatienceInputView {
         } else {
             presenter.didTapUpdateButton(patience: Patience(date: dateRecord, description: memoRecord, money: moneyRecord ?? 0, category: categoryTitleRecord))
         }
-    }
-
-    private func cancelAction() {
     }
 
     @objc private func inputButtonAction(_ :UIButton) {

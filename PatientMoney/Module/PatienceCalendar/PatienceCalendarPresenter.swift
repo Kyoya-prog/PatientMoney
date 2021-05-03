@@ -1,8 +1,27 @@
-//
-//  PatienceCalenderPresenter.swift
-//  PatientMoney
-//
-//  Created by 松山響也 on 2021/05/03.
-//
-
 import Foundation
+
+class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarInteractorOutput {
+    var view: PatienceCalendarView?
+    var interactor: PatienceCalendarInteractor!
+    var router: PatienceCalendarWireframe!
+
+    func didTapRegisterButton(date: Date) {
+        router.presentRegisterModal(date: date)
+    }
+
+    func didTappedRecordCell(record: PatienceRecord) {
+        router.presentUpdateView(record: record)
+    }
+
+    func dateDidchange(date: Date) {
+        interactor.fetchPatienceData(date:date)
+    }
+
+    func outputFetchData(records: [PatienceRecord]) {
+        view?.updateRecord(records: records)
+    }
+
+    func outputError() {
+        view?.showError(message: "データの取得に失敗しました")
+    }
+}

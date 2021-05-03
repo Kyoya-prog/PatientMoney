@@ -2,14 +2,15 @@ import Foundation
 import UIKit.UIViewController
 
 class PatienceInputRouter: PatienceInputWireframe {
-    
     var viewController: UIViewController?
 
-    static func assembleRegisterModule() -> UIViewController {
+    static func assembleRegisterModule(date: Date? = nil) -> UIViewController {
         let registerView = PatienceInputViewController(isNewRecord: true)
         let presenter = PatienceInputPresenter()
-        let interactor = PatienceInteractor()
+        let interactor = PatienceInputInteractor()
         let datastore = PatienceDataStore()
+
+        registerView.dateRecord = date ?? Date()
 
         interactor.repository = datastore
         interactor.output = presenter
@@ -19,13 +20,13 @@ class PatienceInputRouter: PatienceInputWireframe {
 
         return registerView
     }
-    
-    static func assembleUpdateModule(record:PatienceRecord) ->UIViewController{
+
+    static func assembleUpdateModule(record: PatienceRecord) -> UIViewController {
         let registerView = PatienceInputViewController(isNewRecord: false)
         let presenter = PatienceInputPresenter()
-        let interactor = PatienceInteractor()
+        let interactor = PatienceInputInteractor()
         let datastore = PatienceDataStore()
-        
+
         registerView.dateRecord = record.date
         registerView.memoRecord = record.description
         registerView.moneyRecord = record.money
@@ -40,8 +41,7 @@ class PatienceInputRouter: PatienceInputWireframe {
 
         return registerView
     }
-    
-    func presentInputViewController(){
-        
+
+    func presentInputViewController() {
     }
 }

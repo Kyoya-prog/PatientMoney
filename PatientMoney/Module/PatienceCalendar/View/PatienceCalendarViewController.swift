@@ -10,7 +10,7 @@ struct PatienceRecord {
     var categoryTitle: String
 }
 
-class PatienceCalenderViewController: UIViewController {
+class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
     var records: [PatienceRecord] = [] {
         didSet {
             recordsView.reloadData()
@@ -19,7 +19,7 @@ class PatienceCalenderViewController: UIViewController {
 
     var date = Date() {
         didSet {
-            recordsView.reloadData()
+            presenter.dateDidchange(date: date)
         }
     }
 
@@ -49,6 +49,21 @@ class PatienceCalenderViewController: UIViewController {
 
     let calendar = FSCalendar()
 
+    // MARK: PatienceCalendarView
+    var presenter: PatienceCalendarPresentation!
+
+    func showError(message: String) {
+        StatusNotification.notifyError(message)
+    }
+
+    func showSuccess(message: String) {
+        StatusNotification.notifySuccess(message)
+    }
+
+    func updateRecord(records: [PatienceRecord]) {
+        self.records = records
+    }
+
     private lazy var recordsView: HeightSelfSizingTableView = {
         let view = HeightSelfSizingTableView()
         view.register(RecordCell.self, forCellReuseIdentifier: RecordCell.reuseIdentifer)
@@ -56,6 +71,22 @@ class PatienceCalenderViewController: UIViewController {
         view.dataSource = self
         return view
     }()
+
+    private lazy var alert: UIAlertController = {
+        let alert = UIAlertController(title: "日付から選択", message: "項目を登録しますか？", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "登録しない", style: .cancel)
+        let registerAction = UIAlertAction(title: "登録する", style: .default) { [weak self]_ in
+            self?.didTapRegisterButton()
+        }
+
+        alert.addAction(cancelAction)
+        alert.addAction(registerAction)
+        return alert
+    }()
+
+    private func didTapRegisterButton() {
+        presenter.didTapRegisterButton(date: date)
+    }
 }
 
 extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSource {
@@ -80,6 +111,8 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let record = records[indexPath.item]
+        presenter.didTappedRecordCell(record: record)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -87,6 +120,7 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
 extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.date = date
+        present(alert, animated: true, completion: nil)
     }
 }
 
