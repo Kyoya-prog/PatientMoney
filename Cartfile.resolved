@@ -4,4 +4,5 @@ binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseFirestoreBinary.j
 github "Daltron/NotificationBanner" "2ce5c49d8ee4865f01a3ce3bbe078664c78c7a3c"
 github "MatiBot/MBCircularProgressBar" "0.3.4"
 github "SnapKit/SnapKit" "5.0.1"
+github "WenchaoD/FSCalendar" "2.8.2"
 github "cbpowell/MarqueeLabel" "4.0.5"

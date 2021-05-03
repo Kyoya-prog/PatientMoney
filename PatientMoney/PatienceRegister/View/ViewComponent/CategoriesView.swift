@@ -16,13 +16,6 @@ class CategoriesView: UIView {
         construct()
     }
 
-    // MARK: Private
-    private let categories:[(icon: FontAwesome.Icon, title: String, color: UIColor)] = [
-        (icon:.pizzaSlice, title:L10n.CategoriesView.IconTitle.pizzaSlice, UIColor(hex: "FFA500")),
-        (icon:.bus, title:L10n.CategoriesView.IconTitle.bus, UIColor(hex: "00BFFF")),
-        (icon:.paintBrush, title:L10n.CategoriesView.IconTitle.paintBrush, UIColor(hex: "00FF00"))
-    ]
-
     private func construct() {
         categoriesView.translatesAutoresizingMaskIntoConstraints = false
         categoriesView.delegate = self
@@ -68,7 +61,7 @@ class CategoriesView: UIView {
 // MARK: CollectionViewDelegateMethod
 extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        categories.count
+        Category.categories.count
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -80,7 +73,7 @@ extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // swiftlint:disable:next force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseIdentifer, for: indexPath) as! CategoryCell
-        let category = categories[indexPath.item]
+        let category = Category.categories[indexPath.item]
         cell.icon = category.icon
         cell.title = category.title
         cell.color = category.color
@@ -89,7 +82,7 @@ extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let category = categories[indexPath.item]
+        let category = Category.categories[indexPath.item]
         selectedCategoryTitle = category.title
         categoriesView.reloadData()
     }

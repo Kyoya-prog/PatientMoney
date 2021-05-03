@@ -15,4 +15,6 @@ class DateUtils {
         formatter.dateFormat = format
         return formatter.string(from: date)
     }
+
+    static let dateFormatJapanese = "yyyy年MM月dd日"
 }
