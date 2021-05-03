@@ -1,4 +1,5 @@
 github "MatiBot/MBCircularProgressBar"
+github "Daltron/NotificationBanner" "master"
 
 ## firebase
 binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.json"

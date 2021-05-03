@@ -7,8 +7,13 @@ class FirebaseAuthManeger {
     static let shared = FirebaseAuthManeger()
 
     /// サインインしているかどうか
-    var isSignIn: Bool = {
-        Auth.auth().currentUser != nil
+    lazy var isSignIn: Bool = {
+        if let user = Auth.auth().currentUser {
+            uid = user.uid
+            return true
+        } else {
+            return false
+        }
     }()
 
     /// サインインする
@@ -50,7 +55,9 @@ class FirebaseAuthManeger {
         }
     }
 
-    enum AuthErrorType {
-        case emailAlreadyInUse
+    var uid: String
+
+    private init() {
+        uid = ""
     }
 }

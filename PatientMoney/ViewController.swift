@@ -12,10 +12,13 @@ import UIKit
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
-        let label = UILabel()
+        view.backgroundColor = .white
+        print(UIFont.fontNames(
+            forFamilyName: "Font Awesome 5 Free"
+        ))
+        let label = DateView()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "home"
+
         view.addSubview(label)
         NSLayoutConstraint.activate([
             label.centerYAnchor.constraint(equalTo: view.centerYAnchor),

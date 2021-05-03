@@ -68,6 +68,33 @@ internal enum L10n {
     }
   }
 
+  internal enum CategoriesView {
+    /// カテゴリー
+    internal static let title = L10n.tr("Localizable", "CategoriesView.title")
+    internal enum IconTitle {
+      /// 交通費
+      internal static let bus = L10n.tr("Localizable", "CategoriesView.IconTitle.bus")
+      /// 趣味
+      internal static let paintBrush = L10n.tr("Localizable", "CategoriesView.IconTitle.paintBrush")
+      /// 飲食費
+      internal static let pizzaSlice = L10n.tr("Localizable", "CategoriesView.IconTitle.pizzaSlice")
+    }
+  }
+
+  internal enum DateView {
+    /// 日付
+    internal static let title = L10n.tr("Localizable", "DateView.title")
+  }
+
+  internal enum DescriptionView {
+    /// メモ
+    internal static let title = L10n.tr("Localizable", "DescriptionView.title")
+    internal enum DescriptionTextView {
+      /// 未入力
+      internal static let text = L10n.tr("Localizable", "DescriptionView.descriptionTextView.text")
+    }
+  }
+
   internal enum FirebaseAuthManager {
     internal enum Error {
       internal enum Default {
@@ -90,6 +117,47 @@ internal enum L10n {
         /// パスワードが間違っています。
         internal static let message = L10n.tr("Localizable", "FirebaseAuthManager.Error.WrongPassword.message")
       }
+    }
+  }
+
+  internal enum MoneyView {
+    /// 金額
+    internal static let title = L10n.tr("Localizable", "MoneyView.title")
+  }
+
+  internal enum PatienceRegisterPresenter {
+    internal enum StatusNotification {
+      internal enum Failure {
+        /// 登録に失敗しました
+        internal static let title = L10n.tr("Localizable", "PatienceRegisterPresenter.StatusNotification.Failure.title")
+      }
+      internal enum Success {
+        /// 登録に成功しました
+        internal static let title = L10n.tr("Localizable", "PatienceRegisterPresenter.StatusNotification.Success.title")
+      }
+    }
+  }
+
+  internal enum PatienceRegisterViewController {
+    internal enum Alert {
+      /// 金額が０円ですがこのまま登録しますか？
+      internal static let title = L10n.tr("Localizable", "PatienceRegisterViewController.Alert.title")
+      internal enum CancelAction {
+        /// キャンセル
+        internal static let title = L10n.tr("Localizable", "PatienceRegisterViewController.Alert.CancelAction.title")
+      }
+      internal enum OkAction {
+        /// OK
+        internal static let title = L10n.tr("Localizable", "PatienceRegisterViewController.Alert.OkAction.title")
+      }
+    }
+    internal enum NavigationItem {
+      /// 登録画面
+      internal static let title = L10n.tr("Localizable", "PatienceRegisterViewController.NavigationItem.title")
+    }
+    internal enum RegisterButton {
+      /// 登録する
+      internal static let title = L10n.tr("Localizable", "PatienceRegisterViewController.RegisterButton.title")
     }
   }
 }

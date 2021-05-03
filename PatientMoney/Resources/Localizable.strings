@@ -21,3 +21,29 @@
 "FirebaseAuthManager.Error.WrongPassword.message" = "パスワードが間違っています。";
 "FirebaseAuthManager.Error.UserNotFound.message" = "ユーザーが見つかりませんでした。";
 "FirebaseAuthManager.Error.Default.message" = "認証に失敗しました。もう一度お試しください。";
+
+// CategoriesView
+"CategoriesView.title" = "カテゴリー";
+"CategoriesView.IconTitle.pizzaSlice" = "飲食費";
+"CategoriesView.IconTitle.bus" = "交通費";
+"CategoriesView.IconTitle.paintBrush" = "趣味";
+
+// DateView
+"DateView.title" = "日付";
+
+// DescriptionView
+"DescriptionView.title" = "メモ";
+"DescriptionView.descriptionTextView.text" = "未入力";
+
+// MoneyView
+"MoneyView.title" = "金額";
+
+// RegisterViewController
+"PatienceRegisterViewController.RegisterButton.title" = "登録する";
+"PatienceRegisterViewController.NavigationItem.title" = "登録画面";
+"PatienceRegisterViewController.Alert.OkAction.title" = "OK";
+"PatienceRegisterViewController.Alert.CancelAction.title" = "キャンセル";
+"PatienceRegisterViewController.Alert.title" = "金額が０円ですがこのまま登録しますか？";
+"PatienceRegisterPresenter.StatusNotification.Success.title" = "登録に成功しました";
+"PatienceRegisterPresenter.StatusNotification.Failure.title" = "登録に失敗しました";
+
