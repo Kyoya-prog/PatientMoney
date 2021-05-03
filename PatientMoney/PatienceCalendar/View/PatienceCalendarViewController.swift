@@ -11,7 +11,17 @@ struct PatienceRecord {
 }
 
 class PatienceCalenderViewController: UIViewController {
-    var records: [PatienceRecord] = [.init(documentID: "hoge", date: Date(), description: "", money: 100, categoryTitle: L10n.CategoriesView.IconTitle.pizzaSlice), .init(documentID: "hoge", date: Date(), description: "", money: 100, categoryTitle: L10n.CategoriesView.IconTitle.paintBrush)]
+    var records: [PatienceRecord] = []{
+        didSet{
+            recordsView.reloadData()
+        }
+    }
+    
+    var date = Date(){
+        didSet{
+            recordsView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +86,7 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
 
 extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(DateUtils.stringFromDate(date: date, format: "yyyy-MM-dd"))
+        self.date = date
     }
 }
 
