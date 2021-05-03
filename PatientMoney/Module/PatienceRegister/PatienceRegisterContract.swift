@@ -8,14 +8,14 @@ struct Patience {
     var category: String
 }
 
-protocol PatienceRegisterWireframe {
+protocol PatienceInputWireframe {
     // Dependency
     var viewController: UIViewController? { get }
 }
 
-protocol PatienceRegisterView {
+protocol PatienceInputView {
     // Dependency
-    var presenter: PatienceRegisterPresentation! { get }
+    var presenter: PatienceInputPresentation! { get }
     /// エラーメッセージを表示する
     /// - parameter message:エラーメッセージ
     func showError(message: String)
@@ -25,19 +25,23 @@ protocol PatienceRegisterView {
     func showSuccess(message: String)
 }
 
-protocol PatienceRegisterPresentation {
+protocol PatienceInputPresentation {
     // Dependency
-    var view: PatienceRegisterView? { get }
+    var view: PatienceInputView? { get }
     var interactor: PatienceUsecase! { get }
     var router: AuthWireFrame! { get }
     /// 登録ボタンがタップされた
     /// - parameter patience:登録項目
     func didTapRegisterButton(patience: Patience)
+
+    /// 更新ボタンがタップされた
+    /// - parameter patience:登録項目
+    func didTapUpdateButton(patience: Patience)
 }
 
 protocol PatienceUsecase {
     // Dependency
-    var output: PatienceRegisterInteractorOutput? { get }
+    var output: PatienceInputInteractorOutput? { get }
 
     var repository: PatienceRepository! { get }
     /// データを登録する
@@ -56,7 +60,7 @@ protocol PatienceUsecase {
     func updatePatienceData(record: PatienceRecord)
 }
 
-protocol PatienceRegisterInteractorOutput {
+protocol PatienceInputInteractorOutput {
     /// 登録時のエラーを知らせる
     /// - parameter error:エラー内容
     func outputRegisterError(error: Error)

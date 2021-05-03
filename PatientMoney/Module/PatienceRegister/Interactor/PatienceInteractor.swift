@@ -7,7 +7,7 @@ class PatienceInteractor: PatienceUsecase {
     func updatePatienceData(record: PatienceRecord) {
     }
 
-    var output: PatienceRegisterInteractorOutput?
+    var output: PatienceInputInteractorOutput?
     var repository: PatienceRepository!
 
     func registerPatienceData(date: Date, description: String, money: Int, category: String) {
