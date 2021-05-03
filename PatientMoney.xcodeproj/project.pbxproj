@@ -79,16 +79,6 @@
 		3DE104A7263D383C00F724B8 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DE104A4263D383C00F724B8 /* Font Awesome 5 Free-Solid-900.otf */; };
 		3DE104A8263D383C00F724B8 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DE104A5263D383C00F724B8 /* Font Awesome 5 Free-Regular-400.otf */; };
 		3DE104B1263D3BEC00F724B8 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE104B0263D3BEC00F724B8 /* CategoriesView.swift */; };
-		3DEB53A3263FF784002A2166 /* RxBlocking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB539E263FF784002A2166 /* RxBlocking.xcframework */; };
-		3DEB53A4263FF784002A2166 /* RxBlocking.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB539E263FF784002A2166 /* RxBlocking.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3DEB53A5263FF784002A2166 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB539F263FF784002A2166 /* RxRelay.xcframework */; };
-		3DEB53A6263FF784002A2166 /* RxRelay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB539F263FF784002A2166 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3DEB53A7263FF784002A2166 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB53A0263FF784002A2166 /* RxCocoa.xcframework */; };
-		3DEB53A8263FF785002A2166 /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB53A0263FF784002A2166 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3DEB53A9263FF785002A2166 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB53A1263FF784002A2166 /* RxSwift.xcframework */; };
-		3DEB53AA263FF785002A2166 /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB53A1263FF784002A2166 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3DEB53AB263FF785002A2166 /* RxTest.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB53A2263FF784002A2166 /* RxTest.xcframework */; };
-		3DEB53AC263FF785002A2166 /* RxTest.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB53A2263FF784002A2166 /* RxTest.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,14 +105,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3DEB53A8263FF785002A2166 /* RxCocoa.xcframework in Embed Frameworks */,
-				3DEB53AC263FF785002A2166 /* RxTest.xcframework in Embed Frameworks */,
-				3DEB53AA263FF785002A2166 /* RxSwift.xcframework in Embed Frameworks */,
 				3D3A3225263EEFE000077B6D /* SnapKit.xcframework in Embed Frameworks */,
 				3D3A3223263EEFE000077B6D /* NotificationBanner.xcframework in Embed Frameworks */,
 				3D6D012726355E4400C30DD1 /* MBCircularProgressBar.framework in Embed Frameworks */,
-				3DEB53A6263FF784002A2166 /* RxRelay.xcframework in Embed Frameworks */,
-				3DEB53A4263FF784002A2166 /* RxBlocking.xcframework in Embed Frameworks */,
 				3D3A3221263EEFE000077B6D /* MarqueeLabel.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -245,13 +230,11 @@
 				3D3A3222263EEFE000077B6D /* NotificationBanner.xcframework in Frameworks */,
 				3D6D011E26355E4400C30DD1 /* gRPC-C++.framework in Frameworks */,
 				3D6D011826355E4400C30DD1 /* GoogleAppMeasurement.framework in Frameworks */,
-				3DEB53A3263FF784002A2166 /* RxBlocking.xcframework in Frameworks */,
 				3D6D012226355E4400C30DD1 /* GTMSessionFetcher.framework in Frameworks */,
 				3D6D010826355E4300C30DD1 /* FIRAnalyticsConnector.framework in Frameworks */,
 				3D6D010426355E4300C30DD1 /* abseil.framework in Frameworks */,
 				3D6D010E26355E4400C30DD1 /* FirebaseAuth.framework in Frameworks */,
 				3D6D011026355E4400C30DD1 /* FirebaseCore.framework in Frameworks */,
-				3DEB53A7263FF784002A2166 /* RxCocoa.xcframework in Frameworks */,
 				3D6D012A26355E4400C30DD1 /* PromisesObjC.framework in Frameworks */,
 				3D6D012426355E4400C30DD1 /* leveldb-library.framework in Frameworks */,
 				3D6D011426355E4400C30DD1 /* FirebaseFirestore.framework in Frameworks */,
@@ -259,13 +242,10 @@
 				3D6D011A26355E4400C30DD1 /* GoogleDataTransport.framework in Frameworks */,
 				3D6D012626355E4400C30DD1 /* MBCircularProgressBar.framework in Frameworks */,
 				3D6D012026355E4400C30DD1 /* gRPC-Core.framework in Frameworks */,
-				3DEB53A5263FF784002A2166 /* RxRelay.xcframework in Frameworks */,
 				3D3A3224263EEFE000077B6D /* SnapKit.xcframework in Frameworks */,
 				3D6D010A26355E4300C30DD1 /* Firebase.framework in Frameworks */,
-				3DEB53A9263FF785002A2166 /* RxSwift.xcframework in Frameworks */,
 				3D6D011C26355E4400C30DD1 /* GoogleUtilities.framework in Frameworks */,
 				3D6D010C26355E4300C30DD1 /* FirebaseAnalytics.framework in Frameworks */,
-				3DEB53AB263FF785002A2166 /* RxTest.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

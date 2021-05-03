@@ -1,6 +1,12 @@
 import Foundation
 
 class PatienceInteractor: PatienceUsecase {
+    func fetchPatienceData(date: Date) {
+    }
+
+    func updatePatienceData(record: PatienceRecord) {
+    }
+
     var output: PatienceRegisterInteractorOutput?
     var repository: PatienceRepository!
 
