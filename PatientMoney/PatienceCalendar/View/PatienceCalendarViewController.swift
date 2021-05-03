@@ -11,14 +11,14 @@ struct PatienceRecord {
 }
 
 class PatienceCalenderViewController: UIViewController {
-    var records: [PatienceRecord] = []{
-        didSet{
+    var records: [PatienceRecord] = [] {
+        didSet {
             recordsView.reloadData()
         }
     }
-    
-    var date = Date(){
-        didSet{
+
+    var date = Date() {
+        didSet {
             recordsView.reloadData()
         }
     }
@@ -64,7 +64,7 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        DateUtils.stringFromDate(date: Date(), format: "yyyy年MM月dd日")
+        DateUtils.stringFromDate(date: Date(), format: DateUtils.dateFormatJapanese)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         records.count

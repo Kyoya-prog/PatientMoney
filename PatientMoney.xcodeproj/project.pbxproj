@@ -12,6 +12,7 @@
 		3D36BC8C263FBDCC00EDF69F /* FSCalendar.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D36BC8B263FBDCC00EDF69F /* FSCalendar.xcframework */; };
 		3D36BC92263FBF1A00EDF69F /* PatienceCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */; };
 		3D36BC99263FD39200EDF69F /* HeightSelfSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC98263FD39200EDF69F /* HeightSelfSizingTableView.swift */; };
+		3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC9E263FD60F00EDF69F /* Category.swift */; };
 		3D3A3216263EE0F700077B6D /* PatienceRegisterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3215263EE0F700077B6D /* PatienceRegisterContract.swift */; };
 		3D3A321A263EEEA000077B6D /* StatusNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3219263EEEA000077B6D /* StatusNotification.swift */; };
 		3D3A3220263EEFE000077B6D /* MarqueeLabel.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */; };
@@ -120,6 +121,7 @@
 		3D36BC8B263FBDCC00EDF69F /* FSCalendar.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FSCalendar.xcframework; path = Carthage/Build/FSCalendar.xcframework; sourceTree = "<group>"; };
 		3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarViewController.swift; sourceTree = "<group>"; };
 		3D36BC98263FD39200EDF69F /* HeightSelfSizingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightSelfSizingTableView.swift; sourceTree = "<group>"; };
+		3D36BC9E263FD60F00EDF69F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3D3A3215263EE0F700077B6D /* PatienceRegisterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceRegisterContract.swift; sourceTree = "<group>"; };
 		3D3A3219263EEEA000077B6D /* StatusNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusNotification.swift; sourceTree = "<group>"; };
 		3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MarqueeLabel.xcframework; path = Carthage/Build/MarqueeLabel.xcframework; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			children = (
 				3D6B0FEB263E714D009D21A1 /* DateUtils.swift */,
 				3D3A3219263EEEA000077B6D /* StatusNotification.swift */,
+				3D36BC9E263FD60F00EDF69F /* Category.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */,
 				3DE103ED263AE65A00F724B8 /* ColorsExtension.swift in Sources */,
 				3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */,
+				3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
