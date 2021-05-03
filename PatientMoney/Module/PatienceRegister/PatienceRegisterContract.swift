@@ -1,4 +1,5 @@
 import Foundation
+import RxSwift
 import UIKit
 
 struct Patience {
@@ -72,7 +73,7 @@ protocol PatienceRepository {
 
     /// データをフェッチする
     /// - parameter data:日付
-    func fetchPatienceData(date: Date, completion:@escaping (Result<[PatienceRecord], Error>) -> Void)
+    func fetchPatienceData(date: Date) -> Single<[PatienceRecord]>
 
     /// データをupdateする
     /// - parameter documentId:ドキュメントID

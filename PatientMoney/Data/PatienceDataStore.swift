@@ -1,6 +1,7 @@
 import FirebaseAuth
 import FirebaseFirestore
 import Foundation
+import RxSwift
 
 class PatienceDataStore: PatienceRepository {
     func registerPatienceData(data: [String: Any]) -> Error? {
@@ -11,18 +12,22 @@ class PatienceDataStore: PatienceRepository {
         return returningError
     }
 
-    func fetchPatienceData(date: Date, completion: @escaping (Result<[PatienceRecord], Error>) -> Void) {
-        let ref = firestore.collection("patience")
-        let query = ref
-        query.getDocuments { [ weak self ]querysnapshot, error in
-            guard let self = self else { return }
-            var result: Result<[PatienceRecord], Error>!
-            if let error = error {
-                result = .failure(error)
-            } else if let documents = querysnapshot?.documents {
-                result = .success(self.createPatienceRecord(documents: documents))
+    func fetchPatienceData(date: Date) -> Single<[PatienceRecord]> {
+        Single<[PatienceRecord]>.create { [weak self] observer -> Disposable in
+            guard let self = self else { return Disposables.create() }
+            let ref = self.firestore.collection("patience")
+            let query = ref.whereField("UID", isEqualTo: FirebaseAuthManeger.shared.uid)//.whereField("Date", isEqualTo: date)
+            query.getDocuments { query, error in
+                if let error = error {
+                    observer(.failure(error))
+                    return
+                }
+                if let documents = query?.documents {
+                    observer(.success(self.createPatienceRecord(documents: documents)))
+                    return
+                }
             }
-            completion(result)
+            return Disposables.create()
         }
     }
     func updatePatienceData(documentId: String, record: [String: Any]) -> Error? {
