@@ -72,7 +72,7 @@ protocol PatienceRepository {
 
     /// データをフェッチする
     /// - parameter data:日付
-    func fetchPatienceData(date: Date) -> Result<[PatienceRecord], Error>
+    func fetchPatienceData(date: Date, completion:@escaping (Result<[PatienceRecord], Error>) -> Void)
 
     /// データをupdateする
     /// - parameter documentId:ドキュメントID

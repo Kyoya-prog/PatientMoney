@@ -17,7 +17,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
         }
     }
 
-    var date = Date() {
+    var date = DateUtils.getStartDay(date: Date()) {
         didSet {
             presenter.dateDidchange(date: date)
         }
@@ -42,9 +42,10 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 
             recordsView.topAnchor.constraint(equalTo: calendar.bottomAnchor),
             recordsView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            recordsView.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
-            recordsView.widthAnchor.constraint(equalToConstant: view.frame.width)
+            recordsView.widthAnchor.constraint(equalToConstant: view.frame.width),
+            recordsView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.4 )
         ])
+        presenter.dateDidchange(date: DateUtils.getStartDay(date: Date()))
     }
 
     let calendar = FSCalendar()
@@ -64,8 +65,8 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
         self.records = records
     }
 
-    private lazy var recordsView: HeightSelfSizingTableView = {
-        let view = HeightSelfSizingTableView()
+    private lazy var recordsView: UITableView = {
+        let view = UITableView()
         view.register(RecordCell.self, forCellReuseIdentifier: RecordCell.reuseIdentifer)
         view.delegate = self
         view.dataSource = self
@@ -119,13 +120,13 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
 
 extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        self.date = date
+        self.date = DateUtils.getStartDay(date: date)
         present(alert, animated: true, completion: nil)
     }
 }
 
 private class RecordCell: UITableViewCell {
-    var categoryTitle = ""{
+    var categoryTitle = L10n.CategoriesView.IconTitle.pizzaSlice {
         didSet {
             updateValue()
         }

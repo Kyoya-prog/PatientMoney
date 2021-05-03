@@ -76,6 +76,8 @@ class DateView: UIView {
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
         dateTextField.endEditing(true)
 
-        dateTextField.text = DateUtils.stringFromDate(date: datePicker.date, format: DateUtils.dateFormatJapanese)
+        let startDay = DateUtils.getStartDay(date: datePicker.date)
+        selectedDate = startDay
+        dateTextField.text = DateUtils.stringFromDate(date: startDay, format: DateUtils.dateFormatJapanese)
     }
 }

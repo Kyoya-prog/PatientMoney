@@ -32,7 +32,7 @@ protocol PatienceCalendarView {
 protocol PatienceCalendarPresentation {
     // Dependency
     var view: PatienceCalendarView? { get }
-    var interactor: PatienceCalendarInteractor! { get }
+    var interactor: PatienceCalendarUsecase! { get }
     var router: PatienceCalendarWireframe! { get }
 
     /// 登録ボタンがタップされた
@@ -48,7 +48,9 @@ protocol PatienceCalendarPresentation {
     func dateDidchange(date: Date)
 }
 
-protocol PatienceCalendarInteractor {
+protocol PatienceCalendarUsecase {
+    // Dependency
+    var repository: PatienceRepository! { get }
     /// データをフェッチする
     /// - parameter data:日付
     func fetchPatienceData(date: Date)

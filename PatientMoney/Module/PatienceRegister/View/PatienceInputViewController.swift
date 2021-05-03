@@ -136,7 +136,11 @@ class PatienceInputViewController: UIViewController, PatienceInputView {
     @objc private func inputButtonAction(_ :UIButton) {
         if let money = (subViews[2] as? MoneyView)?.money {
             let patience = Patience(date: dateRecord, description: memoRecord, money: money, category: categoryTitleRecord)
-            presenter.didTapRegisterButton(patience: patience)
+            if isNewRecord {
+                presenter.didTapRegisterButton(patience: patience)
+            } else {
+                presenter.didTapUpdateButton(patience: patience)
+            }
         } else {
             present(alert, animated: true, completion: nil)
         }

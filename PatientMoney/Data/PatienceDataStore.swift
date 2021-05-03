@@ -11,23 +11,22 @@ class PatienceDataStore: PatienceRepository {
         return returningError
     }
 
-    func fetchPatienceData(date: Date) -> Result<[PatienceRecord], Error> {
+    func fetchPatienceData(date: Date, completion: @escaping (Result<[PatienceRecord], Error>) -> Void) {
         let ref = firestore.collection("patience")
-        let query = ref.whereField("uid", isEqualTo: FirebaseAuthManeger.shared.uid).whereField("Date", isEqualTo: date)
-        var result: Result<[PatienceRecord], Error> = .failure(NSError())
+        let query = ref
         query.getDocuments { [ weak self ]querysnapshot, error in
             guard let self = self else { return }
+            var result: Result<[PatienceRecord], Error>!
             if let error = error {
                 result = .failure(error)
             } else if let documents = querysnapshot?.documents {
                 result = .success(self.createPatienceRecord(documents: documents))
             }
+            completion(result)
         }
-        return result
     }
-
     func updatePatienceData(documentId: String, record: [String: Any]) -> Error? {
-        let document = firestore.document(documentId)
+        let document = firestore.collection("patience").document(documentId)
         var returningError: Error?
         document.updateData(record) { error in
             returningError = error
@@ -43,7 +42,7 @@ class PatienceDataStore: PatienceRepository {
                            date: ($0.data()["Date"] as? Date) ?? Date() ,
                            description: ($0.data()["Memo"] as? String) ?? "",
                            money: ($0.data()["Money"] as? Int) ?? 0,
-                           categoryTitle: ( $0.data()["Categoy"] as? String) ?? ""  )
+                           categoryTitle: ( $0.data()["Category"] as? String) ?? ""  )
         }
     }
 }

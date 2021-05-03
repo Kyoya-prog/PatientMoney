@@ -9,15 +9,33 @@ import Foundation
 import UIKit.UIViewController
 
 class PatienceCalendarRouter: PatienceCalendarWireframe {
+    static func assembleModule() -> UIViewController {
+        let viewController = PatienceCalenderViewController()
+        let presenter = PatienceCalendarPresenter()
+        let interactor = PatienceCalendarInteractor()
+        let dataStore = PatienceDataStore()
+        let router = PatienceCalendarRouter()
+
+        presenter.interactor = interactor
+        interactor.repository = dataStore
+        interactor.output = presenter
+        presenter.router = router
+        presenter.view = viewController
+        viewController.presenter = presenter
+        router.viewController = viewController
+
+        return viewController
+    }
+
     var viewController: UIViewController?
 
     func presentRegisterModal(date: Date) {
         let registerView = PatienceInputRouter.assembleRegisterModule(date: date)
-        viewController?.navigationController?.pushViewController(registerView, animated: true)
+        viewController?.present(registerView, animated: true, completion: nil)
     }
 
     func presentUpdateView(record: PatienceRecord) {
         let updateView = PatienceInputRouter.assembleUpdateModule(record: record)
-        viewController?.present(updateView, animated: true, completion: nil)
+        viewController?.navigationController?.pushViewController(updateView, animated: true)
     }
 }

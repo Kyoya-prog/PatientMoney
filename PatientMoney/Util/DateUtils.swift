@@ -17,4 +17,10 @@ class DateUtils {
     }
 
     static let dateFormatJapanese = "yyyy年MM月dd日"
+
+    static func getStartDay(date: Date) -> Date {
+        let calendar = Calendar(identifier: .gregorian)
+        let date = Date()
+        return calendar.startOfDay(for: date)
+    }
 }

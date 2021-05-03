@@ -2,7 +2,7 @@ import Foundation
 
 class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarInteractorOutput {
     var view: PatienceCalendarView?
-    var interactor: PatienceCalendarInteractor!
+    var interactor: PatienceCalendarUsecase!
     var router: PatienceCalendarWireframe!
 
     func didTapRegisterButton(date: Date) {
@@ -14,7 +14,7 @@ class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarI
     }
 
     func dateDidchange(date: Date) {
-        interactor.fetchPatienceData(date:date)
+        interactor.fetchPatienceData(date: date)
     }
 
     func outputFetchData(records: [PatienceRecord]) {
