@@ -20,7 +20,6 @@ class DateUtils {
 
     static func getStartDay(date: Date) -> Date {
         let calendar = Calendar(identifier: .gregorian)
-        let date = Date()
         return calendar.startOfDay(for: date)
     }
 }

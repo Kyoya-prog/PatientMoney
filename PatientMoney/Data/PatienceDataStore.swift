@@ -16,7 +16,7 @@ class PatienceDataStore: PatienceRepository {
         Single<[PatienceRecord]>.create { [weak self] observer -> Disposable in
             guard let self = self else { return Disposables.create() }
             let ref = self.firestore.collection("patience")
-            let query = ref.whereField("UID", isEqualTo: FirebaseAuthManeger.shared.uid)//.whereField("Date", isEqualTo: date)
+            let query = ref.whereField("UID", isEqualTo: FirebaseAuthManeger.shared.uid).whereField("Date", isEqualTo: date)
             query.getDocuments { query, error in
                 if let error = error {
                     observer(.failure(error))

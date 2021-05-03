@@ -14,7 +14,7 @@ class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarI
     }
 
     func dateDidchange(date: Date) {
-        interactor.fetchPatienceData(date: date)
+        interactor.fetchPatienceData(date: DateUtils.getStartDay(date: date))
     }
 
     func outputFetchData(records: [PatienceRecord]) {
