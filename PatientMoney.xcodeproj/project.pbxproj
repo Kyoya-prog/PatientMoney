@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D205C6326381C820058064C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6226381C820058064C /* Localizable.strings */; };
 		3D205C6B26381EAB0058064C /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6A26381EAB0058064C /* gRPCCertificates-Cpp.bundle */; };
+		3D36BC8C263FBDCC00EDF69F /* FSCalendar.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D36BC8B263FBDCC00EDF69F /* FSCalendar.xcframework */; };
 		3D3A3216263EE0F700077B6D /* PatienceRegisterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3215263EE0F700077B6D /* PatienceRegisterContract.swift */; };
 		3D3A321A263EEEA000077B6D /* StatusNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3219263EEEA000077B6D /* StatusNotification.swift */; };
 		3D3A3220263EEFE000077B6D /* MarqueeLabel.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */; };
@@ -114,6 +115,7 @@
 /* Begin PBXFileReference section */
 		3D205C6226381C820058064C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3D205C6A26381EAB0058064C /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "gRPCCertificates-Cpp.bundle"; path = "../../Carthage/Build/iOS/gRPC-C++.framework/Resources/gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
+		3D36BC8B263FBDCC00EDF69F /* FSCalendar.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FSCalendar.xcframework; path = Carthage/Build/FSCalendar.xcframework; sourceTree = "<group>"; };
 		3D3A3215263EE0F700077B6D /* PatienceRegisterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceRegisterContract.swift; sourceTree = "<group>"; };
 		3D3A3219263EEEA000077B6D /* StatusNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusNotification.swift; sourceTree = "<group>"; };
 		3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MarqueeLabel.xcframework; path = Carthage/Build/MarqueeLabel.xcframework; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D36BC8C263FBDCC00EDF69F /* FSCalendar.xcframework in Frameworks */,
 				3D6D012826355E4400C30DD1 /* nanopb.framework in Frameworks */,
 				3D6D010626355E4300C30DD1 /* BoringSSL-GRPC.framework in Frameworks */,
 				3D3A3220263EEFE000077B6D /* MarqueeLabel.xcframework in Frameworks */,
@@ -387,6 +390,7 @@
 		3D6DFF8A263548B200C30DD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D36BC8B263FBDCC00EDF69F /* FSCalendar.xcframework */,
 				3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */,
 				3D3A321E263EEFE000077B6D /* NotificationBanner.xcframework */,
 				3D3A321F263EEFE000077B6D /* SnapKit.xcframework */,
