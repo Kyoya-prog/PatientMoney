@@ -6,7 +6,7 @@ class PatienceInputInteractor: PatienceUsecase {
         if let error = repository.updatePatienceData(documentId: record.documentID, record: documentData ) {
             output?.outputRegisterError(error: error)
         } else {
-            output?.outputRegisterSuccess()
+            output?.outputUpdateSuccess()
         }
     }
 

@@ -9,6 +9,7 @@ class PatienceInputRouter: PatienceInputWireframe {
         let presenter = PatienceInputPresenter()
         let interactor = PatienceInputInteractor()
         let datastore = PatienceDataStore()
+        let router = PatienceInputRouter()
 
         registerView.dateRecord = date ?? Date()
 
@@ -16,6 +17,8 @@ class PatienceInputRouter: PatienceInputWireframe {
         interactor.output = presenter
         presenter.interactor = interactor
         presenter.view = registerView
+        router.viewController = registerView
+        presenter.router = router
         registerView.presenter = presenter
 
         return registerView
@@ -26,6 +29,7 @@ class PatienceInputRouter: PatienceInputWireframe {
         let presenter = PatienceInputPresenter()
         let interactor = PatienceInputInteractor()
         let datastore = PatienceDataStore()
+        let router = PatienceInputRouter()
 
         registerView.dateRecord = record.date
         registerView.memoRecord = record.description
@@ -37,11 +41,18 @@ class PatienceInputRouter: PatienceInputWireframe {
         interactor.output = presenter
         presenter.interactor = interactor
         presenter.view = registerView
+        presenter.router = router
+        router.viewController = registerView
         registerView.presenter = presenter
 
         return registerView
     }
 
-    func presentInputViewController() {
+    func closeRegisterView() {
+        viewController?.dismiss(animated: true, completion: nil)
+    }
+
+    func closeUpdateView() {
+        viewController?.navigationController?.popViewController(animated: true)
     }
 }

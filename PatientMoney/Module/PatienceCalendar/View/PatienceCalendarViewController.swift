@@ -48,6 +48,11 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
         presenter.dateDidchange(date: DateUtils.getStartDay(date: Date()))
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.dateDidchange(date: date)
+    }
+
     let calendar = FSCalendar()
 
     // MARK: PatienceCalendarView
@@ -123,6 +128,12 @@ extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSour
         self.date = DateUtils.getStartDay(date: date)
         present(alert, animated: true, completion: nil)
     }
+}
+
+extension PatienceCalenderViewController: UIAdaptivePresentationControllerDelegate {
+  func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+    presenter.dateDidchange(date: date)
+  }
 }
 
 private class RecordCell: UITableViewCell {

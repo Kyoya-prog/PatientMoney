@@ -12,6 +12,12 @@ struct Patience {
 protocol PatienceInputWireframe {
     // Dependency
     var viewController: UIViewController? { get }
+
+    ///  登録モーダルを閉じる
+    func closeRegisterView()
+
+    /// 更新Viewを閉じる
+    func closeUpdateView()
 }
 
 protocol PatienceInputView {
@@ -30,7 +36,7 @@ protocol PatienceInputPresentation {
     // Dependency
     var view: PatienceInputView? { get }
     var interactor: PatienceUsecase! { get }
-    var router: AuthWireFrame! { get }
+    var router: PatienceInputWireframe! { get }
     /// 登録ボタンがタップされた
     /// - parameter patience:登録項目
     func didTapRegisterButton(patience: Patience)
@@ -64,6 +70,9 @@ protocol PatienceInputInteractorOutput {
 
     /// 登録に成功したことを知らせる
     func outputRegisterSuccess()
+
+    /// 更新に成功したことを知らせる
+    func outputUpdateSuccess()
 }
 
 protocol PatienceRepository {

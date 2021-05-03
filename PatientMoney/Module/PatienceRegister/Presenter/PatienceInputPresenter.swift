@@ -6,7 +6,7 @@ class PatienceInputPresenter: PatienceInputPresentation, PatienceInputInteractor
 
     var interactor: PatienceUsecase!
 
-    var router: AuthWireFrame!
+    var router: PatienceInputWireframe!
 
     var documentId: String?
 
@@ -25,6 +25,12 @@ class PatienceInputPresenter: PatienceInputPresentation, PatienceInputInteractor
     }
 
     func outputRegisterSuccess() {
+        router.closeRegisterView()
         view?.showSuccess(message: L10n.PatienceInputPresenter.StatusNotification.Success.title)
+    }
+
+    func outputUpdateSuccess() {
+        router.closeUpdateView()
+        view?.showSuccess(message: "更新が成功しました。")
     }
 }
