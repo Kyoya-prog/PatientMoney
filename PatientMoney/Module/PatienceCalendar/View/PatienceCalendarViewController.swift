@@ -53,8 +53,6 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
         presenter.selectedDateDidChange(date: date)
     }
 
-    let calendar = FSCalendar()
-
     // MARK: PatienceCalendarView
     var presenter: PatienceCalendarPresentation!
 
@@ -69,6 +67,10 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
     func updateRecord(records: [PatienceRecord]) {
         self.records = records
     }
+    
+    // MARK: Private
+    
+    private let calendar = FSCalendar()
 
     private lazy var recordsView: UITableView = {
         let view = UITableView()
@@ -95,6 +97,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
     }
 }
 
+// MARK: UITableViewDelegate, UITableViewDataSource
 extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         20
@@ -123,17 +126,12 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
     }
 }
 
+//MARK:FSCalendarDelegate, FSCalendarDataSource
 extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.date = DateUtils.getStartDay(date: date)
         present(alert, animated: true, completion: nil)
     }
-}
-
-extension PatienceCalenderViewController: UIAdaptivePresentationControllerDelegate {
-  func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
-    presenter.selectedDateDidChange(date: date)
-  }
 }
 
 private class RecordCell: UITableViewCell {
