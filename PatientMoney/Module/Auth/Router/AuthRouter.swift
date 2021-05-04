@@ -35,7 +35,7 @@ class AuthRouter: AuthWireFrame {
 
         return signUpView
     }
-    
+
     static func assembleHomeModule() -> UIViewController {
         let homeViewController = UITabBarController()
         let inputVC = UINavigationController(rootViewController: PatienceInputRouter.assembleRegisterModule())
