@@ -35,6 +35,17 @@ class AuthRouter: AuthWireFrame {
 
         return signUpView
     }
+    
+    static func assembleHomeModule() -> UIViewController {
+        let homeViewController = UITabBarController()
+        let inputVC = UINavigationController(rootViewController: PatienceInputRouter.assembleRegisterModule())
+        inputVC.tabBarItem = UITabBarItem(title: L10n.AppDelegate.HomeView.RegisterView.title, image: nil, selectedImage: nil)
+        homeViewController.addChild(inputVC)
+        let calendarVC = UINavigationController(rootViewController: PatienceCalendarRouter.assembleModule())
+        calendarVC.tabBarItem = UITabBarItem(title: L10n.AppDelegate.HomeView.CalendarView.title, image: nil, selectedImage: nil)
+        homeViewController.addChild(calendarVC)
+        return homeViewController
+    }
 
     // MARK: AuthWireFrame 
     func presentSignUpView() {
@@ -50,7 +61,7 @@ class AuthRouter: AuthWireFrame {
     }
 
     func presentHomeView() {
-        let homeView = ViewController()
+        let homeView = AuthRouter.assembleHomeModule()
         homeView.modalPresentationStyle = .fullScreen
         viewController?.present(homeView, animated: true, completion: nil)
     }
