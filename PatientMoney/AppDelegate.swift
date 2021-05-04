@@ -16,13 +16,25 @@ var window: UIWindow?
         FirebaseApp.configure()
         window = UIWindow(frame: UIScreen.main.bounds)
         var initialViewController: UIViewController
+
         if FirebaseAuthManeger.shared.isSignIn {
-            initialViewController = PatienceRegisterRouter.assembleModule()
+            initialViewController = AppDelegate.createHomeView()
         } else {
             initialViewController = ViewController()
         }
         window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()
         return true
+    }
+
+    static func createHomeView() -> UITabBarController {
+        let homeViewController = UITabBarController()
+        let inputvc = UINavigationController(rootViewController: PatienceInputRouter.assembleRegisterModule())
+        inputvc.tabBarItem = UITabBarItem(title: L10n.AppDelegate.HomeView.RegisterView.title, image: nil, selectedImage: nil)
+        homeViewController.addChild(inputvc)
+        let calendarVC = UINavigationController(rootViewController: PatienceCalendarRouter.assembleModule())
+        calendarVC.tabBarItem = UITabBarItem(title: L10n.AppDelegate.HomeView.CalendarView.title, image: nil, selectedImage: nil)
+        homeViewController.addChild(calendarVC)
+        return homeViewController
     }
 }

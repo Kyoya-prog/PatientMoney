@@ -5,10 +5,10 @@ class DateView: UIView {
     /// 入力された日付
     var selectedDate: Date {
         get {
-            DateUtils.dateFromString(string: dateTextField.text ?? "", format: dateFormat)
+            DateUtils.dateFromString(string: dateTextField.text ?? "", format: DateUtils.dateFormatJapanese)
         }
         set {
-            dateTextField.text = DateUtils.stringFromDate(date: newValue, format: dateFormat)
+            dateTextField.text = DateUtils.stringFromDate(date: newValue, format: DateUtils.dateFormatJapanese)
         }
     }
 
@@ -31,7 +31,7 @@ class DateView: UIView {
         addSubview(titleLabel)
 
         dateTextField.translatesAutoresizingMaskIntoConstraints = false
-        dateTextField.text = DateUtils.stringFromDate(date: Date(), format: dateFormat)
+        dateTextField.text = DateUtils.stringFromDate(date: Date(), format: DateUtils.dateFormatJapanese)
         dateTextField.backgroundColor = UIColor(hex: "F0E68C")
         dateTextField.textInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
         dateTextField.font = UIFont.boldSystemFont(ofSize: 20)
@@ -63,8 +63,6 @@ class DateView: UIView {
 
     private let dateTextField = PatienceTextField()
 
-    private let dateFormat = "yyyy年MM月dd日"
-
     private lazy var keyboardToolbar: UIToolbar = {
         let toolbar = UIToolbar()
         toolbar.items = [
@@ -78,6 +76,8 @@ class DateView: UIView {
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
         dateTextField.endEditing(true)
 
-        dateTextField.text = DateUtils.stringFromDate(date: datePicker.date, format: dateFormat)
+        let startDay = DateUtils.getStartDay(date: datePicker.date)
+        selectedDate = startDay
+        dateTextField.text = DateUtils.stringFromDate(date: startDay, format: DateUtils.dateFormatJapanese)
     }
 }
