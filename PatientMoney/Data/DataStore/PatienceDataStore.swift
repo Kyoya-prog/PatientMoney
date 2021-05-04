@@ -42,7 +42,7 @@ class PatienceDataStore: PatienceRepository {
         documents.map {
             PatienceEntity(documentID: $0.documentID,
                            date: ($0.data()["Date"] as? Date) ?? Date() ,
-                           description: ($0.data()["Memo"] as? String) ?? "",
+                           memo: ($0.data()["Memo"] as? String) ?? "",
                            money: ($0.data()["Money"] as? Int) ?? 0,
                            categoryTitle: ( $0.data()["Category"] as? String) ?? ""  )
         }

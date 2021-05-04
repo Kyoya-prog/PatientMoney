@@ -99,15 +99,6 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "DateView.title")
   }
 
-  internal enum DescriptionView {
-    /// メモ
-    internal static let title = L10n.tr("Localizable", "DescriptionView.title")
-    internal enum DescriptionTextView {
-      /// 未入力
-      internal static let text = L10n.tr("Localizable", "DescriptionView.descriptionTextView.text")
-    }
-  }
-
   internal enum FirebaseAuthManager {
     internal enum Error {
       internal enum Default {
@@ -130,6 +121,15 @@ internal enum L10n {
         /// パスワードが間違っています。
         internal static let message = L10n.tr("Localizable", "FirebaseAuthManager.Error.WrongPassword.message")
       }
+    }
+  }
+
+  internal enum MemoView {
+    /// メモ
+    internal static let title = L10n.tr("Localizable", "MemoView.title")
+    internal enum MemoTextView {
+      /// 未入力
+      internal static let text = L10n.tr("Localizable", "MemoView.MemoTextView.text")
     }
   }
 

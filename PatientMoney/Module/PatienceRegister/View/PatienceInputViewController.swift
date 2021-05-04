@@ -27,10 +27,10 @@ class PatienceInputViewController: UIViewController, PatienceInputView {
 
     var memoRecord: String {
         get {
-            (subViews[1] as? DescriptionView)?.memo ?? ""
+            (subViews[1] as? MemoView)?.memo ?? ""
         }
         set {
-            (subViews[1] as? DescriptionView)?.memo = newValue
+            (subViews[1] as? MemoView)?.memo = newValue
         }
     }
 
@@ -107,7 +107,7 @@ class PatienceInputViewController: UIViewController, PatienceInputView {
 
     private let subViews = [
         DateView(),
-        DescriptionView(),
+        MemoView(),
         MoneyView(),
         CategoriesView()
     ]
@@ -127,19 +127,18 @@ class PatienceInputViewController: UIViewController, PatienceInputView {
 
     private func inputAction() {
         if isNewRecord {
-            presenter.didTapRegisterButton(patience: Patience(date: dateRecord, description: memoRecord, money: moneyRecord ?? 0, category: categoryTitleRecord))
+            presenter.didTapRegisterButton(date: dateRecord, memo: memoRecord, money: moneyRecord ?? 0, categoryTitle: categoryTitleRecord)
         } else {
-            presenter.didTapUpdateButton(patience: Patience(date: dateRecord, description: memoRecord, money: moneyRecord ?? 0, category: categoryTitleRecord))
+            presenter.didTapUpdateButton(date: dateRecord, memo: memoRecord, money: moneyRecord ?? 0, categoryTitle: categoryTitleRecord)
         }
     }
 
     @objc private func inputButtonAction(_ :UIButton) {
         if let money = (subViews[2] as? MoneyView)?.money {
-            let patience = Patience(date: dateRecord, description: memoRecord, money: money, category: categoryTitleRecord)
             if isNewRecord {
-                presenter.didTapRegisterButton(patience: patience)
+                presenter.didTapRegisterButton(date: dateRecord, memo: memoRecord, money: money, categoryTitle: categoryTitleRecord)
             } else {
-                presenter.didTapUpdateButton(patience: patience)
+                presenter.didTapUpdateButton(date: dateRecord, memo: memoRecord, money: money, categoryTitle: categoryTitleRecord)
             }
         } else {
             present(alert, animated: true, completion: nil)

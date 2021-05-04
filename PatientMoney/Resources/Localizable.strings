@@ -31,9 +31,9 @@
 // DateView
 "DateView.title" = "日付";
 
-// DescriptionView
-"DescriptionView.title" = "メモ";
-"DescriptionView.descriptionTextView.text" = "未入力";
+// MemoView
+"MemoView.title" = "メモ";
+"MemoView.MemoTextView.text" = "未入力";
 
 // MoneyView
 "MoneyView.title" = "金額";

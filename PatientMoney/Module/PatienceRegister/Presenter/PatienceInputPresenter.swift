@@ -10,13 +10,13 @@ class PatienceInputPresenter: PatienceInputPresentation, PatienceInputInteractor
 
     var documentId: String?
 
-    func didTapRegisterButton(patience: Patience) {
-        interactor.registerPatienceData(date: patience.date, description: patience.description, money: patience.money, category: patience.category)
+    func didTapRegisterButton(date: Date, memo: String, money: Int, categoryTitle: String) {
+        interactor.registerPatienceData(date: date, memo: memo, money: money, category: categoryTitle)
     }
 
-    func didTapUpdateButton(patience: Patience) {
+    func didTapUpdateButton(date: Date, memo: String, money: Int, categoryTitle: String) {
         guard let documentId = documentId else { return }
-        interactor.updatePatienceData(record: .init(documentID: documentId, date: patience.date, description: patience.description, money: patience.money, categoryTitle: patience.category))
+        interactor.updatePatienceData(record: PatienceEntity(documentID: documentId, date: date, memo: memo, money: money, categoryTitle: categoryTitle))
     }
 
     // MARK: RegisterInteractorOutput

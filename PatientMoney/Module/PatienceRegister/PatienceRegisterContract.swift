@@ -2,13 +2,6 @@ import Foundation
 import RxSwift
 import UIKit
 
-struct Patience {
-    var date: Date
-    var description: String
-    var money: Int
-    var category: String
-}
-
 protocol PatienceInputWireframe {
     // Dependency
     var viewController: UIViewController? { get }
@@ -38,12 +31,18 @@ protocol PatienceInputPresentation {
     var interactor: PatienceUsecase! { get }
     var router: PatienceInputWireframe! { get }
     /// 登録ボタンがタップされた
-    /// - parameter patience:登録項目
-    func didTapRegisterButton(patience: Patience)
+    /// - parameter date:日付
+    /// - parameter memo:メモ
+    /// - parameter money: 金額
+    /// - parameter categoryTitle: カテゴリータイトル
+    func didTapRegisterButton(date: Date, memo: String, money: Int, categoryTitle: String)
 
     /// 更新ボタンがタップされた
-    /// - parameter patience:登録項目
-    func didTapUpdateButton(patience: Patience)
+    /// - parameter date:日付
+    /// - parameter memo:メモ
+    /// - parameter money: 金額
+    /// - parameter categoryTitle: カテゴリータイトル
+    func didTapUpdateButton(date: Date, memo: String, money: Int, categoryTitle: String)
 }
 
 protocol PatienceUsecase {
@@ -53,10 +52,10 @@ protocol PatienceUsecase {
     var repository: PatienceRepository! { get }
     /// データを登録する
     /// - parameter date:日付
-    /// - parameter description:メモ
+    /// - parameter memo:メモ
     /// - parameter money: 金額
     /// - parameter category: カテゴリー
-    func registerPatienceData(date: Date, description: String, money: Int, category: String)
+    func registerPatienceData(date: Date, memo: String, money: Int, category: String)
 
     /// データをupdateする
     /// - parameter record:データレコード
