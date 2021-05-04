@@ -55,7 +55,6 @@
 		3D6D012A26355E4400C30DD1 /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFEF263555F200C30DD1 /* PromisesObjC.framework */; };
 		3D6D0153263576F700C30DD1 /* MBCircularProgressBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D6D0152263576F700C30DD1 /* MBCircularProgressBar.bundle */; };
 		3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF2926353E3E00C30DD1 /* AppDelegate.swift */; };
-		3D6DFF2E26353E3E00C30DD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF2D26353E3E00C30DD1 /* ViewController.swift */; };
 		3D6DFF3326353E3F00C30DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFF3226353E3F00C30DD1 /* Assets.xcassets */; };
 		3D6DFF4126353E3F00C30DD1 /* PatientMoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF4026353E3F00C30DD1 /* PatientMoneyTests.swift */; };
 		3D6DFF4C26353E3F00C30DD1 /* PatientMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF4B26353E3F00C30DD1 /* PatientMoneyUITests.swift */; };
@@ -177,7 +176,6 @@
 		3D6D0152263576F700C30DD1 /* MBCircularProgressBar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MBCircularProgressBar.bundle; path = Carthage/Build/iOS/MBCircularProgressBar.framework/MBCircularProgressBar.bundle; sourceTree = SOURCE_ROOT; };
 		3D6DFF2626353E3E00C30DD1 /* PatientMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PatientMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6DFF2926353E3E00C30DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3D6DFF2D26353E3E00C30DD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D6DFF3226353E3F00C30DD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D6DFF3726353E3F00C30DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D6DFF3C26353E3F00C30DD1 /* PatientMoneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatientMoneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -318,10 +316,10 @@
 			isa = PBXGroup;
 			children = (
 				3D36BC90263FBF0600EDF69F /* View */,
-				3DEB53C726400B96002A2166 /* PatienceCalendarRouter.swift */,
-				3DEB53CB26400BB9002A2166 /* PatienceCalendarPresenter.swift */,
+				3DEE39AD264117D1005D3EB0 /* Presenter */,
+				3DEE39AE264117D7005D3EB0 /* Interactor */,
+				3DEE39AF264117DF005D3EB0 /* Router */,
 				3DEB53CF26400BC5002A2166 /* PatienceCalendarContract.swift */,
-				3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */,
 			);
 			path = PatienceCalendar;
 			sourceTree = "<group>";
@@ -438,7 +436,6 @@
 				3D205C6626381D4C0058064C /* Resources */,
 				3D6DFFB52635548E00C30DD1 /* GoogleServiceInfo */,
 				3D6DFF2926353E3E00C30DD1 /* AppDelegate.swift */,
-				3D6DFF2D26353E3E00C30DD1 /* ViewController.swift */,
 				3D6DFF3726353E3F00C30DD1 /* Info.plist */,
 				3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */,
 			);
@@ -538,10 +535,10 @@
 		3DE103E3263ACBC900F724B8 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				3DE1044C263C725500F724B8 /* Interactor */,
-				3DE1043B263C0C3900F724B8 /* Presenter */,
-				3DE10434263C0B0500F724B8 /* Router */,
 				3DE103E4263ACBD200F724B8 /* View */,
+				3DE1043B263C0C3900F724B8 /* Presenter */,
+				3DE1044C263C725500F724B8 /* Interactor */,
+				3DE10434263C0B0500F724B8 /* Router */,
 				3DE10407263B976700F724B8 /* AuthContract.swift */,
 			);
 			path = Auth;
@@ -613,10 +610,10 @@
 		3DE104AE263D3BC700F724B8 /* PatienceRegister */ = {
 			isa = PBXGroup;
 			children = (
+				3D6B1007263E9A6D009D21A1 /* View */,
+				3D3A3228263EF36D00077B6D /* Presenter */,
 				3D3A322F263F073E00077B6D /* Interactor */,
 				3D3A324E263F2B8400077B6D /* Router */,
-				3D3A3228263EF36D00077B6D /* Presenter */,
-				3D6B1007263E9A6D009D21A1 /* View */,
 				3D3A3215263EE0F700077B6D /* PatienceRegisterContract.swift */,
 			);
 			path = PatienceRegister;
@@ -648,6 +645,30 @@
 				3D3A323E263F096B00077B6D /* PatienceDataStore.swift */,
 			);
 			path = DataStore;
+			sourceTree = "<group>";
+		};
+		3DEE39AD264117D1005D3EB0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3DEB53CB26400BB9002A2166 /* PatienceCalendarPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3DEE39AE264117D7005D3EB0 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3DEE39AF264117DF005D3EB0 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3DEB53C726400B96002A2166 /* PatienceCalendarRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -838,7 +859,6 @@
 				3D36BC92263FBF1A00EDF69F /* PatienceCalendarViewController.swift in Sources */,
 				3D6B0FDD263D8031009D21A1 /* HeightSelfSizingCollectionView.swift in Sources */,
 				3D6B0FEC263E714D009D21A1 /* DateUtils.swift in Sources */,
-				3D6DFF2E26353E3E00C30DD1 /* ViewController.swift in Sources */,
 				3DE103C82638360000F724B8 /* Strings.swift in Sources */,
 				3D6B0FF6263E76AA009D21A1 /* MemoView.swift in Sources */,
 				3D3A3250263F2B9800077B6D /* PatienceInputRouter.swift in Sources */,
