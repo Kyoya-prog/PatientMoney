@@ -9,11 +9,11 @@ class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarI
         router.presentRegisterModal(date: date)
     }
 
-    func didTappedRecordCell(record: PatienceRecord) {
+    func didTapRecordCell(record: PatienceRecord) {
         router.presentUpdateView(record: record)
     }
 
-    func dateDidchange(date: Date) {
+    func selectedDateDidChange(date: Date) {
         interactor.fetchPatienceData(date: DateUtils.getStartDay(date: date))
     }
 

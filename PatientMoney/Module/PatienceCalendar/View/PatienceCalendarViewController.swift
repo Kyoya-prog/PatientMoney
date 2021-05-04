@@ -19,7 +19,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 
     var date = DateUtils.getStartDay(date: Date()) {
         didSet {
-            presenter.dateDidchange(date: date)
+            presenter.selectedDateDidChange(date: date)
         }
     }
 
@@ -45,12 +45,12 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
             recordsView.widthAnchor.constraint(equalToConstant: view.frame.width),
             recordsView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.4 )
         ])
-        presenter.dateDidchange(date: DateUtils.getStartDay(date: Date()))
+        presenter.selectedDateDidChange(date: DateUtils.getStartDay(date: Date()))
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.dateDidchange(date: date)
+        presenter.selectedDateDidChange(date: date)
     }
 
     let calendar = FSCalendar()
@@ -118,7 +118,7 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let record = records[indexPath.item]
-        presenter.didTappedRecordCell(record: record)
+        presenter.didTapRecordCell(record: record)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -132,7 +132,7 @@ extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSour
 
 extension PatienceCalenderViewController: UIAdaptivePresentationControllerDelegate {
   func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
-    presenter.dateDidchange(date: date)
+    presenter.selectedDateDidChange(date: date)
   }
 }
 

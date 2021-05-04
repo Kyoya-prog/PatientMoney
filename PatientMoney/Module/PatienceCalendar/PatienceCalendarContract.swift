@@ -41,11 +41,11 @@ protocol PatienceCalendarPresentation {
 
     /// 記録セルがタップされた
     /// - parameter record:記録
-    func didTappedRecordCell(record: PatienceRecord)
+    func didTapRecordCell(record: PatienceRecord)
 
     /// 日付が変更された
     /// - parameter date:日付
-    func dateDidchange(date: Date)
+    func selectedDateDidChange(date: Date)
 }
 
 protocol PatienceCalendarUsecase {
