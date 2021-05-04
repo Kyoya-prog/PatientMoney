@@ -2,24 +2,16 @@ import Foundation
 import FSCalendar
 import UIKit
 
-struct PatienceRecord {
-    var documentID: String
-    var date: Date
-    var description: String
-    var money: Int
-    var categoryTitle: String
-}
-
-class PatienceCalenderViewController: UIViewController {
-    var records: [PatienceRecord] = [] {
+class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
+    var records: [PatienceEntity] = [] {
         didSet {
             recordsView.reloadData()
         }
     }
 
-    var date = Date() {
+    var date = DateUtils.getStartDay(date: Date()) {
         didSet {
-            recordsView.reloadData()
+            presenter.selectedDateDidChange(date: date)
         }
     }
 
@@ -42,22 +34,62 @@ class PatienceCalenderViewController: UIViewController {
 
             recordsView.topAnchor.constraint(equalTo: calendar.bottomAnchor),
             recordsView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            recordsView.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
-            recordsView.widthAnchor.constraint(equalToConstant: view.frame.width)
+            recordsView.widthAnchor.constraint(equalToConstant: view.frame.width),
+            recordsView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.4 )
         ])
+        presenter.selectedDateDidChange(date: DateUtils.getStartDay(date: Date()))
     }
 
-    let calendar = FSCalendar()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.selectedDateDidChange(date: date)
+    }
 
-    private lazy var recordsView: HeightSelfSizingTableView = {
-        let view = HeightSelfSizingTableView()
+    // MARK: PatienceCalendarView
+    var presenter: PatienceCalendarPresentation!
+
+    func showError(message: String) {
+        StatusNotification.notifyError(message)
+    }
+
+    func showSuccess(message: String) {
+        StatusNotification.notifySuccess(message)
+    }
+
+    func updateRecord(records: [PatienceEntity]) {
+        self.records = records
+    }
+
+    // MARK: Private
+
+    private let calendar = FSCalendar()
+
+    private lazy var recordsView: UITableView = {
+        let view = UITableView()
         view.register(RecordCell.self, forCellReuseIdentifier: RecordCell.reuseIdentifer)
         view.delegate = self
         view.dataSource = self
         return view
     }()
+
+    private lazy var alert: UIAlertController = {
+        let alert = UIAlertController(title: "日付から選択", message: "項目を登録しますか？", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "登録しない", style: .cancel)
+        let registerAction = UIAlertAction(title: "登録する", style: .default) { [weak self]_ in
+            self?.didTapRegisterButton()
+        }
+
+        alert.addAction(cancelAction)
+        alert.addAction(registerAction)
+        return alert
+    }()
+
+    private func didTapRegisterButton() {
+        presenter.didTapRegisterButton(date: date)
+    }
 }
 
+// MARK: UITableViewDelegate, UITableViewDataSource
 extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         20
@@ -80,18 +112,22 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let record = records[indexPath.item]
+        presenter.didTapRecordCell(record: record)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
+// MARK: FSCalendarDelegate, FSCalendarDataSource
 extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        self.date = date
+        self.date = DateUtils.getStartDay(date: date)
+        present(alert, animated: true, completion: nil)
     }
 }
 
 private class RecordCell: UITableViewCell {
-    var categoryTitle = ""{
+    var categoryTitle = L10n.CategoriesView.IconTitle.pizzaSlice {
         didSet {
             updateValue()
         }

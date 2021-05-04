@@ -1,14 +1,14 @@
 import Foundation
 import UIKit
 
-class DescriptionView: UIView {
+class MemoView: UIView {
     /// メモ
     var memo: String {
         get {
-            descriptionTextView.text
+            memoTextView.text
         }
         set {
-            descriptionTextView.text = newValue
+            memoTextView.text = newValue
         }
     }
 
@@ -26,35 +26,35 @@ class DescriptionView: UIView {
     private func construct() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.systemFont(ofSize: 20)
-        titleLabel.text = L10n.DescriptionView.title
+        titleLabel.text = L10n.MemoView.title
         addSubview(titleLabel)
 
-        descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
-        descriptionTextView.layer.cornerRadius = 4
-        descriptionTextView.backgroundColor = UIColor(hex: "DCDCDC")
-        descriptionTextView.font = UIFont.systemFont(ofSize: 20)
-        descriptionTextView.textContainerInset = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
-        descriptionTextView.text = L10n.DescriptionView.DescriptionTextView.text
-        descriptionTextView.isScrollEnabled = false
-        addSubview(descriptionTextView)
+        memoTextView.translatesAutoresizingMaskIntoConstraints = false
+        memoTextView.layer.cornerRadius = 4
+        memoTextView.backgroundColor = UIColor(hex: "DCDCDC")
+        memoTextView.font = UIFont.systemFont(ofSize: 20)
+        memoTextView.textContainerInset = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
+        memoTextView.text = L10n.MemoView.MemoTextView.text
+        memoTextView.isScrollEnabled = false
+        addSubview(memoTextView)
 
-        descriptionTextView.inputAccessoryView = keyboardToolbar
+        memoTextView.inputAccessoryView = keyboardToolbar
 
         NSLayoutConstraint.activate([
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor),
             titleLabel.widthAnchor.constraint(equalToConstant: 50),
 
-            descriptionTextView.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 20),
-            descriptionTextView.topAnchor.constraint(equalTo: topAnchor, constant: 3),
-            descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3),
-            descriptionTextView.rightAnchor.constraint(equalTo: rightAnchor, constant: -30)
+            memoTextView.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 20),
+            memoTextView.topAnchor.constraint(equalTo: topAnchor, constant: 3),
+            memoTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3),
+            memoTextView.rightAnchor.constraint(equalTo: rightAnchor, constant: -30)
         ])
     }
 
     private let titleLabel = UILabel()
 
-    private let descriptionTextView = UITextView()
+    private let memoTextView = UITextView()
 
     private lazy var keyboardToolbar: UIToolbar = {
         let toolbar = UIToolbar()
@@ -67,6 +67,6 @@ class DescriptionView: UIView {
     }()
 
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
-        descriptionTextView.endEditing(true)
+        memoTextView.endEditing(true)
     }
 }

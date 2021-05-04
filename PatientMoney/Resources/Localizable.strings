@@ -31,19 +31,24 @@
 // DateView
 "DateView.title" = "日付";
 
-// DescriptionView
-"DescriptionView.title" = "メモ";
-"DescriptionView.descriptionTextView.text" = "未入力";
+// MemoView
+"MemoView.title" = "メモ";
+"MemoView.MemoTextView.text" = "未入力";
 
 // MoneyView
 "MoneyView.title" = "金額";
 
 // RegisterViewController
-"PatienceRegisterViewController.RegisterButton.title" = "登録する";
-"PatienceRegisterViewController.NavigationItem.title" = "登録画面";
-"PatienceRegisterViewController.Alert.OkAction.title" = "OK";
-"PatienceRegisterViewController.Alert.CancelAction.title" = "キャンセル";
-"PatienceRegisterViewController.Alert.title" = "金額が０円ですがこのまま登録しますか？";
-"PatienceRegisterPresenter.StatusNotification.Success.title" = "登録に成功しました";
-"PatienceRegisterPresenter.StatusNotification.Failure.title" = "登録に失敗しました";
+"PatienceInputViewController.InputButton.Register.title" = "登録する";
+"PatienceInputViewController.InputButton.Update.title" = "更新する";
+"PatienceInputViewController.NavigationItem.title" = "登録画面";
+"PatienceInputViewController.Alert.OkAction.title" = "OK";
+"PatienceInputViewController.Alert.CancelAction.title" = "キャンセル";
+"PatienceInputViewController.Alert.title" = "金額が０円ですがこのまま登録しますか？";
+"PatienceInputPresenter.StatusNotification.Success.title" = "登録に成功しました";
+"PatienceInputPresenter.StatusNotification.Failure.title" = "登録に失敗しました";
+
+// AppDelegate
+"AppDelegate.HomeView.RegisterView.title" = "登録";
+"AppDelegate.HomeView.CalendarView.title" = "カレンダー";
 

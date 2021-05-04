@@ -11,6 +11,19 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
+  internal enum AppDelegate {
+    internal enum HomeView {
+      internal enum CalendarView {
+        /// カレンダー
+        internal static let title = L10n.tr("Localizable", "AppDelegate.HomeView.CalendarView.title")
+      }
+      internal enum RegisterView {
+        /// 登録
+        internal static let title = L10n.tr("Localizable", "AppDelegate.HomeView.RegisterView.title")
+      }
+    }
+  }
+
   internal enum AuthViewController {
     /// パスワードは8文字以上入力してください。
     internal static let passwordMustMoreEightCharacters = L10n.tr("Localizable", "AuthViewController.passwordMustMoreEightCharacters")
@@ -86,15 +99,6 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "DateView.title")
   }
 
-  internal enum DescriptionView {
-    /// メモ
-    internal static let title = L10n.tr("Localizable", "DescriptionView.title")
-    internal enum DescriptionTextView {
-      /// 未入力
-      internal static let text = L10n.tr("Localizable", "DescriptionView.descriptionTextView.text")
-    }
-  }
-
   internal enum FirebaseAuthManager {
     internal enum Error {
       internal enum Default {
@@ -120,44 +124,59 @@ internal enum L10n {
     }
   }
 
+  internal enum MemoView {
+    /// メモ
+    internal static let title = L10n.tr("Localizable", "MemoView.title")
+    internal enum MemoTextView {
+      /// 未入力
+      internal static let text = L10n.tr("Localizable", "MemoView.MemoTextView.text")
+    }
+  }
+
   internal enum MoneyView {
     /// 金額
     internal static let title = L10n.tr("Localizable", "MoneyView.title")
   }
 
-  internal enum PatienceRegisterPresenter {
+  internal enum PatienceInputPresenter {
     internal enum StatusNotification {
       internal enum Failure {
         /// 登録に失敗しました
-        internal static let title = L10n.tr("Localizable", "PatienceRegisterPresenter.StatusNotification.Failure.title")
+        internal static let title = L10n.tr("Localizable", "PatienceInputPresenter.StatusNotification.Failure.title")
       }
       internal enum Success {
         /// 登録に成功しました
-        internal static let title = L10n.tr("Localizable", "PatienceRegisterPresenter.StatusNotification.Success.title")
+        internal static let title = L10n.tr("Localizable", "PatienceInputPresenter.StatusNotification.Success.title")
       }
     }
   }
 
-  internal enum PatienceRegisterViewController {
+  internal enum PatienceInputViewController {
     internal enum Alert {
       /// 金額が０円ですがこのまま登録しますか？
-      internal static let title = L10n.tr("Localizable", "PatienceRegisterViewController.Alert.title")
+      internal static let title = L10n.tr("Localizable", "PatienceInputViewController.Alert.title")
       internal enum CancelAction {
         /// キャンセル
-        internal static let title = L10n.tr("Localizable", "PatienceRegisterViewController.Alert.CancelAction.title")
+        internal static let title = L10n.tr("Localizable", "PatienceInputViewController.Alert.CancelAction.title")
       }
       internal enum OkAction {
         /// OK
-        internal static let title = L10n.tr("Localizable", "PatienceRegisterViewController.Alert.OkAction.title")
+        internal static let title = L10n.tr("Localizable", "PatienceInputViewController.Alert.OkAction.title")
+      }
+    }
+    internal enum InputButton {
+      internal enum Register {
+        /// 登録する
+        internal static let title = L10n.tr("Localizable", "PatienceInputViewController.InputButton.Register.title")
+      }
+      internal enum Update {
+        /// 更新する
+        internal static let title = L10n.tr("Localizable", "PatienceInputViewController.InputButton.Update.title")
       }
     }
     internal enum NavigationItem {
       /// 登録画面
-      internal static let title = L10n.tr("Localizable", "PatienceRegisterViewController.NavigationItem.title")
-    }
-    internal enum RegisterButton {
-      /// 登録する
-      internal static let title = L10n.tr("Localizable", "PatienceRegisterViewController.RegisterButton.title")
+      internal static let title = L10n.tr("Localizable", "PatienceInputViewController.NavigationItem.title")
     }
   }
 }
