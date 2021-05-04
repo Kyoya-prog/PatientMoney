@@ -6,7 +6,7 @@ import RxSwift
 class PatienceDataStore: PatienceRepository {
     func registerPatienceData(data: [String: Any]) -> Error? {
         var returningError: Error?
-        firestore.collection("patience").addDocument(data: data) { error in
+        firestoreCollectionReference.addDocument(data: data) { error in
             returningError = error
         }
         return returningError
@@ -14,9 +14,8 @@ class PatienceDataStore: PatienceRepository {
 
     func fetchPatienceData(date: Date) -> Single<[PatienceRecord]> {
         Single<[PatienceRecord]>.create { [weak self] observer -> Disposable in
-            guard let self = self else { return Disposables.create() }
-            let ref = self.firestore.collection("patience")
-            let query = ref.whereField("UID", isEqualTo: FirebaseAuthManeger.shared.uid).whereField("Date", isEqualTo: date)
+            guard let self = self else { return Disposables.create()}
+                let query = self.firestoreCollectionReference.whereField("UID", isEqualTo: FirebaseAuthManeger.shared.uid).whereField("Date", isEqualTo: date)
             query.getDocuments { query, error in
                 if let error = error {
                     observer(.failure(error))
@@ -31,15 +30,13 @@ class PatienceDataStore: PatienceRepository {
         }
     }
     func updatePatienceData(documentId: String, record: [String: Any]) -> Error? {
-        let document = firestore.collection("patience").document(documentId)
+        let document = firestoreCollectionReference.document(documentId)
         var returningError: Error?
         document.updateData(record) { error in
             returningError = error
         }
         return returningError
     }
-
-    private let firestore = Firestore.firestore()
 
     private func createPatienceRecord(documents: [QueryDocumentSnapshot]) -> [PatienceRecord] {
         documents.map {
@@ -50,4 +47,6 @@ class PatienceDataStore: PatienceRepository {
                            categoryTitle: ( $0.data()["Category"] as? String) ?? ""  )
         }
     }
+    
+    private let firestoreCollectionReference = Firestore.firestore().collection("patience")
 }
