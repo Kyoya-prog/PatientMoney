@@ -22,7 +22,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lRL-Bf-LLf">
-                                <rect key="frame" x="-33" y="206.5" width="480" height="483.5"/>
+                                <rect key="frame" x="0.0" y="206.5" width="414" height="483"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lRL-Bf-LLf" secondAttribute="height" multiplier="6:7" id="is1-iC-ZpI"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
@@ -30,6 +33,8 @@
                         <constraints>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="5cz-MP-9tL"/>
                             <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="20" symbolic="YES" id="SfN-ll-jLj"/>
+                            <constraint firstAttribute="trailing" secondItem="lRL-Bf-LLf" secondAttribute="trailing" id="Tkn-Uy-4JA"/>
+                            <constraint firstItem="lRL-Bf-LLf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="XWp-ZM-QUR"/>
                             <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
                             <constraint firstItem="lRL-Bf-LLf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cDu-nt-Ou6"/>
                             <constraint firstItem="lRL-Bf-LLf" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="opo-3m-Aa6"/>

@@ -1181,7 +1181,7 @@
 				3D6DFF4F26353E3F00C30DD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		3D6DFF5026353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "PatientMoney" */ = {
 			isa = XCConfigurationList;
@@ -1190,7 +1190,7 @@
 				3D6DFF5226353E3F00C30DD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		3D6DFF5326353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "PatientMoneyTests" */ = {
 			isa = XCConfigurationList;
@@ -1199,7 +1199,7 @@
 				3D6DFF5526353E3F00C30DD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		3D6DFF5626353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "PatientMoneyUITests" */ = {
 			isa = XCConfigurationList;
@@ -1208,7 +1208,7 @@
 				3D6DFF5826353E3F00C30DD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
