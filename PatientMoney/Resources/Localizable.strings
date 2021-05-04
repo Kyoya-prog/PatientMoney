@@ -48,3 +48,7 @@
 "PatienceInputPresenter.StatusNotification.Success.title" = "登録に成功しました";
 "PatienceInputPresenter.StatusNotification.Failure.title" = "登録に失敗しました";
 
+// AppDelegate
+"AppDelegate.HomeView.RegisterView.title" = "登録";
+"AppDelegate.HomeView.CalendarView.title" = "カレンダー";
+

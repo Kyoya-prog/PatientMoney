@@ -11,6 +11,19 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
+  internal enum AppDelegate {
+    internal enum HomeView {
+      internal enum CalendarView {
+        /// カレンダー
+        internal static let title = L10n.tr("Localizable", "AppDelegate.HomeView.CalendarView.title")
+      }
+      internal enum RegisterView {
+        /// 登録
+        internal static let title = L10n.tr("Localizable", "AppDelegate.HomeView.RegisterView.title")
+      }
+    }
+  }
+
   internal enum AuthViewController {
     /// パスワードは8文字以上入力してください。
     internal static let passwordMustMoreEightCharacters = L10n.tr("Localizable", "AuthViewController.passwordMustMoreEightCharacters")
