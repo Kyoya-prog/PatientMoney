@@ -2,16 +2,8 @@ import Foundation
 import FSCalendar
 import UIKit
 
-struct PatienceRecord {
-    var documentID: String
-    var date: Date
-    var description: String
-    var money: Int
-    var categoryTitle: String
-}
-
 class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
-    var records: [PatienceRecord] = [] {
+    var records: [PatienceEntity] = [] {
         didSet {
             recordsView.reloadData()
         }
@@ -64,12 +56,12 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
         StatusNotification.notifySuccess(message)
     }
 
-    func updateRecord(records: [PatienceRecord]) {
+    func updateRecord(records: [PatienceEntity]) {
         self.records = records
     }
-    
+
     // MARK: Private
-    
+
     private let calendar = FSCalendar()
 
     private lazy var recordsView: UITableView = {
@@ -126,7 +118,7 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
     }
 }
 
-//MARK:FSCalendarDelegate, FSCalendarDataSource
+// MARK: FSCalendarDelegate, FSCalendarDataSource
 extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.date = DateUtils.getStartDay(date: date)

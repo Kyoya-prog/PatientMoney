@@ -10,7 +10,7 @@ protocol PatienceCalendarWireframe {
 
     /// 更新画面を表示する
     /// - parameter record:登録データ
-    func presentUpdateView(record: PatienceRecord)
+    func presentUpdateView(record: PatienceEntity)
 }
 
 protocol PatienceCalendarView {
@@ -26,7 +26,7 @@ protocol PatienceCalendarView {
 
     /// 記録配列を更新する
     /// - parameter records:記録
-    func updateRecord(records: [PatienceRecord])
+    func updateRecord(records: [PatienceEntity])
 }
 
 protocol PatienceCalendarPresentation {
@@ -41,7 +41,7 @@ protocol PatienceCalendarPresentation {
 
     /// 記録セルがタップされた
     /// - parameter record:記録
-    func didTapRecordCell(record: PatienceRecord)
+    func didTapRecordCell(record: PatienceEntity)
 
     /// 日付が変更された
     /// - parameter date:日付
@@ -59,7 +59,7 @@ protocol PatienceCalendarUsecase {
 protocol PatienceCalendarInteractorOutput {
     /// フェッチしてきたデータを表示する
     /// - parameter records:フェッチされた記録
-    func outputFetchData(records: [PatienceRecord])
+    func outputFetchData(records: [PatienceEntity])
 
     /// エラーを返す
     func outputError()

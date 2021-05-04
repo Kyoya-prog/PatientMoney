@@ -9,7 +9,7 @@ class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarI
         router.presentRegisterModal(date: date)
     }
 
-    func didTapRecordCell(record: PatienceRecord) {
+    func didTapRecordCell(record: PatienceEntity) {
         router.presentUpdateView(record: record)
     }
 
@@ -17,7 +17,7 @@ class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarI
         interactor.fetchPatienceData(date: DateUtils.getStartDay(date: date))
     }
 
-    func outputFetchData(records: [PatienceRecord]) {
+    func outputFetchData(records: [PatienceEntity]) {
         view?.updateRecord(records: records)
     }
 

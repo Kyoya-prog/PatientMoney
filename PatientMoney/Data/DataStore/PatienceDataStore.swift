@@ -12,9 +12,9 @@ class PatienceDataStore: PatienceRepository {
         return returningError
     }
 
-    func fetchPatienceData(date: Date) -> Single<[PatienceRecord]> {
-        Single<[PatienceRecord]>.create { [weak self] observer -> Disposable in
-            guard let self = self else { return Disposables.create()}
+    func fetchPatienceData(date: Date) -> Single<[PatienceEntity]> {
+        Single<[PatienceEntity]>.create { [weak self] observer -> Disposable in
+            guard let self = self else { return Disposables.create() }
                 let query = self.firestoreCollectionReference.whereField("UID", isEqualTo: FirebaseAuthManeger.shared.uid).whereField("Date", isEqualTo: date)
             query.getDocuments { query, error in
                 if let error = error {
@@ -38,15 +38,15 @@ class PatienceDataStore: PatienceRepository {
         return returningError
     }
 
-    private func createPatienceRecord(documents: [QueryDocumentSnapshot]) -> [PatienceRecord] {
+    private func createPatienceRecord(documents: [QueryDocumentSnapshot]) -> [PatienceEntity] {
         documents.map {
-            PatienceRecord(documentID: $0.documentID,
+            PatienceEntity(documentID: $0.documentID,
                            date: ($0.data()["Date"] as? Date) ?? Date() ,
                            description: ($0.data()["Memo"] as? String) ?? "",
                            money: ($0.data()["Money"] as? Int) ?? 0,
                            categoryTitle: ( $0.data()["Category"] as? String) ?? ""  )
         }
     }
-    
+
     private let firestoreCollectionReference = Firestore.firestore().collection("patience")
 }

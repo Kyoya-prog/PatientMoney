@@ -60,7 +60,7 @@ protocol PatienceUsecase {
 
     /// データをupdateする
     /// - parameter record:データレコード
-    func updatePatienceData(record: PatienceRecord)
+    func updatePatienceData(record: PatienceEntity)
 }
 
 protocol PatienceInputInteractorOutput {
@@ -82,7 +82,7 @@ protocol PatienceRepository {
 
     /// データをフェッチする
     /// - parameter data:日付
-    func fetchPatienceData(date: Date) -> Single<[PatienceRecord]>
+    func fetchPatienceData(date: Date) -> Single<[PatienceEntity]>
 
     /// データをupdateする
     /// - parameter documentId:ドキュメントID

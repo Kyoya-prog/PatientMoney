@@ -1,7 +1,7 @@
 import Foundation
 
 class PatienceInputInteractor: PatienceUsecase {
-    func updatePatienceData(record: PatienceRecord) {
+    func updatePatienceData(record: PatienceEntity) {
         let documentData = ["Date": record.date, "Memo": record.description, "Money": record.money, "Category": record.categoryTitle, "UID": uid] as [String: Any]
         if let error = repository.updatePatienceData(documentId: record.documentID, record: documentData ) {
             output?.outputRegisterError(error: error)
