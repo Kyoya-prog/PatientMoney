@@ -18,14 +18,20 @@ class FirebaseAuthManeger {
 
     /// サインインする
     func signIn(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
+            if let user = Auth.auth().currentUser {
+                self?.uid = user.uid
+            }
             completion?(result, error)
         }
     }
 
     /// サインアップする
     func signUp(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
+            if let user = Auth.auth().currentUser {
+                self?.uid = user.uid
+            }
             completion?(result, error)
         }
     }
