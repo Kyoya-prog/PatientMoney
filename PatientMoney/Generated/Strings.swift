@@ -138,6 +138,13 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "MoneyView.title")
   }
 
+  internal enum PatienceCalendarViewController {
+    internal enum NavigationItem {
+      /// カレンダー
+      internal static let title = L10n.tr("Localizable", "PatienceCalendarViewController.NavigationItem.title")
+    }
+  }
+
   internal enum PatienceInputPresenter {
     internal enum StatusNotification {
       internal enum Failure {

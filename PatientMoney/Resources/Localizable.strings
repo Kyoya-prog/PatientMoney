@@ -52,3 +52,6 @@
 "AppDelegate.HomeView.RegisterView.title" = "登録";
 "AppDelegate.HomeView.CalendarView.title" = "カレンダー";
 
+// PatienceCalendarViewController
+"PatienceCalendarViewController.NavigationItem.title" = "カレンダー";
+

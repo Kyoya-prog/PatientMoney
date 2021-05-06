@@ -17,6 +17,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = L10n.PatienceCalendarViewController.NavigationItem.title
         view.backgroundColor = .white
         calendar.translatesAutoresizingMaskIntoConstraints = false
         calendar.delegate = self
