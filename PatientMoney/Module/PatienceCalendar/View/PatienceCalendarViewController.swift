@@ -128,7 +128,7 @@ extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSour
 }
 
 private class RecordCell: UITableViewCell {
-    var categoryTitle = L10n.CategoriesView.IconTitle.pizzaSlice {
+    var categoryTitle = L10n.CategoryIcon.Title.pizzaSlice {
         didSet {
             updateValue()
         }

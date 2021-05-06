@@ -4,7 +4,11 @@ import UIKit
 /// カテゴリーView
 class CategoriesView: UIView {
     /// 選択されたカテゴリータイトル
-    var selectedCategoryTitle: String = L10n.CategoriesView.IconTitle.pizzaSlice
+    var selectedCategoryTitle: String = L10n.CategoryIcon.Title.pizzaSlice {
+        didSet {
+            categoriesView.reloadData()
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
