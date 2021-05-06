@@ -4,7 +4,11 @@ import UIKit
 /// カテゴリーView
 class CategoriesView: UIView {
     /// 選択されたカテゴリータイトル
-    var selectedCategoryTitle: String = L10n.CategoriesView.IconTitle.pizzaSlice
+    var selectedCategoryTitle: String = L10n.CategoryIcon.Title.pizzaSlice {
+        didSet {
+            categoriesView.reloadData()
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,8 +22,6 @@ class CategoriesView: UIView {
 
     private func construct() {
         categoriesView.translatesAutoresizingMaskIntoConstraints = false
-        categoriesView.delegate = self
-        categoriesView.dataSource = self
         addSubview(categoriesView)
 
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -51,6 +53,8 @@ class CategoriesView: UIView {
     private lazy var categoriesView: UICollectionView = {
         let view = HeightSelfSizingCollectionView(frame: frame, collectionViewLayout: categoriesViewLayout)
         view.backgroundColor = .clear
+        view.delegate = self
+        view.dataSource = self
         view.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseIdentifer)
         return view
     }()
@@ -74,6 +78,7 @@ extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource, 
         // swiftlint:disable:next force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseIdentifer, for: indexPath) as! CategoryCell
         let category = Category.categories[indexPath.item]
+        print(category)
         cell.icon = category.icon
         cell.title = category.title
         cell.color = category.color

@@ -84,13 +84,16 @@ internal enum L10n {
   internal enum CategoriesView {
     /// カテゴリー
     internal static let title = L10n.tr("Localizable", "CategoriesView.title")
-    internal enum IconTitle {
+  }
+
+  internal enum CategoryIcon {
+    internal enum Title {
       /// 交通費
-      internal static let bus = L10n.tr("Localizable", "CategoriesView.IconTitle.bus")
+      internal static let bus = L10n.tr("Localizable", "CategoryIcon.Title.bus")
       /// 趣味
-      internal static let paintBrush = L10n.tr("Localizable", "CategoriesView.IconTitle.paintBrush")
+      internal static let paintBrush = L10n.tr("Localizable", "CategoryIcon.Title.paintBrush")
       /// 飲食費
-      internal static let pizzaSlice = L10n.tr("Localizable", "CategoriesView.IconTitle.pizzaSlice")
+      internal static let pizzaSlice = L10n.tr("Localizable", "CategoryIcon.Title.pizzaSlice")
     }
   }
 
@@ -136,6 +139,13 @@ internal enum L10n {
   internal enum MoneyView {
     /// 金額
     internal static let title = L10n.tr("Localizable", "MoneyView.title")
+  }
+
+  internal enum PatienceCalendarViewController {
+    internal enum NavigationItem {
+      /// カレンダー
+      internal static let title = L10n.tr("Localizable", "PatienceCalendarViewController.NavigationItem.title")
+    }
   }
 
   internal enum PatienceInputPresenter {

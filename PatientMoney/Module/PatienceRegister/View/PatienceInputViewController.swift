@@ -98,6 +98,7 @@ class PatienceInputViewController: UIViewController, PatienceInputView {
     }
 
     func showSuccess(message: String) {
+        resetData()
         StatusNotification.notifySuccess(message)
     }
 
@@ -131,6 +132,13 @@ class PatienceInputViewController: UIViewController, PatienceInputView {
         } else {
             presenter.didTapUpdateButton(date: dateRecord, memo: memoRecord, money: moneyRecord ?? 0, categoryTitle: categoryTitleRecord)
         }
+    }
+
+    private func resetData() {
+        dateRecord = Date()
+        moneyRecord = 0
+        memoRecord = L10n.MemoView.MemoTextView.text
+        categoryTitleRecord = L10n.CategoryIcon.Title.pizzaSlice
     }
 
     @objc private func inputButtonAction(_ :UIButton) {
