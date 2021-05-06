@@ -24,9 +24,11 @@
 
 // CategoriesView
 "CategoriesView.title" = "カテゴリー";
-"CategoriesView.IconTitle.pizzaSlice" = "飲食費";
-"CategoriesView.IconTitle.bus" = "交通費";
-"CategoriesView.IconTitle.paintBrush" = "趣味";
+
+/// CategoryIcon
+"CategoryIcon.Title.pizzaSlice" = "飲食費";
+"CategoryIcon.Title.bus" = "交通費";
+"CategoryIcon.Title.paintBrush" = "趣味";
 
 // DateView
 "DateView.title" = "日付";
