@@ -39,10 +39,10 @@ class AuthRouter: AuthWireFrame {
     static func assembleHomeModule() -> UIViewController {
         let homeViewController = UITabBarController()
         let inputVC = UINavigationController(rootViewController: PatienceInputRouter.assembleRegisterModule())
-        inputVC.tabBarItem = UITabBarItem(title: L10n.AppDelegate.HomeView.RegisterView.title, image: nil, selectedImage: nil)
+        inputVC.tabBarItem = UITabBarItem(title: L10n.AppDelegate.HomeView.RegisterView.title, image: Asset.pen.image, selectedImage: nil)
         homeViewController.addChild(inputVC)
         let calendarVC = UINavigationController(rootViewController: PatienceCalendarRouter.assembleModule())
-        calendarVC.tabBarItem = UITabBarItem(title: L10n.AppDelegate.HomeView.CalendarView.title, image: nil, selectedImage: nil)
+        calendarVC.tabBarItem = UITabBarItem(title: L10n.AppDelegate.HomeView.CalendarView.title, image: Asset.calendar.image, selectedImage: nil)
         homeViewController.addChild(calendarVC)
         return homeViewController
     }
