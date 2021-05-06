@@ -72,6 +72,7 @@ class AuthViewController: UIViewController, AuthView {
         view.addSubview(mailAddressLabel)
 
         mailAddressTextField.translatesAutoresizingMaskIntoConstraints = false
+        mailAddressTextField.delegate = self
         mailAddressTextField.font = UIFont.systemFont(ofSize: 14)
         mailAddressTextField.layer.borderWidth = 1
         mailAddressTextField.layer.borderColor = UIColor(hex: "FFA500").cgColor
@@ -88,6 +89,7 @@ class AuthViewController: UIViewController, AuthView {
         view.addSubview(passwordLabel)
 
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.delegate = self
         passwordTextField.font = UIFont.systemFont(ofSize: 14)
         passwordTextField.layer.borderWidth = 1
         passwordTextField.layer.cornerRadius = 4
@@ -183,5 +185,12 @@ class AuthViewController: UIViewController, AuthView {
 
     @objc private func didChangePasswordTextField(_ sender: PatienceTextField) {
         passwordTextFieldChangeAction()
+    }
+}
+
+extension AuthViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
