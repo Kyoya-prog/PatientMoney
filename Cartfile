@@ -1,6 +1,4 @@
-github "MatiBot/MBCircularProgressBar"
 github "Daltron/NotificationBanner" "master"
-github "WenchaoD/FSCalendar"
 Github "ReactiveX/RxSwift"
 
 ## firebase

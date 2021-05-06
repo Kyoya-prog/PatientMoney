@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3D205C6326381C820058064C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6226381C820058064C /* Localizable.strings */; };
 		3D205C6B26381EAB0058064C /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6A26381EAB0058064C /* gRPCCertificates-Cpp.bundle */; };
-		3D36BC8C263FBDCC00EDF69F /* FSCalendar.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D36BC8B263FBDCC00EDF69F /* FSCalendar.xcframework */; };
 		3D36BC92263FBF1A00EDF69F /* PatienceCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */; };
 		3D36BC99263FD39200EDF69F /* HeightSelfSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC98263FD39200EDF69F /* HeightSelfSizingTableView.swift */; };
 		3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC9E263FD60F00EDF69F /* Category.swift */; };
@@ -238,7 +237,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D36BC8C263FBDCC00EDF69F /* FSCalendar.xcframework in Frameworks */,
 				3D6D012826355E4400C30DD1 /* nanopb.framework in Frameworks */,
 				3D97733D2640495200419E8A /* RxCocoa.xcframework in Frameworks */,
 				3D6D010626355E4300C30DD1 /* BoringSSL-GRPC.framework in Frameworks */,
