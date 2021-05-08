@@ -50,7 +50,6 @@
 		3D6D012426355E4400C30DD1 /* leveldb-library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFBC263555E700C30DD1 /* leveldb-library.framework */; };
 		3D6D012826355E4400C30DD1 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFF0263555F200C30DD1 /* nanopb.framework */; };
 		3D6D012A26355E4400C30DD1 /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6DFFEF263555F200C30DD1 /* PromisesObjC.framework */; };
-		3D6D0153263576F700C30DD1 /* MBCircularProgressBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D6D0152263576F700C30DD1 /* MBCircularProgressBar.bundle */; };
 		3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF2926353E3E00C30DD1 /* AppDelegate.swift */; };
 		3D6DFF3326353E3F00C30DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFF3226353E3F00C30DD1 /* Assets.xcassets */; };
 		3D6DFF4126353E3F00C30DD1 /* PatientMoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF4026353E3F00C30DD1 /* PatientMoneyTests.swift */; };
@@ -130,7 +129,6 @@
 /* Begin PBXFileReference section */
 		3D205C6226381C820058064C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3D205C6A26381EAB0058064C /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "gRPCCertificates-Cpp.bundle"; path = "../../Carthage/Build/iOS/gRPC-C++.framework/Resources/gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
-		3D36BC8B263FBDCC00EDF69F /* FSCalendar.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FSCalendar.xcframework; path = Carthage/Build/FSCalendar.xcframework; sourceTree = "<group>"; };
 		3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarViewController.swift; sourceTree = "<group>"; };
 		3D36BC98263FD39200EDF69F /* HeightSelfSizingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightSelfSizingTableView.swift; sourceTree = "<group>"; };
 		3D36BC9E263FD60F00EDF69F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 		3D6D00A626355BA500C30DD1 /* gRPC-C++.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "gRPC-C++.framework"; path = "Carthage/Build/iOS/gRPC-C++.framework"; sourceTree = "<group>"; };
 		3D6D00A726355BA500C30DD1 /* gRPC-Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "gRPC-Core.framework"; path = "Carthage/Build/iOS/gRPC-Core.framework"; sourceTree = "<group>"; };
 		3D6D00A826355BA500C30DD1 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTMSessionFetcher.framework; path = Carthage/Build/iOS/GTMSessionFetcher.framework; sourceTree = "<group>"; };
-		3D6D00A926355BA500C30DD1 /* MBCircularProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBCircularProgressBar.framework; path = Carthage/Build/iOS/MBCircularProgressBar.framework; sourceTree = "<group>"; };
 		3D6D00AA26355BA500C30DD1 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Carthage/Build/iOS/GoogleUtilities.framework; sourceTree = "<group>"; };
 		3D6D00AB26355BA500C30DD1 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Carthage/Build/iOS/FirebaseAuth.framework; sourceTree = "<group>"; };
 		3D6D00AC26355BA500C30DD1 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Carthage/Build/iOS/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
@@ -169,8 +166,6 @@
 		3D6D00B026355BA500C30DD1 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = Carthage/Build/iOS/FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
 		3D6D00B126355BA500C30DD1 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		3D6D00B226355BA500C30DD1 /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "leveldb-library.framework"; path = "Carthage/Build/iOS/leveldb-library.framework"; sourceTree = "<group>"; };
-		3D6D012D26355E4500C30DD1 /* MBCircularProgressBar.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = MBCircularProgressBar.framework.dSYM; path = Carthage/Build/iOS/MBCircularProgressBar.framework.dSYM; sourceTree = "<group>"; };
-		3D6D0152263576F700C30DD1 /* MBCircularProgressBar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MBCircularProgressBar.bundle; path = Carthage/Build/iOS/MBCircularProgressBar.framework/MBCircularProgressBar.bundle; sourceTree = SOURCE_ROOT; };
 		3D6DFF2626353E3E00C30DD1 /* PatientMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PatientMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6DFF2926353E3E00C30DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D6DFF3226353E3F00C30DD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,7 +177,6 @@
 		3D6DFF4B26353E3F00C30DD1 /* PatientMoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientMoneyUITests.swift; sourceTree = "<group>"; };
 		3D6DFF4D26353E3F00C30DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3D6DFF8B263548B200C30DD1 /* MBCircularProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBCircularProgressBar.framework; path = Carthage/Build/iOS/MBCircularProgressBar.framework; sourceTree = "<group>"; };
 		3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3D6DFFBA263555E700C30DD1 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTMSessionFetcher.framework; path = Carthage/Build/iOS/GTMSessionFetcher.framework; sourceTree = "<group>"; };
 		3D6DFFBB263555E700C30DD1 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Carthage/Build/iOS/GoogleUtilities.framework; sourceTree = "<group>"; };
@@ -292,7 +286,6 @@
 				3DE104AB263D384100F724B8 /* Font */,
 				3D205C6A26381EAB0058064C /* gRPCCertificates-Cpp.bundle */,
 				3D6DFF3226353E3F00C30DD1 /* Assets.xcassets */,
-				3D6D0152263576F700C30DD1 /* MBCircularProgressBar.bundle */,
 				3D205C6226381C820058064C /* Localizable.strings */,
 				3DE10494263D36B500F724B8 /* FontAwesome.swift */,
 			);
@@ -464,11 +457,9 @@
 				3DEB539F263FF784002A2166 /* RxRelay.xcframework */,
 				3DEB53A1263FF784002A2166 /* RxSwift.xcframework */,
 				3DEB53A2263FF784002A2166 /* RxTest.xcframework */,
-				3D36BC8B263FBDCC00EDF69F /* FSCalendar.xcframework */,
 				3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */,
 				3D3A321E263EEFE000077B6D /* NotificationBanner.xcframework */,
 				3D3A321F263EEFE000077B6D /* SnapKit.xcframework */,
-				3D6D012D26355E4500C30DD1 /* MBCircularProgressBar.framework.dSYM */,
 				3D6D00AD26355BA500C30DD1 /* abseil.framework */,
 				3D6D00A226355BA400C30DD1 /* BoringSSL-GRPC.framework */,
 				3D6D00B026355BA500C30DD1 /* FIRAnalyticsConnector.framework */,
@@ -486,7 +477,6 @@
 				3D6D00A726355BA500C30DD1 /* gRPC-Core.framework */,
 				3D6D00A826355BA500C30DD1 /* GTMSessionFetcher.framework */,
 				3D6D00B226355BA500C30DD1 /* leveldb-library.framework */,
-				3D6D00A926355BA500C30DD1 /* MBCircularProgressBar.framework */,
 				3D6D003D2635590100C30DD1 /* Build */,
 				3D6DFFF0263555F200C30DD1 /* nanopb.framework */,
 				3D6DFFEF263555F200C30DD1 /* PromisesObjC.framework */,
@@ -507,7 +497,6 @@
 				3D6DFFC7263555E700C30DD1 /* gRPC-Core.framework */,
 				3D6DFFBA263555E700C30DD1 /* GTMSessionFetcher.framework */,
 				3D6DFFBC263555E700C30DD1 /* leveldb-library.framework */,
-				3D6DFF8B263548B200C30DD1 /* MBCircularProgressBar.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -785,7 +774,6 @@
 				3D6DFF3326353E3F00C30DD1 /* Assets.xcassets in Resources */,
 				3D205C6B26381EAB0058064C /* gRPCCertificates-Cpp.bundle in Resources */,
 				3D205C6326381C820058064C /* Localizable.strings in Resources */,
-				3D6D0153263576F700C30DD1 /* MBCircularProgressBar.bundle in Resources */,
 				3D6DFF80263546EA00C30DD1 /* LaunchScreen.storyboard in Resources */,
 				3D6DFFB7263554B900C30DD1 /* GoogleService-Info.plist in Resources */,
 			);
