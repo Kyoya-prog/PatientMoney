@@ -39,6 +39,8 @@
 
 // MoneyView
 "MoneyView.title" = "金額";
+"MoneyView.MoneyTextField.placeholder" = "0";
+"MoneyView.YenLabel.text" = "円";
 
 // RegisterViewController
 "PatienceInputViewController.InputButton.Register.title" = "登録する";
@@ -47,7 +49,8 @@
 "PatienceInputViewController.Alert.OkAction.title" = "OK";
 "PatienceInputViewController.Alert.CancelAction.title" = "キャンセル";
 "PatienceInputViewController.Alert.title" = "金額が０円ですがこのまま登録しますか？";
-"PatienceInputPresenter.StatusNotification.Success.title" = "登録に成功しました";
+"PatienceInputPresenter.StatusNotification.RegisterSuccess.title" = "登録に成功しました";
+"PatienceInputPresenter.StatusNotification.UpdateSuccess.title" = "更新に成功しました";
 "PatienceInputPresenter.StatusNotification.Failure.title" = "登録に失敗しました";
 
 // AppDelegate
@@ -56,4 +59,9 @@
 
 // PatienceCalendarViewController
 "PatienceCalendarViewController.NavigationItem.title" = "カレンダー";
+"PatienceCalendarViewController.Alert.alertTitle" = "日付から選択";
+"PatienceCalendarViewController.Alert.alertMessage" = "項目を登録しますか？";
+"PatienceCalendarViewController.Alert.CancelAction.title" = "登録しない";
+"PatienceCalendarViewController.Alert.RegisterAction.title" = "登録する";
+
 

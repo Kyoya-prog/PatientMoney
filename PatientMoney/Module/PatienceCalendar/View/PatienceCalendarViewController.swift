@@ -76,9 +76,9 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
     }()
 
     private lazy var alert: UIAlertController = {
-        let alert = UIAlertController(title: "日付から選択", message: "項目を登録しますか？", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "登録しない", style: .cancel)
-        let registerAction = UIAlertAction(title: "登録する", style: .default) { [weak self]_ in
+        let alert = UIAlertController(title: L10n.PatienceCalendarViewController.Alert.alertTitle, message: L10n.PatienceCalendarViewController.Alert.alertMessage, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: L10n.PatienceCalendarViewController.Alert.CancelAction.title, style: .cancel)
+        let registerAction = UIAlertAction(title: L10n.PatienceCalendarViewController.Alert.RegisterAction.title, style: .default) { [weak self]_ in
             self?.didTapRegisterButton()
         }
 
