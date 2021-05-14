@@ -48,11 +48,7 @@ class PatienceInputRouter: PatienceInputWireframe {
         return registerView
     }
 
-    func closeRegisterView() {
-        viewController?.dismiss(animated: true, completion: nil)
-    }
-
-    func closeUpdateView() {
+    func closeInputView() {
         viewController?.navigationController?.popViewController(animated: true)
     }
 }

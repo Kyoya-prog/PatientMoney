@@ -25,12 +25,12 @@ class PatienceInputPresenter: PatienceInputPresentation, PatienceInputInteractor
     }
 
     func outputRegisterSuccess() {
-        router.closeRegisterView()
+        router.closeInputView()
         view?.showSuccess(message: L10n.PatienceInputPresenter.StatusNotification.Success.title)
     }
 
     func outputUpdateSuccess() {
-        router.closeUpdateView()
+        router.closeInputView()
         view?.showSuccess(message: "更新が成功しました。")
     }
 }
