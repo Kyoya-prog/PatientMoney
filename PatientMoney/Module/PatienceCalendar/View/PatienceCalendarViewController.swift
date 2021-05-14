@@ -65,6 +65,8 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 
     private let calendar = FSCalendar()
 
+    private let recordListHeaderView = RecordListHeaderView()
+
     private lazy var recordsView: UITableView = {
         let view = UITableView()
         view.register(RecordCell.self, forCellReuseIdentifier: RecordCell.reuseIdentifer)
@@ -93,7 +95,12 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 // MARK: UITableViewDelegate, UITableViewDataSource
 extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        20
+        44
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        recordListHeaderView.title = DateUtils.stringFromDate(date: date, format: DateUtils.dateFormatJapanese)
+        return recordListHeaderView
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -123,6 +130,7 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
 extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.date = DateUtils.getStartDay(date: date)
+        recordListHeaderView.title = DateUtils.stringFromDate(date: date, format: DateUtils.dateFormatJapanese)
         present(alert, animated: true, completion: nil)
     }
 }
