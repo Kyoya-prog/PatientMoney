@@ -34,7 +34,7 @@ class MoneyView: UIView {
 
         moneyTextField.backgroundColor = UIColor(hex: "F0E68C")
         moneyTextField.textInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
-        moneyTextField.placeholder = "0"
+        moneyTextField.placeholder = L10n.MoneyView.MoneyTextField.placeholder
         moneyTextField.font = UIFont.boldSystemFont(ofSize: 20)
         moneyTextField.layer.cornerRadius = 4
         moneyTextField.keyboardType = .numberPad
@@ -43,7 +43,7 @@ class MoneyView: UIView {
         moneyTextField.inputAccessoryView = keyboardToolbar
 
         yenLabel.translatesAutoresizingMaskIntoConstraints = false
-        yenLabel.text = "円"
+        yenLabel.text = L10n.MoneyView.YenLabel.text
         yenLabel.font = UIFont.systemFont(ofSize: 14)
         addSubview(yenLabel)
 

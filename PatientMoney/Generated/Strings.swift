@@ -139,9 +139,31 @@ internal enum L10n {
   internal enum MoneyView {
     /// 金額
     internal static let title = L10n.tr("Localizable", "MoneyView.title")
+    internal enum MoneyTextField {
+      /// 0
+      internal static let placeholder = L10n.tr("Localizable", "MoneyView.MoneyTextField.placeholder")
+    }
+    internal enum YenLabel {
+      /// 円
+      internal static let text = L10n.tr("Localizable", "MoneyView.YenLabel.text")
+    }
   }
 
   internal enum PatienceCalendarViewController {
+    internal enum Alert {
+      /// 項目を登録しますか？
+      internal static let alertMessage = L10n.tr("Localizable", "PatienceCalendarViewController.Alert.alertMessage")
+      /// 日付から選択
+      internal static let alertTitle = L10n.tr("Localizable", "PatienceCalendarViewController.Alert.alertTitle")
+      internal enum CancelAction {
+        /// 登録しない
+        internal static let title = L10n.tr("Localizable", "PatienceCalendarViewController.Alert.CancelAction.title")
+      }
+      internal enum RegisterAction {
+        /// 登録する
+        internal static let title = L10n.tr("Localizable", "PatienceCalendarViewController.Alert.RegisterAction.title")
+      }
+    }
     internal enum NavigationItem {
       /// カレンダー
       internal static let title = L10n.tr("Localizable", "PatienceCalendarViewController.NavigationItem.title")
@@ -154,9 +176,13 @@ internal enum L10n {
         /// 登録に失敗しました
         internal static let title = L10n.tr("Localizable", "PatienceInputPresenter.StatusNotification.Failure.title")
       }
-      internal enum Success {
+      internal enum RegisterSuccess {
         /// 登録に成功しました
-        internal static let title = L10n.tr("Localizable", "PatienceInputPresenter.StatusNotification.Success.title")
+        internal static let title = L10n.tr("Localizable", "PatienceInputPresenter.StatusNotification.RegisterSuccess.title")
+      }
+      internal enum UpdateSuccess {
+        /// 更新に成功しました
+        internal static let title = L10n.tr("Localizable", "PatienceInputPresenter.StatusNotification.UpdateSuccess.title")
       }
     }
   }
