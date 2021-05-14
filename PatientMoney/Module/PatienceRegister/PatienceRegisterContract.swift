@@ -6,11 +6,8 @@ protocol PatienceInputWireframe {
     // Dependency
     var viewController: UIViewController? { get }
 
-    ///  登録モーダルを閉じる
-    func closeRegisterView()
-
-    /// 更新Viewを閉じる
-    func closeUpdateView()
+    ///  登録画面を閉じる
+    func closeInputView()
 }
 
 protocol PatienceInputView {
