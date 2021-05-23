@@ -12,7 +12,7 @@ struct FontAwesome {
             }
         }
     }
-    static func font(size: CGFloat, style: Style = .regular) -> UIFont {
+    static func font(size: CGFloat, style: Style = .solid) -> UIFont {
         guard let font = UIFont(name: style.fontName, size: size) else {
             fatalError("cannot initialize font '\(style.fontName)'")
         }
@@ -27,7 +27,6 @@ struct FontAwesome {
         static let bus = Icon(code: "bus")
         static let paintBrush = Icon(code: "paint-brush")
         static let beer = Icon(code: "beer")
-        static let magic = Icon(code: "magic")
         static let child = Icon(code: "child")
         static let tshirt = Icon(code: "tshirt")
     }
