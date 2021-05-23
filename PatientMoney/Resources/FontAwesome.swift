@@ -26,5 +26,8 @@ struct FontAwesome {
         static let pizzaSlice = Icon(code: "pizza-slice")
         static let bus = Icon(code: "bus")
         static let paintBrush = Icon(code: "paint-brush")
+        static let beer = Icon(code: "beer")
+        static let child = Icon(code: "child")
+        static let tshirt = Icon(code: "tshirt")
     }
 }

@@ -88,12 +88,18 @@ internal enum L10n {
 
   internal enum CategoryIcon {
     internal enum Title {
+      /// 飲み代
+      internal static let beer = L10n.tr("Localizable", "CategoryIcon.Title.beer")
       /// 交通費
       internal static let bus = L10n.tr("Localizable", "CategoryIcon.Title.bus")
-      /// 趣味
+      /// 交際費
+      internal static let child = L10n.tr("Localizable", "CategoryIcon.Title.child")
+      /// 趣味代
       internal static let paintBrush = L10n.tr("Localizable", "CategoryIcon.Title.paintBrush")
       /// 飲食費
       internal static let pizzaSlice = L10n.tr("Localizable", "CategoryIcon.Title.pizzaSlice")
+      /// 服代
+      internal static let tshirt = L10n.tr("Localizable", "CategoryIcon.Title.tshirt")
     }
   }
 
