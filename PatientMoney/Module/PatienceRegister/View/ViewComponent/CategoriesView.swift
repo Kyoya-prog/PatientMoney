@@ -25,7 +25,7 @@ class CategoriesView: UIView {
         addSubview(categoriesView)
 
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 14)
         titleLabel.text = L10n.CategoriesView.title
         addSubview(titleLabel)
 

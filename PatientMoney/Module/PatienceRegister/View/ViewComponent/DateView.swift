@@ -27,7 +27,7 @@ class DateView: UIView {
     private func construct() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = L10n.DateView.title
-        titleLabel.font = UIFont.systemFont(ofSize: 20)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 14)
         addSubview(titleLabel)
 
         dateTextField.translatesAutoresizingMaskIntoConstraints = false
