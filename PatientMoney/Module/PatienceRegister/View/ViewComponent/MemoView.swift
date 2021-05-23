@@ -25,7 +25,7 @@ class MemoView: UIView {
     // MARK: Private
     private func construct() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = UIFont.systemFont(ofSize: 20)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 14)
         titleLabel.text = L10n.MemoView.title
         addSubview(titleLabel)
 
