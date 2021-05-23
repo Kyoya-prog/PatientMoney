@@ -54,7 +54,6 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 
     func showSuccess(message: String) {
         StatusNotification.notifySuccess(message)
-        updateRecordsView()
     }
 
     func updateRecord(records: [PatienceEntity]) {

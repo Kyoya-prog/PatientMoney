@@ -57,6 +57,7 @@ class PatienceInputRouter: PatienceInputWireframe {
         guard let presentationController = viewController?.presentationController else {
             return
         }
+        /// dismissで閉じた場合にはdelegateメソッドが起動しないのでここで明示的に呼んでいる
         viewController?.presentationController?.delegate?.presentationControllerDidDismiss?(presentationController)
     }
 }
