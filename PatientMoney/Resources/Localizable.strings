@@ -28,7 +28,10 @@
 /// CategoryIcon
 "CategoryIcon.Title.pizzaSlice" = "飲食費";
 "CategoryIcon.Title.bus" = "交通費";
-"CategoryIcon.Title.paintBrush" = "趣味";
+"CategoryIcon.Title.paintBrush" = "趣味代";
+"CategoryIcon.Title.beer" = "飲み代";
+"CategoryIcon.Title.child" = "交際費";
+"CategoryIcon.Title.tshirt" = "服代";
 
 // DateView
 "DateView.title" = "日付";
