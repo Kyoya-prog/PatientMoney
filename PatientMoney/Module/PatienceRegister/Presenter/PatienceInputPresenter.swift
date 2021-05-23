@@ -25,7 +25,7 @@ class PatienceInputPresenter: PatienceInputPresentation, PatienceInputInteractor
     }
 
     func outputRegisterSuccess() {
-        router.closeInputView()
+        router.dismissInputModal()
         view?.showSuccess(message: L10n.PatienceInputPresenter.StatusNotification.RegisterSuccess.title)
     }
 

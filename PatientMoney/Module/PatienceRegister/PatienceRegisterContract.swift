@@ -8,6 +8,9 @@ protocol PatienceInputWireframe {
 
     ///  登録画面を閉じる
     func closeInputView()
+
+    /// 登録画面モーダルを閉じる
+    func dismissInputModal()
 }
 
 protocol PatienceInputView {
