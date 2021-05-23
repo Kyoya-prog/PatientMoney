@@ -38,7 +38,6 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
             recordsView.widthAnchor.constraint(equalToConstant: view.frame.width),
             recordsView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.4 )
         ])
-        presenter.selectedDateDidChange(date: DateUtils.getStartDay(date: Date()))
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +54,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 
     func showSuccess(message: String) {
         StatusNotification.notifySuccess(message)
+        updateRecordsView()
     }
 
     func updateRecord(records: [PatienceEntity]) {
@@ -89,6 +89,10 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 
     private func didTapRegisterButton() {
         presenter.didTapRegisterButton(date: date)
+    }
+
+    private func updateRecordsView() {
+        presenter.selectedDateDidChange(date: date)
     }
 }
 
@@ -132,6 +136,12 @@ extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSour
         self.date = DateUtils.getStartDay(date: date)
         recordListHeaderView.title = DateUtils.stringFromDate(date: date, format: DateUtils.dateFormatJapanese)
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension PatienceCalenderViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        updateRecordsView()
     }
 }
 

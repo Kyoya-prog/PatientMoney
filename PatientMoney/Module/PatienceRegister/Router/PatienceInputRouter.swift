@@ -51,4 +51,12 @@ class PatienceInputRouter: PatienceInputWireframe {
     func closeInputView() {
         viewController?.navigationController?.popViewController(animated: true)
     }
+
+    func dismissInputModal() {
+        viewController?.dismiss(animated: true, completion: nil)
+        guard let presentationController = viewController?.presentationController else {
+            return
+        }
+        viewController?.presentationController?.delegate?.presentationControllerDidDismiss?(presentationController)
+    }
 }
