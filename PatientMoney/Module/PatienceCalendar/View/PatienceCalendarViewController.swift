@@ -17,6 +17,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.pen.image, style: .plain, target: self, action: #selector(didTapRegisterButton(_:)))
         navigationItem.title = L10n.PatienceCalendarViewController.NavigationItem.title
         view.backgroundColor = .white
         calendar.translatesAutoresizingMaskIntoConstraints = false
@@ -74,19 +75,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
         return view
     }()
 
-    private lazy var alert: UIAlertController = {
-        let alert = UIAlertController(title: L10n.PatienceCalendarViewController.Alert.alertTitle, message: L10n.PatienceCalendarViewController.Alert.alertMessage, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: L10n.PatienceCalendarViewController.Alert.CancelAction.title, style: .cancel)
-        let registerAction = UIAlertAction(title: L10n.PatienceCalendarViewController.Alert.RegisterAction.title, style: .default) { [weak self]_ in
-            self?.didTapRegisterButton()
-        }
-
-        alert.addAction(cancelAction)
-        alert.addAction(registerAction)
-        return alert
-    }()
-
-    private func didTapRegisterButton() {
+    @objc private func didTapRegisterButton(_ sender: UIBarButtonItem) {
         presenter.didTapRegisterButton(date: date)
     }
 
@@ -134,7 +123,6 @@ extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSour
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.date = DateUtils.getStartDay(date: date)
         recordListHeaderView.title = DateUtils.stringFromDate(date: date, format: DateUtils.dateFormatJapanese)
-        present(alert, animated: true, completion: nil)
     }
 }
 
