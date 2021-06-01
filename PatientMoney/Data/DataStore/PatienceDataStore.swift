@@ -37,13 +37,19 @@ class PatienceDataStore: PatienceRepository {
         }
     }
 
-    func updatePatienceData(documentId: String, record: [String: Any]) -> Error? {
-        let document = firestoreCollectionReference.document(documentId)
-        var returningError: Error?
-        document.updateData(record) { error in
-            returningError = error
+    func updatePatienceData(documentId: String, record: [String: Any]) -> Single<Error?> {
+        Single.create { [weak self] observer -> Disposable in
+            guard let self = self else { return Disposables.create() }
+            self.firestoreCollectionReference.document(documentId).updateData(record) { error in
+                if let error = error {
+                    observer(.failure(error))
+                    return
+                }
+                observer(.success(nil))
+                return
+            }
+            return Disposables.create()
         }
-        return returningError
     }
 
     private func createPatienceRecord(documents: [QueryDocumentSnapshot]) -> [PatienceEntity] {

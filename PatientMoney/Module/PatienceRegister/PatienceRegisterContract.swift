@@ -86,5 +86,5 @@ protocol PatienceRepository {
     /// データをupdateする
     /// - parameter documentId:ドキュメントID
     /// - parameter record:データレコード
-    func updatePatienceData(documentId: String, record: [String: Any]) -> Error?
+    func updatePatienceData(documentId: String, record: [String: Any]) -> Single<Error?>
 }

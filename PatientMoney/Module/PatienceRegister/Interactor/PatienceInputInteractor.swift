@@ -4,11 +4,16 @@ import RxSwift
 class PatienceInputInteractor: PatienceUsecase {
     func updatePatienceData(record: PatienceEntity) {
         let documentData = ["Date": record.date, "Memo": record.memo, "Money": record.money, "Category": record.categoryTitle, "UID": uid] as [String: Any]
-        if let error = repository.updatePatienceData(documentId: record.documentID, record: documentData ) {
-            output?.outputRegisterError(error: error)
-        } else {
-            output?.outputUpdateSuccess()
+        repository.updatePatienceData(documentId: record.documentID, record: documentData).subscribe { observer in
+            switch observer {
+            case .success(_):
+                self.output?.outputRegisterSuccess()
+
+            case .failure(let error):
+                self.output?.outputRegisterError(error: error)
+            }
         }
+        .disposed(by: disposeBag)
     }
 
     var output: PatienceInputInteractorOutput?
