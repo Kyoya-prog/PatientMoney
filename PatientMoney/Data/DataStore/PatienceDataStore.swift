@@ -4,12 +4,19 @@ import Foundation
 import RxSwift
 
 class PatienceDataStore: PatienceRepository {
-    func registerPatienceData(data: [String: Any]) -> Error? {
-        var returningError: Error?
-        firestoreCollectionReference.addDocument(data: data) { error in
-            returningError = error
+    func registerPatienceData(data: [String: Any]) -> Single<Error?> {
+        Single.create { [weak self] observer -> Disposable in
+            guard let self = self else { return Disposables.create() }
+            self.firestoreCollectionReference.addDocument(data: data) { error in
+                if let error = error {
+                    observer(.failure(error))
+                    return
+                }
+                observer(.success(nil))
+                return
+            }
+            return Disposables.create()
         }
-        return returningError
     }
 
     func fetchPatienceData(date: Date) -> Single<[PatienceEntity]> {
@@ -29,6 +36,7 @@ class PatienceDataStore: PatienceRepository {
             return Disposables.create()
         }
     }
+
     func updatePatienceData(documentId: String, record: [String: Any]) -> Error? {
         let document = firestoreCollectionReference.document(documentId)
         var returningError: Error?
