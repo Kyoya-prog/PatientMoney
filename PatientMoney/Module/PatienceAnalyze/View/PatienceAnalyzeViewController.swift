@@ -1,8 +1,8 @@
 import Foundation
 import UIKit
 
-class PatienceAnalyzeViewController: UIViewController {
-    var records: [PatienceEntity] = [.init(documentID: "2", date: Date(), memo: "test", money: 200, categoryTitle: "服代")] {
+class PatienceAnalyzeViewController: UIViewController,PatienceAnalyzeView {
+    var records: [PatienceEntity] = [] {
         didSet {
             recordsView.reloadData()
         }
@@ -11,7 +11,7 @@ class PatienceAnalyzeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-
+        presentation.didSelectMonth(year: textField.selectedYear, month: textField.selectedMonth)
         construct()
     }
 
@@ -46,8 +46,10 @@ class PatienceAnalyzeViewController: UIViewController {
 
     private func setUpMonthSelectView() {
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.didSelectAction = { () in
+        textField.didSelectAction = { [weak self]() in
+            guard let self = self else { return }
             self.updateLabel()
+            self.presentation.didSelectMonth(year: self.textField.selectedYear, month: self.textField.selectedMonth)
         }
         monthSelectView.addSubview(textField)
 
@@ -126,6 +128,21 @@ class PatienceAnalyzeViewController: UIViewController {
         didSet {
             sumMoneyLabel.text = "合計\(sumMoney)円"
         }
+    }
+    
+    // MARK:PatienceAnalyzeView
+    var presentation: PatienceAnalyzePresentation!
+    
+    func updateRecords(records: [PatienceEntity]) {
+        self.records = records
+    }
+    
+    func updateSumMoney(sumMoney: Int) {
+        self.sumMoney = sumMoney
+    }
+    
+    func showError(message: String) {
+        StatusNotification.notifyError(message)
     }
 }
 
