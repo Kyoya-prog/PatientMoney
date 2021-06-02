@@ -21,6 +21,7 @@ class PatienceAnalyzeViewController: UIViewController {
     }
 
     private func construct() {
+        vstack.addArrangedSubview(textField)
         vstack.addArrangedSubview(recordsView)
     }
 
@@ -40,6 +41,8 @@ class PatienceAnalyzeViewController: UIViewController {
         view.dataSource = self
         return view
     }()
+    
+    private let textField = YearAndMonthDateTextField()
 }
 
 extension PatienceAnalyzeViewController: UITableViewDelegate, UITableViewDataSource {

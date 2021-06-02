@@ -18,6 +18,10 @@ class YearAndMonthDateTextField: PatienceTextField {
     }
 
     private func construct() {
+        layer.cornerRadius = 4
+        UIFont.boldSystemFont(ofSize: 20)
+        backgroundColor = UIColor(hex: "F0E68C")
+        
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -50,7 +54,7 @@ class YearAndMonthDateTextField: PatienceTextField {
     }
 }
 
-// MARK: - UIPickerView delegate
+// MARK: - UIPickerViewDelegate,UIPickerViewDataSource
 extension YearAndMonthDateTextField: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         2
