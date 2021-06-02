@@ -13,6 +13,10 @@ class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarI
         router.presentUpdateView(record: record)
     }
 
+    func didTapDeleteButton(documentId: String) {
+        interactor.deletePatienceData(documentId: documentId)
+    }
+
     func selectedDateDidChange(date: Date) {
         interactor.fetchPatienceData(date: DateUtils.getStartDay(date: date))
     }
@@ -21,7 +25,15 @@ class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarI
         view?.updateRecord(records: records)
     }
 
-    func outputError() {
+    func notifyDeleteData() {
+        view?.didDeleteRecord()
+    }
+
+    func outputFetchError() {
         view?.showError(message: "データの取得に失敗しました")
+    }
+
+    func outputDeleteError() {
+        view?.showError(message: "データの消去に失敗しました")
     }
 }
