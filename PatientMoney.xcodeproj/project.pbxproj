@@ -65,6 +65,8 @@
 		3D9773422640495200419E8A /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB53A1263FF784002A2166 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D9773452640496600419E8A /* RxBlocking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB539E263FF784002A2166 /* RxBlocking.xcframework */; };
 		3D9773482640497000419E8A /* RxTest.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB53A2263FF784002A2166 /* RxTest.xcframework */; };
+		3D9FEC2226679755008A77FC /* PatienceAnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2126679755008A77FC /* PatienceAnalyzeViewController.swift */; };
+		3D9FEC2926679E11008A77FC /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2826679E11008A77FC /* RecordCell.swift */; };
 		3DE103C82638360000F724B8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103C72638360000F724B8 /* Strings.swift */; };
 		3DE103CC2638360800F724B8 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103CB2638360800F724B8 /* Asset.swift */; };
 		3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */; };
@@ -199,6 +201,8 @@
 		3D6DFFCA263555E700C30DD1 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Carthage/Build/iOS/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
 		3D6DFFEF263555F200C30DD1 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = Carthage/Build/iOS/PromisesObjC.framework; sourceTree = "<group>"; };
 		3D6DFFF0263555F200C30DD1 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
+		3D9FEC2126679755008A77FC /* PatienceAnalyzeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzeViewController.swift; sourceTree = "<group>"; };
+		3D9FEC2826679E11008A77FC /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		3DE103C72638360000F724B8 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Generated/Strings.swift; sourceTree = "<group>"; };
 		3DE103CB2638360800F724B8 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Generated/Asset.swift; sourceTree = "<group>"; };
 		3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
@@ -535,6 +539,7 @@
 		3D9FEC1D266796F7008A77FC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3D9FEC2126679755008A77FC /* PatienceAnalyzeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -558,6 +563,14 @@
 			children = (
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		3D9FEC2726679DF6008A77FC /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3D9FEC2826679E11008A77FC /* RecordCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		3DE103D6263A803A00F724B8 /* Firebase */ = {
@@ -602,6 +615,7 @@
 		3DE103F2263AE67100F724B8 /* ViewComponent */ = {
 			isa = PBXGroup;
 			children = (
+				3D9FEC2726679DF6008A77FC /* TableViewCell */,
 				3D36BC97263FD37C00EDF69F /* HeightSelfSizingView */,
 				3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */,
 				3DE10419263BEDE900F724B8 /* FlatButton.swift */,
@@ -922,7 +936,9 @@
 				3DE10436263C0B1000F724B8 /* AuthRouter.swift in Sources */,
 				3D3A323F263F096B00077B6D /* PatienceDataStore.swift in Sources */,
 				3DE1042B263C013800F724B8 /* SignInViewController.swift in Sources */,
+				3D9FEC2226679755008A77FC /* PatienceAnalyzeViewController.swift in Sources */,
 				3DE104B1263D3BEC00F724B8 /* CategoriesView.swift in Sources */,
+				3D9FEC2926679E11008A77FC /* RecordCell.swift in Sources */,
 				3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */,
 				3DE103ED263AE65A00F724B8 /* ColorsExtension.swift in Sources */,
 				3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */,
