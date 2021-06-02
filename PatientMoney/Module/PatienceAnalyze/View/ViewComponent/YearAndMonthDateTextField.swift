@@ -2,11 +2,10 @@ import Foundation
 import UIKit
 
 class YearAndMonthDateTextField: PatienceTextField {
-    
-    var selectedMonth:Int = 1
-    
-    var selectedYear:Int = 2000
-    
+    var selectedMonth: Int = 1
+
+    var selectedYear: Int = 2000
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         construct()
@@ -21,7 +20,8 @@ class YearAndMonthDateTextField: PatienceTextField {
         layer.cornerRadius = 4
         UIFont.boldSystemFont(ofSize: 20)
         backgroundColor = UIColor(hex: "F0E68C")
-        
+        textAlignment = .center
+
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -30,6 +30,7 @@ class YearAndMonthDateTextField: PatienceTextField {
     }
 
     private lazy var years: [Int] = { (2000...currentYear).reversed().map { $0 } }()
+
     private let months = (1...12).map { $0 }
 
     private lazy var keyboardToolbar: UIToolbar = {

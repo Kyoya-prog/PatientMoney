@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 class PatienceAnalyzeViewController: UIViewController {
-    var records: [PatienceEntity] = [] {
+    var records: [PatienceEntity] = [.init(documentID: "2", date: Date(), memo: "test", money: 200, categoryTitle: "服代")] {
         didSet {
             recordsView.reloadData()
         }
@@ -10,29 +10,59 @@ class PatienceAnalyzeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(vstack)
+        view.backgroundColor = .white
 
-        NSLayoutConstraint.activate([
-            vstack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            vstack.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-            vstack.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-            vstack.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
+        construct()
     }
 
     private func construct() {
-        vstack.addArrangedSubview(textField)
-        vstack.addArrangedSubview(recordsView)
+        setUpMonthSelectView()
+        monthSelectView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(monthSelectView)
+
+        sumLabel.text = "合計\(sumMoney)円"
+        sumLabel.translatesAutoresizingMaskIntoConstraints = false
+        sumLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        view.addSubview(sumLabel)
+
+        recordsView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(recordsView)
+
+        NSLayoutConstraint.activate([
+            monthSelectView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            monthSelectView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
+            monthSelectView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20),
+
+            sumLabel.topAnchor.constraint(equalTo: monthSelectView.bottomAnchor, constant: 30),
+            sumLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+            recordsView.topAnchor.constraint(equalTo: sumLabel.bottomAnchor, constant: 30),
+            recordsView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
+            recordsView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20),
+            recordsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
 
-    private lazy var vstack: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.axis = .vertical
-        view.alignment = .fill
-        view.distribution = .equalSpacing
-        return view
-    }()
+    private func setUpMonthSelectView() {
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        monthSelectView.addSubview(textField)
+
+        monthLabel.translatesAutoresizingMaskIntoConstraints = false
+        monthLabel.font = UIFont.systemFont(ofSize: 20)
+        monthLabel.text = "月を入力"
+        monthSelectView.addSubview(monthLabel)
+
+        NSLayoutConstraint.activate([
+            monthSelectView.heightAnchor.constraint(equalToConstant: 25),
+
+            monthLabel.centerYAnchor.constraint(equalTo: monthSelectView.centerYAnchor),
+            monthLabel.leftAnchor.constraint(equalTo: monthSelectView.leftAnchor, constant: 20),
+
+            textField.centerYAnchor.constraint(equalTo: monthSelectView.centerYAnchor),
+            textField.leftAnchor.constraint(equalTo: monthSelectView.leftAnchor, constant: 170),
+            textField.rightAnchor.constraint(equalTo: monthSelectView.rightAnchor, constant: -20)
+        ])
+    }
 
     private lazy var recordsView: UITableView = {
         let view = UITableView()
@@ -41,8 +71,20 @@ class PatienceAnalyzeViewController: UIViewController {
         view.dataSource = self
         return view
     }()
-    
+
     private let textField = YearAndMonthDateTextField()
+
+    private let monthLabel = UILabel()
+
+    private let monthSelectView = UIView()
+
+    private let sumLabel = UILabel()
+    
+    private var sumMoney = 0{
+        didSet{
+            sumLabel.text = "合計\(sumMoney)円"
+        }
+    }
 }
 
 extension PatienceAnalyzeViewController: UITableViewDelegate, UITableViewDataSource {
