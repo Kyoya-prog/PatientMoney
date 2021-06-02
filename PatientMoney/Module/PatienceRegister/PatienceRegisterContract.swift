@@ -87,4 +87,8 @@ protocol PatienceRepository {
     /// - parameter documentId:ドキュメントID
     /// - parameter record:データレコード
     func updatePatienceData(documentId: String, record: [String: Any]) -> Single<Error?>
+
+    /// データを消去する
+    /// - parameter documentId:ドキュメントID
+    func deletePatienceData(documentId: String) ->Single<Error?>
 }

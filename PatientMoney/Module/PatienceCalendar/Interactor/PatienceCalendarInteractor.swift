@@ -13,9 +13,21 @@ class PatienceCalendarInteractor: PatienceCalendarUsecase {
                     self.output?.outputFetchData(records: records)
 
                 case .failure:
-                    self.output?.outputError()
+                    self.output?.outputFetchError()
                 }
-            }.disposed(by: self.disposeBag)
+            }.disposed(by: disposeBag)
+    }
+
+    func deletePatienceData(documentId: String) {
+        repository.deletePatienceData(documentId: documentId).subscribe { observer in
+            switch observer {
+            case .success(_):
+                self.output?.notifyDeleteData()
+
+            case .failure(_):
+                self.output?.outputDeleteError()
+            }
+        }.disposed(by: disposeBag)
     }
 
     private let disposeBag = DisposeBag()

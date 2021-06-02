@@ -52,6 +52,21 @@ class PatienceDataStore: PatienceRepository {
         }
     }
 
+    func deletePatienceData(documentId: String) ->Single<Error?> {
+        Single.create { [weak self] observer -> Disposable in
+            guard let self = self else { return Disposables.create() }
+            self.firestoreCollectionReference.document(documentId).delete { error in
+                if let error = error {
+                    observer(.failure(error))
+                    return
+                }
+                observer(.success(nil))
+                return
+            }
+            return Disposables.create()
+        }
+    }
+
     private func createPatienceRecord(documents: [QueryDocumentSnapshot]) -> [PatienceEntity] {
         documents.map {
             PatienceEntity(documentID: $0.documentID,

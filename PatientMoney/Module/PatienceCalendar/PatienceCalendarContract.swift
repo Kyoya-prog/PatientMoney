@@ -27,6 +27,9 @@ protocol PatienceCalendarView {
     /// 記録配列を更新する
     /// - parameter records:記録
     func updateRecord(records: [PatienceEntity])
+
+    /// 記録が削除された
+    func didDeleteRecord()
 }
 
 protocol PatienceCalendarPresentation {
@@ -43,6 +46,10 @@ protocol PatienceCalendarPresentation {
     /// - parameter record:記録
     func didTapRecordCell(record: PatienceEntity)
 
+    /// セルの削除ボタンがタップされた
+    /// - parameter documentId:ドキュメントID
+    func didTapDeleteButton(documentId: String)
+
     /// 日付が変更された
     /// - parameter date:日付
     func selectedDateDidChange(date: Date)
@@ -54,6 +61,10 @@ protocol PatienceCalendarUsecase {
     /// データをフェッチする
     /// - parameter data:日付
     func fetchPatienceData(date: Date)
+
+    /// データを削除する
+    /// - parameter documentId:ドキュメントID
+    func deletePatienceData(documentId: String)
 }
 
 protocol PatienceCalendarInteractorOutput {
@@ -61,6 +72,12 @@ protocol PatienceCalendarInteractorOutput {
     /// - parameter records:フェッチされた記録
     func outputFetchData(records: [PatienceEntity])
 
-    /// エラーを返す
-    func outputError()
+    /// データが消去されたことを通知する
+    func notifyDeleteData()
+
+    /// フェッチの際のエラーを返す
+    func outputFetchError()
+
+    /// データ削除の際のエラーを返す
+    func outputDeleteError()
 }

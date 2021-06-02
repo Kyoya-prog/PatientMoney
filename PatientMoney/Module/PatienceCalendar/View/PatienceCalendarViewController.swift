@@ -61,11 +61,17 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
         self.records = records
     }
 
+    func didDeleteRecord() {
+        records.remove(at: willDeleteRowValue)
+    }
+
     // MARK: Private
 
     private let calendar = FSCalendar()
 
     private let recordListHeaderView = RecordListHeaderView()
+
+    private var willDeleteRowValue: Int = 0
 
     private lazy var recordsView: UITableView = {
         let view = UITableView()
@@ -88,6 +94,18 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         44
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            willDeleteRowValue = indexPath.item
+            let documentId = records[indexPath.item].documentID
+            presenter.didTapDeleteButton(documentId: documentId)
+        }
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
