@@ -335,6 +335,7 @@
 		3D36BCA8263FDCBA00EDF69F /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				3D9FEC1C266796ED008A77FC /* PatienceAnalyze */,
 				3DE104AE263D3BC700F724B8 /* PatienceRegister */,
 				3D36BC8F263FBEF400EDF69F /* PatienceCalendar */,
 				3DE103E3263ACBC900F724B8 /* Auth */,
@@ -518,6 +519,45 @@
 				3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */,
 			);
 			path = GoogleServiceInfo;
+			sourceTree = "<group>";
+		};
+		3D9FEC1C266796ED008A77FC /* PatienceAnalyze */ = {
+			isa = PBXGroup;
+			children = (
+				3D9FEC1D266796F7008A77FC /* View */,
+				3D9FEC1E266796FB008A77FC /* Presenter */,
+				3D9FEC1F26679701008A77FC /* Interactor */,
+				3D9FEC202667970E008A77FC /* Router */,
+			);
+			path = PatienceAnalyze;
+			sourceTree = "<group>";
+		};
+		3D9FEC1D266796F7008A77FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D9FEC1E266796FB008A77FC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3D9FEC1F26679701008A77FC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3D9FEC202667970E008A77FC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		3DE103D6263A803A00F724B8 /* Firebase */ = {
