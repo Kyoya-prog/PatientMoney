@@ -20,10 +20,9 @@ class PatienceAnalyzeViewController: UIViewController {
         monthSelectView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(monthSelectView)
 
-        sumLabel.text = "合計\(sumMoney)円"
-        sumLabel.translatesAutoresizingMaskIntoConstraints = false
-        sumLabel.font = UIFont.boldSystemFont(ofSize: 30)
-        view.addSubview(sumLabel)
+        setUpSumView()
+        sumView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(sumView)
 
         recordsView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(recordsView)
@@ -33,10 +32,12 @@ class PatienceAnalyzeViewController: UIViewController {
             monthSelectView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
             monthSelectView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20),
 
-            sumLabel.topAnchor.constraint(equalTo: monthSelectView.bottomAnchor, constant: 30),
-            sumLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            sumView.topAnchor.constraint(equalTo: monthSelectView.bottomAnchor, constant: 30),
+            sumView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
+            sumView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20),
+            sumView.heightAnchor.constraint(equalToConstant: 100),
 
-            recordsView.topAnchor.constraint(equalTo: sumLabel.bottomAnchor, constant: 30),
+            recordsView.topAnchor.constraint(equalTo: sumView.bottomAnchor, constant: 30),
             recordsView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
             recordsView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20),
             recordsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -64,6 +65,32 @@ class PatienceAnalyzeViewController: UIViewController {
         ])
     }
 
+    private func setUpSumView() {
+        sumView.layer.borderColor = UIColor(hex: "FFECCC").cgColor
+        sumView.layer.borderWidth = 2
+        sumView.layer.cornerRadius = 4
+
+        selectedMonthLabel.translatesAutoresizingMaskIntoConstraints = false
+        selectedMonthLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        selectedMonthLabel.text = "\(textField.selectedYear)年\(textField.selectedMonth)月の節約合計額"
+        sumView.addSubview(selectedMonthLabel)
+
+        sumMoneyLabel.translatesAutoresizingMaskIntoConstraints = false
+        sumMoneyLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        sumMoneyLabel.text = "　\(sumMoney)円"
+        sumView.addSubview(sumMoneyLabel)
+
+        NSLayoutConstraint.activate([
+            selectedMonthLabel.topAnchor.constraint(equalTo: sumView.topAnchor, constant: 10),
+            selectedMonthLabel.centerXAnchor.constraint(equalTo: sumView.centerXAnchor),
+
+            sumMoneyLabel.topAnchor.constraint(equalTo: selectedMonthLabel.bottomAnchor, constant: 10),
+            sumMoneyLabel.bottomAnchor.constraint(equalTo: sumView.bottomAnchor, constant: -10),
+            sumMoneyLabel.rightAnchor.constraint(equalTo: sumView.rightAnchor, constant: -10),
+            sumMoneyLabel.leftAnchor.constraint(greaterThanOrEqualTo: sumView.leftAnchor)
+        ])
+    }
+
     private lazy var recordsView: UITableView = {
         let view = UITableView()
         view.register(RecordCell.self, forCellReuseIdentifier: RecordCell.reuseIdentifer)
@@ -78,11 +105,15 @@ class PatienceAnalyzeViewController: UIViewController {
 
     private let monthSelectView = UIView()
 
-    private let sumLabel = UILabel()
+    private let sumView = UIView()
+
+    private let sumMoneyLabel = UILabel()
+
+    private let selectedMonthLabel = UILabel()
 
     private var sumMoney = 0 {
         didSet {
-            sumLabel.text = "合計\(sumMoney)円"
+            sumMoneyLabel.text = "合計\(sumMoney)円"
         }
     }
 }

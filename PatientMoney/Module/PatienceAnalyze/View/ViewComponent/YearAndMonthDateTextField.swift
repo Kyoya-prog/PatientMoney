@@ -20,6 +20,8 @@ class YearAndMonthDateTextField: PatienceTextField {
 
     private func construct() {
         text = DateUtils.stringFromDate(date: Date(), format: "yyyy年　M月")
+        selectedMonth = Int(DateUtils.stringFromDate(date: Date(), format: "M")) ?? 1
+        selectedYear = Int(DateUtils.stringFromDate(date: Date(), format: "yyyy")) ?? 2000
         layer.cornerRadius = 4
         UIFont.boldSystemFont(ofSize: 20)
         backgroundColor = UIColor(hex: "F0E68C")
