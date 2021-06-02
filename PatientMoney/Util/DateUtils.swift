@@ -1,6 +1,6 @@
 import UIKit
 
-/// Date⇆String変換Utilクラス
+/// DateUtilクラス
 class DateUtils {
     static func dateFromString(string: String, format: String) -> Date {
         let formatter = DateFormatter()
