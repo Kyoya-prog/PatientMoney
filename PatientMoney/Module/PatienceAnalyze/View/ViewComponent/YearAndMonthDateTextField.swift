@@ -6,6 +6,8 @@ class YearAndMonthDateTextField: PatienceTextField {
 
     var selectedYear: Int = 2000
 
+    var didSelectAction:((_ selectedMonth: Int, _ selectedYear: Int) -> Void)?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         construct()
@@ -17,6 +19,7 @@ class YearAndMonthDateTextField: PatienceTextField {
     }
 
     private func construct() {
+        text = DateUtils.stringFromDate(date: Date(), format: "yyyy年　M月")
         layer.cornerRadius = 4
         UIFont.boldSystemFont(ofSize: 20)
         backgroundColor = UIColor(hex: "F0E68C")
@@ -52,6 +55,7 @@ class YearAndMonthDateTextField: PatienceTextField {
 
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
         endEditing(true)
+        didSelectAction?(selectedMonth, selectedYear)
     }
 }
 

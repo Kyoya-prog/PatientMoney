@@ -79,9 +79,9 @@ class PatienceAnalyzeViewController: UIViewController {
     private let monthSelectView = UIView()
 
     private let sumLabel = UILabel()
-    
-    private var sumMoney = 0{
-        didSet{
+
+    private var sumMoney = 0 {
+        didSet {
             sumLabel.text = "合計\(sumMoney)円"
         }
     }
