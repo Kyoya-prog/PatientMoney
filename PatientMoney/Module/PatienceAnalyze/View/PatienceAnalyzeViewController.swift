@@ -46,22 +46,26 @@ class PatienceAnalyzeViewController: UIViewController {
 
     private func setUpMonthSelectView() {
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.didSelectAction = { () in
+            self.updateLabel()
+        }
         monthSelectView.addSubview(textField)
 
         monthLabel.translatesAutoresizingMaskIntoConstraints = false
         monthLabel.font = UIFont.systemFont(ofSize: 20)
-        monthLabel.text = "月を入力"
+        monthLabel.text = "表示する年月"
+        monthLabel.setContentHuggingPriority(.required, for: .horizontal)
         monthSelectView.addSubview(monthLabel)
 
         NSLayoutConstraint.activate([
             monthSelectView.heightAnchor.constraint(equalToConstant: 25),
 
             monthLabel.centerYAnchor.constraint(equalTo: monthSelectView.centerYAnchor),
-            monthLabel.leftAnchor.constraint(equalTo: monthSelectView.leftAnchor, constant: 20),
+            monthLabel.leftAnchor.constraint(equalTo: monthSelectView.leftAnchor),
 
             textField.centerYAnchor.constraint(equalTo: monthSelectView.centerYAnchor),
-            textField.leftAnchor.constraint(equalTo: monthSelectView.leftAnchor, constant: 170),
-            textField.rightAnchor.constraint(equalTo: monthSelectView.rightAnchor, constant: -20)
+            textField.leftAnchor.constraint(equalTo: monthLabel.rightAnchor, constant: 10),
+            textField.rightAnchor.constraint(equalTo: monthSelectView.rightAnchor)
         ])
     }
 
@@ -72,13 +76,15 @@ class PatienceAnalyzeViewController: UIViewController {
 
         selectedMonthLabel.translatesAutoresizingMaskIntoConstraints = false
         selectedMonthLabel.font = UIFont.boldSystemFont(ofSize: 30)
-        selectedMonthLabel.text = "\(textField.selectedYear)年\(textField.selectedMonth)月の節約合計額"
+        selectedMonthLabel.textColor = UIColor(hex: "FFA81C")
         sumView.addSubview(selectedMonthLabel)
 
         sumMoneyLabel.translatesAutoresizingMaskIntoConstraints = false
         sumMoneyLabel.font = UIFont.boldSystemFont(ofSize: 30)
-        sumMoneyLabel.text = "　\(sumMoney)円"
+        sumMoneyLabel.textColor = UIColor(hex: "FFA81C")
         sumView.addSubview(sumMoneyLabel)
+
+        updateLabel()
 
         NSLayoutConstraint.activate([
             selectedMonthLabel.topAnchor.constraint(equalTo: sumView.topAnchor, constant: 10),
@@ -89,6 +95,11 @@ class PatienceAnalyzeViewController: UIViewController {
             sumMoneyLabel.rightAnchor.constraint(equalTo: sumView.rightAnchor, constant: -10),
             sumMoneyLabel.leftAnchor.constraint(greaterThanOrEqualTo: sumView.leftAnchor)
         ])
+    }
+
+    private func updateLabel() {
+        selectedMonthLabel.text = "\(textField.selectedYear)年\(textField.selectedMonth)月の節約合計額"
+        sumMoneyLabel.text = "　\(sumMoney)円"
     }
 
     private lazy var recordsView: UITableView = {

@@ -6,7 +6,7 @@ class YearAndMonthDateTextField: PatienceTextField {
 
     var selectedYear: Int = 2000
 
-    var didSelectAction:((_ selectedMonth: Int, _ selectedYear: Int) -> Void)?
+    var didSelectAction:(() -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,6 +19,7 @@ class YearAndMonthDateTextField: PatienceTextField {
     }
 
     private func construct() {
+        font = UIFont.boldSystemFont(ofSize: 20)
         text = DateUtils.stringFromDate(date: Date(), format: "yyyy年　M月")
         selectedMonth = Int(DateUtils.stringFromDate(date: Date(), format: "M")) ?? 1
         selectedYear = Int(DateUtils.stringFromDate(date: Date(), format: "yyyy")) ?? 2000
@@ -57,7 +58,7 @@ class YearAndMonthDateTextField: PatienceTextField {
 
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
         endEditing(true)
-        didSelectAction?(selectedMonth, selectedYear)
+        didSelectAction?()
     }
 }
 
