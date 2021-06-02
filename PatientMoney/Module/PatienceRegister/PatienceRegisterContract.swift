@@ -1,7 +1,7 @@
+import FirebaseFirestore.FIRTimestamp
 import Foundation
 import RxSwift
 import UIKit
-import FirebaseFirestore.FIRTimestamp
 
 protocol PatienceInputWireframe {
     // Dependency
@@ -83,11 +83,11 @@ protocol PatienceRepository {
     /// データをフェッチする
     /// - parameter data:日付
     func fetchPatienceData(date: Date) -> Single<[PatienceEntity]>
-    
+
     /// 指定期間のデータをフェッチする
     /// - parameter startDate:開始日
     /// - parameter endDate:終了日
-    func fetchPatienceData(startDate:Timestamp,endDate:Timestamp)->Single<[PatienceEntity]>
+    func fetchPatienceData(startDate: Timestamp, endDate: Timestamp) -> Single<[PatienceEntity]>
 
     /// データをupdateする
     /// - parameter documentId:ドキュメントID

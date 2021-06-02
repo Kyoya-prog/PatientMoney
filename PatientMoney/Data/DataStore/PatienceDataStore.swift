@@ -38,9 +38,9 @@ class PatienceDataStore: PatienceRepository {
             return Disposables.create()
         }
     }
-    
+
     func fetchPatienceData(startDate: Timestamp, endDate: Timestamp) -> Single<[PatienceEntity]> {
-        Single<[PatienceEntity]>.create{ [weak self] observer ->Disposable in
+        Single<[PatienceEntity]>.create { [weak self] observer ->Disposable in
             guard let self = self else { return Disposables.create() }
             let query = self.firestoreCollectionReference
                 .whereField("UID", isEqualTo: FirebaseAuthManeger.shared.uid)

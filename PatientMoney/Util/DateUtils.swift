@@ -16,6 +16,30 @@ class DateUtils {
         return formatter.string(from: date)
     }
 
+    static func getBeginningMonth(year: Int, month: Int) -> Date {
+        let calendar = Calendar(identifier: .gregorian)
+        var components = DateComponents()
+        components.year = year
+        components.month = month
+        components.day = 1
+
+        // swiftlint:disable:next force_unwrapping
+        let date = calendar.date(from: components)!
+        return date
+    }
+
+    static func getEndMonth(year: Int, month: Int) -> Date {
+        let calendar = Calendar(identifier: .gregorian)
+        var components = DateComponents()
+        components.year = year
+        components.month = month + 1
+        components.day = 0
+
+        // swiftlint:disable:next force_unwrapping
+        let date = calendar.date(from: components)!
+        return date
+    }
+
     static let dateFormatJapanese = "yyyy年MM月dd日"
 
     static func getStartDay(date: Date) -> Date {
