@@ -1,3 +1,4 @@
+import FirebaseFirestore.FIRTimestamp
 import Foundation
 import RxSwift
 import UIKit
@@ -82,6 +83,11 @@ protocol PatienceRepository {
     /// データをフェッチする
     /// - parameter data:日付
     func fetchPatienceData(date: Date) -> Single<[PatienceEntity]>
+
+    /// 指定期間のデータをフェッチする
+    /// - parameter startDate:開始日
+    /// - parameter endDate:終了日
+    func fetchPatienceData(startTimestamp: Timestamp, endTimestamp: Timestamp) -> Single<[PatienceEntity]>
 
     /// データをupdateする
     /// - parameter documentId:ドキュメントID
