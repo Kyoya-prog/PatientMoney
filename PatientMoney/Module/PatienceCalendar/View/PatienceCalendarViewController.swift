@@ -142,6 +142,8 @@ extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSour
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.date = DateUtils.getStartDay(date: date)
         recordListHeaderView.title = DateUtils.stringFromDate(date: date, format: DateUtils.dateFormatJapanese)
+        recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: date)
+        recordListHeaderView.sumMoney = 800
     }
 }
 
