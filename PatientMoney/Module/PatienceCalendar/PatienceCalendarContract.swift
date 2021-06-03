@@ -28,6 +28,10 @@ protocol PatienceCalendarView {
     /// - parameter records:記録
     func updateRecord(records: [PatienceEntity])
 
+    /// 合計金額を更新する
+    /// - parameter sumMoney:合計金額
+    func updateSumMoney(sumMoney: Int)
+
     /// 記録が削除された
     func didDeleteRecord()
 }
@@ -65,12 +69,21 @@ protocol PatienceCalendarUsecase {
     /// データを削除する
     /// - parameter documentId:ドキュメントID
     func deletePatienceData(documentId: String)
+
+    /// 入力された年月のデータを取得する
+    /// - parameter year:年
+    /// - parameter month:月
+    func fetchDataFromMonth(year: Int, month: Int)
 }
 
 protocol PatienceCalendarInteractorOutput {
     /// フェッチしてきたデータを表示する
     /// - parameter records:フェッチされた記録
     func outputFetchData(records: [PatienceEntity])
+
+    /// 月毎の取得したデータを出力する
+    /// - parameter records:記録
+    func outputFetchRecordsPerMonth(records: [PatienceEntity])
 
     /// データが消去されたことを通知する
     func notifyDeleteData()

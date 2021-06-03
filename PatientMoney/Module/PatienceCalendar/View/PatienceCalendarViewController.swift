@@ -61,6 +61,10 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
         self.records = records
     }
 
+    func updateSumMoney(sumMoney: Int) {
+        recordListHeaderView.sumMoney = sumMoney
+    }
+
     func didDeleteRecord() {
         records.remove(at: willDeleteRowValue)
     }
@@ -111,6 +115,7 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         recordListHeaderView.title = DateUtils.stringFromDate(date: date, format: DateUtils.dateFormatJapanese)
+        recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: date)
         return recordListHeaderView
     }
 
@@ -143,7 +148,6 @@ extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSour
         self.date = DateUtils.getStartDay(date: date)
         recordListHeaderView.title = DateUtils.stringFromDate(date: date, format: DateUtils.dateFormatJapanese)
         recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: date)
-        recordListHeaderView.sumMoney = 800
     }
 }
 
