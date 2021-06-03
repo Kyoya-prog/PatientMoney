@@ -22,13 +22,36 @@ class PatienceDataStore: PatienceRepository {
     func fetchPatienceData(date: Date) -> Single<[PatienceEntity]> {
         Single<[PatienceEntity]>.create { [weak self] observer -> Disposable in
             guard let self = self else { return Disposables.create() }
-                let query = self.firestoreCollectionReference.whereField("UID", isEqualTo: FirebaseAuthManeger.shared.uid).whereField("Date", isEqualTo: date)
+            let query = self.firestoreCollectionReference
+                .whereField("UID", isEqualTo: FirebaseAuthManeger.shared.uid)
+                .whereField("Date", isEqualTo: date)
             query.getDocuments { query, error in
                 if let error = error {
                     observer(.failure(error))
                     return
                 }
                 if let documents = query?.documents {
+                    observer(.success(self.createPatienceRecord(documents: documents)))
+                    return
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
+    func fetchPatienceData(startTimestamp: Timestamp, endTimestamp: Timestamp) -> Single<[PatienceEntity]> {
+        Single<[PatienceEntity]>.create { [weak self] observer ->Disposable in
+            guard let self = self else { return Disposables.create() }
+            let query = self.firestoreCollectionReference
+                .whereField("UID", isEqualTo: FirebaseAuthManeger.shared.uid)
+                .whereField("Date", isGreaterThanOrEqualTo: startTimestamp)
+                .whereField("Date", isLessThanOrEqualTo: endTimestamp)
+            query.getDocuments { snapshot, error in
+                if let error = error {
+                    observer(.failure(error))
+                    return
+                }
+                if let documents = snapshot?.documents {
                     observer(.success(self.createPatienceRecord(documents: documents)))
                     return
                 }
