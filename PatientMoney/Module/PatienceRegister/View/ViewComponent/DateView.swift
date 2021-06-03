@@ -28,6 +28,7 @@ class DateView: UIView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = L10n.DateView.title
         titleLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        titleLabel.textColor = UIColor.black
         addSubview(titleLabel)
 
         dateTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -36,6 +37,7 @@ class DateView: UIView {
         dateTextField.textInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
         dateTextField.font = UIFont.boldSystemFont(ofSize: 20)
         dateTextField.layer.cornerRadius = 4
+        dateTextField.textColor = UIColor.black
         addSubview(dateTextField)
 
         datePicker.datePickerMode = .date

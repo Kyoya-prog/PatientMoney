@@ -58,6 +58,7 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
         monthLabel.font = UIFont.systemFont(ofSize: 20)
         monthLabel.text = L10n.PatienceAnalyzeViewController.MonthLabel.text
         monthLabel.setContentHuggingPriority(.required, for: .horizontal)
+        monthLabel.textColor = UIColor.black
         monthSelectView.addSubview(monthLabel)
 
         NSLayoutConstraint.activate([

@@ -26,6 +26,7 @@ class YearAndMonthDateTextField: PatienceTextField {
         layer.cornerRadius = 4
         UIFont.boldSystemFont(ofSize: 20)
         backgroundColor = UIColor(hex: "F0E68C")
+        textColor = UIColor.black
         textAlignment = .center
 
         let pickerView = UIPickerView()
