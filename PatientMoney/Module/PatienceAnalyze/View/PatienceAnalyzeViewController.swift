@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class PatienceAnalyzeViewController: UIViewController,PatienceAnalyzeView {
+class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
     var records: [PatienceEntity] = [] {
         didSet {
             recordsView.reloadData()
@@ -129,18 +129,18 @@ class PatienceAnalyzeViewController: UIViewController,PatienceAnalyzeView {
             sumMoneyLabel.text = "合計\(sumMoney)円"
         }
     }
-    
-    // MARK:PatienceAnalyzeView
+
+    // MARK: PatienceAnalyzeView
     var presentation: PatienceAnalyzePresentation!
-    
+
     func updateRecords(records: [PatienceEntity]) {
         self.records = records
     }
-    
+
     func updateSumMoney(sumMoney: Int) {
         self.sumMoney = sumMoney
     }
-    
+
     func showError(message: String) {
         StatusNotification.notifyError(message)
     }
