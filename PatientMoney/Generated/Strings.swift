@@ -155,6 +155,38 @@ internal enum L10n {
     }
   }
 
+  internal enum PatienceAnalyzePresenter {
+    internal enum StatusNotification {
+      internal enum Error {
+        /// データの取得に失敗しました
+        internal static let title = L10n.tr("Localizable", "PatienceAnalyzePresenter.StatusNotification.Error.title")
+      }
+    }
+  }
+
+  internal enum PatienceAnalyzeViewController {
+    internal enum MonthLabel {
+      /// 表示する年月
+      internal static let text = L10n.tr("Localizable", "PatienceAnalyzeViewController.MonthLabel.text")
+    }
+    internal enum NavigationItem {
+      /// 分析
+      internal static let title = L10n.tr("Localizable", "PatienceAnalyzeViewController.NavigationItem.title")
+    }
+    internal enum SelectedMonthLabel {
+      /// %@年%d月の節約合計額
+      internal static func text(_ p1: Any, _ p2: Int) -> String {
+        return L10n.tr("Localizable", "PatienceAnalyzeViewController.selectedMonthLabel.text", String(describing: p1), p2)
+      }
+    }
+    internal enum SumMoneyLabel {
+      /// %d円
+      internal static func text(_ p1: Int) -> String {
+        return L10n.tr("Localizable", "PatienceAnalyzeViewController.sumMoneyLabel.text", p1)
+      }
+    }
+  }
+
   internal enum PatienceCalendarViewController {
     internal enum Alert {
       /// 項目を登録しますか？

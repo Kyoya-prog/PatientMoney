@@ -11,6 +11,7 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        navigationItem.title = L10n.PatienceAnalyzeViewController.NavigationItem.title
         presentation.didSelectMonth(year: textField.selectedYear, month: textField.selectedMonth)
         construct()
     }
@@ -55,7 +56,7 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
 
         monthLabel.translatesAutoresizingMaskIntoConstraints = false
         monthLabel.font = UIFont.systemFont(ofSize: 20)
-        monthLabel.text = "表示する年月"
+        monthLabel.text = L10n.PatienceAnalyzeViewController.MonthLabel.text
         monthLabel.setContentHuggingPriority(.required, for: .horizontal)
         monthSelectView.addSubview(monthLabel)
 
@@ -100,8 +101,8 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
     }
 
     private func updateLabel() {
-        selectedMonthLabel.text = "\(textField.selectedYear)年\(textField.selectedMonth)月の節約合計額"
-        sumMoneyLabel.text = "　\(sumMoney)円"
+        selectedMonthLabel.text = L10n.PatienceAnalyzeViewController.SelectedMonthLabel.text("\(textField.selectedYear)", textField.selectedMonth)
+        sumMoneyLabel.text = L10n.PatienceAnalyzeViewController.SumMoneyLabel.text(sumMoney)
     }
 
     private lazy var recordsView: UITableView = {
@@ -109,6 +110,7 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
         view.register(RecordCell.self, forCellReuseIdentifier: RecordCell.reuseIdentifer)
         view.delegate = self
         view.dataSource = self
+        view.allowsSelection = false
         return view
     }()
 

@@ -67,4 +67,13 @@
 "PatienceCalendarViewController.Alert.CancelAction.title" = "登録しない";
 "PatienceCalendarViewController.Alert.RegisterAction.title" = "登録する";
 
+// PatienceAnalyzeViewController
+"PatienceAnalyzeViewController.NavigationItem.title" = "分析";
+"PatienceAnalyzeViewController.MonthLabel.text" = "表示する年月";
+"PatienceAnalyzeViewController.selectedMonthLabel.text" = "%@年%d月の節約合計額";
+"PatienceAnalyzeViewController.sumMoneyLabel.text" = "%d円";
+
+// PatienceAnalyzePresenter
+"PatienceAnalyzePresenter.StatusNotification.Error.title" = "データの取得に失敗しました";
+
 

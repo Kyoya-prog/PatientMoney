@@ -21,6 +21,6 @@ class PatienceAnalyzePresenter: PatienceAnalyzePresentation, PatienceAnalyzeOutp
     }
 
     func outputError() {
-        view?.showError(message: "データの取得に失敗しました")
+        view?.showError(message: L10n.PatienceAnalyzePresenter.StatusNotification.Error.title)
     }
 }
