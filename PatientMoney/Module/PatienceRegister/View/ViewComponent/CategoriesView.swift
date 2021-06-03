@@ -52,7 +52,7 @@ class CategoriesView: UIView {
 
     private lazy var categoriesView: UICollectionView = {
         let view = HeightSelfSizingCollectionView(frame: frame, collectionViewLayout: categoriesViewLayout)
-        view.backgroundColor = .clear
+        view.backgroundColor = .white
         view.delegate = self
         view.dataSource = self
         view.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseIdentifer)
