@@ -253,6 +253,21 @@ internal enum L10n {
       internal static let title = L10n.tr("Localizable", "PatienceInputViewController.NavigationItem.title")
     }
   }
+
+  internal enum RecordListHeaderView {
+    internal enum MonthLabel {
+      /// %d月の節約合計額
+      internal static func text(_ p1: Int) -> String {
+        return L10n.tr("Localizable", "RecordListHeaderView.MonthLabel.text", p1)
+      }
+    }
+    internal enum SumMoneyLabel {
+      /// %d円
+      internal static func text(_ p1: Int) -> String {
+        return L10n.tr("Localizable", "RecordListHeaderView.sumMoneyLabel.text", p1)
+      }
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

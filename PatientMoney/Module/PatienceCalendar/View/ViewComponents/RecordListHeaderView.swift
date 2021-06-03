@@ -27,6 +27,18 @@ class RecordListHeaderView: UIView {
         }
     }
 
+    var selectedMonth: Int = 0 {
+        didSet {
+            monthLabel.text = L10n.RecordListHeaderView.MonthLabel.text(selectedMonth)
+        }
+    }
+
+    var sumMoney: Int = 0 {
+        didSet {
+            sumMoneyLabel.text = L10n.RecordListHeaderView.SumMoneyLabel.text(sumMoney)
+        }
+    }
+
     private func construct() {
         backgroundColor = .white
 
@@ -34,12 +46,34 @@ class RecordListHeaderView: UIView {
         titleLabel.font = UIFont.boldSystemFont(ofSize: 15)
         titleLabel.textColor = .black
         addSubview(titleLabel)
+
+        monthLabel.translatesAutoresizingMaskIntoConstraints = false
+        monthLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        monthLabel.setContentHuggingPriority(.required, for: .horizontal)
+        monthLabel.textColor = .black
+        addSubview(monthLabel)
+
+        sumMoneyLabel.translatesAutoresizingMaskIntoConstraints = false
+        sumMoneyLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        sumMoneyLabel.textColor = .black
+        addSubview(sumMoneyLabel)
+
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 44),
+            heightAnchor.constraint(equalToConstant: 60),
             titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
-            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+
+            monthLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
+            monthLabel.topAnchor.constraint(equalTo: topAnchor),
+
+            sumMoneyLabel.leftAnchor.constraint(equalTo: monthLabel.rightAnchor, constant: 10),
+            sumMoneyLabel.topAnchor.constraint(equalTo: topAnchor)
         ])
     }
 
     private let titleLabel = UILabel()
+
+    private let monthLabel = UILabel()
+
+    private let sumMoneyLabel = UILabel()
 }

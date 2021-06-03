@@ -12,6 +12,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
     var date = DateUtils.getStartDay(date: Date()) {
         didSet {
             presenter.selectedDateDidChange(date: date)
+            recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: date)
         }
     }
 
@@ -59,6 +60,10 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 
     func updateRecord(records: [PatienceEntity]) {
         self.records = records
+    }
+
+    func updateSumMoney(sumMoney: Int) {
+        recordListHeaderView.sumMoney = sumMoney
     }
 
     func didDeleteRecord() {
@@ -111,6 +116,7 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         recordListHeaderView.title = DateUtils.stringFromDate(date: date, format: DateUtils.dateFormatJapanese)
+        recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: date)
         return recordListHeaderView
     }
 
@@ -142,6 +148,10 @@ extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSour
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.date = DateUtils.getStartDay(date: date)
         recordListHeaderView.title = DateUtils.stringFromDate(date: date, format: DateUtils.dateFormatJapanese)
+    }
+
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        date = calendar.currentPage
     }
 }
 
