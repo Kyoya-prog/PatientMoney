@@ -76,4 +76,6 @@
 // PatienceAnalyzePresenter
 "PatienceAnalyzePresenter.StatusNotification.Error.title" = "データの取得に失敗しました";
 
-
+// RecordListHeaderView
+"RecordListHeaderView.MonthLabel.text" = "%d月の節約合計額";
+"RecordListHeaderView.sumMoneyLabel.text" = "%d円";

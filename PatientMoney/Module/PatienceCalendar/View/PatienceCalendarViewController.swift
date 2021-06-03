@@ -12,6 +12,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
     var date = DateUtils.getStartDay(date: Date()) {
         didSet {
             presenter.selectedDateDidChange(date: date)
+            recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: date)
         }
     }
 
@@ -147,7 +148,10 @@ extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSour
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.date = DateUtils.getStartDay(date: date)
         recordListHeaderView.title = DateUtils.stringFromDate(date: date, format: DateUtils.dateFormatJapanese)
-        recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: date)
+    }
+
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        date = calendar.currentPage
     }
 }
 

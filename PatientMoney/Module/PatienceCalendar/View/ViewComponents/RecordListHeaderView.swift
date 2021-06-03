@@ -29,13 +29,13 @@ class RecordListHeaderView: UIView {
 
     var selectedMonth: Int = 0 {
         didSet {
-            monthLabel.text = "\(selectedMonth)月の合計節約額"
+            monthLabel.text = L10n.RecordListHeaderView.MonthLabel.text(selectedMonth)
         }
     }
 
     var sumMoney: Int = 0 {
         didSet {
-            sumMoneyLabel.text = "\(sumMoney)円"
+            sumMoneyLabel.text = L10n.RecordListHeaderView.SumMoneyLabel.text(sumMoney)
         }
     }
 
