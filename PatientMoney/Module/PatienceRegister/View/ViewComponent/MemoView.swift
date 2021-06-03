@@ -27,6 +27,7 @@ class MemoView: UIView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.boldSystemFont(ofSize: 14)
         titleLabel.text = L10n.MemoView.title
+        titleLabel.textColor = UIColor.black
         addSubview(titleLabel)
 
         memoTextView.translatesAutoresizingMaskIntoConstraints = false
@@ -36,6 +37,7 @@ class MemoView: UIView {
         memoTextView.textContainerInset = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
         memoTextView.text = L10n.MemoView.MemoTextView.text
         memoTextView.isScrollEnabled = false
+        memoTextView.textColor = UIColor.black
         addSubview(memoTextView)
 
         memoTextView.inputAccessoryView = keyboardToolbar

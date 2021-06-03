@@ -28,6 +28,7 @@ class MoneyView: UIView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = L10n.MoneyView.title
         titleLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        titleLabel.textColor = UIColor.black
         addSubview(titleLabel)
 
         moneyTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +39,8 @@ class MoneyView: UIView {
         moneyTextField.font = UIFont.boldSystemFont(ofSize: 20)
         moneyTextField.layer.cornerRadius = 4
         moneyTextField.keyboardType = .numberPad
+        moneyTextField.textColor = UIColor.black
+        moneyTextField.text = "0"
         addSubview(moneyTextField)
 
         moneyTextField.inputAccessoryView = keyboardToolbar
@@ -45,6 +48,7 @@ class MoneyView: UIView {
         yenLabel.translatesAutoresizingMaskIntoConstraints = false
         yenLabel.text = L10n.MoneyView.YenLabel.text
         yenLabel.font = UIFont.systemFont(ofSize: 14)
+        yenLabel.textColor = UIColor.black
         addSubview(yenLabel)
 
         NSLayoutConstraint.activate([

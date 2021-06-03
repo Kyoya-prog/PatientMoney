@@ -75,6 +75,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 
     private lazy var recordsView: UITableView = {
         let view = UITableView()
+        view.backgroundColor = .white
         view.register(RecordCell.self, forCellReuseIdentifier: RecordCell.reuseIdentifer)
         view.delegate = self
         view.dataSource = self

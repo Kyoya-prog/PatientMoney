@@ -26,13 +26,17 @@ class RecordCell: UITableViewCell {
     }
 
     private func construct() {
+        backgroundColor = .white
+
         icon.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(icon)
 
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.textColor = UIColor.black
         contentView.addSubview(titleLabel)
 
         moneyLabel.translatesAutoresizingMaskIntoConstraints = false
+        moneyLabel.textColor = UIColor.black
         contentView.addSubview(moneyLabel)
 
         NSLayoutConstraint.activate([
