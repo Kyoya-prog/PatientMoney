@@ -25,6 +25,7 @@
 		3D3A323F263F096B00077B6D /* PatienceDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A323E263F096B00077B6D /* PatienceDataStore.swift */; };
 		3D3A3250263F2B9800077B6D /* PatienceInputRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A324F263F2B9800077B6D /* PatienceInputRouter.swift */; };
 		3D61B4E2264EDA2F001C74B6 /* RecordListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D61B4E1264EDA2F001C74B6 /* RecordListHeaderView.swift */; };
+		3D6963DE2678D26100368810 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6963DD2678D26100368810 /* CategoryCell.swift */; };
 		3D6B0FDD263D8031009D21A1 /* HeightSelfSizingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FDC263D8031009D21A1 /* HeightSelfSizingCollectionView.swift */; };
 		3D6B0FE7263D85E0009D21A1 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FE6263D85E0009D21A1 /* DateView.swift */; };
 		3D6B0FEC263E714D009D21A1 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FEB263E714D009D21A1 /* DateUtils.swift */; };
@@ -149,6 +150,7 @@
 		3D3A323E263F096B00077B6D /* PatienceDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceDataStore.swift; sourceTree = "<group>"; };
 		3D3A324F263F2B9800077B6D /* PatienceInputRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceInputRouter.swift; sourceTree = "<group>"; };
 		3D61B4E1264EDA2F001C74B6 /* RecordListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListHeaderView.swift; sourceTree = "<group>"; };
+		3D6963DD2678D26100368810 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		3D6B0FDC263D8031009D21A1 /* HeightSelfSizingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightSelfSizingCollectionView.swift; sourceTree = "<group>"; };
 		3D6B0FE6263D85E0009D21A1 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		3D6B0FEB263E714D009D21A1 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
@@ -396,6 +398,13 @@
 			path = HeightSelfSizing;
 			sourceTree = "<group>";
 		};
+		3D6963DC2678D21C00368810 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		3D6B0FEA263E713E009D21A1 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +645,7 @@
 		3DE103F2263AE67100F724B8 /* ViewComponent */ = {
 			isa = PBXGroup;
 			children = (
+				3D6963DC2678D21C00368810 /* CollectionViewCell */,
 				3D6963DA2678D17B00368810 /* HeightSelfSizing */,
 				3D9FEC2726679DF6008A77FC /* TableViewCell */,
 				3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */,
@@ -697,6 +707,7 @@
 				3D6B0FE6263D85E0009D21A1 /* DateView.swift */,
 				3D6B0FF5263E76AA009D21A1 /* MemoView.swift */,
 				3D6B0FFF263E94E1009D21A1 /* MoneyView.swift */,
+				3D6963DD2678D26100368810 /* CategoryCell.swift */,
 			);
 			path = ViewComponent;
 			sourceTree = "<group>";
@@ -938,6 +949,7 @@
 				3D6B0FF6263E76AA009D21A1 /* MemoView.swift in Sources */,
 				3D3A3250263F2B9800077B6D /* PatienceInputRouter.swift in Sources */,
 				3DEB53C826400B96002A2166 /* PatienceCalendarRouter.swift in Sources */,
+				3D6963DE2678D26100368810 /* CategoryCell.swift in Sources */,
 				3D6B1000263E94E1009D21A1 /* MoneyView.swift in Sources */,
 				3DE10495263D36B500F724B8 /* FontAwesome.swift in Sources */,
 				3D3A321A263EEEA000077B6D /* StatusNotification.swift in Sources */,
