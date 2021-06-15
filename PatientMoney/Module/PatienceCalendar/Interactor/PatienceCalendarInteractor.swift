@@ -3,7 +3,9 @@ import Foundation
 import RxSwift
 
 class PatienceCalendarInteractor: PatienceCalendarUsecase {
+    // MARK: PatienceCalendarUsecase
     var repository: PatienceRepository!
+
     var output: PatienceCalendarInteractorOutput?
 
     func fetchPatienceData(date: Date) {

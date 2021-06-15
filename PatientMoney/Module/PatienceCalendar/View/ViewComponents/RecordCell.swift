@@ -1,20 +1,22 @@
-import Foundation
 import UIKit
 
 class RecordCell: UITableViewCell {
+    static let reuseIdentifer = "patience-record"
+
+    /// カテゴリータイトル
     var categoryTitle = L10n.CategoryIcon.Title.pizzaSlice {
         didSet {
             updateValue()
         }
     }
 
+    /// 金額
     var money = 0 {
         didSet {
             updateValue()
         }
     }
 
-    static let reuseIdentifer = "patience-record"
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         construct()

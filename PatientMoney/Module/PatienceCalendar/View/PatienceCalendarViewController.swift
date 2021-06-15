@@ -3,16 +3,17 @@ import FSCalendar
 import UIKit
 
 class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
+    /// 記録
     var records: [PatienceEntity] = [] {
         didSet {
             recordsView.reloadData()
         }
     }
-
-    var date = DateUtils.getStartDay(date: Date()) {
+    ///  選択されている日付
+    var selectedDate = DateUtils.getStartDay(date: Date()) {
         didSet {
-            presenter.selectedDateDidChange(date: date)
-            recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: date)
+            presenter.selectedDateDidChange(date: selectedDate)
+            recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: selectedDate)
         }
     }
 
@@ -44,7 +45,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.selectedDateDidChange(date: date)
+        presenter.selectedDateDidChange(date: selectedDate)
     }
 
     // MARK: PatienceCalendarView
@@ -88,11 +89,11 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
     }()
 
     @objc private func didTapRegisterButton(_ sender: UIBarButtonItem) {
-        presenter.didTapRegisterButton(date: date)
+        presenter.didTapRegisterButton(date: selectedDate)
     }
 
     private func updateRecordsView() {
-        presenter.selectedDateDidChange(date: date)
+        presenter.selectedDateDidChange(date: selectedDate)
     }
 }
 
@@ -115,8 +116,8 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        recordListHeaderView.title = DateUtils.stringFromDate(date: date, format: DateUtils.dateFormatJapanese)
-        recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: date)
+        recordListHeaderView.title = DateUtils.stringFromDate(date: selectedDate, format: DateUtils.dateFormatJapanese)
+        recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: selectedDate)
         return recordListHeaderView
     }
 
@@ -146,12 +147,12 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
 // MARK: FSCalendarDelegate, FSCalendarDataSource
 extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        self.date = DateUtils.getStartDay(date: date)
+        self.selectedDate = DateUtils.getStartDay(date: date)
         recordListHeaderView.title = DateUtils.stringFromDate(date: date, format: DateUtils.dateFormatJapanese)
     }
 
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        date = calendar.currentPage
+        selectedDate = calendar.currentPage
     }
 }
 
