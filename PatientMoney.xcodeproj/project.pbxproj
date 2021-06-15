@@ -10,7 +10,6 @@
 		3D205C6326381C820058064C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6226381C820058064C /* Localizable.strings */; };
 		3D205C6B26381EAB0058064C /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6A26381EAB0058064C /* gRPCCertificates-Cpp.bundle */; };
 		3D36BC92263FBF1A00EDF69F /* PatienceCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */; };
-		3D36BC99263FD39200EDF69F /* HeightSelfSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC98263FD39200EDF69F /* HeightSelfSizingTableView.swift */; };
 		3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC9E263FD60F00EDF69F /* Category.swift */; };
 		3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */; };
 		3D3A3216263EE0F700077B6D /* PatienceRegisterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3215263EE0F700077B6D /* PatienceRegisterContract.swift */; };
@@ -138,7 +137,6 @@
 		3D205C6226381C820058064C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3D205C6A26381EAB0058064C /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "gRPCCertificates-Cpp.bundle"; path = "../../Carthage/Build/iOS/gRPC-C++.framework/Resources/gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
 		3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarViewController.swift; sourceTree = "<group>"; };
-		3D36BC98263FD39200EDF69F /* HeightSelfSizingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightSelfSizingTableView.swift; sourceTree = "<group>"; };
 		3D36BC9E263FD60F00EDF69F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarInteractor.swift; sourceTree = "<group>"; };
 		3D3A3215263EE0F700077B6D /* PatienceRegisterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceRegisterContract.swift; sourceTree = "<group>"; };
@@ -336,14 +334,6 @@
 				3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		3D36BC97263FD37C00EDF69F /* HeightSelfSizingView */ = {
-			isa = PBXGroup;
-			children = (
-				3D36BC98263FD39200EDF69F /* HeightSelfSizingTableView.swift */,
-			);
-			path = HeightSelfSizingView;
 			sourceTree = "<group>";
 		};
 		3D36BCA8263FDCBA00EDF69F /* Module */ = {
@@ -639,7 +629,6 @@
 			isa = PBXGroup;
 			children = (
 				3D9FEC2726679DF6008A77FC /* TableViewCell */,
-				3D36BC97263FD37C00EDF69F /* HeightSelfSizingView */,
 				3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */,
 				3DE10419263BEDE900F724B8 /* FlatButton.swift */,
 			);
@@ -950,7 +939,6 @@
 				3D9FEC2E2667FB1A008A77FC /* PatienceAnalyzeInteractor.swift in Sources */,
 				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
-				3D36BC99263FD39200EDF69F /* HeightSelfSizingTableView.swift in Sources */,
 				3DEE39A0264112C4005D3EB0 /* PatienceEntity.swift in Sources */,
 				3D9FEC2C2667A95D008A77FC /* YearAndMonthDateTextField.swift in Sources */,
 				3D61B4E2264EDA2F001C74B6 /* RecordListHeaderView.swift in Sources */,
