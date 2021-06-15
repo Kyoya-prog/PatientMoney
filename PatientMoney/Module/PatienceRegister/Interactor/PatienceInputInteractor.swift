@@ -2,6 +2,10 @@ import Foundation
 import RxSwift
 
 class PatienceInputInteractor: PatienceUsecase {
+    var output: PatienceInputInteractorOutput?
+
+    var repository: PatienceRepository!
+
     func updatePatienceData(record: PatienceEntity) {
         let documentData = ["Date": record.date, "Memo": record.memo, "Money": record.money, "Category": record.categoryTitle, "UID": uid] as [String: Any]
         repository.updatePatienceData(documentId: record.documentID, record: documentData).subscribe { observer in
@@ -15,9 +19,6 @@ class PatienceInputInteractor: PatienceUsecase {
         }
         .disposed(by: disposeBag)
     }
-
-    var output: PatienceInputInteractorOutput?
-    var repository: PatienceRepository!
 
     func registerPatienceData(date: Date, memo: String, money: Int, category: String) {
         let documentData = ["Date": date, "Memo": memo, "Money": money, "Category": category, "UID": uid] as [String: Any]

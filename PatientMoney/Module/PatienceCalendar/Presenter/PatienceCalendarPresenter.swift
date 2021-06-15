@@ -1,8 +1,11 @@
 import Foundation
 
 class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarInteractorOutput {
+    // MARK: PatienceCalendarInteractorOutput
     var view: PatienceCalendarView?
+
     var interactor: PatienceCalendarUsecase!
+
     var router: PatienceCalendarWireframe!
 
     func didTapRegisterButton(date: Date) {

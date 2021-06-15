@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 
 class PatienceInputViewController: UIViewController, PatienceInputView {
+    /// 新規の記録かどうか
     var isNewRecord: Bool
 
     init(isNewRecord: Bool) {

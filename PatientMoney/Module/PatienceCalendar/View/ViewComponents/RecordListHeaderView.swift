@@ -20,19 +20,19 @@ class RecordListHeaderView: UIView {
         construct()
     }
 
-    ///　taitoru
+    ///　タイトル
     var title: String = ""{
         didSet {
             titleLabel.text = title
         }
     }
-
+    /// 選択された月
     var selectedMonth: Int = 0 {
         didSet {
             monthLabel.text = L10n.RecordListHeaderView.MonthLabel.text(selectedMonth)
         }
     }
-
+    /// 合計金額
     var sumMoney: Int = 0 {
         didSet {
             sumMoneyLabel.text = L10n.RecordListHeaderView.SumMoneyLabel.text(sumMoney)
