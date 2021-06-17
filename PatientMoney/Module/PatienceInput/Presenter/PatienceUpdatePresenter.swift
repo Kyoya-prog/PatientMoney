@@ -1,6 +1,6 @@
 import Foundation
 
-class PatienceUpdatePreseneter: PatienceInputPresentation, PatienceInputInteractorOutput {
+class PatienceUpdatePreseneter: PatienceUpdatePresentation, PatienceInputInteractorOutput {
     /// ドキュメントID
     var documentId: String?
     // MARK: RegisterPresentation
@@ -10,7 +10,7 @@ class PatienceUpdatePreseneter: PatienceInputPresentation, PatienceInputInteract
 
     var router: PatienceInputWireframe!
 
-    func didTapInputButton(date: Date, memo: String, money: Int, categoryTitle: String) {
+    func didTapUpdateButton(date: Date, memo: String, money: Int, categoryTitle: String) {
         guard let documentId = documentId else { return }
         interactor.updatePatienceData(record: PatienceEntity(documentID: documentId, date: date, memo: memo, money: money, categoryTitle: categoryTitle))
     }

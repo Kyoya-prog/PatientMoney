@@ -20,7 +20,7 @@
 		3D3A3223263EEFE000077B6D /* NotificationBanner.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321E263EEFE000077B6D /* NotificationBanner.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D3A3224263EEFE000077B6D /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; };
 		3D3A3225263EEFE000077B6D /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3D3A322A263EF37F00077B6D /* PatienceInputPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3229263EF37F00077B6D /* PatienceInputPresenter.swift */; };
+		3D3A322A263EF37F00077B6D /* PatienceRegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3229263EF37F00077B6D /* PatienceRegisterPresenter.swift */; };
 		3D3A3231263F074F00077B6D /* PatienceInputInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3230263F074F00077B6D /* PatienceInputInteractor.swift */; };
 		3D3A323F263F096B00077B6D /* PatienceDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A323E263F096B00077B6D /* PatienceDataStore.swift */; };
 		3D3A3250263F2B9800077B6D /* PatienceInputRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A324F263F2B9800077B6D /* PatienceInputRouter.swift */; };
@@ -73,6 +73,7 @@
 		3D9FEC3226680174008A77FC /* PatienceAnalyzePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC3126680174008A77FC /* PatienceAnalyzePresenter.swift */; };
 		3D9FEC342668041E008A77FC /* PatienceAnalyzeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC332668041E008A77FC /* PatienceAnalyzeRouter.swift */; };
 		3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */; };
+		3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */; };
 		3DE103C82638360000F724B8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103C72638360000F724B8 /* Strings.swift */; };
 		3DE103CC2638360800F724B8 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103CB2638360800F724B8 /* Asset.swift */; };
 		3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */; };
@@ -146,7 +147,7 @@
 		3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MarqueeLabel.xcframework; path = Carthage/Build/MarqueeLabel.xcframework; sourceTree = "<group>"; };
 		3D3A321E263EEFE000077B6D /* NotificationBanner.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NotificationBanner.xcframework; path = Carthage/Build/NotificationBanner.xcframework; sourceTree = "<group>"; };
 		3D3A321F263EEFE000077B6D /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
-		3D3A3229263EF37F00077B6D /* PatienceInputPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceInputPresenter.swift; sourceTree = "<group>"; };
+		3D3A3229263EF37F00077B6D /* PatienceRegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceRegisterPresenter.swift; sourceTree = "<group>"; };
 		3D3A3230263F074F00077B6D /* PatienceInputInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceInputInteractor.swift; sourceTree = "<group>"; };
 		3D3A323E263F096B00077B6D /* PatienceDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceDataStore.swift; sourceTree = "<group>"; };
 		3D3A324F263F2B9800077B6D /* PatienceInputRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceInputRouter.swift; sourceTree = "<group>"; };
@@ -215,6 +216,7 @@
 		3D9FEC3126680174008A77FC /* PatienceAnalyzePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzePresenter.swift; sourceTree = "<group>"; };
 		3D9FEC332668041E008A77FC /* PatienceAnalyzeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzeRouter.swift; sourceTree = "<group>"; };
 		3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceUpdatePresenter.swift; sourceTree = "<group>"; };
+		3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPresentationProtocol.swift; sourceTree = "<group>"; };
 		3DE103C72638360000F724B8 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Generated/Strings.swift; sourceTree = "<group>"; };
 		3DE103CB2638360800F724B8 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Generated/Asset.swift; sourceTree = "<group>"; };
 		3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
@@ -354,8 +356,9 @@
 		3D3A3228263EF36D00077B6D /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				3D3A3229263EF37F00077B6D /* PatienceInputPresenter.swift */,
+				3D3A3229263EF37F00077B6D /* PatienceRegisterPresenter.swift */,
 				3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */,
+				3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -932,9 +935,10 @@
 			files = (
 				3DE10427263C008900F724B8 /* SignUpViewController.swift in Sources */,
 				3D3A3216263EE0F700077B6D /* PatienceInputContract.swift in Sources */,
+				3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */,
 				3DE10449263C725200F724B8 /*  AuthInteractor.swift in Sources */,
 				3DE1049A263D36E900F724B8 /* NSAttributedStrinfExtension.swift in Sources */,
-				3D3A322A263EF37F00077B6D /* PatienceInputPresenter.swift in Sources */,
+				3D3A322A263EF37F00077B6D /* PatienceRegisterPresenter.swift in Sources */,
 				3D6B1009263E9A82009D21A1 /* PatienceInputViewController.swift in Sources */,
 				3DEB53D026400BC5002A2166 /* PatienceCalendarContract.swift in Sources */,
 				3D36BC92263FBF1A00EDF69F /* PatienceCalendarViewController.swift in Sources */,
