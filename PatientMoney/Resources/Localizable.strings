@@ -45,16 +45,21 @@
 "MoneyView.MoneyTextField.placeholder" = "0";
 "MoneyView.YenLabel.text" = "円";
 
-// RegisterViewController
+// PatienceInputViewController
 "PatienceInputViewController.InputButton.Register.title" = "登録する";
 "PatienceInputViewController.InputButton.Update.title" = "更新する";
 "PatienceInputViewController.NavigationItem.title" = "登録画面";
 "PatienceInputViewController.Alert.OkAction.title" = "OK";
 "PatienceInputViewController.Alert.CancelAction.title" = "キャンセル";
 "PatienceInputViewController.Alert.title" = "金額が０円ですがこのまま登録しますか？";
-"PatienceInputPresenter.StatusNotification.RegisterSuccess.title" = "登録に成功しました";
-"PatienceInputPresenter.StatusNotification.UpdateSuccess.title" = "更新に成功しました";
-"PatienceInputPresenter.StatusNotification.Failure.title" = "登録に失敗しました";
+
+// PatienceRegisterPresenter
+"PatienceRegisterPresenter.StatusNotification.RegisterSuccess.title" = "登録に成功しました";
+"PatienceRegisterPresenter.StatusNotification.RegisterFailure.title" = "登録に失敗しました";
+
+// PatienceUpdatePresenter
+"PatienceUpdatePresenter.StatusNotification.UpdateSuccess.title" = "更新に成功しました";
+"PatienceUpdatePresenter.StatusNotification.UpdateFailure.title" = "更新に失敗しました";
 
 // AppDelegate
 "AppDelegate.HomeView.RegisterView.title" = "登録";

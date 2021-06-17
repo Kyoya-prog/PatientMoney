@@ -11,24 +11,24 @@ class PatienceInputInteractor: PatienceUsecase {
         repository.updatePatienceData(documentId: record.documentID, record: documentData).subscribe { observer in
             switch observer {
             case .success(_):
-                self.output?.outputRegisterSuccess()
+                self.output?.outputInputSuccess()
 
             case .failure(let error):
-                self.output?.outputRegisterError(error: error)
+                self.output?.outputInputError(error: error)
             }
         }
         .disposed(by: disposeBag)
     }
 
-    func registerPatienceData(date: Date, memo: String, money: Int, category: String) {
-        let documentData = ["Date": date, "Memo": memo, "Money": money, "Category": category, "UID": uid] as [String: Any]
+    func registerPatienceData(record: PatienceEntity) {
+        let documentData = ["Date": record.date, "Memo": record.memo, "Money": record.money, "Category": record.categoryTitle, "UID": uid] as [String: Any]
         repository.registerPatienceData(data: documentData).subscribe { observer in
             switch observer {
             case .success(_):
-                self.output?.outputRegisterSuccess()
+                self.output?.outputInputSuccess()
 
             case .failure(let error):
-                self.output?.outputRegisterError(error: error)
+                self.output?.outputInputError(error: error)
             }
         }
         .disposed(by: disposeBag)

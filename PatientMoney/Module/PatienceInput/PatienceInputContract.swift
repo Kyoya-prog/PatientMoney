@@ -31,19 +31,12 @@ protocol PatienceInputPresentation {
     var view: PatienceInputView? { get }
     var interactor: PatienceUsecase! { get }
     var router: PatienceInputWireframe! { get }
-    /// 登録ボタンがタップされた
+    /// 入力ボタンがタップされた
     /// - parameter date:日付
     /// - parameter memo:メモ
     /// - parameter money: 金額
     /// - parameter categoryTitle: カテゴリータイトル
-    func didTapRegisterButton(date: Date, memo: String, money: Int, categoryTitle: String)
-
-    /// 更新ボタンがタップされた
-    /// - parameter date:日付
-    /// - parameter memo:メモ
-    /// - parameter money: 金額
-    /// - parameter categoryTitle: カテゴリータイトル
-    func didTapUpdateButton(date: Date, memo: String, money: Int, categoryTitle: String)
+    func didTapInputButton(date: Date, memo: String, money: Int, categoryTitle: String)
 }
 
 protocol PatienceUsecase {
@@ -52,11 +45,8 @@ protocol PatienceUsecase {
 
     var repository: PatienceRepository! { get }
     /// データを登録する
-    /// - parameter date:日付
-    /// - parameter memo:メモ
-    /// - parameter money: 金額
-    /// - parameter category: カテゴリー
-    func registerPatienceData(date: Date, memo: String, money: Int, category: String)
+    /// - parameter record:データレコード
+    func registerPatienceData(record: PatienceEntity)
 
     /// データをupdateする
     /// - parameter record:データレコード
@@ -64,15 +54,12 @@ protocol PatienceUsecase {
 }
 
 protocol PatienceInputInteractorOutput {
-    /// 登録時のエラーを知らせる
+    /// 入力のエラーを出力する
     /// - parameter error:エラー内容
-    func outputRegisterError(error: Error)
+    func outputInputError(error: Error)
 
-    /// 登録に成功したことを知らせる
-    func outputRegisterSuccess()
-
-    /// 更新に成功したことを知らせる
-    func outputUpdateSuccess()
+    /// 入力に成功したことを知らせる
+    func outputInputSuccess()
 }
 
 protocol PatienceRepository {

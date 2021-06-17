@@ -119,21 +119,14 @@ class PatienceInputViewController: UIViewController, PatienceInputView {
     private lazy var alert: UIAlertController = {
         let alert = UIAlertController(title: nil, message: L10n.PatienceInputViewController.Alert.title, preferredStyle: .alert)
         let okAction = UIAlertAction(title: L10n.PatienceInputViewController.Alert.OkAction.title, style: .default, handler: { [weak self] _ in
-            self?.inputAction()
+            guard let self = self else { return }
+            self.presenter.didTapInputButton(date: self.dateRecord, memo: self.memoRecord, money: self.moneyRecord ?? 0, categoryTitle: self.categoryTitleRecord)
         })
         let cancelAction = UIAlertAction(title: L10n.PatienceInputViewController.Alert.CancelAction.title, style: .cancel)
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         return alert
     }()
-
-    private func inputAction() {
-        if isNewRecord {
-            presenter.didTapRegisterButton(date: dateRecord, memo: memoRecord, money: moneyRecord ?? 0, categoryTitle: categoryTitleRecord)
-        } else {
-            presenter.didTapUpdateButton(date: dateRecord, memo: memoRecord, money: moneyRecord ?? 0, categoryTitle: categoryTitleRecord)
-        }
-    }
 
     private func resetData() {
         dateRecord = Date()
@@ -144,11 +137,7 @@ class PatienceInputViewController: UIViewController, PatienceInputView {
 
     @objc private func inputButtonAction(_ :UIButton) {
         if let money = (subViews[2] as? MoneyView)?.money {
-            if isNewRecord {
-                presenter.didTapRegisterButton(date: dateRecord, memo: memoRecord, money: money, categoryTitle: categoryTitleRecord)
-            } else {
-                presenter.didTapUpdateButton(date: dateRecord, memo: memoRecord, money: money, categoryTitle: categoryTitleRecord)
-            }
+            presenter.didTapInputButton(date: dateRecord, memo: memoRecord, money: money, categoryTitle: categoryTitleRecord)
         } else {
             present(alert, animated: true, completion: nil)
         }

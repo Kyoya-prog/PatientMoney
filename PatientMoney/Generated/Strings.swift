@@ -208,23 +208,6 @@ internal enum L10n {
     }
   }
 
-  internal enum PatienceInputPresenter {
-    internal enum StatusNotification {
-      internal enum Failure {
-        /// 登録に失敗しました
-        internal static let title = L10n.tr("Localizable", "PatienceInputPresenter.StatusNotification.Failure.title")
-      }
-      internal enum RegisterSuccess {
-        /// 登録に成功しました
-        internal static let title = L10n.tr("Localizable", "PatienceInputPresenter.StatusNotification.RegisterSuccess.title")
-      }
-      internal enum UpdateSuccess {
-        /// 更新に成功しました
-        internal static let title = L10n.tr("Localizable", "PatienceInputPresenter.StatusNotification.UpdateSuccess.title")
-      }
-    }
-  }
-
   internal enum PatienceInputViewController {
     internal enum Alert {
       /// 金額が０円ですがこのまま登録しますか？
@@ -251,6 +234,32 @@ internal enum L10n {
     internal enum NavigationItem {
       /// 登録画面
       internal static let title = L10n.tr("Localizable", "PatienceInputViewController.NavigationItem.title")
+    }
+  }
+
+  internal enum PatienceRegisterPresenter {
+    internal enum StatusNotification {
+      internal enum RegisterFailure {
+        /// 登録に失敗しました
+        internal static let title = L10n.tr("Localizable", "PatienceRegisterPresenter.StatusNotification.RegisterFailure.title")
+      }
+      internal enum RegisterSuccess {
+        /// 登録に成功しました
+        internal static let title = L10n.tr("Localizable", "PatienceRegisterPresenter.StatusNotification.RegisterSuccess.title")
+      }
+    }
+  }
+
+  internal enum PatienceUpdatePresenter {
+    internal enum StatusNotification {
+      internal enum UpdateFailure {
+        /// 更新に失敗しました
+        internal static let title = L10n.tr("Localizable", "PatienceUpdatePresenter.StatusNotification.UpdateFailure.title")
+      }
+      internal enum UpdateSuccess {
+        /// 更新に成功しました
+        internal static let title = L10n.tr("Localizable", "PatienceUpdatePresenter.StatusNotification.UpdateSuccess.title")
+      }
     }
   }
 
