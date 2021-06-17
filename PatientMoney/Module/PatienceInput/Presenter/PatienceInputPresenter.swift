@@ -11,7 +11,7 @@ class PatienceInputPresenter: PatienceInputPresentation, PatienceInputInteractor
     var documentId: String?
 
     func didTapRegisterButton(date: Date, memo: String, money: Int, categoryTitle: String) {
-        interactor.registerPatienceData(date: date, memo: memo, money: money, category: categoryTitle)
+        interactor.registerPatienceData(record: PatienceEntity(documentID: "", date: date, memo: memo, money: money, categoryTitle: categoryTitle))
     }
 
     func didTapUpdateButton(date: Date, memo: String, money: Int, categoryTitle: String) {

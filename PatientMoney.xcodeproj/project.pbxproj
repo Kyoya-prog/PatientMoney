@@ -12,7 +12,7 @@
 		3D36BC92263FBF1A00EDF69F /* PatienceCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */; };
 		3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC9E263FD60F00EDF69F /* Category.swift */; };
 		3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */; };
-		3D3A3216263EE0F700077B6D /* PatienceRegisterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3215263EE0F700077B6D /* PatienceRegisterContract.swift */; };
+		3D3A3216263EE0F700077B6D /* PatienceInputContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3215263EE0F700077B6D /* PatienceInputContract.swift */; };
 		3D3A321A263EEEA000077B6D /* StatusNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3219263EEEA000077B6D /* StatusNotification.swift */; };
 		3D3A3220263EEFE000077B6D /* MarqueeLabel.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */; };
 		3D3A3221263EEFE000077B6D /* MarqueeLabel.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -140,7 +140,7 @@
 		3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarViewController.swift; sourceTree = "<group>"; };
 		3D36BC9E263FD60F00EDF69F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarInteractor.swift; sourceTree = "<group>"; };
-		3D3A3215263EE0F700077B6D /* PatienceRegisterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceRegisterContract.swift; sourceTree = "<group>"; };
+		3D3A3215263EE0F700077B6D /* PatienceInputContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceInputContract.swift; sourceTree = "<group>"; };
 		3D3A3219263EEEA000077B6D /* StatusNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusNotification.swift; sourceTree = "<group>"; };
 		3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MarqueeLabel.xcframework; path = Carthage/Build/MarqueeLabel.xcframework; sourceTree = "<group>"; };
 		3D3A321E263EEFE000077B6D /* NotificationBanner.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NotificationBanner.xcframework; path = Carthage/Build/NotificationBanner.xcframework; sourceTree = "<group>"; };
@@ -342,7 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				3D9FEC1C266796ED008A77FC /* PatienceAnalyze */,
-				3DE104AE263D3BC700F724B8 /* PatienceRegister */,
+				3DE104AE263D3BC700F724B8 /* PatienceInput */,
 				3D36BC8F263FBEF400EDF69F /* PatienceCalendar */,
 				3DE103E3263ACBC900F724B8 /* Auth */,
 			);
@@ -680,16 +680,16 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
-		3DE104AE263D3BC700F724B8 /* PatienceRegister */ = {
+		3DE104AE263D3BC700F724B8 /* PatienceInput */ = {
 			isa = PBXGroup;
 			children = (
 				3D6B1007263E9A6D009D21A1 /* View */,
 				3D3A3228263EF36D00077B6D /* Presenter */,
 				3D3A322F263F073E00077B6D /* Interactor */,
 				3D3A324E263F2B8400077B6D /* Router */,
-				3D3A3215263EE0F700077B6D /* PatienceRegisterContract.swift */,
+				3D3A3215263EE0F700077B6D /* PatienceInputContract.swift */,
 			);
-			path = PatienceRegister;
+			path = PatienceInput;
 			sourceTree = "<group>";
 		};
 		3DE104AF263D3BD600F724B8 /* ViewComponent */ = {
@@ -928,7 +928,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE10427263C008900F724B8 /* SignUpViewController.swift in Sources */,
-				3D3A3216263EE0F700077B6D /* PatienceRegisterContract.swift in Sources */,
+				3D3A3216263EE0F700077B6D /* PatienceInputContract.swift in Sources */,
 				3DE10449263C725200F724B8 /*  AuthInteractor.swift in Sources */,
 				3DE1049A263D36E900F724B8 /* NSAttributedStrinfExtension.swift in Sources */,
 				3D3A322A263EF37F00077B6D /* PatienceInputPresenter.swift in Sources */,

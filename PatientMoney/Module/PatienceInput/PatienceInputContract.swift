@@ -52,11 +52,8 @@ protocol PatienceUsecase {
 
     var repository: PatienceRepository! { get }
     /// データを登録する
-    /// - parameter date:日付
-    /// - parameter memo:メモ
-    /// - parameter money: 金額
-    /// - parameter category: カテゴリー
-    func registerPatienceData(date: Date, memo: String, money: Int, category: String)
+    /// - parameter record:データレコード
+    func registerPatienceData(record: PatienceEntity)
 
     /// データをupdateする
     /// - parameter record:データレコード
