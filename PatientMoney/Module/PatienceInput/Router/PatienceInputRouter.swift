@@ -35,7 +35,7 @@ class PatienceInputRouter: PatienceInputWireframe {
         registerView.memoRecord = record.memo
         registerView.moneyRecord = record.money
         registerView.categoryTitleRecord = record.categoryTitle
-        presenter.documentId = record.documentID
+        presenter.id = record.documentID
 
         interactor.repository = datastore
         interactor.output = presenter

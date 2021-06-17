@@ -15,8 +15,6 @@ class PatienceInputViewController: UIViewController, PatienceInputView {
         super.init(coder: coder)
     }
 
-    var documentId: String = ""
-
     var dateRecord: Date {
         get {
             (subViews[0] as? DateView)?.selectedDate ?? Date()

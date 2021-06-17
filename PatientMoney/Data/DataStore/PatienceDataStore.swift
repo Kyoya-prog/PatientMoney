@@ -60,10 +60,10 @@ class PatienceDataStore: PatienceRepository {
         }
     }
 
-    func updatePatienceData(documentId: String, record: [String: Any]) -> Single<Error?> {
+    func updatePatienceData(id: String, record: [String: Any]) -> Single<Error?> {
         Single.create { [weak self] observer -> Disposable in
             guard let self = self else { return Disposables.create() }
-            self.firestoreCollectionReference.document(documentId).updateData(record) { error in
+            self.firestoreCollectionReference.document(id).updateData(record) { error in
                 if let error = error {
                     observer(.failure(error))
                     return
@@ -75,10 +75,10 @@ class PatienceDataStore: PatienceRepository {
         }
     }
 
-    func deletePatienceData(documentId: String) ->Single<Error?> {
+    func deletePatienceData(id: String) ->Single<Error?> {
         Single.create { [weak self] observer -> Disposable in
             guard let self = self else { return Disposables.create() }
-            self.firestoreCollectionReference.document(documentId).delete { error in
+            self.firestoreCollectionReference.document(id).delete { error in
                 if let error = error {
                     observer(.failure(error))
                     return
