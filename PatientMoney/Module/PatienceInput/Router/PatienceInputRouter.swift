@@ -26,7 +26,7 @@ class PatienceInputRouter: PatienceInputWireframe {
 
     static func assembleUpdateModule(record: PatienceEntity) -> UIViewController {
         let registerView = PatienceInputViewController(isNewRecord: false)
-        let presenter = PatienceInputPresenter()
+        let presenter = PatienceUpdatePreseneter()
         let interactor = PatienceInputInteractor()
         let datastore = PatienceDataStore()
         let router = PatienceInputRouter()

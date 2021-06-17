@@ -11,10 +11,10 @@ class PatienceInputInteractor: PatienceUsecase {
         repository.updatePatienceData(documentId: record.documentID, record: documentData).subscribe { observer in
             switch observer {
             case .success(_):
-                self.output?.outputRegisterSuccess()
+                self.output?.outputInputSuccess()
 
             case .failure(let error):
-                self.output?.outputRegisterError(error: error)
+                self.output?.outputInputError(error: error)
             }
         }
         .disposed(by: disposeBag)
@@ -25,10 +25,10 @@ class PatienceInputInteractor: PatienceUsecase {
         repository.registerPatienceData(data: documentData).subscribe { observer in
             switch observer {
             case .success(_):
-                self.output?.outputRegisterSuccess()
+                self.output?.outputInputSuccess()
 
             case .failure(let error):
-                self.output?.outputRegisterError(error: error)
+                self.output?.outputInputError(error: error)
             }
         }
         .disposed(by: disposeBag)

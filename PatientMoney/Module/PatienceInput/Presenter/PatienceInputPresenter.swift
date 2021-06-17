@@ -8,29 +8,16 @@ class PatienceInputPresenter: PatienceInputPresentation, PatienceInputInteractor
 
     var router: PatienceInputWireframe!
 
-    var documentId: String?
-
-    func didTapRegisterButton(date: Date, memo: String, money: Int, categoryTitle: String) {
+    func didTapInputButton(date: Date, memo: String, money: Int, categoryTitle: String) {
         interactor.registerPatienceData(record: PatienceEntity(documentID: "", date: date, memo: memo, money: money, categoryTitle: categoryTitle))
     }
 
-    func didTapUpdateButton(date: Date, memo: String, money: Int, categoryTitle: String) {
-        guard let documentId = documentId else { return }
-        interactor.updatePatienceData(record: PatienceEntity(documentID: documentId, date: date, memo: memo, money: money, categoryTitle: categoryTitle))
-    }
-
     // MARK: RegisterInteractorOutput
-    func outputRegisterError(error: Error) {
-        view?.showError(message: L10n.PatienceInputPresenter.StatusNotification.Failure.title)
+    func outputInputError(error: Error) {
+        view?.showError(message: L10n.PatienceRegisterPresenter.StatusNotification.RegisterFailure.title)
     }
 
-    func outputRegisterSuccess() {
-        router.dismissInputModal()
-        view?.showSuccess(message: L10n.PatienceInputPresenter.StatusNotification.RegisterSuccess.title)
-    }
-
-    func outputUpdateSuccess() {
-        router.closeInputView()
-        view?.showSuccess(message: L10n.PatienceInputPresenter.StatusNotification.UpdateSuccess.title)
+    func outputInputSuccess() {
+        view?.showSuccess(message: L10n.PatienceRegisterPresenter.StatusNotification.RegisterSuccess.title)
     }
 }
