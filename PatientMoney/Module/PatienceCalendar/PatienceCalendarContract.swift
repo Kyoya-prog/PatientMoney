@@ -51,8 +51,8 @@ protocol PatienceCalendarPresentation {
     func didTapRecordCell(record: PatienceEntity)
 
     /// セルの削除ボタンがタップされた
-    /// - parameter documentId:ドキュメントID
-    func didTapDeleteButton(documentId: String)
+    /// - parameter id:ドキュメントID
+    func didTapDeleteButton(id: String)
 
     /// 日付が変更された
     /// - parameter date:日付
@@ -68,7 +68,7 @@ protocol PatienceCalendarUsecase {
 
     /// データを削除する
     /// - parameter documentId:ドキュメントID
-    func deletePatienceData(documentId: String)
+    func deletePatienceData(id: String)
 
     /// 入力された年月のデータを取得する
     /// - parameter year:年

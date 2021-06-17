@@ -96,11 +96,11 @@ protocol PatienceRepository {
     func fetchPatienceData(startTimestamp: Timestamp, endTimestamp: Timestamp) -> Single<[PatienceEntity]>
 
     /// データをupdateする
-    /// - parameter documentId:ドキュメントID
+    /// - parameter id:ドキュメントID
     /// - parameter record:データレコード
-    func updatePatienceData(documentId: String, record: [String: Any]) -> Single<Error?>
+    func updatePatienceData(id: String, record: [String: Any]) -> Single<Error?>
 
     /// データを消去する
-    /// - parameter documentId:ドキュメントID
-    func deletePatienceData(documentId: String) ->Single<Error?>
+    /// - parameter id:ドキュメントID
+    func deletePatienceData(id: String) ->Single<Error?>
 }

@@ -37,8 +37,8 @@ class PatienceCalendarInteractor: PatienceCalendarUsecase {
         }.disposed(by: disposeBag)
     }
 
-    func deletePatienceData(documentId: String) {
-        repository.deletePatienceData(documentId: documentId).subscribe { observer in
+    func deletePatienceData(id: String) {
+        repository.deletePatienceData(id: id).subscribe { observer in
             switch observer {
             case .success(_):
                 self.output?.notifyDeleteData()
