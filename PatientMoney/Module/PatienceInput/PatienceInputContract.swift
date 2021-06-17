@@ -31,12 +31,31 @@ protocol PatienceInputPresentation {
     var view: PatienceInputView? { get }
     var interactor: PatienceUsecase! { get }
     var router: PatienceInputWireframe! { get }
+
     /// 入力ボタンがタップされた
     /// - parameter date:日付
     /// - parameter memo:メモ
     /// - parameter money: 金額
     /// - parameter categoryTitle: カテゴリータイトル
     func didTapInputButton(date: Date, memo: String, money: Int, categoryTitle: String)
+}
+
+protocol PatienceRegisterPresentation: PatienceInputPresentation {
+    /// 登録ボタンがタップされた
+    /// - parameter date:日付
+    /// - parameter memo:メモ
+    /// - parameter money: 金額
+    /// - parameter categoryTitle: カテゴリータイトル
+    func didTapRegisterButton(date: Date, memo: String, money: Int, categoryTitle: String)
+}
+
+protocol PatienceUpdatePresentation: PatienceInputPresentation {
+    /// 更新ボタンがタップされた
+    /// - parameter date:日付
+    /// - parameter memo:メモ
+    /// - parameter money: 金額
+    /// - parameter categoryTitle: カテゴリータイトル
+    func didTapUpdateButton(date: Date, memo: String, money: Int, categoryTitle: String)
 }
 
 protocol PatienceUsecase {

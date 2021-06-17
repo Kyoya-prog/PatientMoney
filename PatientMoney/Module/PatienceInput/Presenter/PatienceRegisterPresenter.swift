@@ -1,6 +1,6 @@
 import Foundation
 
-class PatienceInputPresenter: PatienceInputPresentation, PatienceInputInteractorOutput {
+class PatienceRegisterPresenter: PatienceRegisterPresentation, PatienceInputInteractorOutput {
     // MARK: RegisterPresentation
     var view: PatienceInputView?
 
@@ -8,7 +8,7 @@ class PatienceInputPresenter: PatienceInputPresentation, PatienceInputInteractor
 
     var router: PatienceInputWireframe!
 
-    func didTapInputButton(date: Date, memo: String, money: Int, categoryTitle: String) {
+    func didTapRegisterButton(date: Date, memo: String, money: Int, categoryTitle: String) {
         interactor.registerPatienceData(record: PatienceEntity(documentID: "", date: date, memo: memo, money: money, categoryTitle: categoryTitle))
     }
 
