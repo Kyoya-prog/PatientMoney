@@ -70,8 +70,8 @@ struct DateForTractableDay {
     }
 
     var dateString: String {
-        // swiftlint:disable:next implicit_getter
         // レイジープロパティでかくと、monthやyear、dayの値が初期値のままになるのでコンピューティッドプロパティで記述している
+        // swiftlint:disable:next implicit_getter
         get {
             let formattedMonth = month < 10 ? "0\(month)" : "\(month)"
             if isIncludeDate {
@@ -83,7 +83,6 @@ struct DateForTractableDay {
     }
 
     var date: Date {
-        // swiftlint:disable:next implicit_getter
         DateAndStringConverter.dateFromString(string: dateString, format: DateAndStringConverter.dateFormatJapanese)
     }
 }
