@@ -70,7 +70,7 @@ class PatienceChartsView: PieChartView {
         dataEntries.append(PieChartDataEntry(value: Double(wearMoney), label: Category.categories[4].title, data: Double(wearMoney)))
         dataEntries.append(PieChartDataEntry(value: Double(hobbyMoney), label: Category.categories[5].title, data: Double(hobbyMoney)))
 
-        let dataSet = PieChartDataSet(entries: dataEntries, label: "分析チャート")
+        let dataSet = PieChartDataSet(entries: dataEntries, label: L10n.PatienceChartsView.Charts.description)
 
         data = PieChartData(dataSet: dataSet)
 
@@ -80,8 +80,8 @@ class PatienceChartsView: PieChartView {
             let r = CGFloat.random(in: 0 ... 255) / 255.0
             let g = CGFloat.random(in: 0 ... 255) / 255.0
             let b = CGFloat.random(in: 0 ... 255) / 255.0
-            let color =  UIColor(red: r, green: g, blue: b, alpha: 1)
-            
+            let color = UIColor(red: r, green: g, blue: b, alpha: 1)
+
             colors.append(color)
         }
 
@@ -113,7 +113,9 @@ struct PatienceChartsVIewPreviews: PreviewProvider {
             .init(categoryTilte: "交通費", money: 200),
             .init(categoryTilte: "飲食費", money: 400),
             .init(categoryTilte: "服代", money: 500),
-            .init(categoryTilte: "飲み代", money: 800)
+            .init(categoryTilte: "飲み代", money: 800),
+            .init(categoryTilte: "趣味代", money: 280),
+            .init(categoryTilte: "交際費", money: 500)
         ]).previewLayout(.fixed(width: 500, height: 500))
     }
 }

@@ -208,6 +208,13 @@ internal enum L10n {
     }
   }
 
+  internal enum PatienceChartsView {
+    internal enum Charts {
+      /// 分析チャート(単位：円)
+      internal static let description = L10n.tr("Localizable", "PatienceChartsView.Charts.description")
+    }
+  }
+
   internal enum PatienceInputViewController {
     internal enum Alert {
       /// 金額が０円ですがこのまま登録しますか？

@@ -84,3 +84,6 @@
 // RecordListHeaderView
 "RecordListHeaderView.MonthLabel.text" = "%d月の節約合計額";
 "RecordListHeaderView.sumMoneyLabel.text" = "%d円";
+
+// PatienceChartsView
+"PatienceChartsView.Charts.description" = "分析チャート(単位：円)";
