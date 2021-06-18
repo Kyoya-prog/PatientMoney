@@ -74,6 +74,9 @@
 		3D9FEC342668041E008A77FC /* PatienceAnalyzeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC332668041E008A77FC /* PatienceAnalyzeRouter.swift */; };
 		3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */; };
 		3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */; };
+		3DCEB8B8267C685700EDD973 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 3DCEB8B7267C685700EDD973 /* Charts */; };
+		3DCEB8BA267C685700EDD973 /* ChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 3DCEB8B9267C685700EDD973 /* ChartsDynamic */; };
+		3DCEB8BB267C685700EDD973 /* ChartsDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 3DCEB8B9267C685700EDD973 /* ChartsDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		3DE103C82638360000F724B8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103C72638360000F724B8 /* Strings.swift */; };
 		3DE103CC2638360800F724B8 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103CB2638360800F724B8 /* Asset.swift */; };
 		3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */; };
@@ -126,6 +129,7 @@
 			files = (
 				3D3A3225263EEFE000077B6D /* SnapKit.xcframework in Embed Frameworks */,
 				3D3A3223263EEFE000077B6D /* NotificationBanner.xcframework in Embed Frameworks */,
+				3DCEB8BB267C685700EDD973 /* ChartsDynamic in Embed Frameworks */,
 				3D97733E2640495200419E8A /* RxCocoa.xcframework in Embed Frameworks */,
 				3D9773402640495200419E8A /* RxRelay.xcframework in Embed Frameworks */,
 				3D9773422640495200419E8A /* RxSwift.xcframework in Embed Frameworks */,
@@ -274,6 +278,8 @@
 				3D6D011A26355E4400C30DD1 /* GoogleDataTransport.framework in Frameworks */,
 				3D6D012026355E4400C30DD1 /* gRPC-Core.framework in Frameworks */,
 				3D97733F2640495200419E8A /* RxRelay.xcframework in Frameworks */,
+				3DCEB8B8267C685700EDD973 /* Charts in Frameworks */,
+				3DCEB8BA267C685700EDD973 /* ChartsDynamic in Frameworks */,
 				3D3A3224263EEFE000077B6D /* SnapKit.xcframework in Frameworks */,
 				3D6D010A26355E4300C30DD1 /* Firebase.framework in Frameworks */,
 				3D6D011C26355E4400C30DD1 /* GoogleUtilities.framework in Frameworks */,
@@ -771,6 +777,8 @@
 			name = PatientMoney;
 			packageProductDependencies = (
 				3DE952D92643B35E004AF23D /* FSCalendar */,
+				3DCEB8B7267C685700EDD973 /* Charts */,
+				3DCEB8B9267C685700EDD973 /* ChartsDynamic */,
 			);
 			productName = PatientMoney;
 			productReference = 3D6DFF2626353E3E00C30DD1 /* PatientMoney.app */;
@@ -845,6 +853,7 @@
 			mainGroup = 3D6DFF1D26353E3E00C30DD1;
 			packageReferences = (
 				3DE952D82643B35E004AF23D /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				3DCEB8B6267C685700EDD973 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 3D6DFF2726353E3E00C30DD1 /* Products */;
 			projectDirPath = "";
@@ -1311,6 +1320,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3DCEB8B6267C685700EDD973 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
 		3DE952D82643B35E004AF23D /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -1322,6 +1339,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3DCEB8B7267C685700EDD973 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DCEB8B6267C685700EDD973 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+		3DCEB8B9267C685700EDD973 /* ChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DCEB8B6267C685700EDD973 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = ChartsDynamic;
+		};
 		3DE952D92643B35E004AF23D /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3DE952D82643B35E004AF23D /* XCRemoteSwiftPackageReference "FSCalendar" */;
