@@ -3,26 +3,16 @@ import UIKit
 
 /// 日付のピック方法を選べるdatePickerTextField
 class SelectableDatePickStyleTextField: PatienceTextField {
-    var selectedMonth: Int = 1 {
+    var selectedDate = DateForTractableDay() {
         didSet {
-            updateText()
-        }
-    }
-
-    var selectedYear: Int = 2000 {
-        didSet {
-            updateText()
-        }
-    }
-
-    var selecetdDate = Date() {
-        didSet {
-            updateText()
+            text = selectedDate.dateString
         }
     }
 
     var isSingleDaySelect = true {
         didSet {
+            selectedDate.isIncludeDate = isSingleDaySelect
+            selectedDate.injectDate(date: selectedDate.date)
             updatePickStyle()
         }
     }
@@ -45,9 +35,9 @@ class SelectableDatePickStyleTextField: PatienceTextField {
 
     private func setUpYearAndMonthPickerView() {
         font = UIFont.boldSystemFont(ofSize: 20)
-        text = DateUtils.stringFromDate(date: Date(), format: "yyyy年　M月")
-        selectedMonth = Int(DateUtils.stringFromDate(date: Date(), format: "M")) ?? 1
-        selectedYear = Int(DateUtils.stringFromDate(date: Date(), format: "yyyy")) ?? 2000
+        text = DateAndStringConverter.stringFromDate(date: Date(), format: "yyyy年　M月")
+        selectedDate.injectDate(date: Date())
+        selectedDate.isIncludeDate = isSingleDaySelect
         layer.cornerRadius = 4
         UIFont.boldSystemFont(ofSize: 20)
         backgroundColor = UIColor(hex: "F0E68C")
@@ -78,14 +68,6 @@ class SelectableDatePickStyleTextField: PatienceTextField {
 
     private let datePickerView = UIDatePicker()
 
-    private func updateText() {
-        if isSingleDaySelect {
-        text = DateUtils.stringFromDate(date: selecetdDate, format: DateUtils.dateFormatJapanese)
-        } else {
-        text = "\(selectedYear)年 \(selectedMonth)月"
-        }
-    }
-
     private lazy var keyboardToolbar: UIToolbar = {
         let toolbar = UIToolbar()
         toolbar.items = [
@@ -97,15 +79,15 @@ class SelectableDatePickStyleTextField: PatienceTextField {
     }()
 
     private lazy var currentYear: Int = {
-        guard let currentYear = Int(DateUtils.stringFromDate(date: Date(), format: "yyyy")) else {
+        guard let currentYear = Int(DateAndStringConverter.stringFromDate(date: Date(), format: "yyyy")) else {
             return  2000
         }
         return currentYear
     }()
 
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
-        selecetdDate = datePickerView.date
-        updateText()
+        selectedDate.injectDate(date: datePickerView.date)
+        text = selectedDate.dateString
         endEditing(true)
     }
 }
@@ -137,11 +119,7 @@ extension SelectableDatePickStyleTextField: UIPickerViewDelegate, UIPickerViewDa
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let year = years[pickerView.selectedRow(inComponent: 0)]
-        let month = months[pickerView.selectedRow(inComponent: 1)]
-        selectedMonth = month
-        selectedYear = year
-        selecetdDate = DateUtils.getBeginningMonth(year: selectedYear, month: selectedMonth)
-        text = "\(year)年 \(month)月"
+        selectedDate.year = years[pickerView.selectedRow(inComponent: 0)]
+        selectedDate.month = months[pickerView.selectedRow(inComponent: 1)]
     }
 }

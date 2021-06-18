@@ -12,7 +12,7 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.title = L10n.PatienceAnalyzeViewController.NavigationItem.title
-        presentation.didSelectMonth(year: textField.selectedYear, month: textField.selectedMonth)
+        presentation.didSelectMonth(year: textField.selectedDate.year, month: textField.selectedDate.month)
         construct()
     }
 
@@ -97,7 +97,7 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
     }
 
     private func updateLabel() {
-        selectedMonthLabel.text = L10n.PatienceAnalyzeViewController.SelectedMonthLabel.text("\(textField.selectedYear)", textField.selectedMonth)
+        selectedMonthLabel.text = L10n.PatienceAnalyzeViewController.SelectedMonthLabel.text("\(textField.selectedDate.year)", textField.selectedDate.month)
         sumMoneyLabel.text = L10n.PatienceAnalyzeViewController.SumMoneyLabel.text(sumMoney)
     }
 
