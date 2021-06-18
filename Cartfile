@@ -1,5 +1,6 @@
 github "Daltron/NotificationBanner" "master"
-Github "ReactiveX/RxSwift"
+github "ReactiveX/RxSwift"
+github "danielgindi/Charts"
 
 ## firebase
 binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.json"
