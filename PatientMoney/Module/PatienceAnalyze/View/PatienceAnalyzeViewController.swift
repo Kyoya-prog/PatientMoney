@@ -47,11 +47,6 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
 
     private func setUpMonthSelectView() {
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.didSelectAction = { [weak self]() in
-            guard let self = self else { return }
-            self.updateLabel()
-            self.presentation.didSelectMonth(year: self.textField.selectedYear, month: self.textField.selectedMonth)
-        }
         monthSelectView.addSubview(textField)
 
         monthLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -116,7 +111,7 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
         return view
     }()
 
-    private let textField = YearAndMonthDateTextField()
+    private let textField = SelectableDatePickStyleTextField()
 
     private let monthLabel = UILabel()
 

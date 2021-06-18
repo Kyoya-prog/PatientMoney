@@ -1,12 +1,31 @@
 import Foundation
 import UIKit
 
-class YearAndMonthDateTextField: PatienceTextField {
-    var selectedMonth: Int = 1
+/// 日付のピック方法を選べるdatePickerTextField
+class SelectableDatePickStyleTextField: PatienceTextField {
+    var selectedMonth: Int = 1 {
+        didSet {
+            updateText()
+        }
+    }
 
-    var selectedYear: Int = 2000
+    var selectedYear: Int = 2000 {
+        didSet {
+            updateText()
+        }
+    }
 
-    var didSelectAction:(() -> Void)?
+    var selecetdDate = Date() {
+        didSet {
+            updateText()
+        }
+    }
+
+    var isSingleDaySelect = true {
+        didSet {
+            updatePickStyle()
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,6 +38,12 @@ class YearAndMonthDateTextField: PatienceTextField {
     }
 
     private func construct() {
+        setUpYearAndMonthPickerView()
+        setUpDatePickerView()
+        updatePickStyle()
+    }
+
+    private func setUpYearAndMonthPickerView() {
         font = UIFont.boldSystemFont(ofSize: 20)
         text = DateUtils.stringFromDate(date: Date(), format: "yyyy年　M月")
         selectedMonth = Int(DateUtils.stringFromDate(date: Date(), format: "M")) ?? 1
@@ -29,16 +54,37 @@ class YearAndMonthDateTextField: PatienceTextField {
         textColor = UIColor.black
         textAlignment = .center
 
-        let pickerView = UIPickerView()
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        inputView = pickerView
+        yearAndMonthPickerView.delegate = self
+        yearAndMonthPickerView.dataSource = self
+        inputView = yearAndMonthPickerView
         inputAccessoryView = keyboardToolbar
+    }
+
+    private func setUpDatePickerView() {
+        datePickerView.datePickerMode = .date
+        datePickerView.preferredDatePickerStyle = .wheels
+        datePickerView.locale = .current
+    }
+
+    private func updatePickStyle() {
+        inputView = isSingleDaySelect ? datePickerView : yearAndMonthPickerView
     }
 
     private lazy var years: [Int] = { (2000...currentYear).reversed().map { $0 } }()
 
     private let months = (1...12).map { $0 }
+
+    private let yearAndMonthPickerView = UIPickerView()
+
+    private let datePickerView = UIDatePicker()
+
+    private func updateText() {
+        if isSingleDaySelect {
+        text = DateUtils.stringFromDate(date: selecetdDate, format: DateUtils.dateFormatJapanese)
+        } else {
+        text = "\(selectedYear)年 \(selectedMonth)月"
+        }
+    }
 
     private lazy var keyboardToolbar: UIToolbar = {
         let toolbar = UIToolbar()
@@ -58,13 +104,14 @@ class YearAndMonthDateTextField: PatienceTextField {
     }()
 
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
+        selecetdDate = datePickerView.date
+        updateText()
         endEditing(true)
-        didSelectAction?()
     }
 }
 
 // MARK: - UIPickerViewDelegate,UIPickerViewDataSource
-extension YearAndMonthDateTextField: UIPickerViewDelegate, UIPickerViewDataSource {
+extension SelectableDatePickStyleTextField: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         2
     }
@@ -94,6 +141,7 @@ extension YearAndMonthDateTextField: UIPickerViewDelegate, UIPickerViewDataSourc
         let month = months[pickerView.selectedRow(inComponent: 1)]
         selectedMonth = month
         selectedYear = year
+        selecetdDate = DateUtils.getBeginningMonth(year: selectedYear, month: selectedMonth)
         text = "\(year)年 \(month)月"
     }
 }
