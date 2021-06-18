@@ -47,8 +47,6 @@ class DateView: UIView {
         ])
     }
 
-    private let datePicker = UIDatePicker()
-
     private let titleLabel = UILabel()
 
     private let dateTextField = SelectableDatePickStyleTextField()
