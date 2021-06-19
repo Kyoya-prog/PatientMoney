@@ -24,12 +24,15 @@
 		3D3A3231263F074F00077B6D /* PatienceInputInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3230263F074F00077B6D /* PatienceInputInteractor.swift */; };
 		3D3A323F263F096B00077B6D /* PatienceDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A323E263F096B00077B6D /* PatienceDataStore.swift */; };
 		3D3A3250263F2B9800077B6D /* PatienceInputRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A324F263F2B9800077B6D /* PatienceInputRouter.swift */; };
+		3D55A05A267CAF02006422BC /* SelectableDatePickStyleTextFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55A059267CAF02006422BC /* SelectableDatePickStyleTextFieldTest.swift */; };
+		3D55A05C267CEADE006422BC /* DateSelectStyleCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55A05B267CEADE006422BC /* DateSelectStyleCheckView.swift */; };
+		3D55A05E267DBE69006422BC /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55A05D267DBE69006422BC /* CheckBox.swift */; };
 		3D61B4E2264EDA2F001C74B6 /* RecordListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D61B4E1264EDA2F001C74B6 /* RecordListHeaderView.swift */; };
 		3D6963DE2678D26100368810 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6963DD2678D26100368810 /* CategoryCell.swift */; };
 		3D6963E02678D2E500368810 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6963DF2678D2E500368810 /* RecordCell.swift */; };
 		3D6B0FDD263D8031009D21A1 /* HeightSelfSizingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FDC263D8031009D21A1 /* HeightSelfSizingCollectionView.swift */; };
 		3D6B0FE7263D85E0009D21A1 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FE6263D85E0009D21A1 /* DateView.swift */; };
-		3D6B0FEC263E714D009D21A1 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FEB263E714D009D21A1 /* DateUtils.swift */; };
+		3D6B0FEC263E714D009D21A1 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FEB263E714D009D21A1 /* DateUtil.swift */; };
 		3D6B0FF6263E76AA009D21A1 /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FF5263E76AA009D21A1 /* MemoView.swift */; };
 		3D6B1000263E94E1009D21A1 /* MoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B0FFF263E94E1009D21A1 /* MoneyView.swift */; };
 		3D6B1009263E9A82009D21A1 /* PatienceInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B1008263E9A82009D21A1 /* PatienceInputViewController.swift */; };
@@ -67,13 +70,16 @@
 		3D9773452640496600419E8A /* RxBlocking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB539E263FF784002A2166 /* RxBlocking.xcframework */; };
 		3D9773482640497000419E8A /* RxTest.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB53A2263FF784002A2166 /* RxTest.xcframework */; };
 		3D9FEC2226679755008A77FC /* PatienceAnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2126679755008A77FC /* PatienceAnalyzeViewController.swift */; };
-		3D9FEC2C2667A95D008A77FC /* YearAndMonthDateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2B2667A95D008A77FC /* YearAndMonthDateTextField.swift */; };
+		3D9FEC2C2667A95D008A77FC /* SelectableDatePickStyleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2B2667A95D008A77FC /* SelectableDatePickStyleTextField.swift */; };
 		3D9FEC2E2667FB1A008A77FC /* PatienceAnalyzeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2D2667FB1A008A77FC /* PatienceAnalyzeInteractor.swift */; };
 		3D9FEC302667FB37008A77FC /* PatienceAnalyzeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2F2667FB37008A77FC /* PatienceAnalyzeContract.swift */; };
 		3D9FEC3226680174008A77FC /* PatienceAnalyzePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC3126680174008A77FC /* PatienceAnalyzePresenter.swift */; };
 		3D9FEC342668041E008A77FC /* PatienceAnalyzeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC332668041E008A77FC /* PatienceAnalyzeRouter.swift */; };
 		3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */; };
 		3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */; };
+		3DCEB8BF267C7A1C00EDD973 /* Charts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */; };
+		3DCEB8C0267C7A1C00EDD973 /* Charts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8C1267C7A7000EDD973 /* PatienceChartsView.swift */; };
 		3DE103C82638360000F724B8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103C72638360000F724B8 /* Strings.swift */; };
 		3DE103CC2638360800F724B8 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103CB2638360800F724B8 /* Asset.swift */; };
 		3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */; };
@@ -129,6 +135,7 @@
 				3D97733E2640495200419E8A /* RxCocoa.xcframework in Embed Frameworks */,
 				3D9773402640495200419E8A /* RxRelay.xcframework in Embed Frameworks */,
 				3D9773422640495200419E8A /* RxSwift.xcframework in Embed Frameworks */,
+				3DCEB8C0267C7A1C00EDD973 /* Charts.xcframework in Embed Frameworks */,
 				3D3A3221263EEFE000077B6D /* MarqueeLabel.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -151,12 +158,15 @@
 		3D3A3230263F074F00077B6D /* PatienceInputInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceInputInteractor.swift; sourceTree = "<group>"; };
 		3D3A323E263F096B00077B6D /* PatienceDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceDataStore.swift; sourceTree = "<group>"; };
 		3D3A324F263F2B9800077B6D /* PatienceInputRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceInputRouter.swift; sourceTree = "<group>"; };
+		3D55A059267CAF02006422BC /* SelectableDatePickStyleTextFieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableDatePickStyleTextFieldTest.swift; sourceTree = "<group>"; };
+		3D55A05B267CEADE006422BC /* DateSelectStyleCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectStyleCheckView.swift; sourceTree = "<group>"; };
+		3D55A05D267DBE69006422BC /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		3D61B4E1264EDA2F001C74B6 /* RecordListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListHeaderView.swift; sourceTree = "<group>"; };
 		3D6963DD2678D26100368810 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		3D6963DF2678D2E500368810 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		3D6B0FDC263D8031009D21A1 /* HeightSelfSizingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightSelfSizingCollectionView.swift; sourceTree = "<group>"; };
 		3D6B0FE6263D85E0009D21A1 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
-		3D6B0FEB263E714D009D21A1 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		3D6B0FEB263E714D009D21A1 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		3D6B0FF5263E76AA009D21A1 /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
 		3D6B0FFF263E94E1009D21A1 /* MoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyView.swift; sourceTree = "<group>"; };
 		3D6B1008263E9A82009D21A1 /* PatienceInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceInputViewController.swift; sourceTree = "<group>"; };
@@ -210,13 +220,15 @@
 		3D6DFFEF263555F200C30DD1 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = Carthage/Build/iOS/PromisesObjC.framework; sourceTree = "<group>"; };
 		3D6DFFF0263555F200C30DD1 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
 		3D9FEC2126679755008A77FC /* PatienceAnalyzeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzeViewController.swift; sourceTree = "<group>"; };
-		3D9FEC2B2667A95D008A77FC /* YearAndMonthDateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearAndMonthDateTextField.swift; sourceTree = "<group>"; };
+		3D9FEC2B2667A95D008A77FC /* SelectableDatePickStyleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableDatePickStyleTextField.swift; sourceTree = "<group>"; };
 		3D9FEC2D2667FB1A008A77FC /* PatienceAnalyzeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzeInteractor.swift; sourceTree = "<group>"; };
 		3D9FEC2F2667FB37008A77FC /* PatienceAnalyzeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzeContract.swift; sourceTree = "<group>"; };
 		3D9FEC3126680174008A77FC /* PatienceAnalyzePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzePresenter.swift; sourceTree = "<group>"; };
 		3D9FEC332668041E008A77FC /* PatienceAnalyzeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzeRouter.swift; sourceTree = "<group>"; };
 		3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceUpdatePresenter.swift; sourceTree = "<group>"; };
 		3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPresentationProtocol.swift; sourceTree = "<group>"; };
+		3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Charts.xcframework; path = Carthage/Build/Charts.xcframework; sourceTree = "<group>"; };
+		3DCEB8C1267C7A7000EDD973 /* PatienceChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceChartsView.swift; sourceTree = "<group>"; };
 		3DE103C72638360000F724B8 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Generated/Strings.swift; sourceTree = "<group>"; };
 		3DE103CB2638360800F724B8 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Generated/Asset.swift; sourceTree = "<group>"; };
 		3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
@@ -274,6 +286,7 @@
 				3D6D011A26355E4400C30DD1 /* GoogleDataTransport.framework in Frameworks */,
 				3D6D012026355E4400C30DD1 /* gRPC-Core.framework in Frameworks */,
 				3D97733F2640495200419E8A /* RxRelay.xcframework in Frameworks */,
+				3DCEB8BF267C7A1C00EDD973 /* Charts.xcframework in Frameworks */,
 				3D3A3224263EEFE000077B6D /* SnapKit.xcframework in Frameworks */,
 				3D6D010A26355E4300C30DD1 /* Firebase.framework in Frameworks */,
 				3D6D011C26355E4400C30DD1 /* GoogleUtilities.framework in Frameworks */,
@@ -415,7 +428,7 @@
 		3D6B0FEA263E713E009D21A1 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				3D6B0FEB263E714D009D21A1 /* DateUtils.swift */,
+				3D6B0FEB263E714D009D21A1 /* DateUtil.swift */,
 				3D3A3219263EEEA000077B6D /* StatusNotification.swift */,
 				3D36BC9E263FD60F00EDF69F /* Category.swift */,
 			);
@@ -476,6 +489,7 @@
 			children = (
 				3D6DFF4026353E3F00C30DD1 /* PatientMoneyTests.swift */,
 				3D6DFF4226353E3F00C30DD1 /* Info.plist */,
+				3D55A059267CAF02006422BC /* SelectableDatePickStyleTextFieldTest.swift */,
 			);
 			path = PatientMoneyTests;
 			sourceTree = "<group>";
@@ -492,6 +506,7 @@
 		3D6DFF8A263548B200C30DD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */,
 				3DEB539E263FF784002A2166 /* RxBlocking.xcframework */,
 				3DEB53A0263FF784002A2166 /* RxCocoa.xcframework */,
 				3DEB539F263FF784002A2166 /* RxRelay.xcframework */,
@@ -597,7 +612,10 @@
 		3D9FEC2A2667A948008A77FC /* ViewComponent */ = {
 			isa = PBXGroup;
 			children = (
-				3D9FEC2B2667A95D008A77FC /* YearAndMonthDateTextField.swift */,
+				3D9FEC2B2667A95D008A77FC /* SelectableDatePickStyleTextField.swift */,
+				3DCEB8C1267C7A7000EDD973 /* PatienceChartsView.swift */,
+				3D55A05B267CEADE006422BC /* DateSelectStyleCheckView.swift */,
+				3D55A05D267DBE69006422BC /* CheckBox.swift */,
 			);
 			path = ViewComponent;
 			sourceTree = "<group>";
@@ -937,13 +955,14 @@
 				3D3A3216263EE0F700077B6D /* PatienceInputContract.swift in Sources */,
 				3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */,
 				3DE10449263C725200F724B8 /*  AuthInteractor.swift in Sources */,
+				3D55A05E267DBE69006422BC /* CheckBox.swift in Sources */,
 				3DE1049A263D36E900F724B8 /* NSAttributedStrinfExtension.swift in Sources */,
 				3D3A322A263EF37F00077B6D /* PatienceRegisterPresenter.swift in Sources */,
 				3D6B1009263E9A82009D21A1 /* PatienceInputViewController.swift in Sources */,
 				3DEB53D026400BC5002A2166 /* PatienceCalendarContract.swift in Sources */,
 				3D36BC92263FBF1A00EDF69F /* PatienceCalendarViewController.swift in Sources */,
 				3D6B0FDD263D8031009D21A1 /* HeightSelfSizingCollectionView.swift in Sources */,
-				3D6B0FEC263E714D009D21A1 /* DateUtils.swift in Sources */,
+				3D6B0FEC263E714D009D21A1 /* DateUtil.swift in Sources */,
 				3DE103C82638360000F724B8 /* Strings.swift in Sources */,
 				3D6B0FF6263E76AA009D21A1 /* MemoView.swift in Sources */,
 				3D3A3250263F2B9800077B6D /* PatienceInputRouter.swift in Sources */,
@@ -961,7 +980,7 @@
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
 				3DEE39A0264112C4005D3EB0 /* PatienceEntity.swift in Sources */,
 				3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */,
-				3D9FEC2C2667A95D008A77FC /* YearAndMonthDateTextField.swift in Sources */,
+				3D9FEC2C2667A95D008A77FC /* SelectableDatePickStyleTextField.swift in Sources */,
 				3D61B4E2264EDA2F001C74B6 /* RecordListHeaderView.swift in Sources */,
 				3D6B0FE7263D85E0009D21A1 /* DateView.swift in Sources */,
 				3DE10408263B976700F724B8 /* AuthContract.swift in Sources */,
@@ -971,12 +990,14 @@
 				3DE1043D263C0C4700F724B8 /* AuthPresenter.swift in Sources */,
 				3DE10436263C0B1000F724B8 /* AuthRouter.swift in Sources */,
 				3D3A323F263F096B00077B6D /* PatienceDataStore.swift in Sources */,
+				3D55A05C267CEADE006422BC /* DateSelectStyleCheckView.swift in Sources */,
 				3DE1042B263C013800F724B8 /* SignInViewController.swift in Sources */,
 				3D9FEC2226679755008A77FC /* PatienceAnalyzeViewController.swift in Sources */,
 				3D9FEC342668041E008A77FC /* PatienceAnalyzeRouter.swift in Sources */,
 				3DE104B1263D3BEC00F724B8 /* CategoriesView.swift in Sources */,
 				3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */,
 				3DE103ED263AE65A00F724B8 /* ColorsExtension.swift in Sources */,
+				3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */,
 				3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */,
 				3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */,
 				3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */,
@@ -987,6 +1008,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D55A05A267CAF02006422BC /* SelectableDatePickStyleTextFieldTest.swift in Sources */,
 				3D6DFF4126353E3F00C30DD1 /* PatientMoneyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
