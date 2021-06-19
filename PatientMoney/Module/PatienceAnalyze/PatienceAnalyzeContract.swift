@@ -18,7 +18,6 @@ protocol PatienceAnalyzeUsecase: AnyObject {
 
 protocol PatienceAnalyzeView: AnyObject {
     var presentation: PatienceAnalyzePresentation! { get }
-
     /// チャートを更新する
     /// - parameter records:記録
     func updateCharts(data: [PatienceChartDataModel])
@@ -31,7 +30,9 @@ protocol PatienceAnalyzeView: AnyObject {
 protocol PatienceAnalyzePresentation: AnyObject {
     var usecase: PatienceAnalyzeUsecase! { get }
     var view: PatienceAnalyzeView? { get }
-
+    
+    /// viewが読み込まれた
+    func didLoad()
     /// 日付が変更された
     /// - parameter date:選択されている日付
     /// - parameter isSingleDaySelect 日付のみかどうか

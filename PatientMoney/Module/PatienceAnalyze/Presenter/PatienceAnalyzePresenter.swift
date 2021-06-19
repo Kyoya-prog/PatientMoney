@@ -5,6 +5,10 @@ class PatienceAnalyzePresenter: PatienceAnalyzePresentation, PatienceAnalyzeOutp
     var usecase: PatienceAnalyzeUsecase!
 
     var view: PatienceAnalyzeView?
+    
+    func didLoad() {
+        usecase.fetchDataFromDate(date: Date())
+    }
 
     func didChangeDate(dateModel: DateForTractableDay, isSingleDaySelect: Bool) {
         if isSingleDaySelect {
