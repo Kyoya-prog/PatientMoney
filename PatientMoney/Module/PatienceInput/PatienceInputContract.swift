@@ -95,10 +95,6 @@ protocol PatienceRepository {
     /// - parameter endDate:終了日
     func fetchPatienceData(startDate: Date, endDate: Date) -> Single<[PatienceEntity]>
 
-    /// 指定日時のデータをフェッチする
-    /// - parameter dateTimestamp:日付タイムスタンプ
-    func fetchPatienceData(date: Timestamp) -> Single<[PatienceEntity]>
-
     /// データをupdateする
     /// - parameter id:ドキュメントID
     /// - parameter record:データレコード

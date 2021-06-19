@@ -4,7 +4,6 @@ import Foundation
 import RxSwift
 
 class PatienceDataStore: PatienceRepository {
-    
     func registerPatienceData(data: [String: Any]) -> Single<Error?> {
         Single.create { [weak self] observer -> Disposable in
             guard let self = self else { return Disposables.create() }
@@ -61,10 +60,6 @@ class PatienceDataStore: PatienceRepository {
             }
             return Disposables.create()
         }
-    }
-    
-    func fetchPatienceData(date: Timestamp) -> Single<[PatienceEntity]> {
-        
     }
 
     func updatePatienceData(id: String, record: [String: Any]) -> Single<Error?> {

@@ -6,22 +6,22 @@ protocol PatienceAnalyzeUsecase: AnyObject {
 
     var output: PatienceAnalyzeOutput? { get }
 
-    /// 入力された年月のデータを取得する
+    /// 指定年月のデータを取得する
     /// - parameter year:年
     /// - parameter month:月
     func fetchDataFromMonth(year: Int, month: Int)
+
+    /// 指定日時のデータを取得する
+    /// - parameter date:日付
+    func fetchDataFromDate(date: Date)
 }
 
 protocol PatienceAnalyzeView: AnyObject {
     var presentation: PatienceAnalyzePresentation! { get }
 
-    /// 記録を更新する
+    /// チャートを更新する
     /// - parameter records:記録
-    func updateRecords(records: [PatienceEntity])
-
-    /// 合計金額を更新する
-    /// - parameter sumMoney:合計金額
-    func updateSumMoney(sumMoney: Int)
+    func updateCharts(records: [PatienceChartDataModel])
 
     /// エラーを表示する
     /// - parameter message:エラーメッセージ
@@ -33,7 +33,8 @@ protocol PatienceAnalyzePresentation: AnyObject {
     var view: PatienceAnalyzeView? { get }
 
     /// 日付が変更された
-    func didSelectMonth(year: Int, month: Int)
+    /// - parameter date:選択されている日付
+    func didChangeDate(date: DateForTractableDay)
 }
 
 protocol PatienceAnalyzeOutput {
