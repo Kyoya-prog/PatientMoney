@@ -21,7 +21,7 @@ protocol PatienceAnalyzeView: AnyObject {
 
     /// チャートを更新する
     /// - parameter records:記録
-    func updateCharts(records: [PatienceChartDataModel])
+    func updateCharts(data: [PatienceChartDataModel])
 
     /// エラーを表示する
     /// - parameter message:エラーメッセージ
@@ -34,7 +34,8 @@ protocol PatienceAnalyzePresentation: AnyObject {
 
     /// 日付が変更された
     /// - parameter date:選択されている日付
-    func didChangeDate(date: DateForTractableDay)
+    /// - parameter isSingleDaySelect 日付のみかどうか
+    func didChangeDate(dateModel: DateForTractableDay, isSingleDaySelect: Bool)
 }
 
 protocol PatienceAnalyzeOutput {
