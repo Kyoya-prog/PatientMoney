@@ -12,10 +12,11 @@ class SelectableDatePickStyleTextField: PatienceTextField {
     var isSingleDaySelect = true {
         didSet {
             selectedDate.isIncludeDate = isSingleDaySelect
-            selectedDate.injectDate(date: selectedDate.date)
             updatePickStyle()
         }
     }
+
+    var selectedAction:((_ date: DateForTractableDay) -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,7 +37,6 @@ class SelectableDatePickStyleTextField: PatienceTextField {
     private func setUpYearAndMonthPickerView() {
         font = UIFont.boldSystemFont(ofSize: 20)
         text = DateAndStringConverter.stringFromDate(date: Date(), format: "yyyy年　M月")
-        selectedDate.injectDate(date: Date())
         selectedDate.isIncludeDate = isSingleDaySelect
         layer.cornerRadius = 4
         UIFont.boldSystemFont(ofSize: 20)
@@ -57,7 +57,12 @@ class SelectableDatePickStyleTextField: PatienceTextField {
     }
 
     private func updatePickStyle() {
-        inputView = isSingleDaySelect ? datePickerView : yearAndMonthPickerView
+        if isSingleDaySelect {
+            datePickerView.date = selectedDate.date
+            inputView = datePickerView
+        } else {
+            inputView = yearAndMonthPickerView
+        }
     }
 
     private lazy var years: [Int] = { (2000...currentYear).reversed().map { $0 } }()
@@ -86,9 +91,12 @@ class SelectableDatePickStyleTextField: PatienceTextField {
     }()
 
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
-        selectedDate.injectDate(date: datePickerView.date)
+        if isSingleDaySelect {
+            selectedDate.date = datePickerView.date
+        }
         text = selectedDate.dateString
         endEditing(true)
+        selectedAction?(selectedDate)
     }
 }
 
@@ -119,7 +127,9 @@ extension SelectableDatePickStyleTextField: UIPickerViewDelegate, UIPickerViewDa
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedDate.year = years[pickerView.selectedRow(inComponent: 0)]
-        selectedDate.month = months[pickerView.selectedRow(inComponent: 1)]
+        let year = years[pickerView.selectedRow(inComponent: 0)]
+        let month = months[pickerView.selectedRow(inComponent: 1)]
+        let date = PaticuralDayFetcher.getBeginningMonth(year: year, month: month)
+        selectedDate.date = date
     }
 }

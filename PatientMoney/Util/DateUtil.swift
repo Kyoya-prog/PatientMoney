@@ -56,17 +56,18 @@ struct DateForTractableDay {
     var year: Int = Calendar.current.component(.year, from: Date())
     var month: Int = Calendar.current.component(.month, from: Date())
     var day: Int = Calendar.current.component(.day, from: Date())
-    var isIncludeDate = true {
+    var date = Date() {
         didSet {
-            injectDate(date: date)
+            let current = Calendar.current
+            year = current.component(.year, from: date)
+            month = current.component(.month, from: date)
+            day = isIncludeDate ? current.component(.day, from: date):1
         }
     }
-
-    mutating func injectDate(date: Date) {
-        let current = Calendar.current
-        year = current.component(.year, from: date)
-        month = current.component(.month, from: date)
-        day = isIncludeDate ? current.component(.day, from: date):1
+    var isIncludeDate = true {
+        didSet {
+            day = isIncludeDate ? Calendar.current.component(.day, from: date):1
+        }
     }
 
     var dateString: String {
@@ -80,9 +81,5 @@ struct DateForTractableDay {
                 return "\(year)年\(formattedMonth)月"
             }
         }
-    }
-
-    var date: Date {
-        DateAndStringConverter.dateFromString(string: dateString, format: DateAndStringConverter.dateFormatJapanese)
     }
 }
