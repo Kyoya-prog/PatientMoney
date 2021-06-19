@@ -86,6 +86,8 @@ class PatienceChartsView: PieChartView {
         }
 
         dataSet.colors = colors
+
+        data?.setValueTextColor(.black)
     }
 }
 

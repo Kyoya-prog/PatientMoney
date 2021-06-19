@@ -21,6 +21,7 @@ class DateSelectStyleCheckView: UIView {
         checkBox.translatesAutoresizingMaskIntoConstraints = false
         checkBox.checkBoxSelectedAction = { [weak self] isOn in
             self?.isChecked = isOn
+            self?.didToggleCheckBoxAction?(isOn)
         }
 
         addSubview(checkBox)
