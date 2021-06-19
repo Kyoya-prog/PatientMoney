@@ -4,6 +4,7 @@ import Foundation
 import RxSwift
 
 class PatienceDataStore: PatienceRepository {
+    
     func registerPatienceData(data: [String: Any]) -> Single<Error?> {
         Single.create { [weak self] observer -> Disposable in
             guard let self = self else { return Disposables.create() }
@@ -39,9 +40,11 @@ class PatienceDataStore: PatienceRepository {
         }
     }
 
-    func fetchPatienceData(startTimestamp: Timestamp, endTimestamp: Timestamp) -> Single<[PatienceEntity]> {
+    func fetchPatienceData(startDate: Date, endDate: Date) -> Single<[PatienceEntity]> {
         Single<[PatienceEntity]>.create { [weak self] observer ->Disposable in
             guard let self = self else { return Disposables.create() }
+            let startTimestamp = Timestamp(date: startDate)
+            let endTimestamp = Timestamp(date: endDate)
             let query = self.firestoreCollectionReference
                 .whereField("UID", isEqualTo: FirebaseAuthManeger.shared.uid)
                 .whereField("Date", isGreaterThanOrEqualTo: startTimestamp)
@@ -58,6 +61,10 @@ class PatienceDataStore: PatienceRepository {
             }
             return Disposables.create()
         }
+    }
+    
+    func fetchPatienceData(date: Timestamp) -> Single<[PatienceEntity]> {
+        
     }
 
     func updatePatienceData(id: String, record: [String: Any]) -> Single<Error?> {
