@@ -87,3 +87,6 @@
 
 // PatienceChartsView
 "PatienceChartsView.Charts.description" = "分析チャート(単位：円)";
+
+// DateSelectStyleCheckView
+"DateSelectStyleCheckView.DescriptionLabel.text" = "月毎に分析する";

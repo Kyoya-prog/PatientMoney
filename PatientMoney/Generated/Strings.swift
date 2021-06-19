@@ -103,6 +103,13 @@ internal enum L10n {
     }
   }
 
+  internal enum DateSelectStyleCheckView {
+    internal enum DescriptionLabel {
+      /// 月毎に分析する
+      internal static let text = L10n.tr("Localizable", "DateSelectStyleCheckView.DescriptionLabel.text")
+    }
+  }
+
   internal enum DateView {
     /// 日付
     internal static let title = L10n.tr("Localizable", "DateView.title")
