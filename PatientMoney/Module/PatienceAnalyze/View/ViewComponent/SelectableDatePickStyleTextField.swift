@@ -16,7 +16,7 @@ class SelectableDatePickStyleTextField: PatienceTextField {
         }
     }
 
-    var selectedAction:((_ date: DateForTractableDay) -> Void)?
+    var dateChangeAction:((_ date: DateForTractableDay) -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -64,6 +64,7 @@ class SelectableDatePickStyleTextField: PatienceTextField {
         } else {
             inputView = yearAndMonthPickerView
         }
+        dateChangeAction?(selectedDate)
     }
 
     private lazy var years: [Int] = { (2000...currentYear).reversed().map { $0 } }()
@@ -97,7 +98,7 @@ class SelectableDatePickStyleTextField: PatienceTextField {
         }
         text = selectedDate.dateString
         endEditing(true)
-        selectedAction?(selectedDate)
+        dateChangeAction?(selectedDate)
     }
 
     // 入力カーソル非表示

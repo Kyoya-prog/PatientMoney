@@ -17,7 +17,7 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
         view.addSubview(vstack)
 
         vstack.addArrangedSubview(textField)
-        textField.selectedAction = {[weak self] date in
+        textField.dateChangeAction = {[weak self] date in
             guard let self = self else { return }
             self.presentation.didChangeDate(dateModel: date, isSingleDaySelect: !self.checkView.isChecked)
         }
