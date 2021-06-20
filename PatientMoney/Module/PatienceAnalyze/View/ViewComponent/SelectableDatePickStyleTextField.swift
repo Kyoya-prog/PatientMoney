@@ -34,6 +34,7 @@ class SelectableDatePickStyleTextField: PatienceTextField {
         updatePickStyle()
     }
 
+    // TODO: 責務ごちゃごちゃ
     private func setUpYearAndMonthPickerView() {
         font = UIFont.boldSystemFont(ofSize: 20)
         text = DateAndStringConverter.stringFromDate(date: Date(), format: "yyyy年　M月")
@@ -46,6 +47,8 @@ class SelectableDatePickStyleTextField: PatienceTextField {
 
         yearAndMonthPickerView.delegate = self
         yearAndMonthPickerView.dataSource = self
+        yearAndMonthPickerView.selectRow(DateForTractableDay().year - currentYear, inComponent: 0, animated: true)
+        yearAndMonthPickerView.selectRow(DateForTractableDay().month - 1, inComponent: 1, animated: true)
         inputView = yearAndMonthPickerView
         inputAccessoryView = keyboardToolbar
     }
