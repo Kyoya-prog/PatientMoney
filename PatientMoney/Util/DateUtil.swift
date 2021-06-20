@@ -56,8 +56,21 @@ struct DateForTractableDay {
     var year: Int = Calendar.current.component(.year, from: Date())
     var month: Int = Calendar.current.component(.month, from: Date())
     var day: Int = Calendar.current.component(.day, from: Date())
-    var date = Date() {
-        didSet {
+    var date: Date {
+        get {
+            let calendar = Calendar(identifier: .gregorian)
+            var components = DateComponents()
+            components.year = year
+            components.month = month
+            components.day = day
+            components.hour = 0
+            components.minute = 0
+
+            // swiftlint:disable:next force_unwrapping
+            let date = calendar.date(from: components)!
+            return date
+        }
+        set {
             let current = Calendar.current
             year = current.component(.year, from: date)
             month = current.component(.month, from: date)

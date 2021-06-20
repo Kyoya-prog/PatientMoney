@@ -1,9 +1,12 @@
 import Foundation
 import UIKit
 
-class PatienceAnalyzeViewController: UIViewController {
+class PatienceAnalyzeViewController: UIViewController,PatienceAnalyzeView {
+    var presentation: PatienceAnalyzePresentation!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        presentation.didLoad()
         view.backgroundColor = UIColor(hex: "EDB077")
 
         vstack.translatesAutoresizingMaskIntoConstraints = false
@@ -14,22 +17,14 @@ class PatienceAnalyzeViewController: UIViewController {
         view.addSubview(vstack)
 
         vstack.addArrangedSubview(textField)
-        textField.selectedAction = { date in
-            print(date)
+        textField.selectedAction = {[weak self] date in
+            guard let self = self else { return }
+            self.presentation.didChangeDate(dateModel: self.textField.selectedDate, isSelectByMonthAndYear: self.checkView.isChecked)
         }
         vstack.addArrangedSubview(checkView)
         checkView.didToggleCheckBoxAction = { isOn in
             self.textField.isSingleDaySelect = !isOn
         }
-        chart.records = [
-            .init(categoryTilte: "飲食費", money: 100),
-            .init(categoryTilte: "交通費", money: 200),
-            .init(categoryTilte: "飲食費", money: 400),
-            .init(categoryTilte: "服代", money: 500),
-            .init(categoryTilte: "飲み代", money: 800),
-            .init(categoryTilte: "趣味代", money: 280),
-            .init(categoryTilte: "交際費", money: 500)
-        ]
 
         vstack.addArrangedSubview(chart)
 
@@ -53,4 +48,13 @@ class PatienceAnalyzeViewController: UIViewController {
     private let chart = PatienceChartsView()
 
     private let checkView = DateSelectStyleCheckView()
+    
+    // MARK: PatienceAnalyticsView
+    func updateCharts(data: [PatienceChartDataModel]) {
+        presentation.didChangeDate(dateModel: textField.selectedDate, isSelectByMonthAndYear: !checkView.isChecked)
+    }
+    
+    func showError(message: String) {
+        StatusNotification.notifyError(message)
+    }
 }
