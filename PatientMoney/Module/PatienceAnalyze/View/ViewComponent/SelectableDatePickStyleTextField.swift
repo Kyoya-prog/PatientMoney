@@ -29,13 +29,6 @@ class SelectableDatePickStyleTextField: PatienceTextField {
     }
 
     private func construct() {
-        setUpYearAndMonthPickerView()
-        setUpDatePickerView()
-        updatePickStyle()
-    }
-
-    // TODO: 責務ごちゃごちゃ
-    private func setUpYearAndMonthPickerView() {
         font = UIFont.boldSystemFont(ofSize: 20)
         text = DateAndStringConverter.stringFromDate(date: Date(), format: "yyyy年　M月")
         selectedDate.isIncludeDate = isSingleDaySelect
@@ -45,11 +38,16 @@ class SelectableDatePickStyleTextField: PatienceTextField {
         textColor = UIColor.black
         textAlignment = .center
 
+        setUpYearAndMonthPickerView()
+        setUpDatePickerView()
+        updatePickStyle()
+    }
+
+    private func setUpYearAndMonthPickerView() {
         yearAndMonthPickerView.delegate = self
         yearAndMonthPickerView.dataSource = self
         yearAndMonthPickerView.selectRow(DateForTractableDay().year - currentYear, inComponent: 0, animated: true)
         yearAndMonthPickerView.selectRow(DateForTractableDay().month - 1, inComponent: 1, animated: true)
-        inputView = yearAndMonthPickerView
         inputAccessoryView = keyboardToolbar
     }
 
@@ -100,6 +98,21 @@ class SelectableDatePickStyleTextField: PatienceTextField {
         text = selectedDate.dateString
         endEditing(true)
         selectedAction?(selectedDate)
+    }
+
+    // 入力カーソル非表示
+    override func caretRect(for position: UITextPosition) -> CGRect {
+        CGRect.zero
+    }
+
+    // 範囲選択カーソル非表示
+    override func selectionRects(for range: UITextRange) -> [UITextSelectionRect] {
+        []
+    }
+
+    // コピー・ペースト・選択等のメニュー非表示
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        false
     }
 }
 
