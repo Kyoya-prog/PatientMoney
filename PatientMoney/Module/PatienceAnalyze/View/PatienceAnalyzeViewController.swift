@@ -7,7 +7,7 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
     override func viewDidLoad() {
         super.viewDidLoad()
         presentation.didLoad()
-        view.backgroundColor = UIColor(hex: "EDB077")
+        view.backgroundColor = UIColor(hex: "FFDAA5")
 
         vstack.translatesAutoresizingMaskIntoConstraints = false
         vstack.axis = .vertical
@@ -26,6 +26,9 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
             self.textField.isSingleDaySelect = !isOn
         }
 
+        chart.backgroundColor = UIColor(hex: "EDB077")
+        chart.layer.cornerRadius = 20
+        chart.clipsToBounds = true
         vstack.addArrangedSubview(chart)
 
         NSLayoutConstraint.activate([

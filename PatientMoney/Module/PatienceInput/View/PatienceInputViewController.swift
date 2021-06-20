@@ -55,7 +55,7 @@ class PatienceInputViewController: UIViewController, PatienceInputView {
         super.viewDidLoad()
 
         navigationItem.title = L10n.PatienceInputViewController.NavigationItem.title
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(hex: "FFDAA5")
         vstack.translatesAutoresizingMaskIntoConstraints = false
         vstack.axis = .vertical
         vstack.alignment = .fill
