@@ -21,6 +21,7 @@ class CategoriesView: UIView {
     }
 
     private func construct() {
+        categoriesView.backgroundColor = UIColor(hex: "FFDAA5")
         categoriesView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(categoriesView)
 

@@ -5,10 +5,10 @@ class DateView: UIView {
     /// 入力された日付
     var selectedDate: Date {
         get {
-            DateUtils.dateFromString(string: dateTextField.text ?? "", format: DateUtils.dateFormatJapanese)
+            DateAndStringConverter.dateFromString(string: dateTextField.text ?? "", format: DateAndStringConverter.dateFormatJapanese)
         }
         set {
-            dateTextField.text = DateUtils.stringFromDate(date: newValue, format: DateUtils.dateFormatJapanese)
+            dateTextField.text = DateAndStringConverter.stringFromDate(date: newValue, format: DateAndStringConverter.dateFormatJapanese)
         }
     }
 
@@ -32,20 +32,8 @@ class DateView: UIView {
         addSubview(titleLabel)
 
         dateTextField.translatesAutoresizingMaskIntoConstraints = false
-        dateTextField.text = DateUtils.stringFromDate(date: Date(), format: DateUtils.dateFormatJapanese)
-        dateTextField.backgroundColor = UIColor(hex: "F0E68C")
-        dateTextField.textInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
-        dateTextField.font = UIFont.boldSystemFont(ofSize: 20)
-        dateTextField.layer.cornerRadius = 4
-        dateTextField.textColor = UIColor.black
+        dateTextField.delegate = self
         addSubview(dateTextField)
-
-        datePicker.datePickerMode = .date
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.locale = .current
-
-        dateTextField.inputView = datePicker
-        dateTextField.inputAccessoryView = keyboardToolbar
 
         NSLayoutConstraint.activate([
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -59,27 +47,13 @@ class DateView: UIView {
         ])
     }
 
-    private let datePicker = UIDatePicker()
-
     private let titleLabel = UILabel()
 
-    private let dateTextField = PatienceTextField()
+    private let dateTextField = SelectableDateStylePickerTextField()
+}
 
-    private lazy var keyboardToolbar: UIToolbar = {
-        let toolbar = UIToolbar()
-        toolbar.items = [
-            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonAction(_:)))
-        ]
-        toolbar.sizeToFit()
-        return toolbar
-    }()
-
-    @objc private func doneButtonAction(_ : UIBarButtonItem) {
-        dateTextField.endEditing(true)
-
-        let startDay = DateUtils.getStartDay(date: datePicker.date)
-        selectedDate = startDay
-        dateTextField.text = DateUtils.stringFromDate(date: startDay, format: DateUtils.dateFormatJapanese)
+extension DateView: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        selectedDate = dateTextField.selectedDate.date
     }
 }

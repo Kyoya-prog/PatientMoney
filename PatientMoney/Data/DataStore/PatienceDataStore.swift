@@ -39,9 +39,11 @@ class PatienceDataStore: PatienceRepository {
         }
     }
 
-    func fetchPatienceData(startTimestamp: Timestamp, endTimestamp: Timestamp) -> Single<[PatienceEntity]> {
+    func fetchPatienceData(startDate: Date, endDate: Date) -> Single<[PatienceEntity]> {
         Single<[PatienceEntity]>.create { [weak self] observer ->Disposable in
             guard let self = self else { return Disposables.create() }
+            let startTimestamp = Timestamp(date: startDate)
+            let endTimestamp = Timestamp(date: endDate)
             let query = self.firestoreCollectionReference
                 .whereField("UID", isEqualTo: FirebaseAuthManeger.shared.uid)
                 .whereField("Date", isGreaterThanOrEqualTo: startTimestamp)
@@ -93,7 +95,7 @@ class PatienceDataStore: PatienceRepository {
     private func createPatienceRecord(documents: [QueryDocumentSnapshot]) -> [PatienceEntity] {
         documents.map {
             PatienceEntity(documentID: $0.documentID,
-                           date: ($0.data()["Date"] as? Date) ?? Date() ,
+                           date: (($0.data()["Date"] as? Timestamp)?.dateValue()) ?? Date() ,
                            memo: ($0.data()["Memo"] as? String) ?? "",
                            money: ($0.data()["Money"] as? Int) ?? 0,
                            categoryTitle: ( $0.data()["Category"] as? String) ?? ""  )

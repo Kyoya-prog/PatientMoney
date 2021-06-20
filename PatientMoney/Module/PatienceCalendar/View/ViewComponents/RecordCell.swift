@@ -28,7 +28,7 @@ class RecordCell: UITableViewCell {
     }
 
     private func construct() {
-        backgroundColor = .white
+        contentView.backgroundColor = UIColor(hex: "FFDA85")
 
         icon.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(icon)

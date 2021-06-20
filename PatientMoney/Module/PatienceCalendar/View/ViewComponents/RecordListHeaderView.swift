@@ -40,7 +40,7 @@ class RecordListHeaderView: UIView {
     }
 
     private func construct() {
-        backgroundColor = .white
+        backgroundColor = UIColor(hex: "FFDA85")
 
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.boldSystemFont(ofSize: 15)

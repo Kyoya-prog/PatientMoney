@@ -6,21 +6,30 @@ class PatienceAnalyzePresenter: PatienceAnalyzePresentation, PatienceAnalyzeOutp
 
     var view: PatienceAnalyzeView?
 
-    func didSelectMonth(year: Int, month: Int) {
-        usecase.fetchDataFromMonth(year: year, month: month)
+    func didLoad() {
+        usecase.fetchDataFromDate(date: DateForTractableDay().date)
+    }
+
+    func didChangeDate(dateModel: DateForTractableDay, isSingleDaySelect: Bool) {
+        if isSingleDaySelect {
+            usecase.fetchDataFromDate(date: dateModel.date)
+        } else {
+            usecase.fetchDataFromMonth(year: dateModel.year, month: dateModel.month)
+        }
     }
 
     // MARK: PatienceAnalyzeOutput
     func outputFetchRecords(records: [PatienceEntity]) {
-        view?.updateRecords(records: records)
-        var sumMoney = 0
-        records.forEach {
-            sumMoney += $0.money
-        }
-        view?.updateSumMoney(sumMoney: sumMoney)
+        let models = translatePatienceEntityIntoModel(records: records)
+        view?.updateCharts(data: models)
     }
 
     func outputError() {
         view?.showError(message: L10n.PatienceAnalyzePresenter.StatusNotification.Error.title)
+    }
+
+    private func translatePatienceEntityIntoModel(records: [PatienceEntity]) -> [PatienceChartDataModel] {
+        let model = records.map { PatienceChartDataModel(categoryTilte: $0.categoryTitle, money: $0.money) }
+        return model
     }
 }

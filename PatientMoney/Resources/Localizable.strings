@@ -64,6 +64,7 @@
 // AppDelegate
 "AppDelegate.HomeView.RegisterView.title" = "登録";
 "AppDelegate.HomeView.CalendarView.title" = "カレンダー";
+"AppDelegate.HomeView.AnalyzeView.title" = "分析";
 
 // PatienceCalendarViewController
 "PatienceCalendarViewController.NavigationItem.title" = "カレンダー";
@@ -73,7 +74,7 @@
 "PatienceCalendarViewController.Alert.RegisterAction.title" = "登録する";
 
 // PatienceAnalyzeViewController
-"PatienceAnalyzeViewController.NavigationItem.title" = "分析";
+"PatienceAnalyzeViewController.NavigationItem.title" = "分析画面";
 "PatienceAnalyzeViewController.MonthLabel.text" = "表示する年月";
 "PatienceAnalyzeViewController.selectedMonthLabel.text" = "%@年%d月の節約合計額";
 "PatienceAnalyzeViewController.sumMoneyLabel.text" = "%d円";
@@ -84,3 +85,9 @@
 // RecordListHeaderView
 "RecordListHeaderView.MonthLabel.text" = "%d月の節約合計額";
 "RecordListHeaderView.sumMoneyLabel.text" = "%d円";
+
+// PatienceChartsView
+"PatienceChartsView.Charts.description" = "分析チャート(単位：円)";
+
+// DateSelectStyleCheckView
+"DateSelectStyleCheckView.DescriptionLabel.text" = "月毎に分析する";
