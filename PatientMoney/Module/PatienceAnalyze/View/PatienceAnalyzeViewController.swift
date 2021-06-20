@@ -43,7 +43,7 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
 
     private let vstack = UIStackView()
 
-    private let textField = SelectableDatePickStyleTextField()
+    private let textField = SelectableDateStylePickerTextField()
 
     private let chart = PatienceChartsView()
 

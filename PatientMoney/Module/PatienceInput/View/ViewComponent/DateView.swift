@@ -49,7 +49,7 @@ class DateView: UIView {
 
     private let titleLabel = UILabel()
 
-    private let dateTextField = SelectableDatePickStyleTextField()
+    private let dateTextField = SelectableDateStylePickerTextField()
 }
 
 extension DateView: UITextFieldDelegate {

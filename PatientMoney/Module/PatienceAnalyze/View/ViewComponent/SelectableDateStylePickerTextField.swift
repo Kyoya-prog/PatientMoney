@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 /// 日付のピック方法を選べるdatePickerTextField
-class SelectableDatePickStyleTextField: PatienceTextField {
+class SelectableDateStylePickerTextField: PatienceTextField {
     var selectedDate = DateForTractableDay() {
         didSet {
             text = selectedDate.dateString
@@ -118,7 +118,7 @@ class SelectableDatePickStyleTextField: PatienceTextField {
 }
 
 // MARK: - UIPickerViewDelegate,UIPickerViewDataSource
-extension SelectableDatePickStyleTextField: UIPickerViewDelegate, UIPickerViewDataSource {
+extension SelectableDateStylePickerTextField: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         2
     }
