@@ -45,7 +45,7 @@ class AuthRouter: AuthWireFrame {
         calendarVC.tabBarItem = UITabBarItem(title: L10n.AppDelegate.HomeView.CalendarView.title, image: Asset.calendar.image, selectedImage: nil)
         homeViewController.addChild(calendarVC)
         let analyzeVC = UINavigationController(rootViewController: PatienceAnalyzeRouter.assembleModule())
-        analyzeVC.tabBarItem = UITabBarItem(title: "分析", image: Asset.analyze.image, selectedImage: nil)
+        analyzeVC.tabBarItem = UITabBarItem(title: L10n.AppDelegate.HomeView.AnalyzeView.title, image: Asset.analyze.image, selectedImage: nil)
         homeViewController.addChild(analyzeVC)
         return homeViewController
     }

@@ -7,6 +7,8 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
     override func viewDidLoad() {
         super.viewDidLoad()
         presentation.didLoad()
+
+        navigationItem.title = L10n.PatienceAnalyzeViewController.NavigationItem.title
         view.backgroundColor = UIColor(hex: "FFDAA5")
 
         vstack.translatesAutoresizingMaskIntoConstraints = false
