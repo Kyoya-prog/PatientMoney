@@ -71,23 +71,11 @@ class PatienceChartsView: PieChartView {
         dataEntries.append(PieChartDataEntry(value: Double(hobbyMoney), label: Category.categories[5].title, data: Double(hobbyMoney)))
 
         let dataSet = PieChartDataSet(entries: dataEntries, label: L10n.PatienceChartsView.Charts.description)
+        dataSet.valueTextColor = .black
+
+        dataSet.colors.append(contentsOf: [.red, .blue, .brown, .yellow, .orange, .green])
 
         data = PieChartData(dataSet: dataSet)
-
-        var colors: [UIColor] = []
-
-        for _ in 0..<dataEntries.count {
-            let r = CGFloat.random(in: 0 ... 255) / 255.0
-            let g = CGFloat.random(in: 0 ... 255) / 255.0
-            let b = CGFloat.random(in: 0 ... 255) / 255.0
-            let color = UIColor(red: r, green: g, blue: b, alpha: 1)
-
-            colors.append(color)
-        }
-
-        dataSet.colors = colors
-
-        data?.setValueTextColor(.black)
     }
 }
 

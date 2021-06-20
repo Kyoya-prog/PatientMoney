@@ -20,13 +20,13 @@ class PatienceAnalyzeInteractor: PatienceAnalyzeUsecase {
             }
         }.disposed(by: dispose)
     }
-    
+
     func fetchDataFromDate(date: Date) {
         repository.fetchPatienceData(date: date).subscribe { [weak self] observer in
             switch observer {
             case .success(let records):
                 self?.output?.outputFetchRecords(records: records)
-                
+
             case .failure(_):
                 self?.output?.outputError()
             }

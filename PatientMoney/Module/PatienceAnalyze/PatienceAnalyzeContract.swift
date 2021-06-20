@@ -30,7 +30,7 @@ protocol PatienceAnalyzeView: AnyObject {
 protocol PatienceAnalyzePresentation: AnyObject {
     var usecase: PatienceAnalyzeUsecase! { get }
     var view: PatienceAnalyzeView? { get }
-    
+
     /// viewが読み込まれた
     func didLoad()
     /// 日付が変更された
