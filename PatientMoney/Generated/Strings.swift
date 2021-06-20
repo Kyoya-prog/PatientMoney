@@ -13,6 +13,10 @@ internal enum L10n {
 
   internal enum AppDelegate {
     internal enum HomeView {
+      internal enum AnalyzeView {
+        /// 分析
+        internal static let title = L10n.tr("Localizable", "AppDelegate.HomeView.AnalyzeView.title")
+      }
       internal enum CalendarView {
         /// カレンダー
         internal static let title = L10n.tr("Localizable", "AppDelegate.HomeView.CalendarView.title")
@@ -177,7 +181,7 @@ internal enum L10n {
       internal static let text = L10n.tr("Localizable", "PatienceAnalyzeViewController.MonthLabel.text")
     }
     internal enum NavigationItem {
-      /// 分析
+      /// 分析画面
       internal static let title = L10n.tr("Localizable", "PatienceAnalyzeViewController.NavigationItem.title")
     }
     internal enum SelectedMonthLabel {

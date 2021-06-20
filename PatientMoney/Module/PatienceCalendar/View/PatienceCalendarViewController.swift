@@ -21,7 +21,8 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.pen.image, style: .plain, target: self, action: #selector(didTapRegisterButton(_:)))
         navigationItem.title = L10n.PatienceCalendarViewController.NavigationItem.title
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(hex: "FFDAA5")
+
         calendar.translatesAutoresizingMaskIntoConstraints = false
         calendar.delegate = self
         calendar.dataSource = self
@@ -81,7 +82,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 
     private lazy var recordsView: UITableView = {
         let view = UITableView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(hex: "FFDAA5")
         view.register(RecordCell.self, forCellReuseIdentifier: RecordCell.reuseIdentifer)
         view.delegate = self
         view.dataSource = self

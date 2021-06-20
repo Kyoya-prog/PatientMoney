@@ -57,6 +57,8 @@ class CategoryCell: UICollectionViewCell {
     }
 
     private func construct() {
+        contentView.backgroundColor = .white
+
         layer.borderWidth = 1
         layer.cornerRadius = 4
 
