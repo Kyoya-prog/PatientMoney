@@ -1,9 +1,9 @@
 import Foundation
 import UIKit
 
-class PatienceAnalyzeViewController: UIViewController,PatienceAnalyzeView {
+class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
     var presentation: PatienceAnalyzePresentation!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         presentation.didLoad()
@@ -19,7 +19,7 @@ class PatienceAnalyzeViewController: UIViewController,PatienceAnalyzeView {
         vstack.addArrangedSubview(textField)
         textField.selectedAction = {[weak self] date in
             guard let self = self else { return }
-            self.presentation.didChangeDate(dateModel: self.textField.selectedDate, isSelectByMonthAndYear: self.checkView.isChecked)
+            self.presentation.didChangeDate(dateModel: date, isSingleDaySelect: !self.checkView.isChecked)
         }
         vstack.addArrangedSubview(checkView)
         checkView.didToggleCheckBoxAction = { isOn in
@@ -37,7 +37,7 @@ class PatienceAnalyzeViewController: UIViewController,PatienceAnalyzeView {
             textField.widthAnchor.constraint(equalToConstant: 200),
 
             chart.widthAnchor.constraint(equalTo: vstack.widthAnchor),
-            chart.heightAnchor.constraint(equalTo: vstack.widthAnchor)
+            chart.heightAnchor.constraint(equalTo: vstack.widthAnchor, constant: 1.2)
         ])
     }
 
@@ -48,12 +48,12 @@ class PatienceAnalyzeViewController: UIViewController,PatienceAnalyzeView {
     private let chart = PatienceChartsView()
 
     private let checkView = DateSelectStyleCheckView()
-    
+
     // MARK: PatienceAnalyticsView
     func updateCharts(data: [PatienceChartDataModel]) {
-        presentation.didChangeDate(dateModel: textField.selectedDate, isSelectByMonthAndYear: !checkView.isChecked)
+        chart.records = data
     }
-    
+
     func showError(message: String) {
         StatusNotification.notifyError(message)
     }
