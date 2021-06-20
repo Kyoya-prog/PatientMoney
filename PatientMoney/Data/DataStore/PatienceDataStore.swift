@@ -95,7 +95,7 @@ class PatienceDataStore: PatienceRepository {
     private func createPatienceRecord(documents: [QueryDocumentSnapshot]) -> [PatienceEntity] {
         documents.map {
             PatienceEntity(documentID: $0.documentID,
-                           date: ($0.data()["Date"] as? Date) ?? Date() ,
+                           date: (($0.data()["Date"] as? Timestamp)?.dateValue()) ?? Date() ,
                            memo: ($0.data()["Memo"] as? String) ?? "",
                            money: ($0.data()["Money"] as? Int) ?? 0,
                            categoryTitle: ( $0.data()["Category"] as? String) ?? ""  )
