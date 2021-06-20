@@ -28,14 +28,14 @@ class SelectableDatePickStyleTextFieldTest: XCTestCase {
 
     func testCorrectTextDisplayWhenIsSingleSelect() {
         let dateTextField = SelectableDatePickStyleTextField()
-        dateTextField.selectedDate.injectDate(date: date)
+        dateTextField.selectedDate.date = date
         XCTAssertEqual(dateTextField.text, "2000年02月28日")
     }
 
     func testCorrectTextDisplayWhenNotIsSingleSelect() {
         let dateTextField = SelectableDatePickStyleTextField()
         dateTextField.isSingleDaySelect = false
-        dateTextField.selectedDate.injectDate(date: date)
+        dateTextField.selectedDate.date = date
         XCTAssertEqual(dateTextField.text, "2000年02月")
     }
 

@@ -72,9 +72,9 @@ struct DateForTractableDay {
         }
         set {
             let current = Calendar.current
-            year = current.component(.year, from: date)
-            month = current.component(.month, from: date)
-            day = isIncludeDate ? current.component(.day, from: date):1
+            year = current.component(.year, from: newValue)
+            month = current.component(.month, from: newValue)
+            day = isIncludeDate ? current.component(.day, from: newValue):1
         }
     }
     var isIncludeDate = true {
