@@ -31,10 +31,6 @@ opt_in_rules:
 excluded:
   # Carthage でインストールしたライブラリは除外
   - Carthage
-  # 各ターゲットの自動生成ファイルは除外
-  - tunag/Generated
-  - tunagUITests/Generated
-  - tunagUIComponents/Generated
 
 # キャストできることが明確であれば force_cast も許容
 # (立ち止まって確認するために warning とする。問題ない場合は disable コメントで無視する。)
