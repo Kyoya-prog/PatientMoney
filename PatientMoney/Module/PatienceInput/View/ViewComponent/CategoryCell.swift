@@ -61,6 +61,7 @@ class CategoryCell: UICollectionViewCell {
 
         layer.borderWidth = 1
         layer.cornerRadius = 4
+        clipsToBounds = true
 
         iconLabel.translatesAutoresizingMaskIntoConstraints = false
         iconLabel.textAlignment = .center
