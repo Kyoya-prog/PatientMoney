@@ -27,8 +27,6 @@ class CheckBox: UIControl {
         iconLabel.translatesAutoresizingMaskIntoConstraints = false
         iconLabel.attributedText = NSAttributedString.icon(FontAwesome.Icon.check, size: 20)
         iconLabel.textAlignment = .center
-        iconLabel.layer.cornerRadius = 4
-        iconLabel.clipsToBounds = true
         addSubview(iconLabel)
         NSLayoutConstraint.activate([
             heightAnchor.constraint(equalToConstant: 30),
@@ -44,7 +42,6 @@ class CheckBox: UIControl {
 
     @objc private func touchAction(_ sender: UIControl) {
         isOn.toggle()
-        backgroundColor = .red
         checkBoxSelectedAction?(isOn)
     }
 
