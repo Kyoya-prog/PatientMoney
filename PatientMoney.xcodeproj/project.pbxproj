@@ -27,6 +27,7 @@
 		3D55A05A267CAF02006422BC /* SelectableDatePickStyleTextFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55A059267CAF02006422BC /* SelectableDatePickStyleTextFieldTest.swift */; };
 		3D55A05C267CEADE006422BC /* DateSelectStyleCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55A05B267CEADE006422BC /* DateSelectStyleCheckView.swift */; };
 		3D55A05E267DBE69006422BC /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55A05D267DBE69006422BC /* CheckBox.swift */; };
+		3D55A061267F2899006422BC /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 3D55A060267F2899006422BC /* Algorithms */; };
 		3D61B4E2264EDA2F001C74B6 /* RecordListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D61B4E1264EDA2F001C74B6 /* RecordListHeaderView.swift */; };
 		3D6963DE2678D26100368810 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6963DD2678D26100368810 /* CategoryCell.swift */; };
 		3D6963E02678D2E500368810 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6963DF2678D2E500368810 /* RecordCell.swift */; };
@@ -272,6 +273,7 @@
 				3D6D011626355E4400C30DD1 /* FirebaseInstallations.framework in Frameworks */,
 				3D3A3222263EEFE000077B6D /* NotificationBanner.xcframework in Frameworks */,
 				3D6D011E26355E4400C30DD1 /* gRPC-C++.framework in Frameworks */,
+				3D55A061267F2899006422BC /* Algorithms in Frameworks */,
 				3D6D011826355E4400C30DD1 /* GoogleAppMeasurement.framework in Frameworks */,
 				3D6D012226355E4400C30DD1 /* GTMSessionFetcher.framework in Frameworks */,
 				3D6D010826355E4300C30DD1 /* FIRAnalyticsConnector.framework in Frameworks */,
@@ -789,6 +791,7 @@
 			name = PatientMoney;
 			packageProductDependencies = (
 				3DE952D92643B35E004AF23D /* FSCalendar */,
+				3D55A060267F2899006422BC /* Algorithms */,
 			);
 			productName = PatientMoney;
 			productReference = 3D6DFF2626353E3E00C30DD1 /* PatientMoney.app */;
@@ -863,6 +866,7 @@
 			mainGroup = 3D6DFF1D26353E3E00C30DD1;
 			packageReferences = (
 				3DE952D82643B35E004AF23D /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				3D55A05F267F2899006422BC /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = 3D6DFF2726353E3E00C30DD1 /* Products */;
 			projectDirPath = "";
@@ -1170,7 +1174,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5.4;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.kyoyaprog.PatientMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1197,7 +1201,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5.4;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.kyoyaprog.PatientMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1333,6 +1337,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3D55A05F267F2899006422BC /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
 		3DE952D82643B35E004AF23D /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -1344,6 +1356,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3D55A060267F2899006422BC /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D55A05F267F2899006422BC /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
 		3DE952D92643B35E004AF23D /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3DE952D82643B35E004AF23D /* XCRemoteSwiftPackageReference "FSCalendar" */;
