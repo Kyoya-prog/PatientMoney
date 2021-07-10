@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3D6DFF2526353E3E00C30DD1"
-               BuildableName = "saving.app"
-               BlueprintName = "saving"
-               ReferencedContainer = "container:saving.xcodeproj">
+               BuildableName = "saving-ios.app"
+               BlueprintName = "saving-ios"
+               ReferencedContainer = "container:saving-ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3D6DFF3B26353E3F00C30DD1"
-               BuildableName = "savingTests.xctest"
-               BlueprintName = "savingTests"
-               ReferencedContainer = "container:saving.xcodeproj">
+               BuildableName = "saving-iosTests.xctest"
+               BlueprintName = "saving-iosTests"
+               ReferencedContainer = "container:saving-ios.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3D6DFF4626353E3F00C30DD1"
-               BuildableName = "savingUITests.xctest"
-               BlueprintName = "savingUITests"
-               ReferencedContainer = "container:saving.xcodeproj">
+               BuildableName = "saving-iosUITests.xctest"
+               BlueprintName = "saving-iosUITests"
+               ReferencedContainer = "container:saving-ios.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D6DFF2526353E3E00C30DD1"
-            BuildableName = "saving.app"
-            BlueprintName = "saving"
-            ReferencedContainer = "container:saving.xcodeproj">
+            BuildableName = "saving-ios.app"
+            BlueprintName = "saving-ios"
+            ReferencedContainer = "container:saving-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -88,9 +88,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D6DFF2526353E3E00C30DD1"
-            BuildableName = "saving.app"
-            BlueprintName = "saving"
-            ReferencedContainer = "container:saving.xcodeproj">
+            BuildableName = "saving-ios.app"
+            BlueprintName = "saving-ios"
+            ReferencedContainer = "container:saving-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
