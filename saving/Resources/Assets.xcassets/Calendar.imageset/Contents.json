@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "カレンダー25.png",
+      "filename" : "calendar25.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "カレンダー５０.png",
+      "filename" : "calendar50.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "カレンダー75.png",
+      "filename" : "calendar75.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

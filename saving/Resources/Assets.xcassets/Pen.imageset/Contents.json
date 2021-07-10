@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ペン25.png",
+      "filename" : "pen25.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ペン50.png",
+      "filename" : "pen50.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ペン75.png",
+      "filename" : "pen75.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
