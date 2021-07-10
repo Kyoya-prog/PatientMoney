@@ -189,14 +189,14 @@
 		3D6D00B026355BA500C30DD1 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = Carthage/Build/iOS/FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
 		3D6D00B126355BA500C30DD1 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		3D6D00B226355BA500C30DD1 /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "leveldb-library.framework"; path = "Carthage/Build/iOS/leveldb-library.framework"; sourceTree = "<group>"; };
-		3D6DFF2626353E3E00C30DD1 /* PatientMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PatientMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D6DFF2626353E3E00C30DD1 /* saving-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "saving-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6DFF2926353E3E00C30DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D6DFF3226353E3F00C30DD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D6DFF3726353E3F00C30DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D6DFF3C26353E3F00C30DD1 /* PatientMoneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatientMoneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D6DFF3C26353E3F00C30DD1 /* saving-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "saving-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6DFF4026353E3F00C30DD1 /* PatientMoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientMoneyTests.swift; sourceTree = "<group>"; };
 		3D6DFF4226353E3F00C30DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D6DFF4726353E3F00C30DD1 /* PatientMoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatientMoneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D6DFF4726353E3F00C30DD1 /* saving-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "saving-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6DFF4B26353E3F00C30DD1 /* PatientMoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientMoneyUITests.swift; sourceTree = "<group>"; };
 		3D6DFF4D26353E3F00C30DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -449,9 +449,9 @@
 		3D6DFF1D26353E3E00C30DD1 = {
 			isa = PBXGroup;
 			children = (
-				3D6DFF2826353E3E00C30DD1 /* PatientMoney */,
-				3D6DFF3F26353E3F00C30DD1 /* PatientMoneyTests */,
-				3D6DFF4A26353E3F00C30DD1 /* PatientMoneyUITests */,
+				3D6DFF2826353E3E00C30DD1 /* saving */,
+				3D6DFF3F26353E3F00C30DD1 /* savingTests */,
+				3D6DFF4A26353E3F00C30DD1 /* savingUITests */,
 				3D6DFF2726353E3E00C30DD1 /* Products */,
 				3D6DFF8A263548B200C30DD1 /* Frameworks */,
 			);
@@ -460,14 +460,14 @@
 		3D6DFF2726353E3E00C30DD1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3D6DFF2626353E3E00C30DD1 /* PatientMoney.app */,
-				3D6DFF3C26353E3F00C30DD1 /* PatientMoneyTests.xctest */,
-				3D6DFF4726353E3F00C30DD1 /* PatientMoneyUITests.xctest */,
+				3D6DFF2626353E3E00C30DD1 /* saving-ios.app */,
+				3D6DFF3C26353E3F00C30DD1 /* saving-iosTests.xctest */,
+				3D6DFF4726353E3F00C30DD1 /* saving-iosUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3D6DFF2826353E3E00C30DD1 /* PatientMoney */ = {
+		3D6DFF2826353E3E00C30DD1 /* saving */ = {
 			isa = PBXGroup;
 			children = (
 				3D3A324D263F2B6F00077B6D /* Data */,
@@ -483,26 +483,26 @@
 				3D6DFF3726353E3F00C30DD1 /* Info.plist */,
 				3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */,
 			);
-			path = PatientMoney;
+			path = saving;
 			sourceTree = "<group>";
 		};
-		3D6DFF3F26353E3F00C30DD1 /* PatientMoneyTests */ = {
+		3D6DFF3F26353E3F00C30DD1 /* savingTests */ = {
 			isa = PBXGroup;
 			children = (
 				3D6DFF4026353E3F00C30DD1 /* PatientMoneyTests.swift */,
 				3D6DFF4226353E3F00C30DD1 /* Info.plist */,
 				3D55A059267CAF02006422BC /* SelectableDatePickStyleTextFieldTest.swift */,
 			);
-			path = PatientMoneyTests;
+			path = savingTests;
 			sourceTree = "<group>";
 		};
-		3D6DFF4A26353E3F00C30DD1 /* PatientMoneyUITests */ = {
+		3D6DFF4A26353E3F00C30DD1 /* savingUITests */ = {
 			isa = PBXGroup;
 			children = (
 				3D6DFF4B26353E3F00C30DD1 /* PatientMoneyUITests.swift */,
 				3D6DFF4D26353E3F00C30DD1 /* Info.plist */,
 			);
-			path = PatientMoneyUITests;
+			path = savingUITests;
 			sourceTree = "<group>";
 		};
 		3D6DFF8A263548B200C30DD1 /* Frameworks */ = {
@@ -773,9 +773,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3D6DFF2526353E3E00C30DD1 /* PatientMoney */ = {
+		3D6DFF2526353E3E00C30DD1 /* saving-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D6DFF5026353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "PatientMoney" */;
+			buildConfigurationList = 3D6DFF5026353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "saving-ios" */;
 			buildPhases = (
 				3DE103AA26382B5800F724B8 /* Run Swiftgen */,
 				3D6D016F2635B4D300C30DD1 /* Run Swiftlint */,
@@ -788,18 +788,18 @@
 			);
 			dependencies = (
 			);
-			name = PatientMoney;
+			name = "saving-ios";
 			packageProductDependencies = (
 				3DE952D92643B35E004AF23D /* FSCalendar */,
 				3D55A060267F2899006422BC /* Algorithms */,
 			);
 			productName = PatientMoney;
-			productReference = 3D6DFF2626353E3E00C30DD1 /* PatientMoney.app */;
+			productReference = 3D6DFF2626353E3E00C30DD1 /* saving-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3D6DFF3B26353E3F00C30DD1 /* PatientMoneyTests */ = {
+		3D6DFF3B26353E3F00C30DD1 /* saving-iosTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D6DFF5326353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "PatientMoneyTests" */;
+			buildConfigurationList = 3D6DFF5326353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "saving-iosTests" */;
 			buildPhases = (
 				3D6DFF3826353E3F00C30DD1 /* Sources */,
 				3D6DFF3926353E3F00C30DD1 /* Frameworks */,
@@ -810,14 +810,14 @@
 			dependencies = (
 				3D6DFF3E26353E3F00C30DD1 /* PBXTargetDependency */,
 			);
-			name = PatientMoneyTests;
+			name = "saving-iosTests";
 			productName = PatientMoneyTests;
-			productReference = 3D6DFF3C26353E3F00C30DD1 /* PatientMoneyTests.xctest */;
+			productReference = 3D6DFF3C26353E3F00C30DD1 /* saving-iosTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3D6DFF4626353E3F00C30DD1 /* PatientMoneyUITests */ = {
+		3D6DFF4626353E3F00C30DD1 /* saving-iosUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D6DFF5626353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "PatientMoneyUITests" */;
+			buildConfigurationList = 3D6DFF5626353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "saving-iosUITests" */;
 			buildPhases = (
 				3D6DFF4326353E3F00C30DD1 /* Sources */,
 				3D6DFF4426353E3F00C30DD1 /* Frameworks */,
@@ -828,9 +828,9 @@
 			dependencies = (
 				3D6DFF4926353E3F00C30DD1 /* PBXTargetDependency */,
 			);
-			name = PatientMoneyUITests;
+			name = "saving-iosUITests";
 			productName = PatientMoneyUITests;
-			productReference = 3D6DFF4726353E3F00C30DD1 /* PatientMoneyUITests.xctest */;
+			productReference = 3D6DFF4726353E3F00C30DD1 /* saving-iosUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -855,7 +855,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3D6DFF2126353E3E00C30DD1 /* Build configuration list for PBXProject "PatientMoney" */;
+			buildConfigurationList = 3D6DFF2126353E3E00C30DD1 /* Build configuration list for PBXProject "saving-ios" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -872,9 +872,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3D6DFF2526353E3E00C30DD1 /* PatientMoney */,
-				3D6DFF3B26353E3F00C30DD1 /* PatientMoneyTests */,
-				3D6DFF4626353E3F00C30DD1 /* PatientMoneyUITests */,
+				3D6DFF2526353E3E00C30DD1 /* saving-ios */,
+				3D6DFF3B26353E3F00C30DD1 /* saving-iosTests */,
+				3D6DFF4626353E3F00C30DD1 /* saving-iosUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1030,12 +1030,12 @@
 /* Begin PBXTargetDependency section */
 		3D6DFF3E26353E3F00C30DD1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3D6DFF2526353E3E00C30DD1 /* PatientMoney */;
+			target = 3D6DFF2526353E3E00C30DD1 /* saving-ios */;
 			targetProxy = 3D6DFF3D26353E3F00C30DD1 /* PBXContainerItemProxy */;
 		};
 		3D6DFF4926353E3F00C30DD1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3D6DFF2526353E3E00C30DD1 /* PatientMoney */;
+			target = 3D6DFF2526353E3E00C30DD1 /* saving-ios */;
 			targetProxy = 3D6DFF4826353E3F00C30DD1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1229,7 +1229,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PatientMoney.app/PatientMoney";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/saving-ios.app/saving-ios";
 			};
 			name = Debug;
 		};
@@ -1251,7 +1251,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PatientMoney.app/PatientMoney";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/saving-ios.app/saving-ios";
 			};
 			name = Release;
 		};
@@ -1298,7 +1298,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3D6DFF2126353E3E00C30DD1 /* Build configuration list for PBXProject "PatientMoney" */ = {
+		3D6DFF2126353E3E00C30DD1 /* Build configuration list for PBXProject "saving-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D6DFF4E26353E3F00C30DD1 /* Debug */,
@@ -1307,7 +1307,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		3D6DFF5026353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "PatientMoney" */ = {
+		3D6DFF5026353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "saving-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D6DFF5126353E3F00C30DD1 /* Debug */,
@@ -1316,7 +1316,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		3D6DFF5326353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "PatientMoneyTests" */ = {
+		3D6DFF5326353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "saving-iosTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D6DFF5426353E3F00C30DD1 /* Debug */,
@@ -1325,7 +1325,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		3D6DFF5626353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "PatientMoneyUITests" */ = {
+		3D6DFF5626353E3F00C30DD1 /* Build configuration list for PBXNativeTarget "saving-iosUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D6DFF5726353E3F00C30DD1 /* Debug */,
