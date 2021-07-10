@@ -77,7 +77,6 @@
 		3D9FEC342668041E008A77FC /* PatienceAnalyzeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC332668041E008A77FC /* PatienceAnalyzeRouter.swift */; };
 		3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */; };
 		3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */; };
-		3DCEB8BF267C7A1C00EDD973 /* Charts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */; };
 		3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8C1267C7A7000EDD973 /* PatienceChartsView.swift */; };
 		3DE103C82638360000F724B8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103C72638360000F724B8 /* Strings.swift */; };
 		3DE103CC2638360800F724B8 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103CB2638360800F724B8 /* Asset.swift */; };
@@ -265,7 +264,6 @@
 				3D97733F2640495200419E8A /* RxRelay.xcframework in Frameworks */,
 				3D0B342926999BBF00C9DDB0 /* GTMSessionFetcher.xcframework in Frameworks */,
 				3D0B342326999BBF00C9DDB0 /* gRPC-C++.xcframework in Frameworks */,
-				3DCEB8BF267C7A1C00EDD973 /* Charts.xcframework in Frameworks */,
 				3D0B344026999DDD00C9DDB0 /* PromisesObjC.xcframework in Frameworks */,
 				3D7B54F52699A13B0037E2DB /* GoogleDataTransport.xcframework in Frameworks */,
 				3D0B343A26999D4200C9DDB0 /* GoogleAppMeasurement.xcframework in Frameworks */,
@@ -798,7 +796,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					3D6DFF2526353E3E00C30DD1 = {
 						CreatedOnToolsVersion = 12.4;
