@@ -26,6 +26,14 @@
 		3D0B344326999DF200C9DDB0 /* leveldb-library.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B344226999DF200C9DDB0 /* leveldb-library.xcframework */; };
 		3D0B344626999E4800C9DDB0 /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D0B344526999E4800C9DDB0 /* gRPCCertificates-Cpp.bundle */; };
 		3D205C6326381C820058064C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6226381C820058064C /* Localizable.strings */; };
+		3D2A1E7E26C6857F0013F247 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2A1E7D26C6857F0013F247 /* Moya */; };
+		3D2A1E8126C685FF0013F247 /* APITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8026C685FF0013F247 /* APITargetType.swift */; };
+		3D2A1E8326C687090013F247 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8226C687090013F247 /* APIClient.swift */; };
+		3D2A1E8526C69CFF0013F247 /* SignUpTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8426C69CFF0013F247 /* SignUpTargetType.swift */; };
+		3D2A1E8826C69E200013F247 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8726C69E200013F247 /* UserEntity.swift */; };
+		3D2A1E8A26C6A00D0013F247 /* SignInTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8926C6A00D0013F247 /* SignInTargetType.swift */; };
+		3D2A1E8D26C6A07F0013F247 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2A1E8C26C6A07F0013F247 /* KeychainAccess */; };
+		3D2A1E8F26C6A1A40013F247 /* TokenManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8E26C6A1A40013F247 /* TokenManagement.swift */; };
 		3D36BC92263FBF1A00EDF69F /* PatienceCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */; };
 		3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC9E263FD60F00EDF69F /* Category.swift */; };
 		3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */; };
@@ -161,6 +169,12 @@
 		3D0B344226999DF200C9DDB0 /* leveldb-library.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "leveldb-library.xcframework"; path = "Carthage/Build/leveldb-library.xcframework"; sourceTree = "<group>"; };
 		3D0B344526999E4800C9DDB0 /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
 		3D205C6226381C820058064C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		3D2A1E8026C685FF0013F247 /* APITargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITargetType.swift; sourceTree = "<group>"; };
+		3D2A1E8226C687090013F247 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		3D2A1E8426C69CFF0013F247 /* SignUpTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTargetType.swift; sourceTree = "<group>"; };
+		3D2A1E8726C69E200013F247 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		3D2A1E8926C6A00D0013F247 /* SignInTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTargetType.swift; sourceTree = "<group>"; };
+		3D2A1E8E26C6A1A40013F247 /* TokenManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManagement.swift; sourceTree = "<group>"; };
 		3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarViewController.swift; sourceTree = "<group>"; };
 		3D36BC9E263FD60F00EDF69F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarInteractor.swift; sourceTree = "<group>"; };
@@ -244,6 +258,7 @@
 			files = (
 				3DE952DA2643B35E004AF23D /* FSCalendar in Frameworks */,
 				3D97733D2640495200419E8A /* RxCocoa.xcframework in Frameworks */,
+				3D2A1E7E26C6857F0013F247 /* Moya in Frameworks */,
 				3D0B340A26999BBE00C9DDB0 /* Charts.xcframework in Frameworks */,
 				3D0B343D26999D7700C9DDB0 /* nanopb.xcframework in Frameworks */,
 				3D3A3220263EEFE000077B6D /* MarqueeLabel.xcframework in Frameworks */,
@@ -257,6 +272,7 @@
 				3D0B344326999DF200C9DDB0 /* leveldb-library.xcframework in Frameworks */,
 				3D55A061267F2899006422BC /* Algorithms in Frameworks */,
 				3D0B343326999BC000C9DDB0 /* gRPC-Core.xcframework in Frameworks */,
+				3D2A1E8D26C6A07F0013F247 /* KeychainAccess in Frameworks */,
 				3D9773412640495200419E8A /* RxSwift.xcframework in Frameworks */,
 				3D0B341D26999BBF00C9DDB0 /* FirebaseAuth.xcframework in Frameworks */,
 				3D0B341F26999BBF00C9DDB0 /* GoogleUtilities.xcframework in Frameworks */,
@@ -309,6 +325,34 @@
 				3DE103C72638360000F724B8 /* Strings.swift */,
 			);
 			name = Generated;
+			sourceTree = "<group>";
+		};
+		3D2A1E7926C684F50013F247 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A1E8626C69D6F0013F247 /* Entity */,
+				3D2A1E7F26C685EC0013F247 /* TargetType */,
+				3D2A1E8226C687090013F247 /* APIClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		3D2A1E7F26C685EC0013F247 /* TargetType */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A1E8026C685FF0013F247 /* APITargetType.swift */,
+				3D2A1E8426C69CFF0013F247 /* SignUpTargetType.swift */,
+				3D2A1E8926C6A00D0013F247 /* SignInTargetType.swift */,
+			);
+			path = TargetType;
+			sourceTree = "<group>";
+		};
+		3D2A1E8626C69D6F0013F247 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A1E8726C69E200013F247 /* UserEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		3D36BC8F263FBEF400EDF69F /* PatienceCalendar */ = {
@@ -408,6 +452,7 @@
 				3D6B0FEB263E714D009D21A1 /* DateUtil.swift */,
 				3D3A3219263EEEA000077B6D /* StatusNotification.swift */,
 				3D36BC9E263FD60F00EDF69F /* Category.swift */,
+				3D2A1E8E26C6A1A40013F247 /* TokenManagement.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -445,6 +490,7 @@
 		3D6DFF2826353E3E00C30DD1 /* saving */ = {
 			isa = PBXGroup;
 			children = (
+				3D2A1E7926C684F50013F247 /* API */,
 				3D3A324D263F2B6F00077B6D /* Data */,
 				3D36BCA8263FDCBA00EDF69F /* Module */,
 				3D6B0FEA263E713E009D21A1 /* Util */,
@@ -748,6 +794,8 @@
 			packageProductDependencies = (
 				3DE952D92643B35E004AF23D /* FSCalendar */,
 				3D55A060267F2899006422BC /* Algorithms */,
+				3D2A1E7D26C6857F0013F247 /* Moya */,
+				3D2A1E8C26C6A07F0013F247 /* KeychainAccess */,
 			);
 			productName = PatientMoney;
 			productReference = 3D6DFF2626353E3E00C30DD1 /* saving.app */;
@@ -823,6 +871,8 @@
 			packageReferences = (
 				3DE952D82643B35E004AF23D /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				3D55A05F267F2899006422BC /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				3D2A1E7C26C6857F0013F247 /* XCRemoteSwiftPackageReference "Moya" */,
+				3D2A1E8B26C6A07F0013F247 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 3D6DFF2726353E3E00C30DD1 /* Products */;
 			projectDirPath = "";
@@ -929,6 +979,7 @@
 				3DEB53C826400B96002A2166 /* PatienceCalendarRouter.swift in Sources */,
 				3D6963DE2678D26100368810 /* CategoryCell.swift in Sources */,
 				3D6B1000263E94E1009D21A1 /* MoneyView.swift in Sources */,
+				3D2A1E8126C685FF0013F247 /* APITargetType.swift in Sources */,
 				3D6963E02678D2E500368810 /* RecordCell.swift in Sources */,
 				3DE10495263D36B500F724B8 /* FontAwesome.swift in Sources */,
 				3D3A321A263EEEA000077B6D /* StatusNotification.swift in Sources */,
@@ -937,14 +988,18 @@
 				3D3A3231263F074F00077B6D /* PatienceInputInteractor.swift in Sources */,
 				3D9FEC2E2667FB1A008A77FC /* PatienceAnalyzeInteractor.swift in Sources */,
 				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
+				3D2A1E8526C69CFF0013F247 /* SignUpTargetType.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
 				3DEE39A0264112C4005D3EB0 /* PatienceEntity.swift in Sources */,
 				3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */,
+				3D2A1E8826C69E200013F247 /* UserEntity.swift in Sources */,
 				3D9FEC2C2667A95D008A77FC /* SelectableDateStylePickerTextField.swift in Sources */,
 				3D61B4E2264EDA2F001C74B6 /* RecordListHeaderView.swift in Sources */,
 				3D6B0FE7263D85E0009D21A1 /* DateView.swift in Sources */,
 				3DE10408263B976700F724B8 /* AuthContract.swift in Sources */,
 				3DE103E6263ACBE100F724B8 /* AuthViewController.swift in Sources */,
+				3D2A1E8326C687090013F247 /* APIClient.swift in Sources */,
+				3D2A1E8F26C6A1A40013F247 /* TokenManagement.swift in Sources */,
 				3D9FEC3226680174008A77FC /* PatienceAnalyzePresenter.swift in Sources */,
 				3D9FEC302667FB37008A77FC /* PatienceAnalyzeContract.swift in Sources */,
 				3DE1043D263C0C4700F724B8 /* AuthPresenter.swift in Sources */,
@@ -957,6 +1012,7 @@
 				3DE104B1263D3BEC00F724B8 /* CategoriesView.swift in Sources */,
 				3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */,
 				3DE103ED263AE65A00F724B8 /* ColorsExtension.swift in Sources */,
+				3D2A1E8A26C6A00D0013F247 /* SignInTargetType.swift in Sources */,
 				3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */,
 				3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */,
 				3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */,
@@ -1293,6 +1349,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3D2A1E7C26C6857F0013F247 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.1;
+			};
+		};
+		3D2A1E8B26C6A07F0013F247 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.2;
+			};
+		};
 		3D55A05F267F2899006422BC /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-algorithms";
@@ -1312,6 +1384,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3D2A1E7D26C6857F0013F247 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D2A1E7C26C6857F0013F247 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		3D2A1E8C26C6A07F0013F247 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D2A1E8B26C6A07F0013F247 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
 		3D55A060267F2899006422BC /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3D55A05F267F2899006422BC /* XCRemoteSwiftPackageReference "swift-algorithms" */;
