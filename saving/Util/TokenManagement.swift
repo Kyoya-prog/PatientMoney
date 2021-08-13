@@ -3,19 +3,16 @@ import KeychainAccess
 
 /// Oauthのトークンを管理するManagementクラス
 class TokenManagement {
-    static let shared = TokenManagement()
 
-    func setToken(token: String) {
+    static func setToken(token: String) {
         try? keychain.remove("access-token")
         try? keychain.set("token", key: "access-token")
     }
 
-    func getToken() -> String? {
+    static func getToken() -> String {
         let token = try? keychain.get("access-token")
-        return token
+        return token ?? nil
     }
 
-    private let keychain = Keychain()
-
-    private init() {}
+    private static let keychain = Keychain()
 }

@@ -9,5 +9,8 @@ protocol ApiTargetType: TargetType {
 extension ApiTargetType {
     //swiftlint:disable:next force_unwrapping
     var baseURL: URL { URL(string: "https://saving-kyoya.jp")! }
-    var headers: [String: String]? { ["Content-Type": "application/json"] }
+    var headers: [String: String]? {
+        let token = TokenManagement.getToken()
+       return  ["Content-Type": "application/json","Authorization": "Token \(token)"]
+    }
 }
