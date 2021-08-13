@@ -21,6 +21,8 @@ class AuthViewController: UIViewController, AuthView {
 
     let authErrorLabel = UILabel()
 
+    let errorLabels = UIStackView()
+
     func finishButtonAction() {
         fatalError("this method must be overrided")
     }
@@ -60,6 +62,54 @@ class AuthViewController: UIViewController, AuthView {
     }
 
     private func construct() {
+        setupSubViews()
+        setUpChangeLabelView()
+
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+            mailAddressLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+            mailAddressLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 30),
+            mailAddressLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -30),
+
+            mailAddressTextField.topAnchor.constraint(equalTo: mailAddressLabel.bottomAnchor, constant: 10),
+            mailAddressTextField.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
+            mailAddressTextField.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
+
+            passwordLabel.topAnchor.constraint(equalTo: mailAddressTextField.bottomAnchor, constant: 20),
+            passwordLabel.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
+            passwordLabel.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
+
+            passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor, constant: 10),
+            passwordTextField.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
+            passwordTextField.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
+
+            errorLabels.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            errorLabels.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
+            errorLabels.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
+
+            authErrorLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 3),
+            authErrorLabel.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
+            authErrorLabel.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
+
+            finishButton.topAnchor.constraint(equalTo: errorLabels.bottomAnchor, constant: 20),
+            finishButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+            changeDescriptionLabel.centerYAnchor.constraint(equalTo: changeLabelView.centerYAnchor),
+            changeDescriptionLabel.leftAnchor.constraint(equalTo: changeLabelView.leftAnchor),
+
+            changeViewLabel.centerYAnchor.constraint(equalTo: changeLabelView.centerYAnchor),
+            changeViewLabel.leftAnchor.constraint(equalTo: changeDescriptionLabel.rightAnchor, constant: 5),
+            changeViewLabel.rightAnchor.constraint(equalTo: changeLabelView.rightAnchor),
+
+            changeLabelView.heightAnchor.constraint(equalToConstant: 20),
+            changeLabelView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            changeLabelView.topAnchor.constraint(equalTo: finishButton.bottomAnchor, constant: 20)
+        ])
+    }
+
+    private func setupSubViews() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.boldSystemFont(ofSize: 30)
         titleLabel.textColor = UIColor(hex: "FFA488")
@@ -100,6 +150,12 @@ class AuthViewController: UIViewController, AuthView {
         view.addSubview(passwordTextField)
         passwordTextField.addTarget(self, action: #selector(didChangePasswordTextField(_:)), for: .editingChanged)
 
+        errorLabels.translatesAutoresizingMaskIntoConstraints = false
+        errorLabels.axis = .vertical
+        errorLabels.alignment = .leading
+        errorLabels.spacing = 5
+        view.addSubview(errorLabels)
+
         finishButton.translatesAutoresizingMaskIntoConstraints = false
         finishButton.isEnabled = false
         finishButton.addTarget(self, action: #selector(didTapFinishButton(_:)), for: .touchUpInside)
@@ -110,47 +166,6 @@ class AuthViewController: UIViewController, AuthView {
         authErrorLabel.textColor = UIColor(hex: "FF0000")
         authErrorLabel.isHidden = true
         view.addSubview(authErrorLabel)
-
-        setUpChangeLabelView()
-
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-
-            mailAddressLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-            mailAddressLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 30),
-            mailAddressLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -30),
-
-            mailAddressTextField.topAnchor.constraint(equalTo: mailAddressLabel.bottomAnchor, constant: 10),
-            mailAddressTextField.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
-            mailAddressTextField.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
-
-            passwordLabel.topAnchor.constraint(equalTo: mailAddressTextField.bottomAnchor, constant: 20),
-            passwordLabel.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
-            passwordLabel.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
-
-            passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor, constant: 10),
-            passwordTextField.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
-            passwordTextField.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
-
-            authErrorLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 3),
-            authErrorLabel.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
-            authErrorLabel.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
-
-            finishButton.topAnchor.constraint(equalTo: authErrorLabel.bottomAnchor, constant: 30),
-            finishButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-
-            changeDescriptionLabel.centerYAnchor.constraint(equalTo: changeLabelView.centerYAnchor),
-            changeDescriptionLabel.leftAnchor.constraint(equalTo: changeLabelView.leftAnchor),
-
-            changeViewLabel.centerYAnchor.constraint(equalTo: changeLabelView.centerYAnchor),
-            changeViewLabel.leftAnchor.constraint(equalTo: changeDescriptionLabel.rightAnchor, constant: 5),
-            changeViewLabel.rightAnchor.constraint(equalTo: changeLabelView.rightAnchor),
-
-            changeLabelView.heightAnchor.constraint(equalToConstant: 20),
-            changeLabelView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            changeLabelView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
-        ])
     }
 
     private func setUpChangeLabelView() {
@@ -169,6 +184,15 @@ class AuthViewController: UIViewController, AuthView {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapChangeViewLabel(_:)))
         changeViewLabel.addGestureRecognizer(tapRecognizer)
         changeLabelView.addSubview(changeViewLabel)
+    }
+
+    private func displayErrorLabel() {
+        for _ in 1...3 {
+            let label = UILabel()
+            label.textColor = .red
+            label.text = "ここにはエラー文が入ります"
+            errorLabels.addArrangedSubview(label)
+        }
     }
 
     @objc private func didChangeMailAddressTextField(_ sender: PatienceTextField) {

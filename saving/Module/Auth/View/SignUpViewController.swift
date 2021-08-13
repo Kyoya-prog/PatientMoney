@@ -27,6 +27,7 @@ class SignUpViewController: AuthViewController {
     override func passwordTextFieldChangeAction() {
         guard let password = passwordTextField.text else { return }
         finishButton.isEnabled = 8 <= password.count
+        // TODO: この処理はpresenterで行う
         if !finishButton.isEnabled {
             authErrorLabel.text = L10n.AuthViewController.passwordMustMoreEightCharacters
             authErrorLabel.isHidden = false

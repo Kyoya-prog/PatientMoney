@@ -11,6 +11,6 @@ extension ApiTargetType {
     var baseURL: URL { URL(string: "https://saving-kyoya.jp")! }
     var headers: [String: String]? {
         let token = TokenManagement.getToken()
-       return  ["Content-Type": "application/json","Authorization": "Token \(token)"]
+       return  ["Content-Type": "application/json", "Authorization": "Token \(token)"]
     }
 }
