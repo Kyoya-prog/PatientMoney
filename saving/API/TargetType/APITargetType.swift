@@ -3,7 +3,7 @@ import Moya
 
 ///　デフォルト実装を用意し、レスポンスの型を定義できるようにしたTargetType
 protocol ApiTargetType: TargetType {
-    associatedtype Response: Codable
+    associatedtype Response: Decodable
 }
 
 extension ApiTargetType {
