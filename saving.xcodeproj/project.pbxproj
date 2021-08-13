@@ -32,6 +32,7 @@
 		3D2A1E8526C69CFF0013F247 /* SignUpTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8426C69CFF0013F247 /* SignUpTargetType.swift */; };
 		3D2A1E8826C69E200013F247 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8726C69E200013F247 /* UserEntity.swift */; };
 		3D2A1E8A26C6A00D0013F247 /* SignInTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8926C6A00D0013F247 /* SignInTargetType.swift */; };
+		3D2A1E8D26C6A07F0013F247 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2A1E8C26C6A07F0013F247 /* KeychainAccess */; };
 		3D36BC92263FBF1A00EDF69F /* PatienceCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */; };
 		3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC9E263FD60F00EDF69F /* Category.swift */; };
 		3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */; };
@@ -269,6 +270,7 @@
 				3D0B344326999DF200C9DDB0 /* leveldb-library.xcframework in Frameworks */,
 				3D55A061267F2899006422BC /* Algorithms in Frameworks */,
 				3D0B343326999BC000C9DDB0 /* gRPC-Core.xcframework in Frameworks */,
+				3D2A1E8D26C6A07F0013F247 /* KeychainAccess in Frameworks */,
 				3D9773412640495200419E8A /* RxSwift.xcframework in Frameworks */,
 				3D0B341D26999BBF00C9DDB0 /* FirebaseAuth.xcframework in Frameworks */,
 				3D0B341F26999BBF00C9DDB0 /* GoogleUtilities.xcframework in Frameworks */,
@@ -790,6 +792,7 @@
 				3DE952D92643B35E004AF23D /* FSCalendar */,
 				3D55A060267F2899006422BC /* Algorithms */,
 				3D2A1E7D26C6857F0013F247 /* Moya */,
+				3D2A1E8C26C6A07F0013F247 /* KeychainAccess */,
 			);
 			productName = PatientMoney;
 			productReference = 3D6DFF2626353E3E00C30DD1 /* saving.app */;
@@ -866,6 +869,7 @@
 				3DE952D82643B35E004AF23D /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				3D55A05F267F2899006422BC /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				3D2A1E7C26C6857F0013F247 /* XCRemoteSwiftPackageReference "Moya" */,
+				3D2A1E8B26C6A07F0013F247 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 3D6DFF2726353E3E00C30DD1 /* Products */;
 			projectDirPath = "";
@@ -1349,6 +1353,14 @@
 				minimumVersion = 14.0.1;
 			};
 		};
+		3D2A1E8B26C6A07F0013F247 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.2;
+			};
+		};
 		3D55A05F267F2899006422BC /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-algorithms";
@@ -1372,6 +1384,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3D2A1E7C26C6857F0013F247 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		3D2A1E8C26C6A07F0013F247 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D2A1E8B26C6A07F0013F247 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 		3D55A060267F2899006422BC /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
