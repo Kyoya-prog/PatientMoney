@@ -29,6 +29,8 @@
 		3D2A1E7E26C6857F0013F247 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2A1E7D26C6857F0013F247 /* Moya */; };
 		3D2A1E8126C685FF0013F247 /* APITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8026C685FF0013F247 /* APITargetType.swift */; };
 		3D2A1E8326C687090013F247 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8226C687090013F247 /* APIClient.swift */; };
+		3D2A1E8526C69CFF0013F247 /* SignUpTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8426C69CFF0013F247 /* SignUpTargetType.swift */; };
+		3D2A1E8826C69E200013F247 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8726C69E200013F247 /* UserEntity.swift */; };
 		3D36BC92263FBF1A00EDF69F /* PatienceCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */; };
 		3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC9E263FD60F00EDF69F /* Category.swift */; };
 		3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */; };
@@ -166,6 +168,8 @@
 		3D205C6226381C820058064C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3D2A1E8026C685FF0013F247 /* APITargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITargetType.swift; sourceTree = "<group>"; };
 		3D2A1E8226C687090013F247 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		3D2A1E8426C69CFF0013F247 /* SignUpTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTargetType.swift; sourceTree = "<group>"; };
+		3D2A1E8726C69E200013F247 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarViewController.swift; sourceTree = "<group>"; };
 		3D36BC9E263FD60F00EDF69F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarInteractor.swift; sourceTree = "<group>"; };
@@ -320,6 +324,7 @@
 		3D2A1E7926C684F50013F247 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				3D2A1E8626C69D6F0013F247 /* Entity */,
 				3D2A1E7F26C685EC0013F247 /* TargetType */,
 				3D2A1E8226C687090013F247 /* APIClient.swift */,
 			);
@@ -330,8 +335,17 @@
 			isa = PBXGroup;
 			children = (
 				3D2A1E8026C685FF0013F247 /* APITargetType.swift */,
+				3D2A1E8426C69CFF0013F247 /* SignUpTargetType.swift */,
 			);
 			path = TargetType;
+			sourceTree = "<group>";
+		};
+		3D2A1E8626C69D6F0013F247 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3D2A1E8726C69E200013F247 /* UserEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		3D36BC8F263FBEF400EDF69F /* PatienceCalendar */ = {
@@ -964,9 +978,11 @@
 				3D3A3231263F074F00077B6D /* PatienceInputInteractor.swift in Sources */,
 				3D9FEC2E2667FB1A008A77FC /* PatienceAnalyzeInteractor.swift in Sources */,
 				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
+				3D2A1E8526C69CFF0013F247 /* SignUpTargetType.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
 				3DEE39A0264112C4005D3EB0 /* PatienceEntity.swift in Sources */,
 				3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */,
+				3D2A1E8826C69E200013F247 /* UserEntity.swift in Sources */,
 				3D9FEC2C2667A95D008A77FC /* SelectableDateStylePickerTextField.swift in Sources */,
 				3D61B4E2264EDA2F001C74B6 /* RecordListHeaderView.swift in Sources */,
 				3D6B0FE7263D85E0009D21A1 /* DateView.swift in Sources */,
