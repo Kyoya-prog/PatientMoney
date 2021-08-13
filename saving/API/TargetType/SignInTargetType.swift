@@ -7,7 +7,7 @@ struct SignInTargetType: ApiTargetType {
     let email: String
 
     let password: String
-    
+
     var parameters: [String: String] { ["email": email, "password": password] }
 
     var path: String { "/session" }
@@ -18,4 +18,3 @@ struct SignInTargetType: ApiTargetType {
 
     var task: Task { .requestParameters(parameters: parameters, encoding: URLEncoding.default) }
 }
-

@@ -7,7 +7,7 @@ struct SignUpTargetType: ApiTargetType {
     let email: String
 
     let password: String
-    
+
     var parameters: [String: String] { ["email": email, "password": password] }
 
     var path: String { "/users" }
