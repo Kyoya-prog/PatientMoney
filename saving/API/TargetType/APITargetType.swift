@@ -11,4 +11,3 @@ extension ApiTargetType {
     var baseURL: URL { URL(string: "https://saving-kyoya.jp")! }
     var headers: [String: String]? { ["Content-Type": "application/json"] }
 }
-
