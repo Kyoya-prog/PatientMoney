@@ -31,6 +31,7 @@
 		3D2A1E8326C687090013F247 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8226C687090013F247 /* APIClient.swift */; };
 		3D2A1E8526C69CFF0013F247 /* SignUpTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8426C69CFF0013F247 /* SignUpTargetType.swift */; };
 		3D2A1E8826C69E200013F247 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8726C69E200013F247 /* UserEntity.swift */; };
+		3D2A1E8A26C6A00D0013F247 /* SignInTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8926C6A00D0013F247 /* SignInTargetType.swift */; };
 		3D36BC92263FBF1A00EDF69F /* PatienceCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */; };
 		3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC9E263FD60F00EDF69F /* Category.swift */; };
 		3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */; };
@@ -170,6 +171,7 @@
 		3D2A1E8226C687090013F247 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		3D2A1E8426C69CFF0013F247 /* SignUpTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTargetType.swift; sourceTree = "<group>"; };
 		3D2A1E8726C69E200013F247 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		3D2A1E8926C6A00D0013F247 /* SignInTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTargetType.swift; sourceTree = "<group>"; };
 		3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarViewController.swift; sourceTree = "<group>"; };
 		3D36BC9E263FD60F00EDF69F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarInteractor.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 			children = (
 				3D2A1E8026C685FF0013F247 /* APITargetType.swift */,
 				3D2A1E8426C69CFF0013F247 /* SignUpTargetType.swift */,
+				3D2A1E8926C6A00D0013F247 /* SignInTargetType.swift */,
 			);
 			path = TargetType;
 			sourceTree = "<group>";
@@ -1001,6 +1004,7 @@
 				3DE104B1263D3BEC00F724B8 /* CategoriesView.swift in Sources */,
 				3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */,
 				3DE103ED263AE65A00F724B8 /* ColorsExtension.swift in Sources */,
+				3D2A1E8A26C6A00D0013F247 /* SignInTargetType.swift in Sources */,
 				3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */,
 				3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */,
 				3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */,
