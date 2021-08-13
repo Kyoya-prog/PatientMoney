@@ -11,7 +11,7 @@ class TokenManagement {
 
     static func getToken() -> String {
         let token = try? keychain.get("access-token")
-        return token ?? nil
+        return token ?? ""
     }
 
     private static let keychain = Keychain()
