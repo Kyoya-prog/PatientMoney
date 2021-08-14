@@ -20,7 +20,7 @@ class AuthPresenter: AuthPresentation, AuthInteractorOutput {
     func checkPasswordLength(password: String) {
         errorMessages.removeAll(where: { $0 == "パスワードは8文字以上入力してください" })
         if password.count < 8 {
-            errorMessages.append("パスワードは８文字以上入力してください")
+            errorMessages.append("パスワードは8文字以上入力してください")
         }
         view?.showError(messages: errorMessages)
     }
