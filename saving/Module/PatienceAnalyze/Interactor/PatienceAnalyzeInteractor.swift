@@ -15,7 +15,7 @@ class PatienceAnalyzeInteractor: PatienceAnalyzeUsecase {
             case .success(let records):
                 self?.output?.outputFetchRecords(records: records)
 
-            case .failure(_):
+            case .error(_):
                 self?.output?.outputError()
             }
         }.disposed(by: dispose)
@@ -27,7 +27,7 @@ class PatienceAnalyzeInteractor: PatienceAnalyzeUsecase {
             case .success(let records):
                 self?.output?.outputFetchRecords(records: records)
 
-            case .failure(_):
+            case .error(_):
                 self?.output?.outputError()
             }
         }.disposed(by: dispose)

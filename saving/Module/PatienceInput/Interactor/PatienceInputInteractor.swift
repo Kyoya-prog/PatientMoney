@@ -13,7 +13,7 @@ class PatienceInputInteractor: PatienceUsecase {
             case .success(_):
                 self.output?.outputInputSuccess()
 
-            case .failure(let error):
+            case .error(let error):
                 self.output?.outputInputError(error: error)
             }
         }
@@ -27,7 +27,7 @@ class PatienceInputInteractor: PatienceUsecase {
             case .success(_):
                 self.output?.outputInputSuccess()
 
-            case .failure(let error):
+            case .error(let error):
                 self.output?.outputInputError(error: error)
             }
         }

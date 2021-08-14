@@ -9,7 +9,7 @@ class PatienceDataStore: PatienceRepository {
             guard let self = self else { return Disposables.create() }
             self.firestoreCollectionReference.addDocument(data: data) { error in
                 if let error = error {
-                    observer(.failure(error))
+                    observer(.error(error))
                     return
                 }
                 observer(.success(nil))
@@ -27,7 +27,7 @@ class PatienceDataStore: PatienceRepository {
                 .whereField("Date", isEqualTo: date)
             query.getDocuments { query, error in
                 if let error = error {
-                    observer(.failure(error))
+                    observer(.error(error))
                     return
                 }
                 if let documents = query?.documents {
@@ -50,7 +50,7 @@ class PatienceDataStore: PatienceRepository {
                 .whereField("Date", isLessThanOrEqualTo: endTimestamp)
             query.getDocuments { snapshot, error in
                 if let error = error {
-                    observer(.failure(error))
+                    observer(.error(error))
                     return
                 }
                 if let documents = snapshot?.documents {
@@ -67,7 +67,7 @@ class PatienceDataStore: PatienceRepository {
             guard let self = self else { return Disposables.create() }
             self.firestoreCollectionReference.document(id).updateData(record) { error in
                 if let error = error {
-                    observer(.failure(error))
+                    observer(.error(error))
                     return
                 }
                 observer(.success(nil))
@@ -82,7 +82,7 @@ class PatienceDataStore: PatienceRepository {
             guard let self = self else { return Disposables.create() }
             self.firestoreCollectionReference.document(id).delete { error in
                 if let error = error {
-                    observer(.failure(error))
+                    observer(.error(error))
                     return
                 }
                 observer(.success(nil))

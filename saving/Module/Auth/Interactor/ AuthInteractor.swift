@@ -2,29 +2,29 @@ import Foundation
 
 class AuthInteractor: AuthUsecase {
     var output: AuthInteractorOutput?
-    var repository: AuthRepository?
+    var repository: AuthRepository? = AuthDataStore()
 
     func signIn(mailAddress: String, password: String) {
-        repository?.signIn(mailAddress: mailAddress, password: password, completion: { result in
-            switch result {
+        repository?.signIn(mailAddress: mailAddress, password: password).subscribe({ observer in
+            switch observer {
             case let .success(token):
-                _ = token.token
+                print(token)
 
-            case let .failure(error):
-                _ = error
+            case let .error(error):
+                print(error)
             }
-        })
+        }).dispose()
     }
 
     func signUp(mailAddress: String, password: String) {
-        repository?.signUp(mailAddress: mailAddress, password: password, completion: { result in
-            switch result {
+        repository?.signUp(mailAddress: mailAddress, password: password).subscribe({ observer in
+            switch observer {
             case let .success(token):
-                _ = token.token
+                print(token)
 
-            case let .failure(error):
-                _ = error
+            case let .error(error):
+                print(error)
             }
-        })
+        }).dispose()
     }
 }
