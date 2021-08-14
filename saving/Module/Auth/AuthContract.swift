@@ -82,12 +82,10 @@ protocol AuthRepository: AnyObject {
     /// サインインする
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
-    /// - parameter completion:完了ハンドラ
-    func signIn(mailAddress: String, password: String, completion: @escaping (Result<TokenEntity, MoyaResponseError>) -> Void)
+    func signIn(mailAddress: String, password: String) -> Single<String>
 
     /// 新規登録する
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
-    /// - parameter completion:完了ハンドラ
-    func signUp(mailAddress: String, password: String, completion: @escaping (Result<TokenEntity, MoyaResponseError>) -> Void)
+    func signUp(mailAddress: String, password: String) -> Single<String>
 }
