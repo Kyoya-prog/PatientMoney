@@ -89,6 +89,7 @@
 		3DDFCC6126C7BF0800E3D1A2 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3DDFCC6026C7BF0800E3D1A2 /* Moya */; };
 		3DDFCC6326C7BF0800E3D1A2 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3DDFCC6226C7BF0800E3D1A2 /* ReactiveMoya */; };
 		3DDFCC6526C7BF0800E3D1A2 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3DDFCC6426C7BF0800E3D1A2 /* RxMoya */; };
+		3DDFCC6726C81B2600E3D1A2 /* ErrorMessageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFCC6626C81B2600E3D1A2 /* ErrorMessageBuilder.swift */; };
 		3DE103C82638360000F724B8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103C72638360000F724B8 /* Strings.swift */; };
 		3DE103CC2638360800F724B8 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103CB2638360800F724B8 /* Asset.swift */; };
 		3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */; };
@@ -225,6 +226,7 @@
 		3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Charts.xcframework; path = Carthage/Build/Charts.xcframework; sourceTree = "<group>"; };
 		3DCEB8C1267C7A7000EDD973 /* PatienceChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceChartsView.swift; sourceTree = "<group>"; };
 		3DDFCC5D26C79A0A00E3D1A2 /*  AuthDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " AuthDataStore.swift"; sourceTree = "<group>"; };
+		3DDFCC6626C81B2600E3D1A2 /* ErrorMessageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageBuilder.swift; sourceTree = "<group>"; };
 		3DE103C72638360000F724B8 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Generated/Strings.swift; sourceTree = "<group>"; };
 		3DE103CB2638360800F724B8 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Generated/Asset.swift; sourceTree = "<group>"; };
 		3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 				3D3A3219263EEEA000077B6D /* StatusNotification.swift */,
 				3D36BC9E263FD60F00EDF69F /* Category.swift */,
 				3D2A1E8E26C6A1A40013F247 /* TokenManagement.swift */,
+				3DDFCC6626C81B2600E3D1A2 /* ErrorMessageBuilder.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -984,6 +987,7 @@
 				3D6B0FEC263E714D009D21A1 /* DateUtil.swift in Sources */,
 				3DE103C82638360000F724B8 /* Strings.swift in Sources */,
 				3D6B0FF6263E76AA009D21A1 /* MemoView.swift in Sources */,
+				3DDFCC6726C81B2600E3D1A2 /* ErrorMessageBuilder.swift in Sources */,
 				3D3A3250263F2B9800077B6D /* PatienceInputRouter.swift in Sources */,
 				3DEB53C826400B96002A2166 /* PatienceCalendarRouter.swift in Sources */,
 				3D6963DE2678D26100368810 /* CategoryCell.swift in Sources */,
