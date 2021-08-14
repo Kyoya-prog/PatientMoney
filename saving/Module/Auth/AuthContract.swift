@@ -59,7 +59,7 @@ protocol AuthPresentation: AnyObject {
 protocol AuthInteractorOutput: AnyObject {
     /// 認証の結果を出力する
     /// - parameter result 認証処理結果
-    func outputAuthResult(result: Result<AuthDataResult, Error>)
+    func outputAuthError(error: Error)
 }
 
 /// 認証Usecase

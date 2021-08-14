@@ -15,7 +15,6 @@ class ApiClient: ApiClientInterface {
                     completion(.success(model))
                 } else if let errorModel = try? response.map(ErrorResponse.self) {
                     completion(.failure(.badRequestError(errorModel.errors[0].code)))
-                        return
                 } else {
                         completion(.failure(.unknownError))
                     }

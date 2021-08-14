@@ -38,7 +38,7 @@ class ErrorMessageBuilder {
             if let error = ((error.errorUserInfo["NSUnderlyingError"]as? Alamofire.AFError)?.underlyingError as NSError?) {
                 switch error.code {
                 case -1009:
-                    return ""
+                    return "インターネット接続がありません"
                 default:
                     return "処理に失敗しました"
                 }

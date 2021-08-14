@@ -34,14 +34,10 @@ class AuthPresenter: AuthPresentation, AuthInteractorOutput {
     }
 
     // MARK: AuthInteractorOutput
-    func outputAuthResult(result: Result<AuthDataResult, Error>) {
-        switch result {
-        case .success:
-            router.presentHomeView()
-
-        case .failure(let error):
-            view?.showError(messages: [])
-        }
+    func outputAuthError(error: Error) {
+        errorMessages.removeAll()
+        errorMessages.append(ErrorMessageBuilder.buildAuthErrorMessage(error: error))
+        view?.showError(messages: errorMessages)
     }
 
     private var errorMessages: [String] = []

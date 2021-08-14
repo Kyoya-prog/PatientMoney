@@ -1,4 +1,5 @@
 import Foundation
+import RxSwift
 
 class AuthInteractor: AuthUsecase {
     var output: AuthInteractorOutput?
@@ -13,7 +14,7 @@ class AuthInteractor: AuthUsecase {
             case let .error(error):
                 print(error)
             }
-        }).dispose()
+        }).disposed(by: disposeBag)
     }
 
     func signUp(mailAddress: String, password: String) {
@@ -23,8 +24,10 @@ class AuthInteractor: AuthUsecase {
                 print(token)
 
             case let .error(error):
-                print(error)
+                self.output?.outputAuthError(error: error)
             }
-        }).dispose()
+        }).disposed(by: disposeBag)
     }
+
+    private let disposeBag = DisposeBag()
 }
