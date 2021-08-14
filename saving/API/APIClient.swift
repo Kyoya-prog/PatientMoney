@@ -11,21 +11,14 @@ class ApiClient: ApiClientInterface {
         provider.request(request) { result in
             switch result {
             case let .success(response):
-                do {
-                    let model = try response.map(T.Response.self)
+                if let model = try? response.map(T.Response.self) {
                     completion(.success(model))
-                } catch {
-                    do {
-                        let errorModel = try response.map(ErrorResponse.self)
-                        completion(.failure(.badRequestError(errorModel.code)))
-                    } catch {
-                        if let error = error as? MoyaError {
-                            completion(.failure(.moyaError(error)))
-                        } else {
-                            completion(.failure(.unknownError))
-                        }
+                } else if let errorModel = try? response.map(ErrorResponse.self) {
+                    completion(.failure(.badRequestError(errorModel.errors[0].code)))
+                        return
+                } else {
+                        completion(.failure(.unknownError))
                     }
-                }
 
             case let .failure(moyaError):
                 completion(.failure(.moyaError(moyaError)))
@@ -35,8 +28,12 @@ class ApiClient: ApiClientInterface {
 }
 
 struct ErrorResponse: Decodable {
-    var code: Int
-    var message: String
+    var errors: [ErrorCodes]
+
+    struct ErrorCodes: Decodable {
+        var code: Int
+        var message: String
+    }
 }
 
 enum MoyaResponseError: Error {
