@@ -17,6 +17,14 @@ class AuthPresenter: AuthPresentation, AuthInteractorOutput {
         interactor.signUp(mailAddress: mailAddress, password: password)
     }
 
+    func checkPasswordLength(password: String) {
+        errorMessages.removeAll(where: { $0 == "パスワードは8文字以上入力してください" })
+        if password.count < 8 {
+            errorMessages.append("パスワードは８文字以上入力してください")
+        }
+        view?.showError(messages: errorMessages)
+    }
+
     func didTapSignInChangeViewLabel() {
         router.presentSignUpView()
     }
@@ -32,7 +40,9 @@ class AuthPresenter: AuthPresentation, AuthInteractorOutput {
             router.presentHomeView()
 
         case .failure(let error):
-            view?.showError(message: FirebaseAuthManeger.shared.buildAuthErrorMessage(error: error))
+            view?.showError(messages: [])
         }
     }
+
+    private var errorMessages: [String] = []
 }

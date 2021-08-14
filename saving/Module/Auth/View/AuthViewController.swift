@@ -18,10 +18,12 @@ class AuthViewController: UIViewController, AuthView {
     let changeDescriptionLabel = UILabel()
 
     let changeViewLabel = UILabel()
-
-    let authErrorLabel = UILabel()
-
-    let errorLabels = UIStackView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        construct()
+    }
 
     func finishButtonAction() {
         fatalError("this method must be overrided")
@@ -42,9 +44,17 @@ class AuthViewController: UIViewController, AuthView {
     // MARK: AuthView
     var presenter: AuthPresentation!
 
-    func showError(message: String) {
-        authErrorLabel.isHidden = false
-        authErrorLabel.text = message
+    func showError(messages: [String]) {
+        errorsView.subviews.forEach { subview in
+            self.errorsView.removeArrangedSubview(subview)
+            subview.removeFromSuperview()
+        }
+        messages.forEach {
+            let label = UILabel()
+            label.textColor = .red
+            label.text = $0
+            errorsView.addArrangedSubview(label)
+        }
     }
 
     // MARK: Private
@@ -54,12 +64,8 @@ class AuthViewController: UIViewController, AuthView {
     private let passwordLabel = UILabel()
 
     private let changeLabelView = UIView()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        construct()
-    }
+    
+    private let errorsView = UIStackView()
 
     private func construct() {
         setupSubViews()
@@ -85,15 +91,11 @@ class AuthViewController: UIViewController, AuthView {
             passwordTextField.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
             passwordTextField.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
 
-            errorLabels.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
-            errorLabels.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
-            errorLabels.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
+            errorsView.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            errorsView.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
+            errorsView.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
 
-            authErrorLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 3),
-            authErrorLabel.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
-            authErrorLabel.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
-
-            finishButton.topAnchor.constraint(equalTo: errorLabels.bottomAnchor, constant: 20),
+            finishButton.topAnchor.constraint(equalTo: errorsView.bottomAnchor, constant: 20),
             finishButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
             changeDescriptionLabel.centerYAnchor.constraint(equalTo: changeLabelView.centerYAnchor),
@@ -150,22 +152,16 @@ class AuthViewController: UIViewController, AuthView {
         view.addSubview(passwordTextField)
         passwordTextField.addTarget(self, action: #selector(didChangePasswordTextField(_:)), for: .editingChanged)
 
-        errorLabels.translatesAutoresizingMaskIntoConstraints = false
-        errorLabels.axis = .vertical
-        errorLabels.alignment = .leading
-        errorLabels.spacing = 5
-        view.addSubview(errorLabels)
+        errorsView.translatesAutoresizingMaskIntoConstraints = false
+        errorsView.axis = .vertical
+        errorsView.alignment = .leading
+        errorsView.spacing = 5
+        view.addSubview(errorsView)
 
         finishButton.translatesAutoresizingMaskIntoConstraints = false
         finishButton.isEnabled = false
         finishButton.addTarget(self, action: #selector(didTapFinishButton(_:)), for: .touchUpInside)
         view.addSubview(finishButton)
-
-        authErrorLabel.translatesAutoresizingMaskIntoConstraints = false
-        authErrorLabel.font = UIFont.systemFont(ofSize: 14)
-        authErrorLabel.textColor = UIColor(hex: "FF0000")
-        authErrorLabel.isHidden = true
-        view.addSubview(authErrorLabel)
     }
 
     private func setUpChangeLabelView() {
@@ -184,15 +180,6 @@ class AuthViewController: UIViewController, AuthView {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapChangeViewLabel(_:)))
         changeViewLabel.addGestureRecognizer(tapRecognizer)
         changeLabelView.addSubview(changeViewLabel)
-    }
-
-    private func displayErrorLabel() {
-        for _ in 1...3 {
-            let label = UILabel()
-            label.textColor = .red
-            label.text = "ここにはエラー文が入ります"
-            errorLabels.addArrangedSubview(label)
-        }
     }
 
     @objc private func didChangeMailAddressTextField(_ sender: PatienceTextField) {

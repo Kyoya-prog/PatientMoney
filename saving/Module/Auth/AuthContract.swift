@@ -22,8 +22,8 @@ protocol AuthView: AnyObject {
     // Dependency
     var presenter: AuthPresentation! { get }
     /// エラーメッセージを表示する
-    /// - parameter message:エラーメッセージ
-    func showError(message: String)
+    /// - parameter messages:エラーメッセージ配列
+    func showError(messages: [String])
 }
 
 /// 認証Presentation
@@ -45,6 +45,10 @@ protocol AuthPresentation: AnyObject {
 
     /// ログイン画面の画面変更ラベルがタップされた
     func didTapSignInChangeViewLabel()
+
+    /// パスワードが短すぎないかをチェックする
+    /// - parameter password:パスワード
+    func checkPasswordLength(password: String)
 
     /// 新規登録画面の画面変更ラベルがタップされた
     func didTapSignUpChangeViewLabel()
