@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 struct SignUpTargetType: ApiTargetType {
-    typealias Response = OAuthTokenEntity
+    typealias Response = TokenEntity
 
     let email: String
 
@@ -14,7 +14,7 @@ struct SignUpTargetType: ApiTargetType {
 
     var method: Moya.Method { .post }
 
-    var sampleData: Data
+    var sampleData: Data { Data() }
 
     var task: Task { .requestParameters(parameters: parameters, encoding: URLEncoding.default) }
 }

@@ -1,5 +1,5 @@
 import Foundation
 
-struct OAuthTokenEntity: Decodable {
+struct TokenEntity: Decodable {
     let token: String
 }

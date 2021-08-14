@@ -2,28 +2,29 @@ import Foundation
 
 class AuthInteractor: AuthUsecase {
     var output: AuthInteractorOutput?
+    var repository: AuthRepository?
 
     func signIn(mailAddress: String, password: String) {
-        FirebaseAuthManeger.shared.signIn(email: mailAddress, password: password) { [weak self] result, error in
-            // errorとresultがどちらともnilはあり得ない
-            if let error = error {
-                self?.output?.outputAuthResult(result: .failure(error))
+        repository?.signIn(mailAddress: mailAddress, password: password, completion: { result in
+            switch result {
+            case let .success(token):
+                _ = token.token
+
+            case let .failure(error):
+                _ = error
             }
-            if let result = result {
-                self?.output?.outputAuthResult(result: .success(result))
-            }
-        }
+        })
     }
 
     func signUp(mailAddress: String, password: String) {
-        FirebaseAuthManeger.shared.signUp(email: mailAddress, password: password) { [weak self] result, error in
-            // errorとresultがどちらともnilはあり得ない
-            if let error = error {
-                self?.output?.outputAuthResult(result: .failure(error))
+        repository?.signUp(mailAddress: mailAddress, password: password, completion: { result in
+            switch result {
+            case let .success(token):
+                _ = token.token
+
+            case let .failure(error):
+                _ = error
             }
-            if let result = result {
-                self?.output?.outputAuthResult(result: .success(result))
-            }
-        }
+        })
     }
 }

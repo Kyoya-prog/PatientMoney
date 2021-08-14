@@ -1,5 +1,6 @@
 import FirebaseAuth
 import Foundation
+import RxSwift
 import UIKit.UIViewController
 
 /// 認証Wireframe
@@ -65,6 +66,7 @@ protocol AuthInteractorOutput: AnyObject {
 protocol AuthUsecase: AnyObject {
     // Dependency
     var output: AuthInteractorOutput? { get }
+    var repository: AuthRepository? { get }
     /// サインインする
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
@@ -74,4 +76,18 @@ protocol AuthUsecase: AnyObject {
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
     func signUp(mailAddress: String, password: String)
+}
+
+protocol AuthRepository: AnyObject {
+    /// サインインする
+    /// - parameter mailAddress:メールアドレス
+    /// - parameter password:パスワード
+    /// - parameter completion:完了ハンドラ
+    func signIn(mailAddress: String, password: String, completion: @escaping (Result<TokenEntity, MoyaResponseError>) -> Void)
+
+    /// 新規登録する
+    /// - parameter mailAddress:メールアドレス
+    /// - parameter password:パスワード
+    /// - parameter completion:完了ハンドラ
+    func signUp(mailAddress: String, password: String, completion: @escaping (Result<TokenEntity, MoyaResponseError>) -> Void)
 }

@@ -18,7 +18,7 @@ class AuthViewController: UIViewController, AuthView {
     let changeDescriptionLabel = UILabel()
 
     let changeViewLabel = UILabel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -64,7 +64,7 @@ class AuthViewController: UIViewController, AuthView {
     private let passwordLabel = UILabel()
 
     private let changeLabelView = UIView()
-    
+
     private let errorsView = UIStackView()
 
     private func construct() {

@@ -84,11 +84,11 @@
       },
       {
         "package": "ReactiveSwift",
-        "repositoryURL": "https://github.com/Moya/ReactiveSwift.git",
+        "repositoryURL": "https://github.com/ReactiveCocoa/ReactiveSwift.git",
         "state": {
           "branch": null,
-          "revision": "f195d82bb30e412e70446e2b4a77e1b514099e88",
-          "version": "6.1.0"
+          "revision": "2c06e9421011a1a4cf57ea4bbcd8936843a6c9da",
+          "version": "6.6.1"
         }
       },
       {
