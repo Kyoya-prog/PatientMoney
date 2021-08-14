@@ -26,7 +26,6 @@
 		3D0B344326999DF200C9DDB0 /* leveldb-library.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B344226999DF200C9DDB0 /* leveldb-library.xcframework */; };
 		3D0B344626999E4800C9DDB0 /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D0B344526999E4800C9DDB0 /* gRPCCertificates-Cpp.bundle */; };
 		3D205C6326381C820058064C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6226381C820058064C /* Localizable.strings */; };
-		3D2A1E7E26C6857F0013F247 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2A1E7D26C6857F0013F247 /* Moya */; };
 		3D2A1E8126C685FF0013F247 /* APITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8026C685FF0013F247 /* APITargetType.swift */; };
 		3D2A1E8326C687090013F247 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8226C687090013F247 /* APIClient.swift */; };
 		3D2A1E8526C69CFF0013F247 /* SignUpTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8426C69CFF0013F247 /* SignUpTargetType.swift */; };
@@ -87,6 +86,9 @@
 		3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */; };
 		3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8C1267C7A7000EDD973 /* PatienceChartsView.swift */; };
 		3DDFCC5E26C79A0A00E3D1A2 /*  AuthDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFCC5D26C79A0A00E3D1A2 /*  AuthDataStore.swift */; };
+		3DDFCC6126C7BF0800E3D1A2 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3DDFCC6026C7BF0800E3D1A2 /* Moya */; };
+		3DDFCC6326C7BF0800E3D1A2 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3DDFCC6226C7BF0800E3D1A2 /* ReactiveMoya */; };
+		3DDFCC6526C7BF0800E3D1A2 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3DDFCC6426C7BF0800E3D1A2 /* RxMoya */; };
 		3DE103C82638360000F724B8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103C72638360000F724B8 /* Strings.swift */; };
 		3DE103CC2638360800F724B8 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103CB2638360800F724B8 /* Asset.swift */; };
 		3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */; };
@@ -258,12 +260,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DDFCC6526C7BF0800E3D1A2 /* RxMoya in Frameworks */,
 				3DE952DA2643B35E004AF23D /* FSCalendar in Frameworks */,
 				3D97733D2640495200419E8A /* RxCocoa.xcframework in Frameworks */,
-				3D2A1E7E26C6857F0013F247 /* Moya in Frameworks */,
 				3D0B340A26999BBE00C9DDB0 /* Charts.xcframework in Frameworks */,
 				3D0B343D26999D7700C9DDB0 /* nanopb.xcframework in Frameworks */,
 				3D3A3220263EEFE000077B6D /* MarqueeLabel.xcframework in Frameworks */,
+				3DDFCC6326C7BF0800E3D1A2 /* ReactiveMoya in Frameworks */,
 				3D0B342126999BBF00C9DDB0 /* BoringSSL-GRPC.xcframework in Frameworks */,
 				3D3A3222263EEFE000077B6D /* NotificationBanner.xcframework in Frameworks */,
 				3D0B341926999BBF00C9DDB0 /* FirebaseCoreDiagnostics.xcframework in Frameworks */,
@@ -285,6 +288,7 @@
 				3D0B344026999DDD00C9DDB0 /* PromisesObjC.xcframework in Frameworks */,
 				3D7B54F52699A13B0037E2DB /* GoogleDataTransport.xcframework in Frameworks */,
 				3D0B343A26999D4200C9DDB0 /* GoogleAppMeasurement.xcframework in Frameworks */,
+				3DDFCC6126C7BF0800E3D1A2 /* Moya in Frameworks */,
 				3D3A3224263EEFE000077B6D /* SnapKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -797,8 +801,10 @@
 			packageProductDependencies = (
 				3DE952D92643B35E004AF23D /* FSCalendar */,
 				3D55A060267F2899006422BC /* Algorithms */,
-				3D2A1E7D26C6857F0013F247 /* Moya */,
 				3D2A1E8C26C6A07F0013F247 /* KeychainAccess */,
+				3DDFCC6026C7BF0800E3D1A2 /* Moya */,
+				3DDFCC6226C7BF0800E3D1A2 /* ReactiveMoya */,
+				3DDFCC6426C7BF0800E3D1A2 /* RxMoya */,
 			);
 			productName = PatientMoney;
 			productReference = 3D6DFF2626353E3E00C30DD1 /* saving.app */;
@@ -874,8 +880,8 @@
 			packageReferences = (
 				3DE952D82643B35E004AF23D /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				3D55A05F267F2899006422BC /* XCRemoteSwiftPackageReference "swift-algorithms" */,
-				3D2A1E7C26C6857F0013F247 /* XCRemoteSwiftPackageReference "Moya" */,
 				3D2A1E8B26C6A07F0013F247 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				3DDFCC5F26C7BF0800E3D1A2 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 3D6DFF2726353E3E00C30DD1 /* Products */;
 			projectDirPath = "";
@@ -1353,14 +1359,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3D2A1E7C26C6857F0013F247 /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 14.0.1;
-			};
-		};
 		3D2A1E8B26C6A07F0013F247 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
@@ -1377,6 +1375,14 @@
 				minimumVersion = 0.2.1;
 			};
 		};
+		3DDFCC5F26C7BF0800E3D1A2 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.1;
+			};
+		};
 		3DE952D82643B35E004AF23D /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -1388,11 +1394,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3D2A1E7D26C6857F0013F247 /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3D2A1E7C26C6857F0013F247 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
 		3D2A1E8C26C6A07F0013F247 /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3D2A1E8B26C6A07F0013F247 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
@@ -1402,6 +1403,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3D55A05F267F2899006422BC /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
+		};
+		3DDFCC6026C7BF0800E3D1A2 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DDFCC5F26C7BF0800E3D1A2 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		3DDFCC6226C7BF0800E3D1A2 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DDFCC5F26C7BF0800E3D1A2 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		3DDFCC6426C7BF0800E3D1A2 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DDFCC5F26C7BF0800E3D1A2 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 		3DE952D92643B35E004AF23D /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
