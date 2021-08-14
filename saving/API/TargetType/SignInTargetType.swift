@@ -16,5 +16,5 @@ struct SignInTargetType: ApiTargetType {
 
     var sampleData: Data { Data() }
 
-    var task: Task { .requestParameters(parameters: parameters, encoding: URLEncoding.default) }
+    var task: Task { .requestParameters(parameters: parameters, encoding: URLEncoding.queryString) }
 }
