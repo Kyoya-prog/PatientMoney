@@ -11,7 +11,7 @@ class ErrorMessageBuilder {
             case 2000:
                 return "既に使われているメールアドレスです"
             case 2001:
-                return "パスワードが短すぎます"
+                return "パスワードが短すぎます。8文字以上入力してください"
             case 2002:
                 return "正しいメールアドレスを入力してください"
             case 2003:

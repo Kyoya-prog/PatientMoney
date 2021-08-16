@@ -23,8 +23,8 @@ protocol AuthView: AnyObject {
     // Dependency
     var presenter: AuthPresentation! { get }
     /// エラーメッセージを表示する
-    /// - parameter messages:エラーメッセージ配列
-    func showError(messages: [String])
+    /// - parameter messages:エラーメッセージ
+    func showError(message: String)
 }
 
 /// 認証Presentation

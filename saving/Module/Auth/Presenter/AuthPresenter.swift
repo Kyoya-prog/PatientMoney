@@ -18,11 +18,9 @@ class AuthPresenter: AuthPresentation, AuthInteractorOutput {
     }
 
     func checkPasswordLength(password: String) {
-        errorMessages.removeAll(where: { $0 == "パスワードは8文字以上入力してください" })
         if password.count < 8 {
-            errorMessages.append("パスワードは8文字以上入力してください")
+            view?.showError(message: "パスワードは８文字以上入力してください")
         }
-        view?.showError(messages: errorMessages)
     }
 
     func didTapSignInChangeViewLabel() {
@@ -35,10 +33,7 @@ class AuthPresenter: AuthPresentation, AuthInteractorOutput {
 
     // MARK: AuthInteractorOutput
     func outputAuthError(error: Error) {
-        errorMessages.removeAll()
-        errorMessages.append(ErrorMessageBuilder.buildAuthErrorMessage(error: error))
-        view?.showError(messages: errorMessages)
+        let message = ErrorMessageBuilder.buildErrorMessage(error: error, message: "認証に失敗しました")
+        view?.showError(message: message)
     }
-
-    private var errorMessages: [String] = []
 }

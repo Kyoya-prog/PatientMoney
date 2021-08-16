@@ -44,17 +44,9 @@ class AuthViewController: UIViewController, AuthView {
     // MARK: AuthView
     var presenter: AuthPresentation!
 
-    func showError(messages: [String]) {
-        errorsView.subviews.forEach { subview in
-            self.errorsView.removeArrangedSubview(subview)
-            subview.removeFromSuperview()
-        }
-        messages.forEach {
-            let label = UILabel()
-            label.textColor = .red
-            label.text = $0
-            errorsView.addArrangedSubview(label)
-        }
+    func showError(message: String) {
+        errorLabel.isHidden = false
+        errorLabel.text = message
     }
 
     // MARK: Private
@@ -65,7 +57,7 @@ class AuthViewController: UIViewController, AuthView {
 
     private let changeLabelView = UIView()
 
-    private let errorsView = UIStackView()
+    private let errorLabel = UILabel()
 
     private func construct() {
         setupSubViews()
@@ -91,11 +83,11 @@ class AuthViewController: UIViewController, AuthView {
             passwordTextField.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
             passwordTextField.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
 
-            errorsView.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
-            errorsView.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
-            errorsView.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
+            errorLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            errorLabel.leftAnchor.constraint(equalTo: mailAddressLabel.leftAnchor),
+            errorLabel.rightAnchor.constraint(equalTo: mailAddressLabel.rightAnchor),
 
-            finishButton.topAnchor.constraint(equalTo: errorsView.bottomAnchor, constant: 20),
+            finishButton.topAnchor.constraint(equalTo: errorLabel.bottomAnchor, constant: 20),
             finishButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
             changeDescriptionLabel.centerYAnchor.constraint(equalTo: changeLabelView.centerYAnchor),
@@ -152,11 +144,11 @@ class AuthViewController: UIViewController, AuthView {
         view.addSubview(passwordTextField)
         passwordTextField.addTarget(self, action: #selector(didChangePasswordTextField(_:)), for: .editingChanged)
 
-        errorsView.translatesAutoresizingMaskIntoConstraints = false
-        errorsView.axis = .vertical
-        errorsView.alignment = .leading
-        errorsView.spacing = 5
-        view.addSubview(errorsView)
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
+        errorLabel.numberOfLines = 0
+        errorLabel.font = UIFont.systemFont(ofSize: 14)
+        errorLabel.textColor = .redge
+        view.addSubview(errorLabel)
 
         finishButton.translatesAutoresizingMaskIntoConstraints = false
         finishButton.isEnabled = false
