@@ -37,4 +37,15 @@ class AuthPresenter: AuthPresentation, AuthInteractorOutput {
         let message = ErrorMessageBuilder.buildErrorMessage(error: error, message: "認証に失敗しました")
         view?.showError(message: message)
     }
+    
+    func setAuthToken(token: String) {
+        TokenManager.setToken(token: token)
+        presentHomeView()
+    }
+    
+    // MARK: Private
+    
+    private func presentHomeView() {
+        router.presentHomeView()
+    }
 }

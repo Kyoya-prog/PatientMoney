@@ -1,11 +1,11 @@
 import Foundation
 import KeychainAccess
 
-/// Oauthのトークンを管理するManagementクラス
-class TokenManagement {
+/// Oauthのトークンを管理するManagerクラス
+class TokenManager {
     static func setToken(token: String) {
         try? keychain.remove("access-token")
-        try? keychain.set("token", key: "access-token")
+        try? keychain.set(token, key: "access-token")
     }
 
     static func getToken() -> String {

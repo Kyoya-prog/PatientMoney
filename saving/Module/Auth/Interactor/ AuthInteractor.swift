@@ -6,25 +6,25 @@ class AuthInteractor: AuthUsecase {
     var repository: AuthRepository? = AuthDataStore()
 
     func signIn(mailAddress: String, password: String) {
-        repository?.signIn(mailAddress: mailAddress, password: password).subscribe({ observer in
+        repository?.signIn(mailAddress: mailAddress, password: password).subscribe({ [weak self] observer in
             switch observer {
             case let .success(token):
-                print(token)
+                self?.output?.setAuthToken(token: token)
 
             case let .error(error):
-                self.output?.outputAuthError(error: error)
+                self?.output?.outputAuthError(error: error)
             }
         }).disposed(by: disposeBag)
     }
 
     func signUp(mailAddress: String, password: String) {
-        repository?.signUp(mailAddress: mailAddress, password: password).subscribe({ observer in
+        repository?.signUp(mailAddress: mailAddress, password: password).subscribe({ [weak self] observer in
             switch observer {
             case let .success(token):
-                print(token)
+                self?.output?.setAuthToken(token: token)
 
             case let .error(error):
-                self.output?.outputAuthError(error: error)
+                self?.output?.outputAuthError(error: error)
             }
         }).disposed(by: disposeBag)
     }

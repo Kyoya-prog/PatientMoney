@@ -64,6 +64,10 @@ protocol AuthInteractorOutput: AnyObject {
     /// 認証の結果を出力する
     /// - parameter result 認証処理結果
     func outputAuthError(error: Error)
+    
+    /// 認証トークンをセットする
+    /// - parameter token 認証トークン
+    func setAuthToken(token:String)
 }
 
 /// 認証Usecase

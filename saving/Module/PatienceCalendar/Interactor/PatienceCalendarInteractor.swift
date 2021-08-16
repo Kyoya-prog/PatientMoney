@@ -15,7 +15,7 @@ class PatienceCalendarInteractor: PatienceCalendarUsecase {
                 case .success(let records):
                     self.output?.outputFetchData(records: records)
 
-                case .failure:
+                case .error(_):
                     self.output?.outputFetchError()
                 }
             }.disposed(by: disposeBag)
@@ -29,7 +29,7 @@ class PatienceCalendarInteractor: PatienceCalendarUsecase {
             case .success(let records):
                 self?.output?.outputFetchRecordsPerMonth(records: records)
 
-            case .failure(_):
+            case .error(_):
                 self?.output?.outputFetchError()
             }
         }.disposed(by: disposeBag)
@@ -41,7 +41,7 @@ class PatienceCalendarInteractor: PatienceCalendarUsecase {
             case .success(_):
                 self.output?.notifyDeleteData()
 
-            case .failure(_):
+            case .error(_):
                 self.output?.outputDeleteError()
             }
         }.disposed(by: disposeBag)
