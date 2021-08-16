@@ -147,7 +147,7 @@ class AuthViewController: UIViewController, AuthView {
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         errorLabel.numberOfLines = 0
         errorLabel.font = UIFont.systemFont(ofSize: 14)
-        errorLabel.textColor = .redge
+        errorLabel.textColor = .red
         view.addSubview(errorLabel)
 
         finishButton.translatesAutoresizingMaskIntoConstraints = false

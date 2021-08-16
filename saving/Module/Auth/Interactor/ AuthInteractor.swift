@@ -12,7 +12,7 @@ class AuthInteractor: AuthUsecase {
                 print(token)
 
             case let .error(error):
-                print(error)
+                self.output?.outputAuthError(error: error)
             }
         }).disposed(by: disposeBag)
     }
