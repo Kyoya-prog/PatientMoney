@@ -14,7 +14,7 @@ class ApiClient: ApiClientInterface {
                 if let model = try? response.map(T.Response.self) {
                     completion(.success(model))
                 } else if let errorModel = try? response.map(ErrorResponse.self) {
-                    completion(.failure(.badRequestError(errorModel.errors[0].code)))
+                    completion(.failure(.badRequestError(errorModel.code)))
                 } else {
                         completion(.failure(.unknownError))
                     }
@@ -27,12 +27,8 @@ class ApiClient: ApiClientInterface {
 }
 
 struct ErrorResponse: Decodable {
-    var errors: [ErrorCodes]
-
-    struct ErrorCodes: Decodable {
-        var code: Int
-        var message: String
-    }
+    var code: Int
+    var message: String
 }
 
 enum MoyaResponseError: Error {
