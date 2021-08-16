@@ -49,6 +49,11 @@ class AuthViewController: UIViewController, AuthView {
         errorLabel.text = message
     }
 
+    func changeFinishButtonEnable(isEnabled: Bool) {
+        finishButton.isEnabled = isEnabled
+        changeErrorLabelAppearance(isHidden: isEnabled)
+    }
+
     // MARK: Private
 
     private let mailAddressLabel = UILabel()
@@ -172,6 +177,10 @@ class AuthViewController: UIViewController, AuthView {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapChangeViewLabel(_:)))
         changeViewLabel.addGestureRecognizer(tapRecognizer)
         changeLabelView.addSubview(changeViewLabel)
+    }
+
+    private func changeErrorLabelAppearance(isHidden: Bool) {
+        errorLabel.isHidden = isHidden
     }
 
     @objc private func didChangeMailAddressTextField(_ sender: PatienceTextField) {

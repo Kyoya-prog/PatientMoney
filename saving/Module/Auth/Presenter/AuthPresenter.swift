@@ -21,6 +21,7 @@ class AuthPresenter: AuthPresentation, AuthInteractorOutput {
         if password.count < 8 {
             view?.showError(message: "パスワードは８文字以上入力してください")
         }
+        view?.changeFinishButtonEnable(isEnabled: 8 <= password.count)
     }
 
     func didTapSignInChangeViewLabel() {
