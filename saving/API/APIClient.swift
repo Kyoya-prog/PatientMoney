@@ -6,6 +6,10 @@ protocol ApiClientInterface {
 }
 
 class ApiClient: ApiClientInterface {
+    private init() {}
+
+    static let shared = ApiClient()
+
     func request<T>(_ request: T, completion: @escaping (Result<T.Response, MoyaResponseError>) -> Void) where T: ApiTargetType {
         let provider = MoyaProvider<T>()
         provider.request(request) { result in
