@@ -82,6 +82,8 @@
 		3D9FEC302667FB37008A77FC /* PatienceAnalyzeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2F2667FB37008A77FC /* PatienceAnalyzeContract.swift */; };
 		3D9FEC3226680174008A77FC /* PatienceAnalyzePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC3126680174008A77FC /* PatienceAnalyzePresenter.swift */; };
 		3D9FEC342668041E008A77FC /* PatienceAnalyzeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC332668041E008A77FC /* PatienceAnalyzeRouter.swift */; };
+		3DB5C5BD26CCE641005E3299 /* PatienceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5BC26CCE641005E3299 /* PatienceEntity.swift */; };
+		3DB5C5BF26CCE683005E3299 /* CreatePatienceTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5BE26CCE683005E3299 /* CreatePatienceTargetType.swift */; };
 		3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */; };
 		3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */; };
 		3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8C1267C7A7000EDD973 /* PatienceChartsView.swift */; };
@@ -114,7 +116,6 @@
 		3DEB53C826400B96002A2166 /* PatienceCalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB53C726400B96002A2166 /* PatienceCalendarRouter.swift */; };
 		3DEB53CC26400BB9002A2166 /* PatienceCalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB53CB26400BB9002A2166 /* PatienceCalendarPresenter.swift */; };
 		3DEB53D026400BC5002A2166 /* PatienceCalendarContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB53CF26400BC5002A2166 /* PatienceCalendarContract.swift */; };
-		3DEE39A0264112C4005D3EB0 /* PatienceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE399F264112C4005D3EB0 /* PatienceEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +223,8 @@
 		3D9FEC2F2667FB37008A77FC /* PatienceAnalyzeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzeContract.swift; sourceTree = "<group>"; };
 		3D9FEC3126680174008A77FC /* PatienceAnalyzePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzePresenter.swift; sourceTree = "<group>"; };
 		3D9FEC332668041E008A77FC /* PatienceAnalyzeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzeRouter.swift; sourceTree = "<group>"; };
+		3DB5C5BC26CCE641005E3299 /* PatienceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceEntity.swift; sourceTree = "<group>"; };
+		3DB5C5BE26CCE683005E3299 /* CreatePatienceTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePatienceTargetType.swift; sourceTree = "<group>"; };
 		3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceUpdatePresenter.swift; sourceTree = "<group>"; };
 		3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPresentationProtocol.swift; sourceTree = "<group>"; };
 		3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Charts.xcframework; path = Carthage/Build/Charts.xcframework; sourceTree = "<group>"; };
@@ -256,7 +259,6 @@
 		3DEB53C726400B96002A2166 /* PatienceCalendarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarRouter.swift; sourceTree = "<group>"; };
 		3DEB53CB26400BB9002A2166 /* PatienceCalendarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarPresenter.swift; sourceTree = "<group>"; };
 		3DEB53CF26400BC5002A2166 /* PatienceCalendarContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarContract.swift; sourceTree = "<group>"; };
-		3DEE399F264112C4005D3EB0 /* PatienceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +356,7 @@
 				3D2A1E8426C69CFF0013F247 /* SignUpTargetType.swift */,
 				3D2A1E8926C6A00D0013F247 /* SignInTargetType.swift */,
 				3DDFCC6826CA900C00E3D1A2 /* CheckTokenTargetType.swift */,
+				3DB5C5BE26CCE683005E3299 /* CreatePatienceTargetType.swift */,
 			);
 			path = TargetType;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				3D2A1E8726C69E200013F247 /* TokenEntity.swift */,
+				3DB5C5BC26CCE641005E3299 /* PatienceEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -420,7 +424,6 @@
 			isa = PBXGroup;
 			children = (
 				3DEE39A42641134C005D3EB0 /* DataStore */,
-				3DEE39A326411342005D3EB0 /* Entity */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -744,14 +747,6 @@
 			path = ViewComponent;
 			sourceTree = "<group>";
 		};
-		3DEE39A326411342005D3EB0 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				3DEE399F264112C4005D3EB0 /* PatienceEntity.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
 		3DEE39A42641134C005D3EB0 /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -976,6 +971,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DB5C5BF26CCE683005E3299 /* CreatePatienceTargetType.swift in Sources */,
 				3DE10427263C008900F724B8 /* SignUpViewController.swift in Sources */,
 				3D3A3216263EE0F700077B6D /* PatienceInputContract.swift in Sources */,
 				3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */,
@@ -993,6 +989,7 @@
 				3D6B0FF6263E76AA009D21A1 /* MemoView.swift in Sources */,
 				3DDFCC6726C81B2600E3D1A2 /* ErrorMessageBuilder.swift in Sources */,
 				3D3A3250263F2B9800077B6D /* PatienceInputRouter.swift in Sources */,
+				3DB5C5BD26CCE641005E3299 /* PatienceEntity.swift in Sources */,
 				3DEB53C826400B96002A2166 /* PatienceCalendarRouter.swift in Sources */,
 				3D6963DE2678D26100368810 /* CategoryCell.swift in Sources */,
 				3D6B1000263E94E1009D21A1 /* MoneyView.swift in Sources */,
@@ -1007,7 +1004,6 @@
 				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
 				3D2A1E8526C69CFF0013F247 /* SignUpTargetType.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
-				3DEE39A0264112C4005D3EB0 /* PatienceEntity.swift in Sources */,
 				3DDFCC5E26C79A0A00E3D1A2 /*  AuthDataStore.swift in Sources */,
 				3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */,
 				3D2A1E8826C69E200013F247 /* TokenEntity.swift in Sources */,
