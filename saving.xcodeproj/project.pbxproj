@@ -647,7 +647,6 @@
 		3DE103E3263ACBC900F724B8 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				3DDFCC5D26C79A0A00E3D1A2 /*  AuthDataStore.swift */,
 				3DE103E4263ACBD200F724B8 /* View */,
 				3DE1043B263C0C3900F724B8 /* Presenter */,
 				3DE1044C263C725500F724B8 /* Interactor */,
@@ -757,6 +756,7 @@
 			isa = PBXGroup;
 			children = (
 				3D3A323E263F096B00077B6D /* PatienceDataStore.swift */,
+				3DDFCC5D26C79A0A00E3D1A2 /*  AuthDataStore.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
