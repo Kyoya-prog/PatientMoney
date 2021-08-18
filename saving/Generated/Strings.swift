@@ -119,6 +119,21 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "DateView.title")
   }
 
+  internal enum ErrorMessageBuilder {
+    /// 正しいメールアドレスを入力してください
+    internal static let invalidMailAddress = L10n.tr("Localizable", "ErrorMessageBuilder.invalidMailAddress")
+    /// パスワードが短すぎます。８文字以上入力してください。
+    internal static let passwordTooShort = L10n.tr("Localizable", "ErrorMessageBuilder.passwordTooShort")
+    /// 既に使われているメールアドレスです
+    internal static let takenMailAddress = L10n.tr("Localizable", "ErrorMessageBuilder.takenMailAddress")
+    /// メールアドレスまたはパスワードが間違っています
+    internal static let userNotFound = L10n.tr("Localizable", "ErrorMessageBuilder.userNotFound")
+    internal enum SubMessage {
+      /// (インターネット接続がありません)
+      internal static let cannotConnectNetwork = L10n.tr("Localizable", "ErrorMessageBuilder.SubMessage.cannotConnectNetwork")
+    }
+  }
+
   internal enum FirebaseAuthManager {
     internal enum Error {
       internal enum Default {

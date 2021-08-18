@@ -91,3 +91,10 @@
 
 // DateSelectStyleCheckView
 "DateSelectStyleCheckView.DescriptionLabel.text" = "月毎に分析する";
+
+// ErrorMessageBuilder
+"ErrorMessageBuilder.takenMailAddress" = "既に使われているメールアドレスです";
+"ErrorMessageBuilder.passwordTooShort" = "パスワードが短すぎます。８文字以上入力してください。";
+"ErrorMessageBuilder.invalidMailAddress" = "正しいメールアドレスを入力してください";
+"ErrorMessageBuilder.userNotFound" = "メールアドレスまたはパスワードが間違っています";
+"ErrorMessageBuilder.SubMessage.cannotConnectNetwork" = "(インターネット接続がありません)";
