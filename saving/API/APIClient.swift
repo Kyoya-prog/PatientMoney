@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 protocol ApiClientInterface {
-    func request<T: ApiTargetType>(_ request: T, completion: @escaping (Result<T.Response, MoyaResponseError>) -> Void)
+    func request<T: ApiTargetType>(_ request: T, callbackQueue: DispatchQueue, completion: @escaping (Result<T.Response, MoyaResponseError>) -> Void)
 }
 
 class ApiClient: ApiClientInterface {
@@ -10,9 +10,9 @@ class ApiClient: ApiClientInterface {
 
     static let shared = ApiClient()
 
-    func request<T>(_ request: T, completion: @escaping (Result<T.Response, MoyaResponseError>) -> Void) where T: ApiTargetType {
+    func request<T>(_ request: T, callbackQueue: DispatchQueue = .main, completion: @escaping (Result<T.Response, MoyaResponseError>) -> Void) where T: ApiTargetType {
         let provider = MoyaProvider<T>()
-        provider.request(request) { result in
+        provider.request(request, callbackQueue: callbackQueue) { result in
             switch result {
             case let .success(response):
                 if let model = try? response.map(T.Response.self) {

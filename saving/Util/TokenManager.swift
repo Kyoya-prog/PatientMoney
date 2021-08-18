@@ -17,7 +17,8 @@ class TokenManager {
     static func isLogin() -> Bool {
         var isLogin = false
         let semaphore = DispatchSemaphore(value: 0)
-        checkTokenRequest { result in
+        // semaphoreでメインスレッドを止めて待ち合わせているのでバックグラウンドスレッドで実行するようにする
+        ApiClient.shared.request(CheckTokenTargetType(), callbackQueue: .global(qos: .default)) { result in
             switch result {
             case .success(_):
                 isLogin = true
@@ -38,24 +39,4 @@ class TokenManager {
     }
 
     private static let keychain = Keychain()
-    /// keyChainに保存されているトークンが正しいものかどうかをサーバーに問い合わせる
-    private static func checkTokenRequest(completion: @escaping (Result<CheckTokenTargetType.Response, MoyaResponseError>) -> Void) {
-        let provider = MoyaProvider<CheckTokenTargetType>()
-        // semaphoreでメインスレッドを止めているので、バックグラウンドスレッドでの実行にする
-        provider.request(CheckTokenTargetType(), callbackQueue: .global(qos: .default)) { result in
-            switch result {
-            case let .success(response):
-                if let model = try? response.map(CheckTokenTargetType.Response.self) {
-                    completion(.success(model))
-                } else if let errorModel = try? response.map(ErrorResponse.self) {
-                    completion(.failure(.badRequestError(errorModel.code)))
-                } else {
-                        completion(.failure(.unknownError))
-                    }
-
-            case let .failure(moyaError):
-                completion(.failure(.moyaError(moyaError)))
-            }
-        }
-    }
 }
