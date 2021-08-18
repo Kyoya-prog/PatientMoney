@@ -20,7 +20,6 @@ class TokenManager {
         checkTokenRequest { result in
             switch result {
             case .success(_):
-                print("ここは")
                 isLogin = true
 
             default:
@@ -42,6 +41,7 @@ class TokenManager {
     /// keyChainに保存されているトークンが正しいものかどうかをサーバーに問い合わせる
     private static func checkTokenRequest(completion: @escaping (Result<CheckTokenTargetType.Response, MoyaResponseError>) -> Void) {
         let provider = MoyaProvider<CheckTokenTargetType>()
+        // semaphoreでメインスレッドを止めているので、バックグラウンドスレッドでの実行にする
         provider.request(CheckTokenTargetType(), callbackQueue: .global(qos: .default)) { result in
             switch result {
             case let .success(response):
