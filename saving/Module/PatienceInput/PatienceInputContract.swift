@@ -84,7 +84,7 @@ protocol PatienceInputInteractorOutput {
 protocol PatienceRepository {
     /// データを登録する
     /// - parameter data:ドキュメントデータ
-    func registerPatienceData(data: [String: Any]) -> Single<Error?>
+    func registerPatienceData(record:PatienceEntity) -> Single<PatienceEntity>
 
     /// データをフェッチする
     /// - parameter data:日付

@@ -4,16 +4,15 @@ import Foundation
 import RxSwift
 
 class PatienceDataStore: PatienceRepository {
-    func registerPatienceData(data: [String: Any]) -> Single<Error?> {
-        Single.create { [weak self] observer -> Disposable in
-            guard let self = self else { return Disposables.create() }
-            self.firestoreCollectionReference.addDocument(data: data) { error in
-                if let error = error {
+    func registerPatienceData(record:PatienceEntity) -> Single<PatienceEntity> {
+        Single.create { observer -> Disposable in
+            ApiClient.shared.request(CreatePatienceTargetType(registeredAt: record.registeredAt, money: record.money, memo: record.memo, categoryTitle: record.categoryTitle)) { result in
+                switch result{      
+                case let .success(record):
+                    observer(.success(record))
+                case let .failure(error):
                     observer(.error(error))
-                    return
                 }
-                observer(.success(nil))
-                return
             }
             return Disposables.create()
         }
@@ -89,16 +88,6 @@ class PatienceDataStore: PatienceRepository {
                 return
             }
             return Disposables.create()
-        }
-    }
-
-    private func createPatienceRecord(documents: [QueryDocumentSnapshot]) -> [PatienceEntity] {
-        documents.map {
-            PatienceEntity(documentID: $0.documentID,
-                           date: (($0.data()["Date"] as? Timestamp)?.dateValue()) ?? Date() ,
-                           memo: ($0.data()["Memo"] as? String) ?? "",
-                           money: ($0.data()["Money"] as? Int) ?? 0,
-                           categoryTitle: ( $0.data()["Category"] as? String) ?? ""  )
         }
     }
 
