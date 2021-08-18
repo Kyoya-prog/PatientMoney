@@ -21,8 +21,7 @@ class PatienceInputInteractor: PatienceUsecase {
     }
 
     func registerPatienceData(record: PatienceEntity) {
-        let documentData = ["Date": record.date, "Memo": record.memo, "Money": record.money, "Category": record.categoryTitle, "UID": uid] as [String: Any]
-        repository.registerPatienceData(data: documentData).subscribe { observer in
+        repository.registerPatienceData(record: record).subscribe { observer in
             switch observer {
             case .success(_):
                 self.output?.outputInputSuccess()
