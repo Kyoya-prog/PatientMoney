@@ -4,7 +4,7 @@ import RxSwift
 class AuthDataStore: AuthRepository {
     func signUp(mailAddress: String, password: String) -> Single<String> {
         Single.create { observer -> Disposable in
-            ApiClient().request(SignUpTargetType(email: mailAddress, password: password)) { response in
+            ApiClient.shared.request(SignUpTargetType(email: mailAddress, password: password)) { response in
                 switch response {
                 case let .success(model):
                     observer(.success(model.token))
@@ -19,7 +19,7 @@ class AuthDataStore: AuthRepository {
 
     func signIn(mailAddress: String, password: String) -> Single<String> {
         Single.create { observer -> Disposable in
-            ApiClient().request(SignInTargetType(email: mailAddress, password: password)) { response in
+            ApiClient.shared.request(SignInTargetType(email: mailAddress, password: password)) { response in
                 switch response {
                 case let .success(model):
                     observer(.success(model.token))

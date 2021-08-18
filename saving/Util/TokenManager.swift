@@ -1,5 +1,6 @@
 import Foundation
 import KeychainAccess
+import Moya
 
 /// Oauthのトークンを管理するManagerクラス
 class TokenManager {
@@ -13,5 +14,48 @@ class TokenManager {
         return token ?? ""
     }
 
+    static func isLogin() -> Bool {
+        var isLogin = false
+        let semaphore = DispatchSemaphore(value: 0)
+        checkTokenRequest { result in
+            switch result {
+            case .success(_):
+                print("ここは")
+                isLogin = true
+
+            default:
+                break
+            }
+            semaphore.signal()
+        }
+
+        switch semaphore.wait(timeout: .now() + 2.0) {
+        case .success:
+            return isLogin
+
+        case .timedOut:
+            return false
+        }
+    }
+
     private static let keychain = Keychain()
+    /// keyChainに保存されているトークンが正しいものかどうかをサーバーに問い合わせる
+    private static func checkTokenRequest(completion: @escaping (Result<CheckTokenTargetType.Response, MoyaResponseError>) -> Void) {
+        let provider = MoyaProvider<CheckTokenTargetType>()
+        provider.request(CheckTokenTargetType(), callbackQueue: .global(qos: .default)) { result in
+            switch result {
+            case let .success(response):
+                if let model = try? response.map(CheckTokenTargetType.Response.self) {
+                    completion(.success(model))
+                } else if let errorModel = try? response.map(ErrorResponse.self) {
+                    completion(.failure(.badRequestError(errorModel.code)))
+                } else {
+                        completion(.failure(.unknownError))
+                    }
+
+            case let .failure(moyaError):
+                completion(.failure(.moyaError(moyaError)))
+            }
+        }
+    }
 }
