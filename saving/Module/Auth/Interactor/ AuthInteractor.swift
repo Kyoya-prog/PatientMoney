@@ -1,29 +1,33 @@
 import Foundation
+import RxSwift
 
 class AuthInteractor: AuthUsecase {
     var output: AuthInteractorOutput?
+    var repository: AuthRepository? = AuthDataStore()
 
     func signIn(mailAddress: String, password: String) {
-        FirebaseAuthManeger.shared.signIn(email: mailAddress, password: password) { [weak self] result, error in
-            // errorとresultがどちらともnilはあり得ない
-            if let error = error {
-                self?.output?.outputAuthResult(result: .failure(error))
+        repository?.signIn(mailAddress: mailAddress, password: password).subscribe({ [weak self] observer in
+            switch observer {
+            case let .success(token):
+                self?.output?.setAuthToken(token: token)
+
+            case let .error(error):
+                self?.output?.outputAuthError(error: error)
             }
-            if let result = result {
-                self?.output?.outputAuthResult(result: .success(result))
-            }
-        }
+        }).disposed(by: disposeBag)
     }
 
     func signUp(mailAddress: String, password: String) {
-        FirebaseAuthManeger.shared.signUp(email: mailAddress, password: password) { [weak self] result, error in
-            // errorとresultがどちらともnilはあり得ない
-            if let error = error {
-                self?.output?.outputAuthResult(result: .failure(error))
+        repository?.signUp(mailAddress: mailAddress, password: password).subscribe({ [weak self] observer in
+            switch observer {
+            case let .success(token):
+                self?.output?.setAuthToken(token: token)
+
+            case let .error(error):
+                self?.output?.outputAuthError(error: error)
             }
-            if let result = result {
-                self?.output?.outputAuthResult(result: .success(result))
-            }
-        }
+        }).disposed(by: disposeBag)
     }
+
+    private let disposeBag = DisposeBag()
 }

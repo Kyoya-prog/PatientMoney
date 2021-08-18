@@ -1,5 +1,6 @@
 import FirebaseAuth
 import Foundation
+import RxSwift
 import UIKit.UIViewController
 
 /// 認証Wireframe
@@ -22,8 +23,12 @@ protocol AuthView: AnyObject {
     // Dependency
     var presenter: AuthPresentation! { get }
     /// エラーメッセージを表示する
-    /// - parameter message:エラーメッセージ
+    /// - parameter messages:エラーメッセージ
     func showError(message: String)
+
+    /// 完了ボタンの表示を変更する
+    /// - parameter isEnabled:　使用可能かどうか
+    func changeFinishButtonEnable(isEnabled: Bool)
 }
 
 /// 認証Presentation
@@ -46,6 +51,10 @@ protocol AuthPresentation: AnyObject {
     /// ログイン画面の画面変更ラベルがタップされた
     func didTapSignInChangeViewLabel()
 
+    /// パスワードが短すぎないかをチェックする
+    /// - parameter password:パスワード
+    func checkPasswordLength(password: String)
+
     /// 新規登録画面の画面変更ラベルがタップされた
     func didTapSignUpChangeViewLabel()
 }
@@ -54,13 +63,18 @@ protocol AuthPresentation: AnyObject {
 protocol AuthInteractorOutput: AnyObject {
     /// 認証の結果を出力する
     /// - parameter result 認証処理結果
-    func outputAuthResult(result: Result<AuthDataResult, Error>)
+    func outputAuthError(error: Error)
+
+    /// 認証トークンをセットする
+    /// - parameter token 認証トークン
+    func setAuthToken(token: String)
 }
 
 /// 認証Usecase
 protocol AuthUsecase: AnyObject {
     // Dependency
     var output: AuthInteractorOutput? { get }
+    var repository: AuthRepository? { get }
     /// サインインする
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
@@ -70,4 +84,16 @@ protocol AuthUsecase: AnyObject {
     /// - parameter mailAddress:メールアドレス
     /// - parameter password:パスワード
     func signUp(mailAddress: String, password: String)
+}
+
+protocol AuthRepository: AnyObject {
+    /// サインインする
+    /// - parameter mailAddress:メールアドレス
+    /// - parameter password:パスワード
+    func signIn(mailAddress: String, password: String) -> Single<String>
+
+    /// 新規登録する
+    /// - parameter mailAddress:メールアドレス
+    /// - parameter password:パスワード
+    func signUp(mailAddress: String, password: String) -> Single<String>
 }

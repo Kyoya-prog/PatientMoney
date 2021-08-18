@@ -15,8 +15,8 @@ var window: UIWindow?
         FirebaseApp.configure()
         window = UIWindow(frame: UIScreen.main.bounds)
         var initialViewController: UIViewController
-
-        if FirebaseAuthManeger.shared.isSignIn {
+        // ログイン済みかどうか
+        if TokenManager.isLogin() {
             initialViewController = AuthRouter.assembleHomeModule()
         } else {
             initialViewController = AuthRouter.assembleSignInModule()

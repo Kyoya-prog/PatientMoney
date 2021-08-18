@@ -10,7 +10,7 @@ extension ApiTargetType {
     //swiftlint:disable:next force_unwrapping
     var baseURL: URL { URL(string: "https://saving-kyoya.jp")! }
     var headers: [String: String]? {
-        let token = TokenManagement.getToken()
-       return  ["Content-Type": "application/json","Authorization": "Token \(token)"]
+        let token = TokenManager.getToken()
+       return  ["Content-Type": "application/json", "Authorization": "Token \(token)"]
     }
 }
