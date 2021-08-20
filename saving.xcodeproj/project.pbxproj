@@ -87,6 +87,8 @@
 		3DB5C5C326CCEC4C005E3299 /* UpdatePatienceTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5C226CCEC4C005E3299 /* UpdatePatienceTargetType.swift */; };
 		3DB5C5C526CF7DDB005E3299 /* PatiencePerDateTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5C426CF7DDB005E3299 /* PatiencePerDateTargetType.swift */; };
 		3DB5C5C726CF7F10005E3299 /* PatiencePerMonthTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5C626CF7F10005E3299 /* PatiencePerMonthTargetType.swift */; };
+		3DB5C5C926CF8FA4005E3299 /* DeletePatienceTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5C826CF8FA4005E3299 /* DeletePatienceTargetType.swift */; };
+		3DB5C5CB26CF9046005E3299 /* SimpleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5CA26CF9046005E3299 /* SimpleEntity.swift */; };
 		3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */; };
 		3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */; };
 		3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8C1267C7A7000EDD973 /* PatienceChartsView.swift */; };
@@ -231,6 +233,8 @@
 		3DB5C5C226CCEC4C005E3299 /* UpdatePatienceTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePatienceTargetType.swift; sourceTree = "<group>"; };
 		3DB5C5C426CF7DDB005E3299 /* PatiencePerDateTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatiencePerDateTargetType.swift; sourceTree = "<group>"; };
 		3DB5C5C626CF7F10005E3299 /* PatiencePerMonthTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatiencePerMonthTargetType.swift; sourceTree = "<group>"; };
+		3DB5C5C826CF8FA4005E3299 /* DeletePatienceTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePatienceTargetType.swift; sourceTree = "<group>"; };
+		3DB5C5CA26CF9046005E3299 /* SimpleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleEntity.swift; sourceTree = "<group>"; };
 		3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceUpdatePresenter.swift; sourceTree = "<group>"; };
 		3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPresentationProtocol.swift; sourceTree = "<group>"; };
 		3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Charts.xcframework; path = Carthage/Build/Charts.xcframework; sourceTree = "<group>"; };
@@ -366,6 +370,7 @@
 				3DB5C5C226CCEC4C005E3299 /* UpdatePatienceTargetType.swift */,
 				3DB5C5C426CF7DDB005E3299 /* PatiencePerDateTargetType.swift */,
 				3DB5C5C626CF7F10005E3299 /* PatiencePerMonthTargetType.swift */,
+				3DB5C5C826CF8FA4005E3299 /* DeletePatienceTargetType.swift */,
 			);
 			path = TargetType;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 			children = (
 				3D2A1E8726C69E200013F247 /* TokenEntity.swift */,
 				3DB5C5BC26CCE641005E3299 /* PatienceEntity.swift */,
+				3DB5C5CA26CF9046005E3299 /* SimpleEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1024,6 +1030,7 @@
 				3DB5C5C326CCEC4C005E3299 /* UpdatePatienceTargetType.swift in Sources */,
 				3DE10408263B976700F724B8 /* AuthContract.swift in Sources */,
 				3DE103E6263ACBE100F724B8 /* AuthViewController.swift in Sources */,
+				3DB5C5CB26CF9046005E3299 /* SimpleEntity.swift in Sources */,
 				3D2A1E8326C687090013F247 /* APIClient.swift in Sources */,
 				3D2A1E8F26C6A1A40013F247 /* TokenManager.swift in Sources */,
 				3D9FEC3226680174008A77FC /* PatienceAnalyzePresenter.swift in Sources */,
@@ -1042,6 +1049,7 @@
 				3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */,
 				3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */,
 				3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */,
+				3DB5C5C926CF8FA4005E3299 /* DeletePatienceTargetType.swift in Sources */,
 				3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

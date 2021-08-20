@@ -64,16 +64,16 @@ class PatienceDataStore: PatienceRepository {
         }
     }
 
-    func deletePatienceData(id: Int) ->Single<Error?> {
-        Single.create { [weak self] observer -> Disposable in
-            guard let self = self else { return Disposables.create() }
-            self.firestoreCollectionReference.document( "\(id)").delete { error in
-                if let error = error {
+    func deletePatienceData(id: Int) ->Single<Void> {
+        Single.create { observer -> Disposable in
+            ApiClient.shared.request(DeletePatienceTargetType(id: id)) { result in
+                switch result {
+                case .success(_):
+                    observer(.success(Void()))
+
+                case let .failure(error):
                     observer(.error(error))
-                    return
                 }
-                observer(.success(nil))
-                return
             }
             return Disposables.create()
         }
