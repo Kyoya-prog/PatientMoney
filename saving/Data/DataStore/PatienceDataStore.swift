@@ -35,21 +35,14 @@ class PatienceDataStore: PatienceRepository {
     }
 
     func fetchPatienceData(startDate: Date, endDate: Date) -> Single<[PatienceEntity]> {
-        Single<[PatienceEntity]>.create { [weak self] observer ->Disposable in
-            guard let self = self else { return Disposables.create() }
-            let startTimestamp = Timestamp(date: startDate)
-            let endTimestamp = Timestamp(date: endDate)
-            let query = self.firestoreCollectionReference
-                .whereField("UID", isEqualTo: FirebaseAuthManeger.shared.uid)
-                .whereField("Date", isGreaterThanOrEqualTo: startTimestamp)
-                .whereField("Date", isLessThanOrEqualTo: endTimestamp)
-            query.getDocuments { snapshot, error in
-                if let error = error {
+        Single.create { observer -> Disposable in
+            ApiClient.shared.request(PatiencePerMonthTargetType(startDate: startDate, endDate: endDate)) { result in
+                switch result {
+                case let .success(record):
+                    observer(.success(record))
+
+                case let .failure(error):
                     observer(.error(error))
-                    return
-                }
-                if let documents = snapshot?.documents {
-                    return
                 }
             }
             return Disposables.create()
