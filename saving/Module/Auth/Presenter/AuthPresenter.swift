@@ -1,4 +1,3 @@
-import FirebaseAuth
 import Foundation
 
 class AuthPresenter: AuthPresentation, AuthInteractorOutput {

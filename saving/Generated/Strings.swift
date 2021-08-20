@@ -134,31 +134,6 @@ internal enum L10n {
     }
   }
 
-  internal enum FirebaseAuthManager {
-    internal enum Error {
-      internal enum Default {
-        /// 認証に失敗しました。もう一度お試しください。
-        internal static let message = L10n.tr("Localizable", "FirebaseAuthManager.Error.Default.message")
-      }
-      internal enum EmailAlreadyInUse {
-        /// このメールアドレスはすでに使用されています。
-        internal static let message = L10n.tr("Localizable", "FirebaseAuthManager.Error.EmailAlreadyInUse.message")
-      }
-      internal enum InvalidEmail {
-        /// メールアドレスの形式が不正です。
-        internal static let message = L10n.tr("Localizable", "FirebaseAuthManager.Error.InvalidEmail.message")
-      }
-      internal enum UserNotFound {
-        /// ユーザーが見つかりませんでした。
-        internal static let message = L10n.tr("Localizable", "FirebaseAuthManager.Error.UserNotFound.message")
-      }
-      internal enum WrongPassword {
-        /// パスワードが間違っています。
-        internal static let message = L10n.tr("Localizable", "FirebaseAuthManager.Error.WrongPassword.message")
-      }
-    }
-  }
-
   internal enum MemoView {
     /// メモ
     internal static let title = L10n.tr("Localizable", "MemoView.title")

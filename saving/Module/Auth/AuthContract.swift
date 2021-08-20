@@ -1,4 +1,3 @@
-import FirebaseAuth
 import Foundation
 import RxSwift
 import UIKit.UIViewController
