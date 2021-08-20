@@ -31,11 +31,11 @@ class PatienceInputRouter: PatienceInputWireframe {
         let datastore = PatienceDataStore()
         let router = PatienceInputRouter()
 
-        registerView.dateRecord = record.date
+        registerView.dateRecord = record.registeredAt
         registerView.memoRecord = record.memo
         registerView.moneyRecord = record.money
         registerView.categoryTitleRecord = record.categoryTitle
-        presenter.id = record.documentID
+        presenter.id = record.id
 
         interactor.repository = datastore
         interactor.output = presenter

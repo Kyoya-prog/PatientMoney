@@ -111,7 +111,7 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             willDeleteRowValue = indexPath.item
-            let id = records[indexPath.item].documentID
+            let id = records[indexPath.item].id
             presenter.didTapDeleteButton(id: id)
         }
     }

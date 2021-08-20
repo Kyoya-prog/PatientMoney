@@ -7,8 +7,11 @@ struct PatienceEntity: Decodable {
     let money: Int
     let categoryTitle: String
 
-    enum CofingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
+        case id
         case registeredAt = "registered_at"
+        case memo
+        case money
         case categoryTitle = "category_title"
     }
 }

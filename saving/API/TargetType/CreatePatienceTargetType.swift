@@ -12,7 +12,7 @@ struct CreatePatienceTargetType: ApiTargetType {
 
     let categoryTitle: String
 
-    var parameters: [String: Any] { ["money": money, "memo": memo, "category_title": categoryTitle, "registered_at": registeredAt] }
+    var parameters: [String: Any] { ["money": money, "memo": memo ?? "", "category_title": categoryTitle, "registered_at": registeredAt] }
 
     var path: String { "/patiences" }
 
