@@ -85,6 +85,7 @@
 		3DB5C5BD26CCE641005E3299 /* PatienceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5BC26CCE641005E3299 /* PatienceEntity.swift */; };
 		3DB5C5BF26CCE683005E3299 /* CreatePatienceTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5BE26CCE683005E3299 /* CreatePatienceTargetType.swift */; };
 		3DB5C5C326CCEC4C005E3299 /* UpdatePatienceTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5C226CCEC4C005E3299 /* UpdatePatienceTargetType.swift */; };
+		3DB5C5C526CF7DDB005E3299 /* PatiencePerDateTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5C426CF7DDB005E3299 /* PatiencePerDateTargetType.swift */; };
 		3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */; };
 		3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */; };
 		3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8C1267C7A7000EDD973 /* PatienceChartsView.swift */; };
@@ -227,6 +228,7 @@
 		3DB5C5BC26CCE641005E3299 /* PatienceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceEntity.swift; sourceTree = "<group>"; };
 		3DB5C5BE26CCE683005E3299 /* CreatePatienceTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePatienceTargetType.swift; sourceTree = "<group>"; };
 		3DB5C5C226CCEC4C005E3299 /* UpdatePatienceTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePatienceTargetType.swift; sourceTree = "<group>"; };
+		3DB5C5C426CF7DDB005E3299 /* PatiencePerDateTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatiencePerDateTargetType.swift; sourceTree = "<group>"; };
 		3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceUpdatePresenter.swift; sourceTree = "<group>"; };
 		3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPresentationProtocol.swift; sourceTree = "<group>"; };
 		3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Charts.xcframework; path = Carthage/Build/Charts.xcframework; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				3DDFCC6826CA900C00E3D1A2 /* CheckTokenTargetType.swift */,
 				3DB5C5BE26CCE683005E3299 /* CreatePatienceTargetType.swift */,
 				3DB5C5C226CCEC4C005E3299 /* UpdatePatienceTargetType.swift */,
+				3DB5C5C426CF7DDB005E3299 /* PatiencePerDateTargetType.swift */,
 			);
 			path = TargetType;
 			sourceTree = "<group>";
@@ -998,6 +1001,7 @@
 				3D6B1000263E94E1009D21A1 /* MoneyView.swift in Sources */,
 				3D2A1E8126C685FF0013F247 /* APITargetType.swift in Sources */,
 				3D6963E02678D2E500368810 /* RecordCell.swift in Sources */,
+				3DB5C5C526CF7DDB005E3299 /* PatiencePerDateTargetType.swift in Sources */,
 				3DE10495263D36B500F724B8 /* FontAwesome.swift in Sources */,
 				3D3A321A263EEEA000077B6D /* StatusNotification.swift in Sources */,
 				3DEB53CC26400BB9002A2166 /* PatienceCalendarPresenter.swift in Sources */,
