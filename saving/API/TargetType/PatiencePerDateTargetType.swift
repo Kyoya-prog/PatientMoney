@@ -1,12 +1,10 @@
 import Foundation
-
-import Foundation
 import Moya
 
 struct PatiencePerDateTargetType: ApiTargetType {
     typealias Response = [PatienceEntity]
 
-    let date:Date
+    let date: Date
 
     var path: String { "/patience/per_day" }
 
@@ -15,5 +13,5 @@ struct PatiencePerDateTargetType: ApiTargetType {
     var sampleData: Data { Data() }
 
     var task: Task { .requestParameters(parameters:
-                                            ["date":date], encoding: URLEncoding.queryString) }
+                                            ["date": date], encoding: URLEncoding.queryString) }
 }
