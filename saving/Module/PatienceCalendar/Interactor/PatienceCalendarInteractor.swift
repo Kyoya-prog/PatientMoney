@@ -1,4 +1,3 @@
-import FirebaseFirestore.FIRTimestamp
 import Foundation
 import RxSwift
 
@@ -35,7 +34,7 @@ class PatienceCalendarInteractor: PatienceCalendarUsecase {
         }.disposed(by: disposeBag)
     }
 
-    func deletePatienceData(id: String) {
+    func deletePatienceData(id: Int) {
         repository.deletePatienceData(id: id).subscribe { observer in
             switch observer {
             case .success(_):

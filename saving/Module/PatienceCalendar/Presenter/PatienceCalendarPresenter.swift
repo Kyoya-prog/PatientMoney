@@ -16,7 +16,7 @@ class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarI
         router.presentUpdateView(record: record)
     }
 
-    func didTapDeleteButton(id: String) {
+    func didTapDeleteButton(id: Int) {
         interactor.deletePatienceData(id: id)
     }
 

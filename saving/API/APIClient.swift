@@ -13,9 +13,17 @@ class ApiClient: ApiClientInterface {
     func request<T>(_ request: T, callbackQueue: DispatchQueue = .main, completion: @escaping (Result<T.Response, MoyaResponseError>) -> Void) where T: ApiTargetType {
         let provider = MoyaProvider<T>()
         provider.request(request, callbackQueue: callbackQueue) { result in
+            let dateFormatter: DateFormatter = {
+                let df = DateFormatter()
+                df.dateFormat = "yyyy-MM-dd"
+                df.timeZone = TimeZone(secondsFromGMT: 0)
+                return df
+            }()
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(dateFormatter)
             switch result {
             case let .success(response):
-                if let model = try? response.map(T.Response.self) {
+                if let model = try? response.map(T.Response.self, using: decoder) {
                     completion(.success(model))
                 } else if let errorModel = try? response.map(ErrorResponse.self) {
                     completion(.failure(.badRequestError(errorModel.code)))

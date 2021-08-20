@@ -79,7 +79,6 @@ extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource, 
         // swiftlint:disable:next force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseIdentifer, for: indexPath) as! CategoryCell
         let category = Category.categories[indexPath.item]
-        print(category)
         cell.icon = category.icon
         cell.title = category.title
         cell.color = category.color

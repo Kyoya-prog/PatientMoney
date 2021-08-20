@@ -9,7 +9,7 @@ class PatienceRegisterPresenter: PatienceRegisterPresentation, PatienceInputInte
     var router: PatienceInputWireframe!
 
     func didTapRegisterButton(date: Date, memo: String, money: Int, categoryTitle: String) {
-        interactor.registerPatienceData(record: PatienceEntity(documentID: "", date: date, memo: memo, money: money, categoryTitle: categoryTitle))
+        interactor.registerPatienceData(record: PatienceEntity(id: 0, registeredAt: date, memo: memo, money: money, categoryTitle: categoryTitle))
     }
 
     // MARK: RegisterInteractorOutput

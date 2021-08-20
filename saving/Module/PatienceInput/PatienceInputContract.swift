@@ -1,4 +1,3 @@
-import FirebaseFirestore.FIRTimestamp
 import Foundation
 import RxSwift
 import UIKit
@@ -9,9 +8,6 @@ protocol PatienceInputWireframe {
 
     ///  登録画面を閉じる
     func closeInputView()
-
-    /// 登録画面モーダルを閉じる
-    func dismissInputModal()
 }
 
 protocol PatienceInputView {
@@ -83,8 +79,8 @@ protocol PatienceInputInteractorOutput {
 
 protocol PatienceRepository {
     /// データを登録する
-    /// - parameter data:ドキュメントデータ
-    func registerPatienceData(data: [String: Any]) -> Single<Error?>
+    /// - parameter record:記録
+    func registerPatienceData(record: PatienceEntity) -> Single<PatienceEntity>
 
     /// データをフェッチする
     /// - parameter data:日付
@@ -96,11 +92,11 @@ protocol PatienceRepository {
     func fetchPatienceData(startDate: Date, endDate: Date) -> Single<[PatienceEntity]>
 
     /// データをupdateする
-    /// - parameter id:ドキュメントID
-    /// - parameter record:データレコード
-    func updatePatienceData(id: String, record: [String: Any]) -> Single<Error?>
+    /// - parameter id:ID
+    /// - parameter record:記録
+    func updatePatienceData(record: PatienceEntity) -> Single<PatienceEntity>
 
     /// データを消去する
-    /// - parameter id:ドキュメントID
-    func deletePatienceData(id: String) ->Single<Error?>
+    /// - parameter id:ID
+    func deletePatienceData(id: Int) ->Single<Void>
 }
