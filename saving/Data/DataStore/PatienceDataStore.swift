@@ -4,13 +4,15 @@ import Foundation
 import RxSwift
 
 class PatienceDataStore: PatienceRepository {
-    func registerPatienceData(record:PatienceEntity) -> Single<PatienceEntity> {
+    func registerPatienceData(record: PatienceEntity) -> Single<PatienceEntity> {
         Single.create { observer -> Disposable in
             ApiClient.shared.request(CreatePatienceTargetType(registeredAt: record.registeredAt, money: record.money, memo: record.memo, categoryTitle: record.categoryTitle)) { result in
-                switch result{      
+                switch result {
                 case let .success(record):
                     observer(.success(record))
+
                 case let .failure(error):
+                    print(error)
                     observer(.error(error))
                 }
             }
@@ -30,7 +32,6 @@ class PatienceDataStore: PatienceRepository {
                     return
                 }
                 if let documents = query?.documents {
-                    observer(.success(self.createPatienceRecord(documents: documents)))
                     return
                 }
             }
@@ -53,7 +54,6 @@ class PatienceDataStore: PatienceRepository {
                     return
                 }
                 if let documents = snapshot?.documents {
-                    observer(.success(self.createPatienceRecord(documents: documents)))
                     return
                 }
             }
@@ -61,25 +61,25 @@ class PatienceDataStore: PatienceRepository {
         }
     }
 
-    func updatePatienceData(id: String, record: [String: Any]) -> Single<Error?> {
-        Single.create { [weak self] observer -> Disposable in
-            guard let self = self else { return Disposables.create() }
-            self.firestoreCollectionReference.document(id).updateData(record) { error in
-                if let error = error {
+    func updatePatienceData(record: PatienceEntity) -> Single<PatienceEntity> {
+        Single.create { observer -> Disposable in
+            ApiClient.shared.request(UpdatePatienceTargetType(registeredAt: record.registeredAt, money: record.money, memo: record.memo, categoryTitle: record.categoryTitle, id: record.id)) { result in
+                switch result {
+                case let .success(record):
+                    observer(.success(record))
+
+                case let .failure(error):
                     observer(.error(error))
-                    return
                 }
-                observer(.success(nil))
-                return
             }
             return Disposables.create()
         }
     }
 
-    func deletePatienceData(id: String) ->Single<Error?> {
+    func deletePatienceData(id: Int) ->Single<Error?> {
         Single.create { [weak self] observer -> Disposable in
             guard let self = self else { return Disposables.create() }
-            self.firestoreCollectionReference.document(id).delete { error in
+            self.firestoreCollectionReference.document( "\(id)").delete { error in
                 if let error = error {
                     observer(.error(error))
                     return
