@@ -51,13 +51,4 @@ class PatienceInputRouter: PatienceInputWireframe {
     func closeInputView() {
         viewController?.navigationController?.popViewController(animated: true)
     }
-
-    func dismissInputModal() {
-        viewController?.dismiss(animated: true, completion: nil)
-        guard let presentationController = viewController?.presentationController else {
-            return
-        }
-        // dismissで閉じた場合にはADaptivePresentationControllerDelegateのdelegateメソッドが起動しないのでここで明示的に呼んでいる
-        viewController?.presentationController?.delegate?.presentationControllerDidDismiss?(presentationController)
-    }
 }
