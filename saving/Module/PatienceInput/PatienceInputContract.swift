@@ -1,4 +1,3 @@
-import FirebaseFirestore.FIRTimestamp
 import Foundation
 import RxSwift
 import UIKit

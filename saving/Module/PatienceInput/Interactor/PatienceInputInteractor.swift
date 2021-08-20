@@ -32,9 +32,5 @@ class PatienceInputInteractor: PatienceUsecase {
         .disposed(by: disposeBag)
     }
 
-    private var uid: String = {
-        FirebaseAuthManeger.shared.uid
-    }()
-
     private let disposeBag = DisposeBag()
 }

@@ -1,5 +1,4 @@
 import FirebaseAuth
-import FirebaseFirestore
 import Foundation
 import RxSwift
 
@@ -78,6 +77,4 @@ class PatienceDataStore: PatienceRepository {
             return Disposables.create()
         }
     }
-
-    private let firestoreCollectionReference = Firestore.firestore().collection("patience")
 }

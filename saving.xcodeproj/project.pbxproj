@@ -8,23 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3D0B340A26999BBE00C9DDB0 /* Charts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */; };
-		3D0B341926999BBF00C9DDB0 /* FirebaseCoreDiagnostics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B340B26999BBE00C9DDB0 /* FirebaseCoreDiagnostics.xcframework */; };
-		3D0B341B26999BBF00C9DDB0 /* FirebaseFirestore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B340C26999BBE00C9DDB0 /* FirebaseFirestore.xcframework */; };
-		3D0B341D26999BBF00C9DDB0 /* FirebaseAuth.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B340D26999BBE00C9DDB0 /* FirebaseAuth.xcframework */; };
-		3D0B341F26999BBF00C9DDB0 /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B340E26999BBE00C9DDB0 /* GoogleUtilities.xcframework */; };
-		3D0B342126999BBF00C9DDB0 /* BoringSSL-GRPC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B340F26999BBE00C9DDB0 /* BoringSSL-GRPC.xcframework */; };
-		3D0B342326999BBF00C9DDB0 /* gRPC-C++.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B341026999BBE00C9DDB0 /* gRPC-C++.xcframework */; };
-		3D0B342526999BBF00C9DDB0 /* FirebaseAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B341126999BBE00C9DDB0 /* FirebaseAnalytics.xcframework */; };
-		3D0B342726999BBF00C9DDB0 /* FirebaseInstallations.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B341226999BBE00C9DDB0 /* FirebaseInstallations.xcframework */; };
-		3D0B342926999BBF00C9DDB0 /* GTMSessionFetcher.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B341326999BBE00C9DDB0 /* GTMSessionFetcher.xcframework */; };
-		3D0B342B26999BBF00C9DDB0 /* abseil.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B341426999BBE00C9DDB0 /* abseil.xcframework */; };
-		3D0B343126999BC000C9DDB0 /* FirebaseCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B341726999BBE00C9DDB0 /* FirebaseCore.xcframework */; };
-		3D0B343326999BC000C9DDB0 /* gRPC-Core.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B341826999BBE00C9DDB0 /* gRPC-Core.xcframework */; };
-		3D0B343A26999D4200C9DDB0 /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B341526999BBE00C9DDB0 /* GoogleAppMeasurement.xcframework */; };
-		3D0B343D26999D7700C9DDB0 /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B343C26999D7700C9DDB0 /* nanopb.xcframework */; };
-		3D0B344026999DDD00C9DDB0 /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B343F26999DDD00C9DDB0 /* PromisesObjC.xcframework */; };
-		3D0B344326999DF200C9DDB0 /* leveldb-library.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B344226999DF200C9DDB0 /* leveldb-library.xcframework */; };
-		3D0B344626999E4800C9DDB0 /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D0B344526999E4800C9DDB0 /* gRPCCertificates-Cpp.bundle */; };
 		3D205C6326381C820058064C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6226381C820058064C /* Localizable.strings */; };
 		3D2A1E8126C685FF0013F247 /* APITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8026C685FF0013F247 /* APITargetType.swift */; };
 		3D2A1E8326C687090013F247 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8226C687090013F247 /* APIClient.swift */; };
@@ -42,8 +25,6 @@
 		3D3A3221263EEFE000077B6D /* MarqueeLabel.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D3A3222263EEFE000077B6D /* NotificationBanner.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321E263EEFE000077B6D /* NotificationBanner.xcframework */; };
 		3D3A3223263EEFE000077B6D /* NotificationBanner.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321E263EEFE000077B6D /* NotificationBanner.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3D3A3224263EEFE000077B6D /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; };
-		3D3A3225263EEFE000077B6D /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D3A322A263EF37F00077B6D /* PatienceRegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3229263EF37F00077B6D /* PatienceRegisterPresenter.swift */; };
 		3D3A3231263F074F00077B6D /* PatienceInputInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3230263F074F00077B6D /* PatienceInputInteractor.swift */; };
 		3D3A323F263F096B00077B6D /* PatienceDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A323E263F096B00077B6D /* PatienceDataStore.swift */; };
@@ -67,15 +48,6 @@
 		3D6DFF4C26353E3F00C30DD1 /* PatientMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF4B26353E3F00C30DD1 /* PatientMoneyUITests.swift */; };
 		3D6DFF80263546EA00C30DD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */; };
 		3D6DFFB7263554B900C30DD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */; };
-		3D7B54F52699A13B0037E2DB /* GoogleDataTransport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0B341626999BBE00C9DDB0 /* GoogleDataTransport.xcframework */; };
-		3D97733D2640495200419E8A /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB53A0263FF784002A2166 /* RxCocoa.xcframework */; };
-		3D97733E2640495200419E8A /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB53A0263FF784002A2166 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3D97733F2640495200419E8A /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB539F263FF784002A2166 /* RxRelay.xcframework */; };
-		3D9773402640495200419E8A /* RxRelay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB539F263FF784002A2166 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3D9773412640495200419E8A /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB53A1263FF784002A2166 /* RxSwift.xcframework */; };
-		3D9773422640495200419E8A /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB53A1263FF784002A2166 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3D9773452640496600419E8A /* RxBlocking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB539E263FF784002A2166 /* RxBlocking.xcframework */; };
-		3D9773482640497000419E8A /* RxTest.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB53A2263FF784002A2166 /* RxTest.xcframework */; };
 		3D9FEC2226679755008A77FC /* PatienceAnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2126679755008A77FC /* PatienceAnalyzeViewController.swift */; };
 		3D9FEC2C2667A95D008A77FC /* SelectableDateStylePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2B2667A95D008A77FC /* SelectableDateStylePickerTextField.swift */; };
 		3D9FEC2E2667FB1A008A77FC /* PatienceAnalyzeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2D2667FB1A008A77FC /* PatienceAnalyzeInteractor.swift */; };
@@ -89,6 +61,8 @@
 		3DB5C5C726CF7F10005E3299 /* PatiencePerMonthTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5C626CF7F10005E3299 /* PatiencePerMonthTargetType.swift */; };
 		3DB5C5C926CF8FA4005E3299 /* DeletePatienceTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5C826CF8FA4005E3299 /* DeletePatienceTargetType.swift */; };
 		3DB5C5CB26CF9046005E3299 /* SimpleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5CA26CF9046005E3299 /* SimpleEntity.swift */; };
+		3DB5C5CC26CF96EA005E3299 /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; };
+		3DB5C5CD26CF96EA005E3299 /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */; };
 		3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */; };
 		3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8C1267C7A7000EDD973 /* PatienceChartsView.swift */; };
@@ -147,11 +121,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3D3A3225263EEFE000077B6D /* SnapKit.xcframework in Embed Frameworks */,
 				3D3A3223263EEFE000077B6D /* NotificationBanner.xcframework in Embed Frameworks */,
-				3D97733E2640495200419E8A /* RxCocoa.xcframework in Embed Frameworks */,
-				3D9773402640495200419E8A /* RxRelay.xcframework in Embed Frameworks */,
-				3D9773422640495200419E8A /* RxSwift.xcframework in Embed Frameworks */,
+				3DB5C5CD26CF96EA005E3299 /* SnapKit.xcframework in Embed Frameworks */,
 				3D3A3221263EEFE000077B6D /* MarqueeLabel.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -160,24 +131,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3D0B340B26999BBE00C9DDB0 /* FirebaseCoreDiagnostics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseCoreDiagnostics.xcframework; path = Carthage/Build/FirebaseCoreDiagnostics.xcframework; sourceTree = "<group>"; };
-		3D0B340C26999BBE00C9DDB0 /* FirebaseFirestore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseFirestore.xcframework; path = Carthage/Build/FirebaseFirestore.xcframework; sourceTree = "<group>"; };
-		3D0B340D26999BBE00C9DDB0 /* FirebaseAuth.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseAuth.xcframework; path = Carthage/Build/FirebaseAuth.xcframework; sourceTree = "<group>"; };
-		3D0B340E26999BBE00C9DDB0 /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleUtilities.xcframework; path = Carthage/Build/GoogleUtilities.xcframework; sourceTree = "<group>"; };
-		3D0B340F26999BBE00C9DDB0 /* BoringSSL-GRPC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "BoringSSL-GRPC.xcframework"; path = "Carthage/Build/BoringSSL-GRPC.xcframework"; sourceTree = "<group>"; };
-		3D0B341026999BBE00C9DDB0 /* gRPC-C++.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "gRPC-C++.xcframework"; path = "Carthage/Build/gRPC-C++.xcframework"; sourceTree = "<group>"; };
-		3D0B341126999BBE00C9DDB0 /* FirebaseAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseAnalytics.xcframework; path = Carthage/Build/FirebaseAnalytics.xcframework; sourceTree = "<group>"; };
-		3D0B341226999BBE00C9DDB0 /* FirebaseInstallations.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseInstallations.xcframework; path = Carthage/Build/FirebaseInstallations.xcframework; sourceTree = "<group>"; };
-		3D0B341326999BBE00C9DDB0 /* GTMSessionFetcher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GTMSessionFetcher.xcframework; path = Carthage/Build/GTMSessionFetcher.xcframework; sourceTree = "<group>"; };
-		3D0B341426999BBE00C9DDB0 /* abseil.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = abseil.xcframework; path = Carthage/Build/abseil.xcframework; sourceTree = "<group>"; };
-		3D0B341526999BBE00C9DDB0 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurement.xcframework; path = Carthage/Build/GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
-		3D0B341626999BBE00C9DDB0 /* GoogleDataTransport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleDataTransport.xcframework; path = Carthage/Build/GoogleDataTransport.xcframework; sourceTree = "<group>"; };
-		3D0B341726999BBE00C9DDB0 /* FirebaseCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseCore.xcframework; path = Carthage/Build/FirebaseCore.xcframework; sourceTree = "<group>"; };
-		3D0B341826999BBE00C9DDB0 /* gRPC-Core.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "gRPC-Core.xcframework"; path = "Carthage/Build/gRPC-Core.xcframework"; sourceTree = "<group>"; };
-		3D0B343526999C3600C9DDB0 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Carthage/Build/iOS/Firebase.framework; sourceTree = "<group>"; };
-		3D0B343C26999D7700C9DDB0 /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = nanopb.xcframework; path = Carthage/Build/nanopb.xcframework; sourceTree = "<group>"; };
-		3D0B343F26999DDD00C9DDB0 /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PromisesObjC.xcframework; path = Carthage/Build/PromisesObjC.xcframework; sourceTree = "<group>"; };
-		3D0B344226999DF200C9DDB0 /* leveldb-library.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "leveldb-library.xcframework"; path = "Carthage/Build/leveldb-library.xcframework"; sourceTree = "<group>"; };
 		3D0B344526999E4800C9DDB0 /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
 		3D205C6226381C820058064C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3D2A1E8026C685FF0013F247 /* APITargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITargetType.swift; sourceTree = "<group>"; };
@@ -261,11 +214,6 @@
 		3DE104A4263D383C00F724B8 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
 		3DE104A5263D383C00F724B8 /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		3DE104B0263D3BEC00F724B8 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
-		3DEB539E263FF784002A2166 /* RxBlocking.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxBlocking.xcframework; path = Carthage/Build/RxBlocking.xcframework; sourceTree = "<group>"; };
-		3DEB539F263FF784002A2166 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
-		3DEB53A0263FF784002A2166 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
-		3DEB53A1263FF784002A2166 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
-		3DEB53A2263FF784002A2166 /* RxTest.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxTest.xcframework; path = Carthage/Build/RxTest.xcframework; sourceTree = "<group>"; };
 		3DEB53C726400B96002A2166 /* PatienceCalendarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarRouter.swift; sourceTree = "<group>"; };
 		3DEB53CB26400BB9002A2166 /* PatienceCalendarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarPresenter.swift; sourceTree = "<group>"; };
 		3DEB53CF26400BC5002A2166 /* PatienceCalendarContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarContract.swift; sourceTree = "<group>"; };
@@ -278,34 +226,14 @@
 			files = (
 				3DDFCC6526C7BF0800E3D1A2 /* RxMoya in Frameworks */,
 				3DE952DA2643B35E004AF23D /* FSCalendar in Frameworks */,
-				3D97733D2640495200419E8A /* RxCocoa.xcframework in Frameworks */,
 				3D0B340A26999BBE00C9DDB0 /* Charts.xcframework in Frameworks */,
-				3D0B343D26999D7700C9DDB0 /* nanopb.xcframework in Frameworks */,
 				3D3A3220263EEFE000077B6D /* MarqueeLabel.xcframework in Frameworks */,
+				3DB5C5CC26CF96EA005E3299 /* SnapKit.xcframework in Frameworks */,
 				3DDFCC6326C7BF0800E3D1A2 /* ReactiveMoya in Frameworks */,
-				3D0B342126999BBF00C9DDB0 /* BoringSSL-GRPC.xcframework in Frameworks */,
 				3D3A3222263EEFE000077B6D /* NotificationBanner.xcframework in Frameworks */,
-				3D0B341926999BBF00C9DDB0 /* FirebaseCoreDiagnostics.xcframework in Frameworks */,
-				3D0B342526999BBF00C9DDB0 /* FirebaseAnalytics.xcframework in Frameworks */,
-				3D0B342726999BBF00C9DDB0 /* FirebaseInstallations.xcframework in Frameworks */,
-				3D0B343126999BC000C9DDB0 /* FirebaseCore.xcframework in Frameworks */,
-				3D0B342B26999BBF00C9DDB0 /* abseil.xcframework in Frameworks */,
-				3D0B344326999DF200C9DDB0 /* leveldb-library.xcframework in Frameworks */,
 				3D55A061267F2899006422BC /* Algorithms in Frameworks */,
-				3D0B343326999BC000C9DDB0 /* gRPC-Core.xcframework in Frameworks */,
 				3D2A1E8D26C6A07F0013F247 /* KeychainAccess in Frameworks */,
-				3D9773412640495200419E8A /* RxSwift.xcframework in Frameworks */,
-				3D0B341D26999BBF00C9DDB0 /* FirebaseAuth.xcframework in Frameworks */,
-				3D0B341F26999BBF00C9DDB0 /* GoogleUtilities.xcframework in Frameworks */,
-				3D0B341B26999BBF00C9DDB0 /* FirebaseFirestore.xcframework in Frameworks */,
-				3D97733F2640495200419E8A /* RxRelay.xcframework in Frameworks */,
-				3D0B342926999BBF00C9DDB0 /* GTMSessionFetcher.xcframework in Frameworks */,
-				3D0B342326999BBF00C9DDB0 /* gRPC-C++.xcframework in Frameworks */,
-				3D0B344026999DDD00C9DDB0 /* PromisesObjC.xcframework in Frameworks */,
-				3D7B54F52699A13B0037E2DB /* GoogleDataTransport.xcframework in Frameworks */,
-				3D0B343A26999D4200C9DDB0 /* GoogleAppMeasurement.xcframework in Frameworks */,
 				3DDFCC6126C7BF0800E3D1A2 /* Moya in Frameworks */,
-				3D3A3224263EEFE000077B6D /* SnapKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,8 +241,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D9773482640497000419E8A /* RxTest.xcframework in Frameworks */,
-				3D9773452640496600419E8A /* RxBlocking.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,30 +485,7 @@
 		3D6DFF8A263548B200C30DD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3D0B344226999DF200C9DDB0 /* leveldb-library.xcframework */,
-				3D0B343F26999DDD00C9DDB0 /* PromisesObjC.xcframework */,
-				3D0B343C26999D7700C9DDB0 /* nanopb.xcframework */,
-				3D0B343526999C3600C9DDB0 /* Firebase.framework */,
-				3D0B341426999BBE00C9DDB0 /* abseil.xcframework */,
-				3D0B340F26999BBE00C9DDB0 /* BoringSSL-GRPC.xcframework */,
-				3D0B341126999BBE00C9DDB0 /* FirebaseAnalytics.xcframework */,
-				3D0B340D26999BBE00C9DDB0 /* FirebaseAuth.xcframework */,
-				3D0B341726999BBE00C9DDB0 /* FirebaseCore.xcframework */,
-				3D0B340B26999BBE00C9DDB0 /* FirebaseCoreDiagnostics.xcframework */,
-				3D0B340C26999BBE00C9DDB0 /* FirebaseFirestore.xcframework */,
-				3D0B341226999BBE00C9DDB0 /* FirebaseInstallations.xcframework */,
-				3D0B341526999BBE00C9DDB0 /* GoogleAppMeasurement.xcframework */,
-				3D0B341626999BBE00C9DDB0 /* GoogleDataTransport.xcframework */,
-				3D0B340E26999BBE00C9DDB0 /* GoogleUtilities.xcframework */,
-				3D0B341026999BBE00C9DDB0 /* gRPC-C++.xcframework */,
-				3D0B341826999BBE00C9DDB0 /* gRPC-Core.xcframework */,
-				3D0B341326999BBE00C9DDB0 /* GTMSessionFetcher.xcframework */,
 				3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */,
-				3DEB539E263FF784002A2166 /* RxBlocking.xcframework */,
-				3DEB53A0263FF784002A2166 /* RxCocoa.xcframework */,
-				3DEB539F263FF784002A2166 /* RxRelay.xcframework */,
-				3DEB53A1263FF784002A2166 /* RxSwift.xcframework */,
-				3DEB53A2263FF784002A2166 /* RxTest.xcframework */,
 				3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */,
 				3D3A321E263EEFE000077B6D /* NotificationBanner.xcframework */,
 				3D3A321F263EEFE000077B6D /* SnapKit.xcframework */,
@@ -915,7 +818,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D0B344626999E4800C9DDB0 /* gRPCCertificates-Cpp.bundle in Resources */,
 				3DE104A6263D383C00F724B8 /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
 				3DE104A7263D383C00F724B8 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 				3DE104A8263D383C00F724B8 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
