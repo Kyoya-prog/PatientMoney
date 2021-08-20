@@ -15,3 +15,7 @@ struct PatienceEntity: Decodable {
         case categoryTitle = "category_title"
     }
 }
+
+struct PatiencesEntity: Decodable {
+    let patiences: [PatienceEntity]
+}

@@ -16,9 +16,9 @@ struct UpdatePatienceTargetType: ApiTargetType {
 
     var parameters: [String: Any] { ["money": money, "memo": memo ?? "", "category_title": categoryTitle, "registered_at": registeredAt] }
 
-    var path: String { "/patience/\(id)" }
+    var path: String { "/patiences/\(id)" }
 
-    var method: Moya.Method { .post }
+    var method: Moya.Method { .patch }
 
     var sampleData: Data { Data() }
 

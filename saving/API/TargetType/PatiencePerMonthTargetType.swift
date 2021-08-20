@@ -2,13 +2,13 @@ import Foundation
 import Moya
 
 struct PatiencePerMonthTargetType: ApiTargetType {
-    typealias Response = [PatienceEntity]
+    typealias Response = PatiencesEntity
 
     let startDate: Date
 
     let endDate: Date
 
-    var path: String { "/patience/per_month" }
+    var path: String { "/patiences/per_month" }
 
     var method: Moya.Method { .get }
 

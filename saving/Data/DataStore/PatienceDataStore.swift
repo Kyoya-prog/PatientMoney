@@ -24,7 +24,7 @@ class PatienceDataStore: PatienceRepository {
             ApiClient.shared.request(PatiencePerDateTargetType(date: date)) { result in
                 switch result {
                 case let .success(record):
-                    observer(.success(record))
+                    observer(.success(record.patiences))
 
                 case let .failure(error):
                     observer(.error(error))
@@ -39,7 +39,7 @@ class PatienceDataStore: PatienceRepository {
             ApiClient.shared.request(PatiencePerMonthTargetType(startDate: startDate, endDate: endDate)) { result in
                 switch result {
                 case let .success(record):
-                    observer(.success(record))
+                    observer(.success(record.patiences))
 
                 case let .failure(error):
                     observer(.error(error))
