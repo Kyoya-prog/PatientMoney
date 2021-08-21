@@ -74,7 +74,6 @@
 		3DDFCC6926CA900C00E3D1A2 /* CheckTokenTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFCC6826CA900C00E3D1A2 /* CheckTokenTargetType.swift */; };
 		3DE103C82638360000F724B8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103C72638360000F724B8 /* Strings.swift */; };
 		3DE103CC2638360800F724B8 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103CB2638360800F724B8 /* Asset.swift */; };
-		3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */; };
 		3DE103E6263ACBE100F724B8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103E5263ACBE100F724B8 /* AuthViewController.swift */; };
 		3DE103ED263AE65A00F724B8 /* ColorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */; };
 		3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */; };
@@ -197,7 +196,6 @@
 		3DDFCC6826CA900C00E3D1A2 /* CheckTokenTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTokenTargetType.swift; sourceTree = "<group>"; };
 		3DE103C72638360000F724B8 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Generated/Strings.swift; sourceTree = "<group>"; };
 		3DE103CB2638360800F724B8 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Generated/Asset.swift; sourceTree = "<group>"; };
-		3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		3DE103E5263ACBE100F724B8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtension.swift; sourceTree = "<group>"; };
 		3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceTextField.swift; sourceTree = "<group>"; };
@@ -394,13 +392,6 @@
 			path = HeightSelfSizing;
 			sourceTree = "<group>";
 		};
-		3D6963DC2678D21C00368810 /* CollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CollectionViewCell;
-			sourceTree = "<group>";
-		};
 		3D6B0FEA263E713E009D21A1 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,7 +443,6 @@
 				3D6B0FEA263E713E009D21A1 /* Util */,
 				3DE103F2263AE67100F724B8 /* ViewComponent */,
 				3DE103EB263AE64900F724B8 /* Extension */,
-				3DE103D6263A803A00F724B8 /* Firebase */,
 				3D205C6726381E160058064C /* Generated */,
 				3D205C6626381D4C0058064C /* Resources */,
 				3D6DFFB52635548E00C30DD1 /* GoogleServiceInfo */,
@@ -557,14 +547,6 @@
 			path = ViewComponent;
 			sourceTree = "<group>";
 		};
-		3DE103D6263A803A00F724B8 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
 		3DE103E3263ACBC900F724B8 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -599,7 +581,6 @@
 		3DE103F2263AE67100F724B8 /* ViewComponent */ = {
 			isa = PBXGroup;
 			children = (
-				3D6963DC2678D21C00368810 /* CollectionViewCell */,
 				3D6963DA2678D17B00368810 /* HeightSelfSizing */,
 				3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */,
 				3DE10419263BEDE900F724B8 /* FlatButton.swift */,
@@ -950,7 +931,6 @@
 				3D2A1E8A26C6A00D0013F247 /* SignInTargetType.swift in Sources */,
 				3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */,
 				3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */,
-				3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */,
 				3DB5C5C926CF8FA4005E3299 /* DeletePatienceTargetType.swift in Sources */,
 				3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */,
 			);
