@@ -6,10 +6,9 @@ protocol PatienceAnalyzeUsecase: AnyObject {
 
     var output: PatienceAnalyzeOutput? { get }
 
-    /// 指定年月のデータを取得する
-    /// - parameter year:年
-    /// - parameter month:月
-    func fetchDataFromMonth(year: Int, month: Int)
+    /// 指定日の月のデータを取得する
+    /// - parameter date:指定日
+    func fetchDataFromMonth(date: Date)
 
     /// 指定日時のデータを取得する
     /// - parameter date:日付
@@ -36,7 +35,7 @@ protocol PatienceAnalyzePresentation: AnyObject {
     /// 日付が変更された
     /// - parameter date:選択されている日付
     /// - parameter isSingleDaySelect 日付のみかどうか
-    func didChangeDate(dateModel: DateForTractableDay, isSingleDaySelect: Bool)
+    func didChangeDate(date: Date, isSingleDaySelect: Bool)
 }
 
 protocol PatienceAnalyzeOutput {

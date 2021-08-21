@@ -7,14 +7,14 @@ class PatienceAnalyzePresenter: PatienceAnalyzePresentation, PatienceAnalyzeOutp
     var view: PatienceAnalyzeView?
 
     func didLoad() {
-        usecase.fetchDataFromDate(date: DateForTractableDay().date)
+        usecase.fetchDataFromDate(date: Date())
     }
 
-    func didChangeDate(dateModel: DateForTractableDay, isSingleDaySelect: Bool) {
+    func didChangeDate(date: Date, isSingleDaySelect: Bool) {
         if isSingleDaySelect {
-            usecase.fetchDataFromDate(date: dateModel.date)
+            usecase.fetchDataFromDate(date: date)
         } else {
-            usecase.fetchDataFromMonth(year: dateModel.year, month: dateModel.month)
+            usecase.fetchDataFromMonth(date: date)
         }
     }
 

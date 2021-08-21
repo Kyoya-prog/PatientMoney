@@ -1,4 +1,5 @@
 import Foundation
+//swiftlint:disable unused_setter_value
 
 extension Date {
     init(year: Int? = nil, month: Int? = nil, day: Int? = nil, hour: Int? = nil, minute: Int? = nil, second: Int? = nil) {
@@ -80,8 +81,8 @@ extension Date {
     var endMonth: Date {
         fixed(month: month + 1, day: 0, hour: 9, minute: 0, second: 0)
     }
-    
-    func getDateText(format:String)->String{
-        return DateStringConverter.stringFromDate(date: self, format: format)
+
+    func getDateText(format: String) -> String {
+        DateStringConverter.stringFromDate(date: self, format: format)
     }
 }

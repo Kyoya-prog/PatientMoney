@@ -10,7 +10,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
         }
     }
     ///  選択されている日付
-    var selectedDate = PaticuralDayFetcher.getStartDay(date: Date()) {
+    var selectedDate = Date().zeroclock {
         didSet {
             presenter.selectedDateDidChange(date: selectedDate)
             recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: selectedDate)
@@ -148,7 +148,7 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
 // MARK: FSCalendarDelegate, FSCalendarDataSource
 extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        self.selectedDate = PaticuralDayFetcher.getStartDay(date: date)
+        self.selectedDate = date.zeroclock
         recordListHeaderView.title = DateStringConverter.stringFromDate(date: date, format: DateStringConverter.dateFormatJapanese)
     }
 

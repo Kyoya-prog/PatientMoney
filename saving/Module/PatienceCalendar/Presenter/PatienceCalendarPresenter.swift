@@ -21,10 +21,8 @@ class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarI
     }
 
     func selectedDateDidChange(date: Date) {
-        interactor.fetchPatienceData(date: PaticuralDayFetcher.getStartDay(date: date))
-        let month = Calendar(identifier: .gregorian).component(.month, from: date)
-        let year = Calendar(identifier: .gregorian).component(.year, from: date)
-        interactor.fetchDataFromMonth(year: year, month: month)
+        interactor.fetchPatienceData(date: date.zeroclock)
+        interactor.fetchDataFromMonth(date: date)
     }
 
     func outputFetchData(records: [PatienceEntity]) {

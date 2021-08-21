@@ -70,10 +70,9 @@ protocol PatienceCalendarUsecase {
     /// - parameter documentId:ドキュメントID
     func deletePatienceData(id: Int)
 
-    /// 入力された年月のデータを取得する
-    /// - parameter year:年
-    /// - parameter month:月
-    func fetchDataFromMonth(year: Int, month: Int)
+    /// 指定日の月のデータを取得する
+    /// - parameter date:指定日
+    func fetchDataFromMonth(date: Date)
 }
 
 protocol PatienceCalendarInteractorOutput {
