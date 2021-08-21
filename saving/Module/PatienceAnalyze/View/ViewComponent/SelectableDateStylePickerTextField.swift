@@ -30,7 +30,7 @@ class SelectableDateStylePickerTextField: PatienceTextField {
 
     private func construct() {
         font = UIFont.boldSystemFont(ofSize: 20)
-        text = DateAndStringConverter.stringFromDate(date: Date(), format: "yyyy年　M月")
+        text = DateStringConverter.stringFromDate(date: Date(), format: "yyyy年　M月")
         selectedDate.isIncludeDate = isSingleDaySelect
         layer.cornerRadius = 4
         UIFont.boldSystemFont(ofSize: 20)
@@ -86,7 +86,7 @@ class SelectableDateStylePickerTextField: PatienceTextField {
     }()
 
     private lazy var currentYear: Int = {
-        guard let currentYear = Int(DateAndStringConverter.stringFromDate(date: Date(), format: "yyyy")) else {
+        guard let currentYear = Int(DateStringConverter.stringFromDate(date: Date(), format: "yyyy")) else {
             return  2000
         }
         return currentYear

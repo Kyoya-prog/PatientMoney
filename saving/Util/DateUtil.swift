@@ -1,7 +1,7 @@
 import UIKit
 
 /// Date⇆String変換クラス
-class DateAndStringConverter {
+class DateStringConverter {
     static func dateFromString(string: String, format: String) -> Date {
         let formatter = DateFormatter()
         formatter.calendar = Calendar(identifier: .gregorian)
@@ -17,6 +17,8 @@ class DateAndStringConverter {
     }
 
     static let dateFormatJapanese = "yyyy年MM月dd日"
+    
+    static let monthFotmatJapanese = "yyyy年MM月"
 }
 
 /// ある特定の日を取得するFetcherクラス
