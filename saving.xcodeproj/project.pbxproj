@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D0B340A26999BBE00C9DDB0 /* Charts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */; };
+		3D1EB49226D119140055CF6E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1EB49126D119140055CF6E /* DateExtension.swift */; };
 		3D205C6326381C820058064C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6226381C820058064C /* Localizable.strings */; };
 		3D2A1E8126C685FF0013F247 /* APITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8026C685FF0013F247 /* APITargetType.swift */; };
 		3D2A1E8326C687090013F247 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8226C687090013F247 /* APIClient.swift */; };
@@ -131,6 +132,7 @@
 
 /* Begin PBXFileReference section */
 		3D0B344526999E4800C9DDB0 /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
+		3D1EB49126D119140055CF6E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		3D205C6226381C820058064C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3D2A1E8026C685FF0013F247 /* APITargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITargetType.swift; sourceTree = "<group>"; };
 		3D2A1E8226C687090013F247 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -574,6 +576,7 @@
 			children = (
 				3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */,
 				3DE10499263D36E900F724B8 /* NSAttributedStrinfExtension.swift */,
+				3D1EB49126D119140055CF6E /* DateExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -900,6 +903,7 @@
 				3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */,
 				3D3A3231263F074F00077B6D /* PatienceInputInteractor.swift in Sources */,
 				3D9FEC2E2667FB1A008A77FC /* PatienceAnalyzeInteractor.swift in Sources */,
+				3D1EB49226D119140055CF6E /* DateExtension.swift in Sources */,
 				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
 				3D2A1E8526C69CFF0013F247 /* SignUpTargetType.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
