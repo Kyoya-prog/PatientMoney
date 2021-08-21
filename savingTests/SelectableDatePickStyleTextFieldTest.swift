@@ -5,7 +5,7 @@
 //  Created by 松山響也 on 2021/06/18.
 //
 
-@testable import PatientMoney
+@testable import saving
 import XCTest
 
 class SelectableDatePickStyleTextFieldTest: XCTestCase {
@@ -28,14 +28,14 @@ class SelectableDatePickStyleTextFieldTest: XCTestCase {
 
     func testCorrectTextDisplayWhenIsSingleSelect() {
         let dateTextField = SelectableDateStylePickerTextField()
-        dateTextField.selectedDate.date = date
+        dateTextField.selectedDate = date
         XCTAssertEqual(dateTextField.text, "2000年02月28日")
     }
 
     func testCorrectTextDisplayWhenNotIsSingleSelect() {
         let dateTextField = SelectableDateStylePickerTextField()
         dateTextField.isSingleDaySelect = false
-        dateTextField.selectedDate.date = date
+        dateTextField.selectedDate = date
         XCTAssertEqual(dateTextField.text, "2000年02月")
     }
 
