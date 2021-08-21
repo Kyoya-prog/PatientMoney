@@ -29,15 +29,24 @@ extension Date {
     }
 
     var year: Int {
-        calendar.component(.year, from: self)
+        get {calendar.component(.year, from: self)
+        }
+        set {
+        }
     }
 
     var month: Int {
-        calendar.component(.month, from: self)
+        get {calendar.component(.month, from: self)
+        }
+        set {
+        }
     }
 
     var day: Int {
-        calendar.component(.day, from: self)
+        get {calendar.component(.day, from: self)
+        }
+        set {
+        }
     }
 
     var hour: Int {
@@ -70,5 +79,9 @@ extension Date {
 
     var endMonth: Date {
         fixed(month: month + 1, day: 0, hour: 9, minute: 0, second: 0)
+    }
+    
+    func getDateText(format:String)->String{
+        return DateStringConverter.stringFromDate(date: self, format: format)
     }
 }

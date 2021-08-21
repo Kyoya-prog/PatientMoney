@@ -3,20 +3,23 @@ import UIKit
 
 /// 日付のピック方法を選べるdatePickerTextField
 class SelectableDateStylePickerTextField: PatienceTextField {
-    var selectedDate = DateForTractableDay() {
+    var selectedDate = Date() {
         didSet {
-            text = selectedDate.dateString
+            if isSingleDaySelect {
+                text = selectedDate.getDateText(format: DateStringConverter.dateFormatJapanese)
+            } else {
+                text = selectedDate.getDateText(format: DateStringConverter.monthFormatJapanese)
+            }
         }
     }
 
     var isSingleDaySelect = true {
         didSet {
-            selectedDate.isIncludeDate = isSingleDaySelect
             updatePickStyle()
         }
     }
 
-    var dateChangeAction:((_ date: DateForTractableDay) -> Void)?
+    var dateChangeAction:((_ date: Date) -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,7 +34,6 @@ class SelectableDateStylePickerTextField: PatienceTextField {
     private func construct() {
         font = UIFont.boldSystemFont(ofSize: 20)
         text = DateStringConverter.stringFromDate(date: Date(), format: "yyyy年　M月")
-        selectedDate.isIncludeDate = isSingleDaySelect
         layer.cornerRadius = 4
         UIFont.boldSystemFont(ofSize: 20)
         backgroundColor = UIColor(hex: "F0E68C")
@@ -46,8 +48,8 @@ class SelectableDateStylePickerTextField: PatienceTextField {
     private func setUpYearAndMonthPickerView() {
         yearAndMonthPickerView.delegate = self
         yearAndMonthPickerView.dataSource = self
-        yearAndMonthPickerView.selectRow(DateForTractableDay().year - currentYear, inComponent: 0, animated: true)
-        yearAndMonthPickerView.selectRow(DateForTractableDay().month - 1, inComponent: 1, animated: true)
+        yearAndMonthPickerView.selectRow(Date().year - currentYear, inComponent: 0, animated: true)
+        yearAndMonthPickerView.selectRow(Date().month - 1, inComponent: 1, animated: true)
         inputAccessoryView = keyboardToolbar
     }
 
@@ -59,7 +61,7 @@ class SelectableDateStylePickerTextField: PatienceTextField {
 
     private func updatePickStyle() {
         if isSingleDaySelect {
-            datePickerView.date = selectedDate.date
+            datePickerView.date = selectedDate
             inputView = datePickerView
         } else {
             inputView = yearAndMonthPickerView
@@ -94,9 +96,11 @@ class SelectableDateStylePickerTextField: PatienceTextField {
 
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
         if isSingleDaySelect {
-            selectedDate.date = datePickerView.date
+            selectedDate = datePickerView.date
+            text = selectedDate.getDateText(format: DateStringConverter.dateFormatJapanese)
+        } else {
+            text = selectedDate.getDateText(format: DateStringConverter.monthFormatJapanese)
         }
-        text = selectedDate.dateString
         endEditing(true)
         dateChangeAction?(selectedDate)
     }
@@ -146,7 +150,9 @@ extension SelectableDateStylePickerTextField: UIPickerViewDelegate, UIPickerView
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let year = years[pickerView.selectedRow(inComponent: 0)]
         let month = months[pickerView.selectedRow(inComponent: 1)]
-        let date = PaticuralDayFetcher.getBeginningMonth(year: year, month: month)
-        selectedDate.date = date
+        var date = Date()
+        date.year = year
+        date.month = month
+        selectedDate = date.beginMonth
     }
 }
