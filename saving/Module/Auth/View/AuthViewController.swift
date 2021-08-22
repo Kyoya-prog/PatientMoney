@@ -25,6 +25,10 @@ class AuthViewController: UIViewController, AuthView {
         construct()
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+
     func finishButtonAction() {
         fatalError("this method must be overrided")
     }
@@ -128,6 +132,8 @@ class AuthViewController: UIViewController, AuthView {
         mailAddressTextField.layer.cornerRadius = 4
         mailAddressTextField.textColor = .black
         mailAddressTextField.placeholder = L10n.AuthViewController.MailAddressTextField.placeholder
+        mailAddressTextField.keyboardType = .emailAddress
+        mailAddressTextField.clearButtonMode = .whileEditing
         mailAddressTextField.addTarget(self, action: #selector(didChangeMailAddressTextField(_:)), for: .editingChanged)
         view.addSubview(mailAddressTextField)
 
@@ -145,7 +151,6 @@ class AuthViewController: UIViewController, AuthView {
         passwordTextField.layer.borderColor = UIColor(hex: "FFA500").cgColor
         passwordTextField.isSecureTextEntry = true
         passwordTextField.textColor = .black
-        passwordTextField.placeholder = L10n.AuthViewController.PasswordTextField.placeholder
         view.addSubview(passwordTextField)
         passwordTextField.addTarget(self, action: #selector(didChangePasswordTextField(_:)), for: .editingChanged)
 
