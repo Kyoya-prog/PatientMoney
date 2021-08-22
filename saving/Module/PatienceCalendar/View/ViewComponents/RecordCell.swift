@@ -61,7 +61,7 @@ class RecordCell: UITableViewCell {
     private let moneyLabel = UILabel()
 
     private func updateValue() {
-        let category = Category.categories.filter {
+        let category = Category.allCases.filter {
             $0.title == categoryTitle
         }
         icon.attributedText = NSAttributedString.icon(category[0].icon, size: 20, style: .solid)

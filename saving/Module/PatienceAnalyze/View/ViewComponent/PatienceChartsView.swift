@@ -40,22 +40,22 @@ class PatienceChartsView: PieChartView {
         var hobbyMoney = 0
         records.forEach {record in
             switch record.categoryTilte {
-            case Category.categories[0].title:
+            case Category.allCases[0].title:
                 foodMoney += record.money
 
-            case Category.categories[1].title:
+            case Category.allCases[1].title:
                 transportMoney += record.money
 
-            case Category.categories[2].title:
+            case Category.allCases[2].title:
                 drinkMoney += record.money
 
-            case Category.categories[3].title:
+            case Category.allCases[3].title:
                 communicationMoney += record.money
 
-            case Category.categories[4].title:
+            case Category.allCases[4].title:
                 wearMoney += record.money
 
-            case Category.categories[5].title:
+            case Category.allCases[5].title:
                 hobbyMoney += record.money
 
             default:
@@ -63,12 +63,12 @@ class PatienceChartsView: PieChartView {
             }
         }
 
-        dataEntries.append(PieChartDataEntry(value: Double(foodMoney), label: Category.categories[0].title, data: Double(foodMoney)))
-        dataEntries.append(PieChartDataEntry(value: Double(transportMoney), label: Category.categories[1].title, data: Double(transportMoney)))
-        dataEntries.append(PieChartDataEntry(value: Double(drinkMoney), label: Category.categories[2].title, data: Double(drinkMoney)))
-        dataEntries.append(PieChartDataEntry(value: Double(communicationMoney), label: Category.categories[3].title, data: Double(communicationMoney)))
-        dataEntries.append(PieChartDataEntry(value: Double(wearMoney), label: Category.categories[4].title, data: Double(wearMoney)))
-        dataEntries.append(PieChartDataEntry(value: Double(hobbyMoney), label: Category.categories[5].title, data: Double(hobbyMoney)))
+        dataEntries.append(PieChartDataEntry(value: Double(foodMoney), label: Category.allCases[0].title, data: Double(foodMoney)))
+        dataEntries.append(PieChartDataEntry(value: Double(transportMoney), label: Category.allCases[1].title, data: Double(transportMoney)))
+        dataEntries.append(PieChartDataEntry(value: Double(drinkMoney), label: Category.allCases[2].title, data: Double(drinkMoney)))
+        dataEntries.append(PieChartDataEntry(value: Double(communicationMoney), label: Category.allCases[3].title, data: Double(communicationMoney)))
+        dataEntries.append(PieChartDataEntry(value: Double(wearMoney), label: Category.allCases[4].title, data: Double(wearMoney)))
+        dataEntries.append(PieChartDataEntry(value: Double(hobbyMoney), label: Category.allCases[5].title, data: Double(hobbyMoney)))
 
         let dataSet = PieChartDataSet(entries: dataEntries, label: L10n.PatienceChartsView.Charts.description)
         dataSet.valueTextColor = .black

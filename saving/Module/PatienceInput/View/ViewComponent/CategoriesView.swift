@@ -66,7 +66,7 @@ class CategoriesView: UIView {
 // MARK: CollectionViewDelegateMethod
 extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        Category.categories.count
+        Category.allCases.count
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -78,7 +78,7 @@ extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // swiftlint:disable:next force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseIdentifer, for: indexPath) as! CategoryCell
-        let category = Category.categories[indexPath.item]
+        let category = Category.allCases[indexPath.item]
         cell.icon = category.icon
         cell.title = category.title
         cell.color = category.color
@@ -87,7 +87,7 @@ extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let category = Category.categories[indexPath.item]
+        let category = Category.allCases[indexPath.item]
         selectedCategoryTitle = category.title
         categoriesView.reloadData()
     }
