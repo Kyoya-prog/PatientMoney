@@ -31,7 +31,7 @@
 
 // MemoView
 "MemoView.title" = "メモ";
-"MemoView.MemoTextView.text" = "未入力";
+"MemoView.MemoTextView.placeHolder" = "未入力";
 
 // MoneyView
 "MoneyView.title" = "金額";

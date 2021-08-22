@@ -129,7 +129,7 @@ class PatienceInputViewController: UIViewController, PatienceInputView {
     private func resetData() {
         dateRecord = Date()
         moneyRecord = 0
-        memoRecord = L10n.MemoView.MemoTextView.text
+        memoRecord = L10n.MemoView.MemoTextView.placeHolder
         categoryTitleRecord = L10n.CategoryIcon.Title.pizzaSlice
     }
 
