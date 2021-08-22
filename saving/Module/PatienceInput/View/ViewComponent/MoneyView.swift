@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class MoneyView: UIView {
+class MoneyView: PatienceInputViewComponent {
     /// 金額
     var money: Int? {
         get {
@@ -20,6 +20,10 @@ class MoneyView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         construct()
+    }
+
+    override func resetView() {
+        moneyTextField.text = nil
     }
 
     // MARK: Private

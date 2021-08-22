@@ -139,7 +139,7 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "MemoView.title")
     internal enum MemoTextView {
       /// 未入力
-      internal static let placeHolder = L10n.tr("Localizable", "MemoView.MemoTextView.placeHolder")
+      internal static let placeholder = L10n.tr("Localizable", "MemoView.MemoTextView.placeholder")
     }
   }
 

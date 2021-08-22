@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class DateView: UIView {
+class DateView: PatienceInputViewComponent {
     /// 入力された日付
     var selectedDate: Date {
         get {
@@ -22,9 +22,14 @@ class DateView: UIView {
         construct()
     }
 
+    override func resetView() {
+        selectedDate = Date()
+    }
+
     // MARK: Private
 
     private func construct() {
+        print(Date())
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = L10n.DateView.title
         titleLabel.font = UIFont.boldSystemFont(ofSize: 14)
