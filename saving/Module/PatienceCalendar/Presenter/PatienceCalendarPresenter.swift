@@ -23,6 +23,7 @@ class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarI
     func selectedDateDidChange(date: Date) {
         interactor.fetchPatienceData(date: date.zeroclock)
         interactor.fetchDataFromMonth(date: date)
+        self.date = date
     }
 
     func outputFetchData(records: [PatienceEntity]) {
@@ -31,6 +32,7 @@ class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarI
 
     func notifyDeleteData() {
         view?.didDeleteRecord()
+        interactor.fetchDataFromMonth(date: date)
     }
 
     func outputFetchError() {
@@ -52,4 +54,6 @@ class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarI
         }
         view?.updateSumMoney(sumMoney: sumMoney)
     }
+
+    private var date = Date()
 }
