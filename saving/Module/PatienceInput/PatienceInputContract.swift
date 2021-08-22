@@ -8,6 +8,9 @@ protocol PatienceInputWireframe {
 
     ///  登録画面を閉じる
     func closeInputView()
+
+    /// カレンダー画面で表示されているモーダルを閉じる
+    func closeModalInCalendar()
 }
 
 protocol PatienceInputView {

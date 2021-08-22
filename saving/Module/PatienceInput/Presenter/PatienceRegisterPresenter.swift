@@ -8,6 +8,8 @@ class PatienceRegisterPresenter: PatienceRegisterPresentation, PatienceInputInte
 
     var router: PatienceInputWireframe!
 
+    var isCalendarModal: Bool = false
+
     func didTapRegisterButton(date: Date, memo: String, money: Int, categoryTitle: String) {
         interactor.registerPatienceData(record: PatienceEntity(id: 0, registeredAt: date, memo: memo, money: money, categoryTitle: categoryTitle))
     }
@@ -18,6 +20,9 @@ class PatienceRegisterPresenter: PatienceRegisterPresentation, PatienceInputInte
     }
 
     func outputInputSuccess() {
+        if isCalendarModal {
+            router.closeModalInCalendar()
+        }
         view?.showSuccess(message: L10n.PatienceRegisterPresenter.StatusNotification.RegisterSuccess.title)
     }
 }
