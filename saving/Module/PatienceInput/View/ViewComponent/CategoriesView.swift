@@ -2,9 +2,9 @@ import Foundation
 import UIKit
 
 /// カテゴリーView
-class CategoriesView: UIView {
+class CategoriesView: PatienceInputViewComponent {
     /// 選択されたカテゴリータイトル
-    var selectedCategoryTitle: String = L10n.CategoryIcon.Title.pizzaSlice {
+    var selectedCategoryTitle: String = Category.pizzaSlice.title {
         didSet {
             categoriesView.reloadData()
         }
@@ -18,6 +18,10 @@ class CategoriesView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         construct()
+    }
+
+    override func resetView() {
+        selectedCategoryTitle = Category.pizzaSlice.title
     }
 
     private func construct() {

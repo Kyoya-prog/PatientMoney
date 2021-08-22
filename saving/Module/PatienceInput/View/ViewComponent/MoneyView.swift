@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class MoneyView: UIView {
+class MoneyView: PatienceInputViewComponent {
     /// 金額
     var money: Int? {
         get {
@@ -22,6 +22,10 @@ class MoneyView: UIView {
         construct()
     }
 
+    override func resetView() {
+        moneyTextField.text = nil
+    }
+
     // MARK: Private
 
     private func construct() {
@@ -40,7 +44,7 @@ class MoneyView: UIView {
         moneyTextField.layer.cornerRadius = 4
         moneyTextField.keyboardType = .numberPad
         moneyTextField.textColor = UIColor.black
-        moneyTextField.text = "0"
+        moneyTextField.placeholder = "0"
         addSubview(moneyTextField)
 
         moneyTextField.inputAccessoryView = keyboardToolbar

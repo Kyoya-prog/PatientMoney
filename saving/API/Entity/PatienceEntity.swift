@@ -3,7 +3,7 @@ import Foundation
 struct PatienceEntity: Decodable {
     let id: Int
     let registeredAt: Date
-    let memo: String
+    let memo: String?
     let money: Int
     let categoryTitle: String
 

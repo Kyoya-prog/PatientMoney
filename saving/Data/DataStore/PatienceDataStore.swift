@@ -4,7 +4,7 @@ import RxSwift
 class PatienceDataStore: PatienceRepository {
     func registerPatienceData(record: PatienceEntity) -> Single<PatienceEntity> {
         Single.create { observer -> Disposable in
-            ApiClient.shared.request(CreatePatienceTargetType(registeredAt: record.registeredAt, money: record.money, memo: record.memo, categoryTitle: record.categoryTitle)) { result in
+            ApiClient.shared.request(CreatePatienceTargetType(registeredAt: record.registeredAt, money: record.money, memo: record.memo ?? "", categoryTitle: record.categoryTitle)) { result in
                 switch result {
                 case let .success(record):
                     observer(.success(record))

@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class MemoView: UIView {
+class MemoView: PatienceInputViewComponent {
     /// メモ
     var memo: String {
         get {
@@ -22,6 +22,11 @@ class MemoView: UIView {
         construct()
     }
 
+    override func resetView() {
+        memoTextView.text = L10n.MemoView.MemoTextView.placeholder
+        memoTextView.textColor = UIColor.lightGray
+    }
+
     // MARK: Private
     private func construct() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -35,9 +40,10 @@ class MemoView: UIView {
         memoTextView.backgroundColor = UIColor(hex: "DCDCDC")
         memoTextView.font = UIFont.systemFont(ofSize: 20)
         memoTextView.textContainerInset = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
-        memoTextView.text = L10n.MemoView.MemoTextView.text
+        memoTextView.text = L10n.MemoView.MemoTextView.placeholder
         memoTextView.isScrollEnabled = false
-        memoTextView.textColor = UIColor.black
+        memoTextView.textColor = UIColor.lightGray
+        memoTextView.delegate = self
         addSubview(memoTextView)
 
         memoTextView.inputAccessoryView = keyboardToolbar
@@ -70,5 +76,21 @@ class MemoView: UIView {
 
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
         memoTextView.endEditing(true)
+    }
+}
+
+extension MemoView: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text == "" {
+            textView.text = L10n.MemoView.MemoTextView.placeholder
+            textView.textColor = UIColor.lightGray
+        }
     }
 }

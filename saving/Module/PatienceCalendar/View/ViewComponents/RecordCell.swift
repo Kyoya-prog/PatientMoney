@@ -4,7 +4,7 @@ class RecordCell: UITableViewCell {
     static let reuseIdentifer = "patience-record"
 
     /// カテゴリータイトル
-    var categoryTitle = L10n.CategoryIcon.Title.pizzaSlice {
+    var categoryTitle = Category.pizzaSlice.title {
         didSet {
             updateValue()
         }
