@@ -4,9 +4,10 @@ import UIKit.UIViewController
 class PatienceInputRouter: PatienceInputWireframe {
     var viewController: UIViewController?
 
-    static func assembleRegisterModule(date: Date? = nil) -> UIViewController {
+    static func assembleRegisterModule(date: Date? = nil, isCalendarModal: Bool = false) -> UIViewController {
         let registerView = PatienceInputViewController(isNewRecord: true)
         let presenter = PatienceRegisterPresenter()
+        presenter.isCalendarModal = isCalendarModal
         let interactor = PatienceInputInteractor()
         let datastore = PatienceDataStore()
         let router = PatienceInputRouter()
@@ -50,5 +51,9 @@ class PatienceInputRouter: PatienceInputWireframe {
 
     func closeInputView() {
         viewController?.navigationController?.popViewController(animated: true)
+    }
+
+    func closeModalInCalendar() {
+        viewController?.dismiss(animated: true, completion: nil)
     }
 }

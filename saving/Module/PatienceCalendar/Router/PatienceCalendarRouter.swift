@@ -31,7 +31,7 @@ class PatienceCalendarRouter: PatienceCalendarWireframe {
     var viewController: UIViewController?
 
     func presentRegisterModal(date: Date) {
-        let registerView = PatienceInputRouter.assembleRegisterModule(date: date)
+        let registerView = PatienceInputRouter.assembleRegisterModule(date: date, isCalendarModal: true)
         registerView.presentationController?.delegate = viewController as? PatienceCalenderViewController
         viewController?.present(registerView, animated: true, completion: nil)
     }

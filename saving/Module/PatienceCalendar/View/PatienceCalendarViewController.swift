@@ -112,7 +112,6 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
         if editingStyle == .delete {
             willDeleteRowValue = indexPath.item
             let id = records[indexPath.item].id
-            let money = records[indexPath.item].money
             presenter.didTapDeleteButton(id: id)
         }
     }
