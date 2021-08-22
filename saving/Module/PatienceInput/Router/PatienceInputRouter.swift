@@ -32,7 +32,7 @@ class PatienceInputRouter: PatienceInputWireframe {
         let router = PatienceInputRouter()
 
         registerView.dateRecord = record.registeredAt
-        registerView.memoRecord = record.memo
+        registerView.memoRecord = record.memo ?? ""
         registerView.moneyRecord = record.money
         registerView.categoryTitleRecord = record.categoryTitle
         presenter.id = record.id
