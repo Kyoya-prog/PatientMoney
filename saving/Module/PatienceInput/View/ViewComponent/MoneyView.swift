@@ -40,7 +40,7 @@ class MoneyView: UIView {
         moneyTextField.layer.cornerRadius = 4
         moneyTextField.keyboardType = .numberPad
         moneyTextField.textColor = UIColor.black
-        moneyTextField.text = "0"
+        moneyTextField.placeholder = "0"
         addSubview(moneyTextField)
 
         moneyTextField.inputAccessoryView = keyboardToolbar
