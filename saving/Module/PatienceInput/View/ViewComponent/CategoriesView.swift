@@ -4,7 +4,7 @@ import UIKit
 /// カテゴリーView
 class CategoriesView: PatienceInputViewComponent {
     /// 選択されたカテゴリータイトル
-    var selectedCategoryTitle: String = L10n.CategoryIcon.Title.pizzaSlice {
+    var selectedCategoryTitle: String = Category.pizzaSlice.title {
         didSet {
             categoriesView.reloadData()
         }

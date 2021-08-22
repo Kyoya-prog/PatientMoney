@@ -5,12 +5,9 @@ class CategoryCell: UICollectionViewCell {
     static let reuseIdentifer = "category-cell"
 
     /// アイコン
-    var icon: FontAwesome.Icon {
-        get {
-            .pizzaSlice
-        }
-        set {
-            iconLabel.attributedText = NSAttributedString.icon(newValue, size: 50, style: .solid)
+    var icon: FontAwesome.Icon = .pizzaSlice {
+        didSet {
+            iconLabel.attributedText = NSAttributedString.icon(icon, size: 50, style: .solid)
         }
     }
 
