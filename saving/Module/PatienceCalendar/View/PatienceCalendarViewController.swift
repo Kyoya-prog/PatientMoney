@@ -10,7 +10,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
         }
     }
     ///  選択されている日付
-    var selectedDate = PaticuralDayFetcher.getStartDay(date: Date()) {
+    var selectedDate = Date().zeroclock {
         didSet {
             presenter.selectedDateDidChange(date: selectedDate)
             recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: selectedDate)
@@ -117,13 +117,13 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        recordListHeaderView.title = DateAndStringConverter.stringFromDate(date: selectedDate, format: DateAndStringConverter.dateFormatJapanese)
+        recordListHeaderView.title = DateStringConverter.stringFromDate(date: selectedDate, format: DateStringConverter.dateFormatJapanese)
         recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: selectedDate)
         return recordListHeaderView
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        DateAndStringConverter.stringFromDate(date: Date(), format: DateAndStringConverter.dateFormatJapanese)
+        DateStringConverter.stringFromDate(date: Date(), format: DateStringConverter.dateFormatJapanese)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         records.count
@@ -148,8 +148,8 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
 // MARK: FSCalendarDelegate, FSCalendarDataSource
 extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        self.selectedDate = PaticuralDayFetcher.getStartDay(date: date)
-        recordListHeaderView.title = DateAndStringConverter.stringFromDate(date: date, format: DateAndStringConverter.dateFormatJapanese)
+        self.selectedDate = date.zeroclock
+        recordListHeaderView.title = DateStringConverter.stringFromDate(date: date, format: DateStringConverter.dateFormatJapanese)
     }
 
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {

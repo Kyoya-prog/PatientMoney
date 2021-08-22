@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3D0B340A26999BBE00C9DDB0 /* Charts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */; };
+		3D1EB49226D119140055CF6E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1EB49126D119140055CF6E /* DateExtension.swift */; };
+		3D1EB49426D119CD0055CF6E /* TimeZoneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1EB49326D119CD0055CF6E /* TimeZoneExtension.swift */; };
+		3D1EB49626D119E30055CF6E /* LocaleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1EB49526D119E30055CF6E /* LocaleExtension.swift */; };
 		3D205C6326381C820058064C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D205C6226381C820058064C /* Localizable.strings */; };
 		3D2A1E8126C685FF0013F247 /* APITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8026C685FF0013F247 /* APITargetType.swift */; };
 		3D2A1E8326C687090013F247 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8226C687090013F247 /* APIClient.swift */; };
@@ -44,7 +47,6 @@
 		3D6B1009263E9A82009D21A1 /* PatienceInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B1008263E9A82009D21A1 /* PatienceInputViewController.swift */; };
 		3D6DFF2A26353E3E00C30DD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF2926353E3E00C30DD1 /* AppDelegate.swift */; };
 		3D6DFF3326353E3F00C30DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFF3226353E3F00C30DD1 /* Assets.xcassets */; };
-		3D6DFF4126353E3F00C30DD1 /* PatientMoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF4026353E3F00C30DD1 /* PatientMoneyTests.swift */; };
 		3D6DFF4C26353E3F00C30DD1 /* PatientMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF4B26353E3F00C30DD1 /* PatientMoneyUITests.swift */; };
 		3D6DFF80263546EA00C30DD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */; };
 		3D6DFFB7263554B900C30DD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */; };
@@ -74,7 +76,6 @@
 		3DDFCC6926CA900C00E3D1A2 /* CheckTokenTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFCC6826CA900C00E3D1A2 /* CheckTokenTargetType.swift */; };
 		3DE103C82638360000F724B8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103C72638360000F724B8 /* Strings.swift */; };
 		3DE103CC2638360800F724B8 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103CB2638360800F724B8 /* Asset.swift */; };
-		3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */; };
 		3DE103E6263ACBE100F724B8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103E5263ACBE100F724B8 /* AuthViewController.swift */; };
 		3DE103ED263AE65A00F724B8 /* ColorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */; };
 		3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */; };
@@ -132,6 +133,9 @@
 
 /* Begin PBXFileReference section */
 		3D0B344526999E4800C9DDB0 /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
+		3D1EB49126D119140055CF6E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		3D1EB49326D119CD0055CF6E /* TimeZoneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneExtension.swift; sourceTree = "<group>"; };
+		3D1EB49526D119E30055CF6E /* LocaleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleExtension.swift; sourceTree = "<group>"; };
 		3D205C6226381C820058064C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3D2A1E8026C685FF0013F247 /* APITargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITargetType.swift; sourceTree = "<group>"; };
 		3D2A1E8226C687090013F247 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -168,7 +172,6 @@
 		3D6DFF3226353E3F00C30DD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D6DFF3726353E3F00C30DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D6DFF3C26353E3F00C30DD1 /* savingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = savingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D6DFF4026353E3F00C30DD1 /* PatientMoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientMoneyTests.swift; sourceTree = "<group>"; };
 		3D6DFF4226353E3F00C30DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D6DFF4726353E3F00C30DD1 /* savingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = savingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6DFF4B26353E3F00C30DD1 /* PatientMoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientMoneyUITests.swift; sourceTree = "<group>"; };
@@ -197,7 +200,6 @@
 		3DDFCC6826CA900C00E3D1A2 /* CheckTokenTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTokenTargetType.swift; sourceTree = "<group>"; };
 		3DE103C72638360000F724B8 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Generated/Strings.swift; sourceTree = "<group>"; };
 		3DE103CB2638360800F724B8 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Generated/Asset.swift; sourceTree = "<group>"; };
-		3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		3DE103E5263ACBE100F724B8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtension.swift; sourceTree = "<group>"; };
 		3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceTextField.swift; sourceTree = "<group>"; };
@@ -394,13 +396,6 @@
 			path = HeightSelfSizing;
 			sourceTree = "<group>";
 		};
-		3D6963DC2678D21C00368810 /* CollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CollectionViewCell;
-			sourceTree = "<group>";
-		};
 		3D6B0FEA263E713E009D21A1 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,7 +447,6 @@
 				3D6B0FEA263E713E009D21A1 /* Util */,
 				3DE103F2263AE67100F724B8 /* ViewComponent */,
 				3DE103EB263AE64900F724B8 /* Extension */,
-				3DE103D6263A803A00F724B8 /* Firebase */,
 				3D205C6726381E160058064C /* Generated */,
 				3D205C6626381D4C0058064C /* Resources */,
 				3D6DFFB52635548E00C30DD1 /* GoogleServiceInfo */,
@@ -466,7 +460,6 @@
 		3D6DFF3F26353E3F00C30DD1 /* savingTests */ = {
 			isa = PBXGroup;
 			children = (
-				3D6DFF4026353E3F00C30DD1 /* PatientMoneyTests.swift */,
 				3D6DFF4226353E3F00C30DD1 /* Info.plist */,
 				3D55A059267CAF02006422BC /* SelectableDatePickStyleTextFieldTest.swift */,
 			);
@@ -557,14 +550,6 @@
 			path = ViewComponent;
 			sourceTree = "<group>";
 		};
-		3DE103D6263A803A00F724B8 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				3DE103D7263A804E00F724B8 /* FirebaseAuthManager.swift */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
 		3DE103E3263ACBC900F724B8 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,6 +577,9 @@
 			children = (
 				3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */,
 				3DE10499263D36E900F724B8 /* NSAttributedStrinfExtension.swift */,
+				3D1EB49126D119140055CF6E /* DateExtension.swift */,
+				3D1EB49326D119CD0055CF6E /* TimeZoneExtension.swift */,
+				3D1EB49526D119E30055CF6E /* LocaleExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -599,7 +587,6 @@
 		3DE103F2263AE67100F724B8 /* ViewComponent */ = {
 			isa = PBXGroup;
 			children = (
-				3D6963DC2678D21C00368810 /* CollectionViewCell */,
 				3D6963DA2678D17B00368810 /* HeightSelfSizing */,
 				3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */,
 				3DE10419263BEDE900F724B8 /* FlatButton.swift */,
@@ -919,10 +906,13 @@
 				3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */,
 				3D3A3231263F074F00077B6D /* PatienceInputInteractor.swift in Sources */,
 				3D9FEC2E2667FB1A008A77FC /* PatienceAnalyzeInteractor.swift in Sources */,
+				3D1EB49226D119140055CF6E /* DateExtension.swift in Sources */,
+				3D1EB49426D119CD0055CF6E /* TimeZoneExtension.swift in Sources */,
 				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
 				3D2A1E8526C69CFF0013F247 /* SignUpTargetType.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
 				3DDFCC5E26C79A0A00E3D1A2 /*  AuthDataStore.swift in Sources */,
+				3D1EB49626D119E30055CF6E /* LocaleExtension.swift in Sources */,
 				3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */,
 				3D2A1E8826C69E200013F247 /* TokenEntity.swift in Sources */,
 				3DB5C5C726CF7F10005E3299 /* PatiencePerMonthTargetType.swift in Sources */,
@@ -950,7 +940,6 @@
 				3D2A1E8A26C6A00D0013F247 /* SignInTargetType.swift in Sources */,
 				3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */,
 				3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */,
-				3DE103D8263A804E00F724B8 /* FirebaseAuthManager.swift in Sources */,
 				3DB5C5C926CF8FA4005E3299 /* DeletePatienceTargetType.swift in Sources */,
 				3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */,
 			);
@@ -961,7 +950,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D55A05A267CAF02006422BC /* SelectableDatePickStyleTextFieldTest.swift in Sources */,
-				3D6DFF4126353E3F00C30DD1 /* PatientMoneyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1166,14 +1154,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87QA297FUT;
-				INFOPLIST_FILE = PatientMoneyTests/Info.plist;
+				INFOPLIST_FILE = savingTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.kyoyaprog.PatientMoneyTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.kyoyaprog.savingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1188,14 +1176,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87QA297FUT;
-				INFOPLIST_FILE = PatientMoneyTests/Info.plist;
+				INFOPLIST_FILE = savingTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.kyoyaprog.PatientMoneyTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.kyoyaprog.savingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1209,13 +1197,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87QA297FUT;
-				INFOPLIST_FILE = PatientMoneyUITests/Info.plist;
+				INFOPLIST_FILE = savingUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.kyoyaprog.PatientMoneyUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.kyoyaprog.savingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1229,13 +1217,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87QA297FUT;
-				INFOPLIST_FILE = PatientMoneyUITests/Info.plist;
+				INFOPLIST_FILE = savingUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.kyoyaprog.PatientMoneyUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.kyoyaprog.savingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

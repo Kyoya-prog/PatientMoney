@@ -5,10 +5,10 @@ class DateView: UIView {
     /// 入力された日付
     var selectedDate: Date {
         get {
-            DateAndStringConverter.dateFromString(string: dateTextField.text ?? "", format: DateAndStringConverter.dateFormatJapanese)
+            DateStringConverter.dateFromString(string: dateTextField.text ?? "", format: DateStringConverter.dateFormatJapanese).zeroclock
         }
         set {
-            dateTextField.text = DateAndStringConverter.stringFromDate(date: newValue, format: DateAndStringConverter.dateFormatJapanese)
+            dateTextField.text = DateStringConverter.stringFromDate(date: newValue, format: DateStringConverter.dateFormatJapanese)
         }
     }
 
@@ -54,6 +54,6 @@ class DateView: UIView {
 
 extension DateView: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        selectedDate = dateTextField.selectedDate.date
+        selectedDate = dateTextField.selectedDate
     }
 }

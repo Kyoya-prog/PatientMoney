@@ -20,9 +20,9 @@ class PatienceCalendarInteractor: PatienceCalendarUsecase {
             }.disposed(by: disposeBag)
     }
 
-    func fetchDataFromMonth(year: Int, month: Int) {
-        let startDate = PaticuralDayFetcher.getBeginningMonth(year: year, month: month)
-        let endDate = PaticuralDayFetcher.getEndMonth(year: year, month: month)
+    func fetchDataFromMonth(date: Date) {
+        let startDate = date.beginMonth
+        let endDate = date.endMonth
         repository.fetchPatienceData(startDate: startDate, endDate: endDate).subscribe { [weak self]observer in
             switch observer {
             case .success(let records):
