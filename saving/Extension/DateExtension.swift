@@ -70,16 +70,15 @@ extension Date {
     }
 
     var zeroclock: Date {
-        // APIリクエスト時にDate型そのままで送るとUTC時間になり、９時間前の時間になるので、９時間追加する
-        return fixed(hour: 9, minute: 0, second: 0)
+        return fixed(hour: 0, minute: 0, second: 0)
     }
 
     var beginMonth: Date {
-        fixed(day: 1, hour: 9, minute: 0, second: 0)
+        fixed(day: 1, hour: 0, minute: 0, second: 0)
     }
 
     var endMonth: Date {
-        fixed(month: month + 1, day: 0, hour: 9, minute: 0, second: 0)
+        fixed(month: month + 1, day: 0, hour: 0, minute: 0, second: 0)
     }
 
     func getDateText(format: String) -> String {
