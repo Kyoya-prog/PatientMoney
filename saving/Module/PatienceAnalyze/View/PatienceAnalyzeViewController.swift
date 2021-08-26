@@ -46,6 +46,12 @@ class PatienceAnalyzeViewController: UIViewController, PatienceAnalyzeView {
         ])
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let date = DateStringConverter.dateFromString(string: textField.text ?? "", format: DateStringConverter.dateFormatJapanese)
+        presentation.didChangeDate(date: date, isSingleDaySelect: !self.checkView.isChecked)
+    }
+
     private let vstack = UIStackView()
 
     private let textField = SelectableDateStylePickerTextField()

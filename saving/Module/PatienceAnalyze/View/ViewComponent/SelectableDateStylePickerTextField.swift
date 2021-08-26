@@ -15,7 +15,7 @@ class SelectableDateStylePickerTextField: PatienceTextField {
 
     var isSingleDaySelect = true {
         didSet {
-            updatePickStyle()
+            updateDisplay()
         }
     }
 
@@ -42,7 +42,7 @@ class SelectableDateStylePickerTextField: PatienceTextField {
 
         setUpYearAndMonthPickerView()
         setUpDatePickerView()
-        updatePickStyle()
+        updateDisplay()
     }
 
     private func setUpYearAndMonthPickerView() {
@@ -59,11 +59,13 @@ class SelectableDateStylePickerTextField: PatienceTextField {
         datePickerView.locale = .current
     }
 
-    private func updatePickStyle() {
+    private func updateDisplay() {
         if isSingleDaySelect {
+            text = selectedDate.getDateText(format: DateStringConverter.dateFormatJapanese)
             datePickerView.date = selectedDate
             inputView = datePickerView
         } else {
+            text = selectedDate.getDateText(format: DateStringConverter.monthFormatJapanese)
             inputView = yearAndMonthPickerView
         }
         dateChangeAction?(selectedDate)
