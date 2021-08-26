@@ -135,7 +135,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3D0B344526999E4800C9DDB0 /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
 		3D1EB49126D119140055CF6E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		3D1EB49326D119CD0055CF6E /* TimeZoneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneExtension.swift; sourceTree = "<group>"; };
 		3D1EB49526D119E30055CF6E /* LocaleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleExtension.swift; sourceTree = "<group>"; };
@@ -263,7 +262,6 @@
 		3D205C6626381D4C0058064C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3D0B344526999E4800C9DDB0 /* gRPCCertificates-Cpp.bundle */,
 				3DE104AB263D384100F724B8 /* Font */,
 				3D6DFF3226353E3F00C30DD1 /* Assets.xcassets */,
 				3D205C6226381C820058064C /* Localizable.strings */,
