@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D0B340A26999BBE00C9DDB0 /* Charts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */; };
 		3D1EB49226D119140055CF6E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1EB49126D119140055CF6E /* DateExtension.swift */; };
 		3D1EB49426D119CD0055CF6E /* TimeZoneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1EB49326D119CD0055CF6E /* TimeZoneExtension.swift */; };
 		3D1EB49626D119E30055CF6E /* LocaleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1EB49526D119E30055CF6E /* LocaleExtension.swift */; };
@@ -51,6 +50,8 @@
 		3D6DFF4C26353E3F00C30DD1 /* PatientMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF4B26353E3F00C30DD1 /* PatientMoneyUITests.swift */; };
 		3D6DFF80263546EA00C30DD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */; };
 		3D6DFFB7263554B900C30DD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */; };
+		3D80D0E326D7E0D5005BAAEC /* Charts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */; };
+		3D80D0E426D7E0D5005BAAEC /* Charts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D9FEC2226679755008A77FC /* PatienceAnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2126679755008A77FC /* PatienceAnalyzeViewController.swift */; };
 		3D9FEC2C2667A95D008A77FC /* SelectableDateStylePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2B2667A95D008A77FC /* SelectableDateStylePickerTextField.swift */; };
 		3D9FEC2E2667FB1A008A77FC /* PatienceAnalyzeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2D2667FB1A008A77FC /* PatienceAnalyzeInteractor.swift */; };
@@ -125,6 +126,7 @@
 			files = (
 				3D3A3223263EEFE000077B6D /* NotificationBanner.xcframework in Embed Frameworks */,
 				3DB5C5CD26CF96EA005E3299 /* SnapKit.xcframework in Embed Frameworks */,
+				3D80D0E426D7E0D5005BAAEC /* Charts.xcframework in Embed Frameworks */,
 				3D3A3221263EEFE000077B6D /* MarqueeLabel.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -230,7 +232,7 @@
 			files = (
 				3DDFCC6526C7BF0800E3D1A2 /* RxMoya in Frameworks */,
 				3DE952DA2643B35E004AF23D /* FSCalendar in Frameworks */,
-				3D0B340A26999BBE00C9DDB0 /* Charts.xcframework in Frameworks */,
+				3D80D0E326D7E0D5005BAAEC /* Charts.xcframework in Frameworks */,
 				3D3A3220263EEFE000077B6D /* MarqueeLabel.xcframework in Frameworks */,
 				3DB5C5CC26CF96EA005E3299 /* SnapKit.xcframework in Frameworks */,
 				3DDFCC6326C7BF0800E3D1A2 /* ReactiveMoya in Frameworks */,
