@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D0B340A26999BBE00C9DDB0 /* Charts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */; };
 		3D1EB49226D119140055CF6E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1EB49126D119140055CF6E /* DateExtension.swift */; };
 		3D1EB49426D119CD0055CF6E /* TimeZoneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1EB49326D119CD0055CF6E /* TimeZoneExtension.swift */; };
 		3D1EB49626D119E30055CF6E /* LocaleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1EB49526D119E30055CF6E /* LocaleExtension.swift */; };
@@ -25,9 +24,7 @@
 		3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */; };
 		3D3A3216263EE0F700077B6D /* PatienceInputContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3215263EE0F700077B6D /* PatienceInputContract.swift */; };
 		3D3A321A263EEEA000077B6D /* StatusNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3219263EEEA000077B6D /* StatusNotification.swift */; };
-		3D3A3220263EEFE000077B6D /* MarqueeLabel.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */; };
 		3D3A3221263EEFE000077B6D /* MarqueeLabel.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3D3A3222263EEFE000077B6D /* NotificationBanner.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321E263EEFE000077B6D /* NotificationBanner.xcframework */; };
 		3D3A3223263EEFE000077B6D /* NotificationBanner.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321E263EEFE000077B6D /* NotificationBanner.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D3A322A263EF37F00077B6D /* PatienceRegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3229263EF37F00077B6D /* PatienceRegisterPresenter.swift */; };
 		3D3A3231263F074F00077B6D /* PatienceInputInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A3230263F074F00077B6D /* PatienceInputInteractor.swift */; };
@@ -51,6 +48,11 @@
 		3D6DFF4C26353E3F00C30DD1 /* PatientMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6DFF4B26353E3F00C30DD1 /* PatientMoneyUITests.swift */; };
 		3D6DFF80263546EA00C30DD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFF7F263546EA00C30DD1 /* LaunchScreen.storyboard */; };
 		3D6DFFB7263554B900C30DD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D6DFFB6263554B900C30DD1 /* GoogleService-Info.plist */; };
+		3D80D0DD26D7DDA9005BAAEC /* NotificationBanner.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321E263EEFE000077B6D /* NotificationBanner.xcframework */; };
+		3D80D0DE26D7DDB5005BAAEC /* MarqueeLabel.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321D263EEFE000077B6D /* MarqueeLabel.xcframework */; };
+		3D80D0DF26D7DDC7005BAAEC /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; };
+		3D80D0E126D7DEAA005BAAEC /* Charts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */; };
+		3D80D0E226D7DEAA005BAAEC /* Charts.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D9FEC2226679755008A77FC /* PatienceAnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2126679755008A77FC /* PatienceAnalyzeViewController.swift */; };
 		3D9FEC2C2667A95D008A77FC /* SelectableDateStylePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2B2667A95D008A77FC /* SelectableDateStylePickerTextField.swift */; };
 		3D9FEC2E2667FB1A008A77FC /* PatienceAnalyzeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2D2667FB1A008A77FC /* PatienceAnalyzeInteractor.swift */; };
@@ -64,7 +66,6 @@
 		3DB5C5C726CF7F10005E3299 /* PatiencePerMonthTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5C626CF7F10005E3299 /* PatiencePerMonthTargetType.swift */; };
 		3DB5C5C926CF8FA4005E3299 /* DeletePatienceTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5C826CF8FA4005E3299 /* DeletePatienceTargetType.swift */; };
 		3DB5C5CB26CF9046005E3299 /* SimpleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5CA26CF9046005E3299 /* SimpleEntity.swift */; };
-		3DB5C5CC26CF96EA005E3299 /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; };
 		3DB5C5CD26CF96EA005E3299 /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A321F263EEFE000077B6D /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */; };
 		3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */; };
@@ -125,6 +126,7 @@
 			files = (
 				3D3A3223263EEFE000077B6D /* NotificationBanner.xcframework in Embed Frameworks */,
 				3DB5C5CD26CF96EA005E3299 /* SnapKit.xcframework in Embed Frameworks */,
+				3D80D0E226D7DEAA005BAAEC /* Charts.xcframework in Embed Frameworks */,
 				3D3A3221263EEFE000077B6D /* MarqueeLabel.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -228,13 +230,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D80D0DF26D7DDC7005BAAEC /* SnapKit.xcframework in Frameworks */,
+				3D80D0DE26D7DDB5005BAAEC /* MarqueeLabel.xcframework in Frameworks */,
+				3D80D0E126D7DEAA005BAAEC /* Charts.xcframework in Frameworks */,
+				3D80D0DD26D7DDA9005BAAEC /* NotificationBanner.xcframework in Frameworks */,
 				3DDFCC6526C7BF0800E3D1A2 /* RxMoya in Frameworks */,
 				3DE952DA2643B35E004AF23D /* FSCalendar in Frameworks */,
-				3D0B340A26999BBE00C9DDB0 /* Charts.xcframework in Frameworks */,
-				3D3A3220263EEFE000077B6D /* MarqueeLabel.xcframework in Frameworks */,
-				3DB5C5CC26CF96EA005E3299 /* SnapKit.xcframework in Frameworks */,
 				3DDFCC6326C7BF0800E3D1A2 /* ReactiveMoya in Frameworks */,
-				3D3A3222263EEFE000077B6D /* NotificationBanner.xcframework in Frameworks */,
 				3D55A061267F2899006422BC /* Algorithms in Frameworks */,
 				3D2A1E8D26C6A07F0013F247 /* KeychainAccess in Frameworks */,
 				3DDFCC6126C7BF0800E3D1A2 /* Moya in Frameworks */,
@@ -1114,8 +1116,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.5;
-				OTHER_LDFLAGS = "-ObjC";
+				MARKETING_VERSION = 1.7.5;
+				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.kyoyaprog.PatientMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1141,8 +1143,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.5;
-				OTHER_LDFLAGS = "-ObjC";
+				MARKETING_VERSION = 1.7.5;
+				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.kyoyaprog.PatientMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -70,7 +70,7 @@ extension Date {
     }
 
     var zeroclock: Date {
-        return fixed(hour: 0, minute: 0, second: 0)
+        fixed(hour: 0, minute: 0, second: 0)
     }
 
     var beginMonth: Date {
