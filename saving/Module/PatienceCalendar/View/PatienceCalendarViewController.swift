@@ -10,7 +10,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
         }
     }
     ///  選択されている日付
-    var selectedDate = Date().zeroclock {
+    var selectedDate = Date().zeroClock {
         didSet {
             presenter.selectedDateDidChange(date: selectedDate)
             recordListHeaderView.selectedMonth = Calendar(identifier: .gregorian).component(.month, from: selectedDate)
