@@ -69,7 +69,7 @@ extension Date {
         return calendar
     }
 
-    var zeroclock: Date {
+    var zeroClock: Date {
         fixed(hour: 0, minute: 0, second: 0)
     }
 
