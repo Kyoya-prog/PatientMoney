@@ -21,7 +21,7 @@ class PatienceCalendarPresenter: PatienceCalendarPresentation, PatienceCalendarI
     }
 
     func selectedDateDidChange(date: Date) {
-        interactor.fetchPatienceData(date: date.zeroclock)
+        interactor.fetchPatienceData(date: date)
         interactor.fetchDataFromMonth(date: date)
         self.date = date
     }

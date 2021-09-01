@@ -5,7 +5,7 @@ class DateView: PatienceInputViewComponent {
     /// 入力された日付
     var selectedDate: Date {
         get {
-            DateStringConverter.dateFromString(string: dateTextField.text ?? "", format: DateStringConverter.dateFormatJapanese).zeroclock
+            DateStringConverter.dateFromString(string: dateTextField.text ?? "", format: DateStringConverter.dateFormatJapanese)
         }
         set {
             dateTextField.text = DateStringConverter.stringFromDate(date: newValue, format: DateStringConverter.dateFormatJapanese)
