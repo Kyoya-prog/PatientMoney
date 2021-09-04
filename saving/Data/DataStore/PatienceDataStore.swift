@@ -17,7 +17,7 @@ class PatienceDataStore: PatienceRepository {
         }
     }
 
-    func fetchPatienceData(date: Date) -> Single<[PatienceEntity]> {
+    func fetchPatienceDataForDay(date: Date) -> Single<[PatienceEntity]> {
         Single.create { observer -> Disposable in
             ApiClient.shared.request(PatiencePerDateTargetType(date: date)) { result in
                 switch result {
@@ -32,9 +32,9 @@ class PatienceDataStore: PatienceRepository {
         }
     }
 
-    func fetchPatienceData(startDate: Date, endDate: Date) -> Single<[PatienceEntity]> {
+    func fetchPatienceDataForMonth(date: Date) -> Single<[PatienceEntity]> {
         Single.create { observer -> Disposable in
-            ApiClient.shared.request(PatiencePerMonthTargetType(startDate: startDate, endDate: endDate)) { result in
+            ApiClient.shared.request(PatiencePerMonthTargetType(date: date)) { result in
                 switch result {
                 case let .success(record):
                     observer(.success(record.patiences))

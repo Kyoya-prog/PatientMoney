@@ -87,12 +87,11 @@ protocol PatienceRepository {
 
     /// データをフェッチする
     /// - parameter data:日付
-    func fetchPatienceData(date: Date) -> Single<[PatienceEntity]>
+    func fetchPatienceDataForDay(date: Date) -> Single<[PatienceEntity]>
 
-    /// 指定期間のデータをフェッチする
-    /// - parameter startDate:開始日
-    /// - parameter endDate:終了日
-    func fetchPatienceData(startDate: Date, endDate: Date) -> Single<[PatienceEntity]>
+    /// 指定日月のデータをフェッチする
+    /// - parameter date:指定日
+    func fetchPatienceDataForMonth(date: Date) -> Single<[PatienceEntity]>
 
     /// データをupdateする
     /// - parameter id:ID

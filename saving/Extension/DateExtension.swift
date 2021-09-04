@@ -69,16 +69,8 @@ extension Date {
         return calendar
     }
 
-    var zeroClock: Date {
-        fixed(hour: 0, minute: 0, second: 0)
-    }
-
     var beginMonth: Date {
         fixed(day: 1, hour: 0, minute: 0, second: 0)
-    }
-
-    var endMonth: Date {
-        fixed(month: month + 1, day: 0, hour: 0, minute: 0, second: 0)
     }
 
     func getDateText(format: String) -> String {

@@ -7,9 +7,7 @@ class PatienceAnalyzeInteractor: PatienceAnalyzeUsecase {
     var output: PatienceAnalyzeOutput?
 
     func fetchDataFromMonth(date: Date) {
-        let startDate = date.beginMonth
-        let endDate = date.endMonth
-        repository.fetchPatienceData(startDate: startDate, endDate: endDate).subscribe { [weak self] observer in
+        repository.fetchPatienceDataForMonth(date: date).subscribe { [weak self] observer in
             switch observer {
             case .success(let records):
                 self?.output?.outputFetchRecords(records: records)
@@ -21,7 +19,7 @@ class PatienceAnalyzeInteractor: PatienceAnalyzeUsecase {
     }
 
     func fetchDataFromDate(date: Date) {
-        repository.fetchPatienceData(date: date).subscribe { [weak self] observer in
+        repository.fetchPatienceDataForDay(date: date).subscribe { [weak self] observer in
             switch observer {
             case .success(let records):
                 self?.output?.outputFetchRecords(records: records)
