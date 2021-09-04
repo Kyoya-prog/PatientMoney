@@ -3,7 +3,7 @@ import UIKit
 
 /// 日付のピック方法を選べるdatePickerTextField
 class SelectableDateStylePickerTextField: PatienceTextField {
-    var selectedDate = Date().zeroClock {
+    var selectedDate = Date() {
         didSet {
             if isSingleDaySelect {
                 text = selectedDate.getDateText(format: DateStringConverter.dateFormatJapanese)
@@ -97,7 +97,7 @@ class SelectableDateStylePickerTextField: PatienceTextField {
     }()
 
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
-        selectedDate = datePickerView.date.zeroClock
+        selectedDate = datePickerView.date
         endEditing(true)
         dateChangeAction?(selectedDate)
     }
