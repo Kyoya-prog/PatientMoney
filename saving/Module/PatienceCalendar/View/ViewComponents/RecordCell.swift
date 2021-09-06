@@ -71,4 +71,9 @@ class RecordCell: UITableViewCell {
 
         moneyLabel.text = String(money) + "円"
     }
+
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: true)
+        contentView.alpha = highlighted ? 0.7 : 1.0
+    }
 }
