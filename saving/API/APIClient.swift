@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 protocol ApiClientInterface {
-    func request<T: ApiTargetType>(_ request: T, callbackQueue: DispatchQueue, completion: @escaping (Result<T.Response, MoyaResponseError>) -> Void)
+    func request<T: ApiTargetType>(_ request: T, callbackQueue: DispatchQueue, completion: @escaping (Result<T.Response, Error>) -> Void)
 }
 
 class ApiClient: ApiClientInterface {
@@ -10,7 +10,7 @@ class ApiClient: ApiClientInterface {
 
     static let shared = ApiClient()
 
-    func request<T>(_ request: T, callbackQueue: DispatchQueue = .main, completion: @escaping (Result<T.Response, MoyaResponseError>) -> Void) where T: ApiTargetType {
+    func request<T>(_ request: T, callbackQueue: DispatchQueue = .main, completion: @escaping (Result<T.Response, Error>) -> Void) where T: ApiTargetType {
         let provider = MoyaProvider<T>()
         provider.request(request, callbackQueue: callbackQueue) { result in
             let dateFormatter: DateFormatter = {
@@ -25,16 +25,15 @@ class ApiClient: ApiClientInterface {
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
             switch result {
             case let .success(response):
-                if let model = try? response.map(T.Response.self, using: decoder) {
+                do {
+                    let model = try response.filterSuccessfulStatusCodes().map(T.Response.self)
                     completion(.success(model))
-                } else if let errorModel = try? response.map(ErrorResponse.self) {
-                    completion(.failure(.badRequestError(errorModel.code)))
-                } else {
-                        completion(.failure(.unknownError))
-                    }
+                } catch {
+                    completion(.failure(error))
+                }
 
-            case let .failure(moyaError):
-                completion(.failure(.moyaError(moyaError)))
+            case let .failure(error):
+                completion(.failure(error))
             }
         }
     }
@@ -43,10 +42,4 @@ class ApiClient: ApiClientInterface {
 struct ErrorResponse: Decodable {
     var code: Int
     var message: String
-}
-
-enum MoyaResponseError: Error {
-    case moyaError(Moya.MoyaError)
-    case badRequestError(Int)
-    case unknownError
 }
