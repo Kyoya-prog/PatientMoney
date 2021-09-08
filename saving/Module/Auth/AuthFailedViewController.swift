@@ -19,7 +19,7 @@ class AuthFailedViewController: UIViewController {
 
     var errorCauseMessage: String = ""
 
-    private let message = "認証に失敗しました。"
+    private let message = L10n.AuthFailedViewController.massage
 
     private let label = UILabel()
 }
