@@ -60,6 +60,7 @@
 		3D9FEC3226680174008A77FC /* PatienceAnalyzePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC3126680174008A77FC /* PatienceAnalyzePresenter.swift */; };
 		3D9FEC342668041E008A77FC /* PatienceAnalyzeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC332668041E008A77FC /* PatienceAnalyzeRouter.swift */; };
 		3DAAF65A26E8C66A00369B35 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAF65926E8C66A00369B35 /* AuthManager.swift */; };
+		3DAAF65C26E8D6DB00369B35 /* AuthFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAF65B26E8D6DB00369B35 /* AuthFailedViewController.swift */; };
 		3DB5C5BD26CCE641005E3299 /* PatienceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5BC26CCE641005E3299 /* PatienceEntity.swift */; };
 		3DB5C5BF26CCE683005E3299 /* CreatePatienceTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5BE26CCE683005E3299 /* CreatePatienceTargetType.swift */; };
 		3DB5C5C326CCEC4C005E3299 /* UpdatePatienceTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5C226CCEC4C005E3299 /* UpdatePatienceTargetType.swift */; };
@@ -182,6 +183,7 @@
 		3D9FEC3126680174008A77FC /* PatienceAnalyzePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzePresenter.swift; sourceTree = "<group>"; };
 		3D9FEC332668041E008A77FC /* PatienceAnalyzeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzeRouter.swift; sourceTree = "<group>"; };
 		3DAAF65926E8C66A00369B35 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		3DAAF65B26E8D6DB00369B35 /* AuthFailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFailedViewController.swift; sourceTree = "<group>"; };
 		3DB5C5BC26CCE641005E3299 /* PatienceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceEntity.swift; sourceTree = "<group>"; };
 		3DB5C5BE26CCE683005E3299 /* CreatePatienceTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePatienceTargetType.swift; sourceTree = "<group>"; };
 		3DB5C5C226CCEC4C005E3299 /* UpdatePatienceTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePatienceTargetType.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 		3D6DFF1D26353E3E00C30DD1 = {
 			isa = PBXGroup;
 			children = (
+				3DAAF65B26E8D6DB00369B35 /* AuthFailedViewController.swift */,
 				3D6DFF2826353E3E00C30DD1 /* saving */,
 				3D6DFF3F26353E3F00C30DD1 /* savingTests */,
 				3D6DFF4A26353E3F00C30DD1 /* savingUITests */,
@@ -863,6 +866,7 @@
 				3DB5C5C526CF7DDB005E3299 /* PatiencePerDateTargetType.swift in Sources */,
 				3DE10495263D36B500F724B8 /* FontAwesome.swift in Sources */,
 				3D3A321A263EEEA000077B6D /* StatusNotification.swift in Sources */,
+				3DAAF65C26E8D6DB00369B35 /* AuthFailedViewController.swift in Sources */,
 				3DEB53CC26400BB9002A2166 /* PatienceCalendarPresenter.swift in Sources */,
 				3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */,
 				3D3A3231263F074F00077B6D /* PatienceInputInteractor.swift in Sources */,
