@@ -16,8 +16,6 @@ class ApiClient: ApiClientInterface {
             let dateFormatter: DateFormatter = {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
-                formatter.calendar = Calendar(identifier: .iso8601)
-                formatter.timeZone = TimeZone(secondsFromGMT: 0)
                 formatter.locale = Locale(identifier: "en_US_POSIX")
                 return formatter
             }()
@@ -26,7 +24,7 @@ class ApiClient: ApiClientInterface {
             switch result {
             case let .success(response):
                 do {
-                    let model = try response.filterSuccessfulStatusCodes().map(T.Response.self)
+                    let model = try decoder.decode(T.Response.self, from: response.data)
                     completion(.success(model))
                 } catch {
                     completion(.failure(error))
