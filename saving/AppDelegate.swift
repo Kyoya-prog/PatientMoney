@@ -21,9 +21,10 @@ var window: UIWindow?
                 case let .success(token):
                     AuthManager.setToken(token: token)
 
-                case .failure(_):
+                case let .failure(error):
                     DispatchQueue.main.async {
-                        self.presentAlert()
+                        let message = ErrorMessageBuilder.buildErrorMessage(error: error, message: "")
+                        self.presentAlert(errorCauseMessage: message)
                     }
                 }
                 semaphore.signal()
@@ -37,8 +38,10 @@ var window: UIWindow?
         return true
     }
 
-    private func presentAlert() {
-        self.window?.rootViewController = AuthFailedViewController()
+    private func presentAlert(errorCauseMessage: String) {
+        let failView = AuthFailedViewController()
+        failView.errorCauseMessage = errorCauseMessage
+        self.window?.rootViewController = failView
         window?.makeKeyAndVisible()
     }
 }
