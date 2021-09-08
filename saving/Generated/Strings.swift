@@ -11,6 +11,19 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
+  internal enum ApiError {
+    /// 不正なリクエストが検出されました
+    internal static let badRequestError = L10n.tr("Localizable", "ApiError.badRequestError")
+    /// サーバーと通信できません。kyoyaprog@gmail.comまでお問い合わせください。
+    internal static let connectionError = L10n.tr("Localizable", "ApiError.ConnectionError")
+    /// ネットワークに問題があります。接続状況を確認の上もう一度お試しください
+    internal static let networkError = L10n.tr("Localizable", "ApiError.networkError")
+    /// サーバーでエラーが発生しています。kyoyaprog@gmail.comまでお問い合わせください
+    internal static let serverError = L10n.tr("Localizable", "ApiError.serverError")
+    /// 不明なエラーです
+    internal static let unknownError = L10n.tr("Localizable", "ApiError.unknownError")
+  }
+
   internal enum AppDelegate {
     internal enum HomeView {
       internal enum AnalyzeView {
@@ -26,6 +39,11 @@ internal enum L10n {
         internal static let title = L10n.tr("Localizable", "AppDelegate.HomeView.RegisterView.title")
       }
     }
+  }
+
+  internal enum AuthFailedViewController {
+    /// 認証に失敗しました
+    internal static let massage = L10n.tr("Localizable", "AuthFailedViewController.massage")
   }
 
   internal enum AuthViewController {

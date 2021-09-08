@@ -18,7 +18,7 @@
 		3D2A1E8826C69E200013F247 /* TokenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8726C69E200013F247 /* TokenEntity.swift */; };
 		3D2A1E8A26C6A00D0013F247 /* SignInTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8926C6A00D0013F247 /* SignInTargetType.swift */; };
 		3D2A1E8D26C6A07F0013F247 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2A1E8C26C6A07F0013F247 /* KeychainAccess */; };
-		3D2A1E8F26C6A1A40013F247 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8E26C6A1A40013F247 /* TokenManager.swift */; };
+		3D2A1E8F26C6A1A40013F247 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A1E8E26C6A1A40013F247 /* AuthManager.swift */; };
 		3D36BC92263FBF1A00EDF69F /* PatienceCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */; };
 		3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36BC9E263FD60F00EDF69F /* Category.swift */; };
 		3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */; };
@@ -59,6 +59,7 @@
 		3D9FEC302667FB37008A77FC /* PatienceAnalyzeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2F2667FB37008A77FC /* PatienceAnalyzeContract.swift */; };
 		3D9FEC3226680174008A77FC /* PatienceAnalyzePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC3126680174008A77FC /* PatienceAnalyzePresenter.swift */; };
 		3D9FEC342668041E008A77FC /* PatienceAnalyzeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC332668041E008A77FC /* PatienceAnalyzeRouter.swift */; };
+		3DAAF65C26E8D6DB00369B35 /* AuthFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAF65B26E8D6DB00369B35 /* AuthFailedViewController.swift */; };
 		3DB5C5BD26CCE641005E3299 /* PatienceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5BC26CCE641005E3299 /* PatienceEntity.swift */; };
 		3DB5C5BF26CCE683005E3299 /* CreatePatienceTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5BE26CCE683005E3299 /* CreatePatienceTargetType.swift */; };
 		3DB5C5C326CCEC4C005E3299 /* UpdatePatienceTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5C226CCEC4C005E3299 /* UpdatePatienceTargetType.swift */; };
@@ -70,24 +71,15 @@
 		3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8AA267B1B4400EDD973 /* PatienceUpdatePresenter.swift */; };
 		3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */; };
 		3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCEB8C1267C7A7000EDD973 /* PatienceChartsView.swift */; };
-		3DDFCC5E26C79A0A00E3D1A2 /*  AuthDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFCC5D26C79A0A00E3D1A2 /*  AuthDataStore.swift */; };
 		3DDFCC6126C7BF0800E3D1A2 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3DDFCC6026C7BF0800E3D1A2 /* Moya */; };
 		3DDFCC6326C7BF0800E3D1A2 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3DDFCC6226C7BF0800E3D1A2 /* ReactiveMoya */; };
 		3DDFCC6526C7BF0800E3D1A2 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3DDFCC6426C7BF0800E3D1A2 /* RxMoya */; };
-		3DDFCC6726C81B2600E3D1A2 /* ErrorMessageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFCC6626C81B2600E3D1A2 /* ErrorMessageBuilder.swift */; };
 		3DDFCC6926CA900C00E3D1A2 /* CheckTokenTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFCC6826CA900C00E3D1A2 /* CheckTokenTargetType.swift */; };
 		3DE103C82638360000F724B8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103C72638360000F724B8 /* Strings.swift */; };
 		3DE103CC2638360800F724B8 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103CB2638360800F724B8 /* Asset.swift */; };
-		3DE103E6263ACBE100F724B8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103E5263ACBE100F724B8 /* AuthViewController.swift */; };
 		3DE103ED263AE65A00F724B8 /* ColorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */; };
 		3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */; };
-		3DE10408263B976700F724B8 /* AuthContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10407263B976700F724B8 /* AuthContract.swift */; };
 		3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10419263BEDE900F724B8 /* FlatButton.swift */; };
-		3DE10427263C008900F724B8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10426263C008900F724B8 /* SignUpViewController.swift */; };
-		3DE1042B263C013800F724B8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1042A263C013800F724B8 /* SignInViewController.swift */; };
-		3DE10436263C0B1000F724B8 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10435263C0B1000F724B8 /* AuthRouter.swift */; };
-		3DE1043D263C0C4700F724B8 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1043C263C0C4700F724B8 /* AuthPresenter.swift */; };
-		3DE10449263C725200F724B8 /*  AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10448263C725200F724B8 /*  AuthInteractor.swift */; };
 		3DE10495263D36B500F724B8 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10494263D36B500F724B8 /* FontAwesome.swift */; };
 		3DE1049A263D36E900F724B8 /* NSAttributedStrinfExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE10499263D36E900F724B8 /* NSAttributedStrinfExtension.swift */; };
 		3DE104A6263D383C00F724B8 /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DE104A3263D383C00F724B8 /* Font Awesome 5 Brands-Regular-400.otf */; };
@@ -98,6 +90,9 @@
 		3DEB53C826400B96002A2166 /* PatienceCalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB53C726400B96002A2166 /* PatienceCalendarRouter.swift */; };
 		3DEB53CC26400BB9002A2166 /* PatienceCalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB53CB26400BB9002A2166 /* PatienceCalendarPresenter.swift */; };
 		3DEB53D026400BC5002A2166 /* PatienceCalendarContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB53CF26400BC5002A2166 /* PatienceCalendarContract.swift */; };
+		3DF0165526E905DE000E0B5F /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF0165426E905DE000E0B5F /* APIError.swift */; };
+		3DF0165726E90607000E0B5F /* ErrorMessageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF0165626E90607000E0B5F /* ErrorMessageBuilder.swift */; };
+		3DF0165926E90646000E0B5F /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF0165826E90646000E0B5F /* AuthRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,7 +140,7 @@
 		3D2A1E8426C69CFF0013F247 /* SignUpTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTargetType.swift; sourceTree = "<group>"; };
 		3D2A1E8726C69E200013F247 /* TokenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenEntity.swift; sourceTree = "<group>"; };
 		3D2A1E8926C6A00D0013F247 /* SignInTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTargetType.swift; sourceTree = "<group>"; };
-		3D2A1E8E26C6A1A40013F247 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		3D2A1E8E26C6A1A40013F247 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		3D36BC91263FBF1A00EDF69F /* PatienceCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarViewController.swift; sourceTree = "<group>"; };
 		3D36BC9E263FD60F00EDF69F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3D38E6372640224B00FCAA60 /* PatienceCalendarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarInteractor.swift; sourceTree = "<group>"; };
@@ -187,6 +182,7 @@
 		3D9FEC2F2667FB37008A77FC /* PatienceAnalyzeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzeContract.swift; sourceTree = "<group>"; };
 		3D9FEC3126680174008A77FC /* PatienceAnalyzePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzePresenter.swift; sourceTree = "<group>"; };
 		3D9FEC332668041E008A77FC /* PatienceAnalyzeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceAnalyzeRouter.swift; sourceTree = "<group>"; };
+		3DAAF65B26E8D6DB00369B35 /* AuthFailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFailedViewController.swift; sourceTree = "<group>"; };
 		3DB5C5BC26CCE641005E3299 /* PatienceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceEntity.swift; sourceTree = "<group>"; };
 		3DB5C5BE26CCE683005E3299 /* CreatePatienceTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePatienceTargetType.swift; sourceTree = "<group>"; };
 		3DB5C5C226CCEC4C005E3299 /* UpdatePatienceTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePatienceTargetType.swift; sourceTree = "<group>"; };
@@ -198,21 +194,12 @@
 		3DCEB8B2267B5D5200EDD973 /* ExtensionPresentationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPresentationProtocol.swift; sourceTree = "<group>"; };
 		3DCEB8BE267C7A1C00EDD973 /* Charts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Charts.xcframework; path = Carthage/Build/Charts.xcframework; sourceTree = "<group>"; };
 		3DCEB8C1267C7A7000EDD973 /* PatienceChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceChartsView.swift; sourceTree = "<group>"; };
-		3DDFCC5D26C79A0A00E3D1A2 /*  AuthDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " AuthDataStore.swift"; sourceTree = "<group>"; };
-		3DDFCC6626C81B2600E3D1A2 /* ErrorMessageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageBuilder.swift; sourceTree = "<group>"; };
 		3DDFCC6826CA900C00E3D1A2 /* CheckTokenTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTokenTargetType.swift; sourceTree = "<group>"; };
 		3DE103C72638360000F724B8 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Generated/Strings.swift; sourceTree = "<group>"; };
 		3DE103CB2638360800F724B8 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Generated/Asset.swift; sourceTree = "<group>"; };
-		3DE103E5263ACBE100F724B8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		3DE103EC263AE65A00F724B8 /* ColorsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtension.swift; sourceTree = "<group>"; };
 		3DE103F3263AE67F00F724B8 /* PatienceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceTextField.swift; sourceTree = "<group>"; };
-		3DE10407263B976700F724B8 /* AuthContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthContract.swift; sourceTree = "<group>"; };
 		3DE10419263BEDE900F724B8 /* FlatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
-		3DE10426263C008900F724B8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		3DE1042A263C013800F724B8 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		3DE10435263C0B1000F724B8 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
-		3DE1043C263C0C4700F724B8 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
-		3DE10448263C725200F724B8 /*  AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " AuthInteractor.swift"; sourceTree = "<group>"; };
 		3DE10494263D36B500F724B8 /* FontAwesome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
 		3DE10499263D36E900F724B8 /* NSAttributedStrinfExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStrinfExtension.swift; sourceTree = "<group>"; };
 		3DE104A3263D383C00F724B8 /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
@@ -222,6 +209,9 @@
 		3DEB53C726400B96002A2166 /* PatienceCalendarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarRouter.swift; sourceTree = "<group>"; };
 		3DEB53CB26400BB9002A2166 /* PatienceCalendarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarPresenter.swift; sourceTree = "<group>"; };
 		3DEB53CF26400BC5002A2166 /* PatienceCalendarContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceCalendarContract.swift; sourceTree = "<group>"; };
+		3DF0165426E905DE000E0B5F /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		3DF0165626E90607000E0B5F /* ErrorMessageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageBuilder.swift; sourceTree = "<group>"; };
+		3DF0165826E90646000E0B5F /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,8 +394,7 @@
 				3D6B0FEB263E714D009D21A1 /* DateUtil.swift */,
 				3D3A3219263EEEA000077B6D /* StatusNotification.swift */,
 				3D36BC9E263FD60F00EDF69F /* Category.swift */,
-				3D2A1E8E26C6A1A40013F247 /* TokenManager.swift */,
-				3DDFCC6626C81B2600E3D1A2 /* ErrorMessageBuilder.swift */,
+				3D2A1E8E26C6A1A40013F247 /* AuthManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -443,6 +432,7 @@
 		3D6DFF2826353E3E00C30DD1 /* saving */ = {
 			isa = PBXGroup;
 			children = (
+				3DF0165326E905D0000E0B5F /* Error */,
 				3D2A1E7926C684F50013F247 /* API */,
 				3D3A324D263F2B6F00077B6D /* Data */,
 				3D36BCA8263FDCBA00EDF69F /* Module */,
@@ -555,23 +545,10 @@
 		3DE103E3263ACBC900F724B8 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				3DE103E4263ACBD200F724B8 /* View */,
-				3DE1043B263C0C3900F724B8 /* Presenter */,
-				3DE1044C263C725500F724B8 /* Interactor */,
-				3DE10434263C0B0500F724B8 /* Router */,
-				3DE10407263B976700F724B8 /* AuthContract.swift */,
+				3DAAF65B26E8D6DB00369B35 /* AuthFailedViewController.swift */,
+				3DF0165826E90646000E0B5F /* AuthRouter.swift */,
 			);
 			path = Auth;
-			sourceTree = "<group>";
-		};
-		3DE103E4263ACBD200F724B8 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3DE103E5263ACBE100F724B8 /* AuthViewController.swift */,
-				3DE10426263C008900F724B8 /* SignUpViewController.swift */,
-				3DE1042A263C013800F724B8 /* SignInViewController.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		3DE103EB263AE64900F724B8 /* Extension */ = {
@@ -594,30 +571,6 @@
 				3DE10419263BEDE900F724B8 /* FlatButton.swift */,
 			);
 			path = ViewComponent;
-			sourceTree = "<group>";
-		};
-		3DE10434263C0B0500F724B8 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				3DE10435263C0B1000F724B8 /* AuthRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		3DE1043B263C0C3900F724B8 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				3DE1043C263C0C4700F724B8 /* AuthPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		3DE1044C263C725500F724B8 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				3DE10448263C725200F724B8 /*  AuthInteractor.swift */,
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 		3DE104AB263D384100F724B8 /* Font */ = {
@@ -659,7 +612,6 @@
 			isa = PBXGroup;
 			children = (
 				3D3A323E263F096B00077B6D /* PatienceDataStore.swift */,
-				3DDFCC5D26C79A0A00E3D1A2 /*  AuthDataStore.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -686,6 +638,15 @@
 				3DEB53C726400B96002A2166 /* PatienceCalendarRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		3DF0165326E905D0000E0B5F /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				3DF0165426E905DE000E0B5F /* APIError.swift */,
+				3DF0165626E90607000E0B5F /* ErrorMessageBuilder.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -879,10 +840,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DB5C5BF26CCE683005E3299 /* CreatePatienceTargetType.swift in Sources */,
-				3DE10427263C008900F724B8 /* SignUpViewController.swift in Sources */,
 				3D3A3216263EE0F700077B6D /* PatienceInputContract.swift in Sources */,
 				3DCEB8B3267B5D5200EDD973 /* ExtensionPresentationProtocol.swift in Sources */,
-				3DE10449263C725200F724B8 /*  AuthInteractor.swift in Sources */,
 				3D55A05E267DBE69006422BC /* CheckBox.swift in Sources */,
 				3DE1049A263D36E900F724B8 /* NSAttributedStrinfExtension.swift in Sources */,
 				3D3A322A263EF37F00077B6D /* PatienceRegisterPresenter.swift in Sources */,
@@ -892,9 +851,9 @@
 				3D36BC92263FBF1A00EDF69F /* PatienceCalendarViewController.swift in Sources */,
 				3D6B0FDD263D8031009D21A1 /* HeightSelfSizingCollectionView.swift in Sources */,
 				3D6B0FEC263E714D009D21A1 /* DateUtil.swift in Sources */,
+				3DF0165526E905DE000E0B5F /* APIError.swift in Sources */,
 				3DE103C82638360000F724B8 /* Strings.swift in Sources */,
 				3D6B0FF6263E76AA009D21A1 /* MemoView.swift in Sources */,
-				3DDFCC6726C81B2600E3D1A2 /* ErrorMessageBuilder.swift in Sources */,
 				3D3A3250263F2B9800077B6D /* PatienceInputRouter.swift in Sources */,
 				3DB5C5BD26CCE641005E3299 /* PatienceEntity.swift in Sources */,
 				3DEB53C826400B96002A2166 /* PatienceCalendarRouter.swift in Sources */,
@@ -906,6 +865,8 @@
 				3DB5C5C526CF7DDB005E3299 /* PatiencePerDateTargetType.swift in Sources */,
 				3DE10495263D36B500F724B8 /* FontAwesome.swift in Sources */,
 				3D3A321A263EEEA000077B6D /* StatusNotification.swift in Sources */,
+				3DF0165726E90607000E0B5F /* ErrorMessageBuilder.swift in Sources */,
+				3DAAF65C26E8D6DB00369B35 /* AuthFailedViewController.swift in Sources */,
 				3DEB53CC26400BB9002A2166 /* PatienceCalendarPresenter.swift in Sources */,
 				3DE1041A263BEDE900F724B8 /* FlatButton.swift in Sources */,
 				3D3A3231263F074F00077B6D /* PatienceInputInteractor.swift in Sources */,
@@ -915,7 +876,6 @@
 				3DE103F4263AE67F00F724B8 /* PatienceTextField.swift in Sources */,
 				3D2A1E8526C69CFF0013F247 /* SignUpTargetType.swift in Sources */,
 				3DE103CC2638360800F724B8 /* Asset.swift in Sources */,
-				3DDFCC5E26C79A0A00E3D1A2 /*  AuthDataStore.swift in Sources */,
 				3D1EB49626D119E30055CF6E /* LocaleExtension.swift in Sources */,
 				3DCEB8AB267B1B4400EDD973 /* PatienceUpdatePresenter.swift in Sources */,
 				3D2A1E8826C69E200013F247 /* TokenEntity.swift in Sources */,
@@ -924,18 +884,13 @@
 				3D61B4E2264EDA2F001C74B6 /* RecordListHeaderView.swift in Sources */,
 				3D6B0FE7263D85E0009D21A1 /* DateView.swift in Sources */,
 				3DB5C5C326CCEC4C005E3299 /* UpdatePatienceTargetType.swift in Sources */,
-				3DE10408263B976700F724B8 /* AuthContract.swift in Sources */,
-				3DE103E6263ACBE100F724B8 /* AuthViewController.swift in Sources */,
 				3DB5C5CB26CF9046005E3299 /* SimpleEntity.swift in Sources */,
 				3D2A1E8326C687090013F247 /* APIClient.swift in Sources */,
-				3D2A1E8F26C6A1A40013F247 /* TokenManager.swift in Sources */,
+				3D2A1E8F26C6A1A40013F247 /* AuthManager.swift in Sources */,
 				3D9FEC3226680174008A77FC /* PatienceAnalyzePresenter.swift in Sources */,
 				3D9FEC302667FB37008A77FC /* PatienceAnalyzeContract.swift in Sources */,
-				3DE1043D263C0C4700F724B8 /* AuthPresenter.swift in Sources */,
-				3DE10436263C0B1000F724B8 /* AuthRouter.swift in Sources */,
 				3D3A323F263F096B00077B6D /* PatienceDataStore.swift in Sources */,
 				3D55A05C267CEADE006422BC /* DateSelectStyleCheckView.swift in Sources */,
-				3DE1042B263C013800F724B8 /* SignInViewController.swift in Sources */,
 				3D9FEC2226679755008A77FC /* PatienceAnalyzeViewController.swift in Sources */,
 				3D9FEC342668041E008A77FC /* PatienceAnalyzeRouter.swift in Sources */,
 				3DE104B1263D3BEC00F724B8 /* CategoriesView.swift in Sources */,
@@ -945,6 +900,7 @@
 				3DCEB8C2267C7A7000EDD973 /* PatienceChartsView.swift in Sources */,
 				3D38E6382640224B00FCAA60 /* PatienceCalendarInteractor.swift in Sources */,
 				3DB5C5C926CF8FA4005E3299 /* DeletePatienceTargetType.swift in Sources */,
+				3DF0165926E90646000E0B5F /* AuthRouter.swift in Sources */,
 				3D36BC9F263FD60F00EDF69F /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

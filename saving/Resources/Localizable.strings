@@ -91,3 +91,13 @@
 "ErrorMessageBuilder.invalidMailAddress" = "正しいメールアドレスを入力してください";
 "ErrorMessageBuilder.userNotFound" = "メールアドレスまたはパスワードが間違っています";
 "ErrorMessageBuilder.SubMessage.cannotConnectNetwork" = "(インターネット接続がありません)";
+
+// AuthFailedViewController
+"AuthFailedViewController.massage" = "認証に失敗しました";
+
+// APIError
+"ApiError.ConnectionError" = "サーバーと通信できません。kyoyaprog@gmail.comまでお問い合わせください。";
+"ApiError.serverError" = "サーバーでエラーが発生しています。kyoyaprog@gmail.comまでお問い合わせください";
+"ApiError.unknownError" = "不明なエラーです";
+"ApiError.networkError" = "ネットワークに問題があります。接続状況を確認の上もう一度お試しください";
+"ApiError.badRequestError" = "不正なリクエストが検出されました";
