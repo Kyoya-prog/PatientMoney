@@ -59,6 +59,7 @@
 		3D9FEC302667FB37008A77FC /* PatienceAnalyzeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC2F2667FB37008A77FC /* PatienceAnalyzeContract.swift */; };
 		3D9FEC3226680174008A77FC /* PatienceAnalyzePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC3126680174008A77FC /* PatienceAnalyzePresenter.swift */; };
 		3D9FEC342668041E008A77FC /* PatienceAnalyzeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FEC332668041E008A77FC /* PatienceAnalyzeRouter.swift */; };
+		3DAA4A2126F076580097AFEA /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3DAA4A2026F076580097AFEA /* FirebaseCrashlytics */; };
 		3DAAF65C26E8D6DB00369B35 /* AuthFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAF65B26E8D6DB00369B35 /* AuthFailedViewController.swift */; };
 		3DB5C5BD26CCE641005E3299 /* PatienceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5BC26CCE641005E3299 /* PatienceEntity.swift */; };
 		3DB5C5BF26CCE683005E3299 /* CreatePatienceTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5C5BE26CCE683005E3299 /* CreatePatienceTargetType.swift */; };
@@ -224,6 +225,7 @@
 				3D80D0E126D7DEAA005BAAEC /* Charts.xcframework in Frameworks */,
 				3D80D0DD26D7DDA9005BAAEC /* NotificationBanner.xcframework in Frameworks */,
 				3DDFCC6526C7BF0800E3D1A2 /* RxMoya in Frameworks */,
+				3DAA4A2126F076580097AFEA /* FirebaseCrashlytics in Frameworks */,
 				3DE952DA2643B35E004AF23D /* FSCalendar in Frameworks */,
 				3DDFCC6326C7BF0800E3D1A2 /* ReactiveMoya in Frameworks */,
 				3D55A061267F2899006422BC /* Algorithms in Frameworks */,
@@ -662,6 +664,7 @@
 				3D6DFF2326353E3E00C30DD1 /* Frameworks */,
 				3D6DFF2426353E3E00C30DD1 /* Resources */,
 				3D6D012C26355E4500C30DD1 /* Embed Frameworks */,
+				3DAA4A2226F077AC0097AFEA /* Set up Xcode to automatically upload dSYM files */,
 			);
 			buildRules = (
 			);
@@ -675,6 +678,7 @@
 				3DDFCC6026C7BF0800E3D1A2 /* Moya */,
 				3DDFCC6226C7BF0800E3D1A2 /* ReactiveMoya */,
 				3DDFCC6426C7BF0800E3D1A2 /* RxMoya */,
+				3DAA4A2026F076580097AFEA /* FirebaseCrashlytics */,
 			);
 			productName = PatientMoney;
 			productReference = 3D6DFF2626353E3E00C30DD1 /* saving.app */;
@@ -752,6 +756,7 @@
 				3D55A05F267F2899006422BC /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				3D2A1E8B26C6A07F0013F247 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				3DDFCC5F26C7BF0800E3D1A2 /* XCRemoteSwiftPackageReference "Moya" */,
+				3DAA4A1F26F076580097AFEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 3D6DFF2726353E3E00C30DD1 /* Products */;
 			projectDirPath = "";
@@ -813,6 +818,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		3DAA4A2226F077AC0097AFEA /* Set up Xcode to automatically upload dSYM files */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "Set up Xcode to automatically upload dSYM files";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${BUILD_DIR%Build/*}SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\n";
 		};
 		3DE103AA26382B5800F724B8 /* Run Swiftgen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -971,7 +996,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1249,6 +1274,14 @@
 				minimumVersion = 0.2.1;
 			};
 		};
+		3DAA4A1F26F076580097AFEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.7.0;
+			};
+		};
 		3DDFCC5F26C7BF0800E3D1A2 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -1277,6 +1310,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3D55A05F267F2899006422BC /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
+		};
+		3DAA4A2026F076580097AFEA /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DAA4A1F26F076580097AFEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 		3DDFCC6026C7BF0800E3D1A2 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
