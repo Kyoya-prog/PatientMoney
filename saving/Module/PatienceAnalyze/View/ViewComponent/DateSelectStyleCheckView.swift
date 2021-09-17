@@ -51,6 +51,7 @@ class DateSelectStyleCheckView: UIView {
 #if canImport(SwiftUI)
 import  SwiftUI
 
+@available(iOS 13, *)
 struct DateSelectStyleCheckViewWrapper: UIViewRepresentable {
     typealias UIViewType = DateSelectStyleCheckView
 
@@ -62,6 +63,7 @@ struct DateSelectStyleCheckViewWrapper: UIViewRepresentable {
     }
 }
 
+@available(iOS 13, *)
 struct DateSelectStyleCheckViewPreviews: PreviewProvider {
     static var previews: some View {
         DateSelectStyleCheckViewWrapper()

@@ -55,7 +55,9 @@ class SelectableDateStylePickerTextField: PatienceTextField {
 
     private func setUpDatePickerView() {
         datePickerView.datePickerMode = .date
-        datePickerView.preferredDatePickerStyle = .wheels
+        if #available(iOS 13.4, *) {
+            datePickerView.preferredDatePickerStyle = .wheels
+        }
         datePickerView.locale = Locale(identifier: "en_US_POSIX")
     }
 
