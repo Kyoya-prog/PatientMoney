@@ -1,5 +1,5 @@
 //
-//  PatienceCalenderRouter.swift
+//  PatienceCalendarRouter.swift
 //  PatientMoney
 //
 //  Created by 松山響也 on 2021/05/03.
@@ -10,7 +10,7 @@ import UIKit.UIViewController
 
 class PatienceCalendarRouter: PatienceCalendarWireframe {
     static func assembleModule() -> UIViewController {
-        let viewController = PatienceCalenderViewController()
+        let viewController = PatienceCalendarViewController()
         let presenter = PatienceCalendarPresenter()
         let interactor = PatienceCalendarInteractor()
         let dataStore = PatienceDataStore()
@@ -32,7 +32,7 @@ class PatienceCalendarRouter: PatienceCalendarWireframe {
 
     func presentRegisterModal(date: Date) {
         let registerView = PatienceInputRouter.assembleRegisterModule(date: date, isCalendarModal: true)
-        registerView.presentationController?.delegate = viewController as? PatienceCalenderViewController
+        registerView.presentationController?.delegate = viewController as? PatienceCalendarViewController
         viewController?.present(registerView, animated: true, completion: nil)
     }
 
