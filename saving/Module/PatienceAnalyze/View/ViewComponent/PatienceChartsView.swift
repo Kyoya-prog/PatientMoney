@@ -82,6 +82,7 @@ class PatienceChartsView: PieChartView {
 #if canImport(SwiftUI)
 import  SwiftUI
 
+@available(iOS 13, *)
 struct PatienceChartsViewWrapper: UIViewRepresentable {
     var records: [PatienceChartDataModel] = []
 
@@ -96,6 +97,7 @@ struct PatienceChartsViewWrapper: UIViewRepresentable {
     }
 }
 
+@available(iOS 13, *)
 struct PatienceChartsVIewPreviews: PreviewProvider {
     static var previews: some View {
         PatienceChartsViewWrapper(records: [

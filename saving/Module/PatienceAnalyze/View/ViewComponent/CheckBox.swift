@@ -76,6 +76,7 @@ class CheckBox: UIControl {
 #if canImport(SwiftUI)
 import  SwiftUI
 
+@available(iOS 13, *)
 struct CheckBoxWrapper: UIViewRepresentable {
     var isOn: Bool
 
@@ -93,6 +94,7 @@ struct CheckBoxWrapper: UIViewRepresentable {
     }
 }
 
+@available(iOS 13, *)
 struct CheckBoxPreviews: PreviewProvider {
     static var previews: some View {
         CheckBoxWrapper(isOn: true, isHighlighted: true
