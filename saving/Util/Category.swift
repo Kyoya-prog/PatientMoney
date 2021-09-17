@@ -23,7 +23,7 @@ enum Category: CaseIterable {
             return .child
 
         case .clothes:
-            return .tshirt
+            return .tShirt
 
         case .paintBrush:
             return .paintBrush

@@ -30,6 +30,6 @@ struct FontAwesome {
         static let paintBrush = Icon(code: "paint-brush")
         static let beer = Icon(code: "beer")
         static let child = Icon(code: "child")
-        static let tshirt = Icon(code: "tshirt")
+        static let tShirt = Icon(code: "tshirt")
     }
 }
