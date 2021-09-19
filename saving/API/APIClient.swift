@@ -1,5 +1,6 @@
 import Foundation
 import Moya
+import UIKit
 
 protocol ApiClientInterface {
     func request<T: ApiTargetType>(_ request: T, callbackQueue: DispatchQueue, completion: @escaping (Result<T.Response, Error>) -> Void)
@@ -40,4 +41,12 @@ class ApiClient: ApiClientInterface {
 struct ErrorResponse: Decodable {
     var code: Int
     var message: String
+    
+
+    
+
+    }
+    
+    
+
 }

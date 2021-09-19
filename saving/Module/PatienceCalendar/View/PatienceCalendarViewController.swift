@@ -2,7 +2,7 @@ import Foundation
 import FSCalendar
 import UIKit
 
-class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
+class PatienceCalendarViewController: UIViewController, PatienceCalendarView {
     /// 記録
     var records: [PatienceEntity] = [] {
         didSet {
@@ -99,7 +99,7 @@ class PatienceCalenderViewController: UIViewController, PatienceCalendarView {
 }
 
 // MARK: UITableViewDelegate, UITableViewDataSource
-extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSource {
+extension PatienceCalendarViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         44
     }
@@ -146,7 +146,7 @@ extension PatienceCalenderViewController: UITableViewDelegate, UITableViewDataSo
 }
 
 // MARK: FSCalendarDelegate, FSCalendarDataSource
-extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSource {
+extension PatienceCalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.selectedDate = date
         recordListHeaderView.title = DateStringConverter.stringFromDate(date: date, format: DateStringConverter.dateFormatJapanese)
@@ -157,7 +157,7 @@ extension PatienceCalenderViewController: FSCalendarDelegate, FSCalendarDataSour
     }
 }
 
-extension PatienceCalenderViewController: UIAdaptivePresentationControllerDelegate {
+extension PatienceCalendarViewController: UIAdaptivePresentationControllerDelegate {
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         updateRecordsView()
     }

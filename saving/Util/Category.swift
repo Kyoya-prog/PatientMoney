@@ -5,8 +5,8 @@ enum Category: CaseIterable {
     case bus
     case beer
     case child
-    case tshirt
-    case paintBrusy
+    case clothes
+    case paintBrush
 
     var icon: FontAwesome.Icon {
         switch self {
@@ -22,10 +22,10 @@ enum Category: CaseIterable {
         case .child:
             return .child
 
-        case .tshirt:
-            return .tshirt
+        case .clothes:
+            return .tShirt
 
-        case .paintBrusy:
+        case .paintBrush:
             return .paintBrush
         }
     }
@@ -44,10 +44,10 @@ enum Category: CaseIterable {
         case .child:
             return L10n.CategoryIcon.Title.child
 
-        case .tshirt:
+        case .clothes:
             return L10n.CategoryIcon.Title.tshirt
 
-        case .paintBrusy:
+        case .paintBrush:
             return L10n.CategoryIcon.Title.paintBrush
         }
     }
@@ -66,10 +66,10 @@ enum Category: CaseIterable {
         case .child:
             return UIColor(hex: "FFA07A")
 
-        case .tshirt:
+        case .clothes:
             return UIColor(hex: "425D69")
 
-        case .paintBrusy:
+        case .paintBrush:
             return UIColor(hex: "FF0000")
         }
     }
