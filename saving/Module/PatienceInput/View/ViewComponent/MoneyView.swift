@@ -45,6 +45,7 @@ class MoneyView: PatienceInputViewComponent {
         moneyTextField.keyboardType = .numberPad
         moneyTextField.textColor = UIColor.black
         moneyTextField.placeholder = "0"
+        moneyTextField.delegate = self
         addSubview(moneyTextField)
 
         moneyTextField.inputAccessoryView = keyboardToolbar
@@ -89,5 +90,19 @@ class MoneyView: PatienceInputViewComponent {
 
     @objc private func doneButtonAction(_ : UIBarButtonItem) {
         moneyTextField.endEditing(true)
+    }
+}
+
+extension MoneyView: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let resultText: String = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
+        let money = Int(resultText)
+        guard let money = money else { fatalError() }
+        if money > 1000000000 {
+            moneyTextField.text = "99999999"
+            return false
+        } else {
+            return true
+        }
     }
 }

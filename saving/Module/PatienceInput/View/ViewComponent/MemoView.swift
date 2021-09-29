@@ -87,6 +87,11 @@ extension MemoView: UITextViewDelegate {
         }
     }
 
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let resultText = (textView.text! as NSString).replacingCharacters(in: range, with: text)
+        return resultText.count <= 255
+    }
+
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == "" {
             textView.text = L10n.MemoView.MemoTextView.placeholder
