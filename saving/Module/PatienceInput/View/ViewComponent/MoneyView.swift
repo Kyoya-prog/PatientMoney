@@ -96,8 +96,7 @@ class MoneyView: PatienceInputViewComponent {
 extension MoneyView: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let resultText: String = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
-        let money = Int(resultText)
-        guard let money = money else { fatalError() }
+        guard let money = Int(resultText) else { fatalError() }
         if money > 1000000000 {
             moneyTextField.text = "99999999"
             return false
