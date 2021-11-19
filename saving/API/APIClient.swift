@@ -37,16 +37,3 @@ class ApiClient: ApiClientInterface {
         }
     }
 }
-
-struct ErrorResponse: Decodable {
-    var code: Int
-    var message: String
-    
-
-    
-
-    }
-    
-    
-
-}
